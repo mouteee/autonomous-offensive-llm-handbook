@@ -1,0 +1,45 @@
+{
+  "expected": {
+    "dropped_count": 2,
+    "kept_count": 1,
+    "phase": "surface",
+    "threshold": 0.55
+  },
+  "insights": [
+    {
+      "evidence": {
+        "ref": "/api/quotes",
+        "snippet": "answers POST without a session cookie"
+      },
+      "insight": "The quote endpoint accepts an unauthenticated POST, so quote creation is reachable before login.",
+      "phase": "surface"
+    },
+    {
+      "evidence": {
+        "ref": "/internal/console",
+        "snippet": "no evidence in the crawl summary"
+      },
+      "insight": "An administrative console is probably served under /internal/, which the crawl never reached.",
+      "phase": "surface"
+    },
+    {
+      "evidence": {
+        "ref": "/session/refresh",
+        "snippet": "no Set-Cookie was captured"
+      },
+      "insight": "The session cookie is probably missing SameSite, so a cross-site POST would carry it.",
+      "phase": "surface"
+    }
+  ],
+  "intel_context": "Crawl summary for https://shop.example.com: 41 urls, 6 forms, 3 json endpoints. The quote service is reachable at /api/quotes and answers POST without a session cookie. A second endpoint under /account/ answers 401. No WAF banner was seen.",
+  "kind": "insights",
+  "provenance": {
+    "finding_type": "insight",
+    "rule_id": "critic-containment"
+  },
+  "regeneration": {
+    "grounding": "insight 0 is grounded because its ref /api/quotes appears in intel_context; the others are not",
+    "prose": "every insight, ref, snippet and the intel context are authored; no source text is carried",
+    "shape_source": "agent_memory.deep_analysis_surface (14 high-value targets in the source record)"
+  }
+}

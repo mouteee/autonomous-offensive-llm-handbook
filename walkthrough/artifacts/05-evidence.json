@@ -1,0 +1,128 @@
+{
+  "exchanges": [
+    {
+      "attached_to_finding": true,
+      "request": {
+        "headers": {
+          "Origin": "null"
+        },
+        "method": "GET",
+        "url": "https://billing.claims.example.com/"
+      },
+      "response": {
+        "body_length": 26,
+        "body_snippet": "{\"quotes\": [], \"count\": 0}",
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "content-type": "application/json"
+        },
+        "status": 200,
+        "url": "https://billing.claims.example.com/"
+      },
+      "source": "01-cors-wildcard.json"
+    },
+    {
+      "attached_to_finding": true,
+      "request": {
+        "method": "GET",
+        "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+      },
+      "response": {
+        "headers": {
+          "content-security-policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://claims.account.example.com/; object-src 'self' https://quotes.portal.example.com/; base-uri 'none'; connect-src 'self' https://shop.account.example.com/; img-src 'self' https://billing.shop.example.com/ https://account.console.example.com/ https://shop.example.com/ https://pay.example.com/; style-src 'self' 'unsafe-inline' https://portal.billing.example.com/; font-src 'self' https://shop.example.com/; frame-ancestors 'self'; media-src https://pay.claims.example.com/"
+        },
+        "status": 200,
+        "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+      },
+      "source": "02-csp-weakness.json"
+    },
+    {
+      "attached_to_finding": true,
+      "request": {
+        "method": "GET",
+        "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+      },
+      "response": {
+        "body_length": 122,
+        "body_snippet": "{\"gateway\": {\"authorizationKey\": \"production_kkq2vfd7_wmz49tqx\", \"tokenExID\": \"tex-4471-ab\", \"environment\": \"production\"}}",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "status": 200,
+        "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+      },
+      "source": "03-tokenization-key-public.json"
+    },
+    {
+      "attached_to_finding": true,
+      "request": {
+        "body": "{\"reference\": \"QT-4471\", \"amount\": \"1240.00\"}",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "method": "POST",
+        "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+      },
+      "response": {
+        "body_length": 291,
+        "body_snippet": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Sign in</title></head><body><div class=\"notice\">Your session has expired. Please log in to continue.</div><form method=\"post\" action=\"/login\"><input name=\"username\"><input name=\"password\" type=\"password\"></form></body></html>",
+        "headers": {
+          "content-type": "text/html; charset=utf-8"
+        },
+        "status": 200,
+        "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+      },
+      "source": "04-read-via-post-bounce.json"
+    },
+    {
+      "attached_to_finding": true,
+      "request": {
+        "method": "GET",
+        "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+      },
+      "response": {
+        "body_length": 227,
+        "body_snippet": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Quote Console</title><link rel=\"stylesheet\" href=\"/static/main.css\"></head><body><app-root></app-root><script src=\"/static/main.js\" defer></script></body></html>",
+        "headers": {
+          "content-type": "text/html; charset=utf-8"
+        },
+        "status": 200,
+        "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+      },
+      "source": "05-spa-fallback-api-200.json"
+    },
+    {
+      "attached_to_finding": true,
+      "request": {
+        "body": "{\"email\": \"' OR 1=1--\", \"password\": \"alph\"}",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "method": "POST",
+        "url": "http://quotes.example.com:3000/rest/nimb/login"
+      },
+      "response": {
+        "body_length": 115,
+        "body_snippet": "{\"error\": {\"message\": \"SQLITE_ERROR: near \\\"OR\\\": syntax error\", \"query\": \"SELECT * FROM Users WHERE email = ...\"}}",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "status": 200,
+        "url": "http://quotes.example.com:3000/rest/nimb/login"
+      },
+      "source": "06-no-rule-matches.json"
+    },
+    {
+      "attached_to_finding": false,
+      "request": {
+        "method": "GET",
+        "url": "https://quotes-test.account.example.com/lume/gamm.php"
+      },
+      "response": {
+        "status": 200,
+        "url": "https://quotes-test.account.example.com/lume/gamm.php"
+      },
+      "source": "07-evidence-ceiling.json"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "profile_hash": "php:sqlite:nowaf:none:rest:unknown",
+  "recommendations": [
+    {
+      "reason": "HIGH PRIORITY; boosted by backend_language",
+      "score": 26.0,
+      "tier": "HIGH",
+      "tool": "test_injection_cmdi"
+    },
+    {
+      "reason": "HIGH PRIORITY; boosted by backend_language",
+      "score": 18.0,
+      "tier": "HIGH",
+      "tool": "test_injection_lfi"
+    },
+    {
+      "reason": "HIGH PRIORITY; boosted by api_types, cors_enabled",
+      "score": 16.38,
+      "tier": "HIGH",
+      "tool": "test_cors"
+    },
+    {
+      "reason": "HIGH PRIORITY",
+      "score": 15.0,
+      "tier": "HIGH",
+      "tool": "test_csp"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by backend_language, waf_detected",
+      "score": 14.4,
+      "tier": "MEDIUM",
+      "tool": "test_sqli"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 11.67,
+      "tier": "MEDIUM",
+      "tool": "test_injection_ssti"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by api_types",
+      "score": 10.4,
+      "tier": "MEDIUM",
+      "tool": "test_race"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 10.0,
+      "tier": "MEDIUM",
+      "tool": "test_clickjacking"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 9.33,
+      "tier": "MEDIUM",
+      "tool": "test_injection_ssrf"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 9.33,
+      "tier": "MEDIUM",
+      "tool": "test_takeover"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by api_types",
+      "score": 9.1,
+      "tier": "MEDIUM",
+      "tool": "test_idor"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by backend_language",
+      "score": 9.1,
+      "tier": "MEDIUM",
+      "tool": "test_deserialize"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 9.0,
+      "tier": "MEDIUM",
+      "tool": "test_redirect"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 8.75,
+      "tier": "MEDIUM",
+      "tool": "test_smuggling"
+    },
+    {
+      "reason": "MEDIUM PRIORITY",
+      "score": 8.0,
+      "tier": "MEDIUM",
+      "tool": "test_cache"
+    },
+    {
+      "reason": "LOW PRIORITY",
+      "score": 7.5,
+      "tier": "LOW",
+      "tool": "test_injection_prototype"
+    },
+    {
+      "reason": "LOW PRIORITY; boosted by api_types",
+      "score": 7.2,
+      "tier": "LOW",
+      "tool": "test_logic"
+    },
+    {
+      "reason": "LOW PRIORITY; boosted by waf_detected; penalized by frontend_framework",
+      "score": 5.67,
+      "tier": "LOW",
+      "tool": "test_xss"
+    },
+    {
+      "reason": "SKIP; boosted by waf_detected",
+      "score": 2.88,
+      "tier": "SKIP",
+      "tool": "fuzz_endpoint"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "harness-port/v1",
+  "name": "offline conference lab",
+  "authorization": {"reference": "local synthetic fixtures only", "origins": ["https://lab.example"]},
+  "max_actions": 2,
+  "profile": {
+    "has_http": {"state": "measured", "value": true, "source": "fixtures:headers,marker"},
+    "has_graphql": {"state": "unknown", "value": null, "source": null}
+  },
+  "tools": [
+    {"id": "inspect_headers", "requires": {"has_http": true}, "weight": 8, "cost": 2, "activity": "passive", "fixture": "headers"},
+    {"id": "check_lab_marker", "requires": {"has_http": true}, "weight": 6, "cost": 3, "activity": "active", "fixture": "marker"},
+    {"id": "inspect_graphql", "requires": {"has_graphql": true}, "weight": 4, "cost": 2, "activity": "passive", "fixture": "graphql"}
+  ],
+  "rules": [
+    {"id": "header-is-not-exploit", "kind": "header", "tool": "inspect_headers", "ceiling": "medium", "fixture": "headers"},
+    {"id": "marker-needs-validation", "kind": "lab_marker", "tool": "check_lab_marker", "ceiling": "low", "fixture": "marker"}
+  ],
+  "proof_rules": [
+    {"id": "synthetic-lab-proof", "kind": "lab_marker", "tool": "check_lab_marker", "status": 200, "marker": "LAB_CONFIRMED", "ceiling": "high", "fixture": "marker"}
+  ]
+}

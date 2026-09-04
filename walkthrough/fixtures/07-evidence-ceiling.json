@@ -1,0 +1,41 @@
+{
+  "expected": {
+    "attach_exchange_evidence": false,
+    "evidence_grade": "thin",
+    "final_severity": "medium",
+    "note": "the finding built from this fixture must carry the short evidence string ALONE. There is no capture here to attach: the request is method+url and the response is status+url, which is everything the contract requires and nothing more. A driver that attaches this envelope wholesale still grades strong, because the governor reads a two-key dict as content, so the driver's own test must assert the ceiling fired.",
+    "original_severity": "critical",
+    "rules_fired": [
+      "evidence-ceiling"
+    ]
+  },
+  "finding": {
+    "evidence": "200; body differs from baseline",
+    "severity": "critical",
+    "title": "Unauthenticated response differs from the baseline",
+    "type": "unauth_data_leak",
+    "url": "https://quotes-test.account.example.com/lume/gamm.php"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "unauth_data_leak",
+    "rule_id": "evidence-ceiling"
+  },
+  "regeneration": {
+    "kept_substrings": [],
+    "note": "The evidence content is deliberately sparse: a 31-character evidence string, no poc_curl, and an exchange reduced to the contract minimum so there is no captured body or header for a driver to attach.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "omitted: this fixture carries no attachable capture -- see the note under expected",
+    "response_body": "omitted: this fixture carries no attachable capture -- see the note under expected",
+    "severity_origin": "from the corpus row",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://quotes-test.account.example.com/lume/gamm.php"
+  },
+  "response": {
+    "status": 200,
+    "url": "https://quotes-test.account.example.com/lume/gamm.php"
+  }
+}

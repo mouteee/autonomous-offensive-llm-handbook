@@ -1,0 +1,236 @@
+{
+  "acceptance": "human_review_required",
+  "coverage": {
+    "denominator": "planned tool-and-URL actions",
+    "error": 0,
+    "executed": 2,
+    "pending": 0,
+    "planned": 2,
+    "skipped": 0
+  },
+  "demonstration_rejections": [
+    {
+      "case": "real quote without proof predicate",
+      "finding_id": "header",
+      "reason": "independent policy predicate did not match the capture",
+      "rule_id": "synthetic-lab-proof"
+    }
+  ],
+  "events": [
+    {
+      "event": "stage",
+      "stage": "observe"
+    },
+    {
+      "event": "gate",
+      "inputs": {
+        "error_rate": 0.0,
+        "forms_found": 0,
+        "pages_crawled": 2,
+        "parameters_found": 0,
+        "scripts_found": 0,
+        "total_responses": 2,
+        "waf_detected": false
+      },
+      "missing": [],
+      "mode": "full",
+      "status": "proceed"
+    },
+    {
+      "event": "stage",
+      "stage": "plan"
+    },
+    {
+      "event": "not_selected",
+      "reasons": [
+        "has_graphql: unknown or not matched"
+      ],
+      "tool": "inspect_graphql"
+    },
+    {
+      "event": "plan",
+      "items": [
+        {
+          "reason": "declared requirements matched; weight / cost",
+          "score": 4.0,
+          "tool": "inspect_headers",
+          "url": "https://lab.example/"
+        },
+        {
+          "reason": "declared requirements matched; weight / cost",
+          "score": 2.0,
+          "tool": "check_lab_marker",
+          "url": "https://lab.example/"
+        }
+      ]
+    },
+    {
+      "event": "stage",
+      "stage": "execute"
+    },
+    {
+      "event": "authorized",
+      "tool": "inspect_headers",
+      "url": "https://lab.example/"
+    },
+    {
+      "event": "action",
+      "evidence_id": "1ceb2bdc4e9eaf5cd7f80d87af6694a5be6cf596058d22a0e54b289e76e9cdee",
+      "status": "executed",
+      "tool": "inspect_headers",
+      "url": "https://lab.example/"
+    },
+    {
+      "event": "authorized",
+      "tool": "check_lab_marker",
+      "url": "https://lab.example/"
+    },
+    {
+      "event": "action",
+      "evidence_id": "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88",
+      "status": "executed",
+      "tool": "check_lab_marker",
+      "url": "https://lab.example/"
+    },
+    {
+      "event": "stage",
+      "stage": "review"
+    },
+    {
+      "acceptance": "human_review_required",
+      "event": "governed_write",
+      "evidence_id": "1ceb2bdc4e9eaf5cd7f80d87af6694a5be6cf596058d22a0e54b289e76e9cdee",
+      "id": "header",
+      "kind": "header",
+      "proposed_severity": "critical",
+      "quote": "Access-Control-Allow-Origin: *",
+      "rules_fired": [
+        "header-is-not-exploit"
+      ],
+      "severity": "medium",
+      "title": "Wildcard header"
+    },
+    {
+      "acceptance": "human_review_required",
+      "event": "governed_write",
+      "evidence_id": "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88",
+      "id": "marker",
+      "kind": "lab_marker",
+      "proposed_severity": "critical",
+      "quote": "LAB_CONFIRMED",
+      "rules_fired": [
+        "marker-needs-validation"
+      ],
+      "severity": "low",
+      "title": "Synthetic lab marker"
+    },
+    {
+      "after": "high",
+      "before": "low",
+      "event": "policy_validated_raise",
+      "evidence_id": "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88",
+      "finding_id": "marker",
+      "quote": "LAB_CONFIRMED",
+      "rule_id": "synthetic-lab-proof"
+    },
+    {
+      "event": "stage",
+      "stage": "report"
+    },
+    {
+      "acceptance": "human_review_required",
+      "event": "finished"
+    }
+  ],
+  "evidence": {
+    "1ceb2bdc4e9eaf5cd7f80d87af6694a5be6cf596058d22a0e54b289e76e9cdee": {
+      "body": "Access-Control-Allow-Origin: *\nThis header alone is not an exploit.",
+      "run_id": "65e1811bf51364b315f79fa8a2c063d372b774d7aec22930b419a76d0e37d2f6",
+      "status": 200,
+      "tool": "inspect_headers",
+      "url": "https://lab.example/"
+    },
+    "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88": {
+      "body": "LAB_CONFIRMED: synthetic evidence for the offline tutorial only.",
+      "run_id": "65e1811bf51364b315f79fa8a2c063d372b774d7aec22930b419a76d0e37d2f6",
+      "status": 200,
+      "tool": "check_lab_marker",
+      "url": "https://lab.example/"
+    }
+  },
+  "findings": [
+    {
+      "acceptance": "human_review_required",
+      "evidence_id": "1ceb2bdc4e9eaf5cd7f80d87af6694a5be6cf596058d22a0e54b289e76e9cdee",
+      "id": "header",
+      "kind": "header",
+      "proposed_severity": "critical",
+      "quote": "Access-Control-Allow-Origin: *",
+      "rules_fired": [
+        "header-is-not-exploit"
+      ],
+      "severity": "medium",
+      "title": "Wildcard header"
+    },
+    {
+      "acceptance": "human_review_required",
+      "evidence_id": "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88",
+      "id": "marker",
+      "kind": "lab_marker",
+      "proposed_severity": "critical",
+      "quote": "LAB_CONFIRMED",
+      "rules_fired": [
+        "marker-needs-validation"
+      ],
+      "severity": "high",
+      "title": "Synthetic lab marker"
+    }
+  ],
+  "finished": true,
+  "gate": {
+    "inputs": {
+      "error_rate": 0.0,
+      "forms_found": 0,
+      "pages_crawled": 2,
+      "parameters_found": 0,
+      "scripts_found": 0,
+      "total_responses": 2,
+      "waf_detected": false
+    },
+    "missing": [],
+    "mode": "full",
+    "status": "proceed"
+  },
+  "mode": "offline_reference",
+  "outcomes": [
+    {
+      "evidence_id": "1ceb2bdc4e9eaf5cd7f80d87af6694a5be6cf596058d22a0e54b289e76e9cdee",
+      "status": "executed",
+      "tool": "inspect_headers",
+      "url": "https://lab.example/"
+    },
+    {
+      "evidence_id": "fb1af894d6b953b3e25469139f2f6929799f8752bea694c1e67cf74f24bc2b88",
+      "status": "executed",
+      "tool": "check_lab_marker",
+      "url": "https://lab.example/"
+    }
+  ],
+  "plan": [
+    {
+      "reason": "declared requirements matched; weight / cost",
+      "score": 4.0,
+      "tool": "inspect_headers",
+      "url": "https://lab.example/"
+    },
+    {
+      "reason": "declared requirements matched; weight / cost",
+      "score": 2.0,
+      "tool": "check_lab_marker",
+      "url": "https://lab.example/"
+    }
+  ],
+  "policy_digest": "d5359c51807d0137f00cc6f16c66c160c81430ba2a4ed34d271e885d6673e56d",
+  "run_id": "65e1811bf51364b315f79fa8a2c063d372b774d7aec22930b419a76d0e37d2f6",
+  "schema": "harness-report/v1"
+}

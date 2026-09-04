@@ -1,0 +1,50 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "evidence_grade": "strong",
+    "false_positive": true,
+    "final_severity": "info",
+    "original_severity": "high",
+    "rules_fired": [
+      "read-via-post-bounce"
+    ]
+  },
+  "finding": {
+    "evidence": "POST returned 200 with a text/html body reading \"Your session has expired. Please log in to continue.\" -- the 200 is a login bounce, not a write.",
+    "severity": "high",
+    "title": "Unauthenticated write succeeded via POST",
+    "type": "access_control",
+    "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "access_control",
+    "rule_id": "read-via-post-bounce"
+  },
+  "regeneration": {
+    "kept_substrings": [],
+    "note": "Museum entry: a 200 on an unauthenticated POST that is really a login bounce. Both halves must be present -- the title regex and the evidence regex AND together.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "authored (the source capture carried no body)",
+    "response_body": "authored (the source capture carried no body)",
+    "severity_origin": "from the corpus row",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "{\"reference\": \"QT-4471\", \"amount\": \"1240.00\"}",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "method": "POST",
+    "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+  },
+  "response": {
+    "body": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Sign in</title></head><body><div class=\"notice\">Your session has expired. Please log in to continue.</div><form method=\"post\" action=\"/login\"><input name=\"username\"><input name=\"password\" type=\"password\"></form></body></html>",
+    "cookies": {},
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "status": 200,
+    "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+  }
+}

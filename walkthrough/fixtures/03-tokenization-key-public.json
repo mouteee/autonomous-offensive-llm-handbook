@@ -1,0 +1,48 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "environment": "prod",
+    "evidence_grade": "strong",
+    "final_severity": "high",
+    "original_severity": "critical",
+    "rules_fired": [
+      "tokenization-key-public"
+    ]
+  },
+  "finding": {
+    "evidence": "{\"authorizationKey\": \"production_kkq2vfd7_wmz49tqx\", \"tokenExID\": \"tex-4471-ab\"} returned by GET /api/config with no session cookie.",
+    "severity": "critical",
+    "title": "Payment gateway configuration is served to unauthenticated callers",
+    "type": "secret_exposure",
+    "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "secret_exposure",
+    "rule_id": "tokenization-key-public"
+  },
+  "regeneration": {
+    "kept_substrings": [],
+    "note": "The tier token is dropped from the host on purpose: the rule splits on environment, and prod is the branch the brief's table demonstrates.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "absent",
+    "response_body": "authored (the source capture carried no body)",
+    "severity_origin": "authored. The corpus row is stored at high after an analyst verdict, and cap_at high on a high finding is silent. Critical is what the auto-rater asserts and what this rule exists to cap.",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "",
+    "headers": {},
+    "method": "GET",
+    "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+  },
+  "response": {
+    "body": "{\"gateway\": {\"authorizationKey\": \"production_kkq2vfd7_wmz49tqx\", \"tokenExID\": \"tex-4471-ab\", \"environment\": \"production\"}}",
+    "cookies": {},
+    "headers": {
+      "content-type": "application/json"
+    },
+    "status": 200,
+    "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+  }
+}

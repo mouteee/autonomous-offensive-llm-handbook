@@ -1,0 +1,3 @@
+# The reference-implementation modules use the Python standard library only.
+# Dev tooling for the verification backbone:
+pytest>=8.0

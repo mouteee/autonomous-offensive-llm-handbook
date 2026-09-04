@@ -1,0 +1,84 @@
+{
+  "fixtures_fingerprinted": [
+    "01-cors-wildcard.json",
+    "02-csp-weakness.json",
+    "03-tokenization-key-public.json",
+    "04-read-via-post-bounce.json",
+    "05-spa-fallback-api-200.json",
+    "06-no-rule-matches.json",
+    "07-evidence-ceiling.json"
+  ],
+  "populated_fields": {
+    "api_types": [
+      "rest"
+    ],
+    "backend_confidence": 1.0,
+    "backend_language": "php",
+    "base_domain": "billing.claims.example.com",
+    "cors_enabled": true,
+    "cors_permissive": true,
+    "database_confidence": 1.0,
+    "database_hints": [
+      "sqlite:SQLite",
+      "sqlite:SQLITE_ERROR"
+    ],
+    "evidence": {
+      "backend": [
+        "url:\\.php(\\?|$|/)",
+        "url:\\.php(\\?|$|/)"
+      ]
+    },
+    "frontend_framework": "angular",
+    "likely_database": "sqlite",
+    "security_headers": {
+      "Content-Security-Policy": true,
+      "Referrer-Policy": false,
+      "Strict-Transport-Security": false,
+      "X-Content-Type-Options": false,
+      "X-Frame-Options": false,
+      "X-XSS-Protection": false
+    },
+    "target_url": "https://billing.claims.example.com/"
+  },
+  "profile_components": {
+    "api_type": "rest",
+    "backend": "php",
+    "database": "sqlite",
+    "framework": "unknown",
+    "waf_status": "nowaf",
+    "waf_vendor": "none"
+  },
+  "profile_hash": "php:sqlite:nowaf:none:rest:unknown",
+  "unreachable_without_live_probes": [
+    "has_graphql",
+    "has_websocket",
+    "accepts_xml",
+    "error_verbosity"
+  ],
+  "withheld_probe_fields": {
+    "accepts_xml": {
+      "passive_writers": [
+        "_analyze_attack_surface"
+      ],
+      "probe": "probe_xml_support",
+      "published_value": false
+    },
+    "error_verbosity": {
+      "passive_writers": [
+        "_analyze_attack_surface"
+      ],
+      "probe": "probe_error_verbosity",
+      "published_value": "low"
+    },
+    "has_graphql": {
+      "passive_writers": [],
+      "probe": "probe_graphql",
+      "published_value": false
+    },
+    "has_websocket": {
+      "passive_writers": [],
+      "probe": "probe_websocket",
+      "published_value": false
+    }
+  }
+}

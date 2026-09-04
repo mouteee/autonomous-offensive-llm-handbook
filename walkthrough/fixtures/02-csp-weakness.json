@@ -1,0 +1,47 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "evidence_grade": "strong",
+    "final_severity": "medium",
+    "original_severity": "high",
+    "rules_fired": [
+      "csp-weakness"
+    ]
+  },
+  "finding": {
+    "evidence": "script-src allows 'unsafe-inline' and 'unsafe-eval', so the policy does not stop an injected script from executing.",
+    "severity": "high",
+    "title": "Content-Security-Policy permits inline script",
+    "type": "csp_weakness",
+    "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "csp_weakness",
+    "rule_id": "csp-weakness"
+  },
+  "regeneration": {
+    "kept_substrings": [],
+    "note": "The response header is the whole finding, so the CSP is sanitized token by token: directives and keywords stay, allowlisted origins do not.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "absent",
+    "response_body": "absent",
+    "severity_origin": "from the corpus row, which carries no governance record",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "",
+    "headers": {},
+    "method": "GET",
+    "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+  },
+  "response": {
+    "body": "",
+    "cookies": {},
+    "headers": {
+      "content-security-policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://claims.account.example.com/; object-src 'self' https://quotes.portal.example.com/; base-uri 'none'; connect-src 'self' https://shop.account.example.com/; img-src 'self' https://billing.shop.example.com/ https://account.console.example.com/ https://shop.example.com/ https://pay.example.com/; style-src 'self' 'unsafe-inline' https://portal.billing.example.com/; font-src 'self' https://shop.example.com/; frame-ancestors 'self'; media-src https://pay.claims.example.com/"
+    },
+    "status": 200,
+    "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+  }
+}

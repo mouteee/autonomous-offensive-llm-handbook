@@ -1,0 +1,51 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "evidence_grade": "strong",
+    "final_severity": null,
+    "governance_record": null,
+    "note": "no rule matched and no ceiling applied",
+    "original_severity": "critical",
+    "rules_fired": []
+  },
+  "finding": {
+    "evidence": "POST body email=' OR 1=1-- returned a database error in the response body, and the same payload authenticated as the first user.",
+    "severity": "critical",
+    "title": "Error-based SQL injection in the login form",
+    "type": "sqli",
+    "url": "http://quotes.example.com:3000/rest/nimb/login"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "sqli",
+    "rule_id": "no-public-rule-matches"
+  },
+  "regeneration": {
+    "kept_substrings": [
+      "' OR 1=1--"
+    ],
+    "note": "The point of this one is that nothing acts on it: strong evidence, and sqli matches none of the six rules, so the governor writes no record at all. Not acting is also an outcome.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "regenerated from the source capture, keys and types preserved",
+    "response_body": "authored (the source capture carried no body)",
+    "severity_origin": "from the corpus row",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "{\"email\": \"' OR 1=1--\", \"password\": \"alph\"}",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "method": "POST",
+    "url": "http://quotes.example.com:3000/rest/nimb/login"
+  },
+  "response": {
+    "body": "{\"error\": {\"message\": \"SQLITE_ERROR: near \\\"OR\\\": syntax error\", \"query\": \"SELECT * FROM Users WHERE email = ...\"}}",
+    "cookies": {},
+    "headers": {
+      "content-type": "application/json"
+    },
+    "status": 200,
+    "url": "http://quotes.example.com:3000/rest/nimb/login"
+  }
+}

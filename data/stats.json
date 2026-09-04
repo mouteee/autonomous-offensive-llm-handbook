@@ -1,0 +1,210 @@
+{
+  "benchmark": {
+    "juice_shop": {
+      "_unmeasured_reason": "Single run: a spread over one sample is not reported.",
+      "excluded": [
+        {
+          "f1": 0.0,
+          "false_negatives": 20,
+          "false_positives": 3,
+          "findings_count": 3,
+          "ground_truth_count": 20,
+          "label": "excluded run 1",
+          "precision": 0.0,
+          "reason": "truncated run \u2014 orchestrating agent killed by watchdog at 50% coverage / 2 URLs tested; never reached active testing, so this measures the harness, not the scanner",
+          "recall": 0.0,
+          "true_positives": 0
+        },
+        {
+          "f1": 0.0,
+          "false_negatives": 20,
+          "false_positives": 17,
+          "findings_count": 17,
+          "ground_truth_count": 20,
+          "label": "excluded run 2",
+          "precision": 0.0,
+          "reason": "early scaffolding run (label \"sanity\"), not protocol-complete and not cited as a baseline in the published verdict or head-to-head",
+          "recall": 0.0,
+          "true_positives": 0
+        }
+      ],
+      "f1": {
+        "mean": 0.37499999999999994,
+        "stdev": null,
+        "values": [
+          0.37499999999999994
+        ]
+      },
+      "included": [
+        {
+          "f1": 0.37499999999999994,
+          "false_negatives": 14,
+          "false_positives": 6,
+          "findings_count": 12,
+          "ground_truth_count": 20,
+          "precision": 0.5,
+          "recall": 0.3,
+          "true_positives": 6
+        }
+      ],
+      "n": 1,
+      "note": "'included' carries the raw per-run counts behind the means above -- one entry per run folded into the statistics, in the order the runs were read, each carrying its own metrics beside its own counts so no entry has to be aligned against the values arrays to be read. Published because a rate alone hides the size of the run it came from: a false-positive count is a number the talk cites directly, and it must be readable, not reconstructed from a ratio. Fields are an explicit allowlist -- no label, no path, no timestamp.",
+      "precision": {
+        "mean": 0.5,
+        "stdev": null,
+        "values": [
+          0.5
+        ]
+      },
+      "recall": {
+        "mean": 0.3,
+        "stdev": null,
+        "values": [
+          0.3
+        ]
+      }
+    },
+    "zap_baseline": {
+      "f1": 0.0,
+      "false_negatives": 20,
+      "false_positives": 90,
+      "findings_count": 90,
+      "ground_truth_count": 20,
+      "label": "ZAP",
+      "note": "Author-recorded OWASP ZAP passive-scan aggregate. This repository does not publish the raw findings, ground-truth entries, matcher, target identifiers or run identifiers needed to establish an identical evaluation procedure; do not treat this row and the scanner rows as a controlled head-to-head.",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "corpus": {
+    "chains": {
+      "governed": 17,
+      "note": "governed = attack_chain findings (seen by the severity governor). ungoverned = chain objects recorded only in agent_memory's deep_analysis_chains rows, under the canonical {'attack_chains': [...]} shape, that never became a finding and so were never evaluated. scans_with_chain_objects additionally credits a few older bare-list-shaped memory rows when checking for at least one object, so it is not a strict per-scan breakdown of the ungoverned count above -- it is its own query, answering 'does this scan have chain data at all'.",
+      "scans_with_chain_objects": 101,
+      "total": 227,
+      "ungoverned": 210,
+      "ungoverned_share": 0.9251101321585903
+    },
+    "findings": {
+      "by_severity_non_fp": {
+        "critical": 227,
+        "high": 104,
+        "info": 1961,
+        "low": 187,
+        "medium": 391
+      },
+      "false_positive": 119,
+      "non_fp": 2869,
+      "stored": 2988
+    },
+    "gate_decisions": {
+      "gated": 0,
+      "gated_soft": 3,
+      "limited": 31,
+      "note": "Per-scan host-gate outcomes, one row per scan that ran the observe-then-gate review (the decide_gate_status gate check), read from agent_memory. `total` counts those rows and is NOT the corpus scan total: a scan reaches the gate only on the per-host review path, so this counts fewer scans than the corpus holds, and the shortfall is scans that never ran the gate, not scans the gate refused. The named counts are the statuses the gate can return and they sum to `total`; a status the gate can emit but no scan produced is published as its own zero, never omitted, so an unfired branch reads as fired-zero-times and not as a missing measurement.",
+      "proceed": 52,
+      "total": 86
+    },
+    "governance_record_written": {
+      "note": "Counts findings whose stored raw_data carries a governance record. The record is built on every governor call and persisted by the write-time path whether or not anything changed, so a PRESENT record does not mean the governor acted -- many carry an empty rules_fired list, meaning evaluated and left alone. An ABSENT record does not mean 'never evaluated' either: a backfill pass persists only the rows it changed. Every stored finding here was evaluated: see the governance block, where scans_governed equals scans_total. Read this pair as 'how often a record was persisted', never as governance coverage.",
+      "with_record": 124,
+      "without_record": 2864
+    },
+    "hosts_distinct": 104,
+    "scans": {
+      "by_status": {
+        "complete": 161,
+        "completed": 3,
+        "failed": 39,
+        "killed": 3
+      },
+      "note": "Scan statuses are reported verbatim, exactly as stored. 'complete' and 'completed' are BOTH real values in the source data -- two writers spelled the terminal state differently across the corpus window -- and both mean a finished scan. The split is a property of the data, not a bug in this aggregation, and the two are not silently merged here.",
+      "total": 206
+    },
+    "tool_executions": 7259,
+    "window": {
+      "first_scan": "2026-05-06",
+      "last_scan": "2026-08-18",
+      "note": "ISO dates (YYYY-MM-DD) of the earliest and latest scan start in the corpus. Times of day are deliberately not published; these are dates, not truncated timestamps."
+    }
+  },
+  "governance": {
+    "impact": {
+      "delta": {
+        "critical": -18,
+        "critical_plus_high": -54,
+        "high": -36
+      },
+      "note": "delta = post_governance - pre_governance; negative means governance reduced the count. The governor never escalates, only downgrades or marks false-positive -- see governance.summary for the transition breakdown.",
+      "post_governance": {
+        "critical": 226,
+        "critical_plus_high": 330,
+        "high": 104
+      },
+      "pre_governance": {
+        "critical": 244,
+        "critical_plus_high": 384,
+        "high": 140
+      }
+    },
+    "summary": {
+      "by_transition": {
+        "critical->high": 12,
+        "critical->medium": 6,
+        "high->medium": 48,
+        "medium->low": 3
+      },
+      "by_type": {
+        "attack_chain": 17,
+        "broken_access_control": 7,
+        "cors_misconfiguration": 1,
+        "csp_weakness": 16,
+        "extracted_credentials": 1,
+        "extracted_data": 2,
+        "extracted_valid_credentials": 1,
+        "idor": 1,
+        "information_disclosure": 3,
+        "sensitive_data_exposure": 1,
+        "source_code_disclosure": 1,
+        "unknown": 1,
+        "vulnerability": 17
+      },
+      "errors": 0,
+      "expected": 17,
+      "flagged": 52,
+      "scans_governed": 206,
+      "scans_total": 206,
+      "total": 69
+    }
+  },
+  "llm_ratio": {
+    "coverage": {
+      "cc_transcripts_collided_with_other_cc_transcript": 3,
+      "cc_transcripts_collided_with_stream_feed": 8,
+      "cc_transcripts_seen": 93,
+      "cc_transcripts_unmappable": 70,
+      "cc_transcripts_unreadable": 0,
+      "note": "Transcripts exist for only a subset of the corpus. The ratio is reported over the measured subset and is NOT extrapolated to the full corpus. '_active' figures further exclude measured scans with zero tool_executions rows -- see scans_excluded_from_active and llm_turns_per_tool_execution_active.",
+      "scans_excluded_from_active": 5,
+      "scans_from_cc_transcript": 12,
+      "scans_from_stream_feed": 8,
+      "scans_measured": 20,
+      "scans_total": 206
+    },
+    "llm_turns_per_agent_tool_call": 1.0380710659898478,
+    "llm_turns_per_tool_execution": 1.520446096654275,
+    "llm_turns_per_tool_execution_active": 1.2936802973977695,
+    "note": "llm_turns is a PROXY for assistant turns, not a transcript-accurate count: it is defined as tool results + 1 (one model turn per tool result, plus the turn that precedes the first tool use), because both transcript formats record tool results reliably and neither marks an assistant-turn boundary. Two known biases, pulling in opposite directions: a turn that emits only text and calls no tool is not counted at all (UNDERCOUNT), and a single turn issuing several tool calls in parallel is counted once per result (OVERCOUNT). Which one dominates is not measured. Note which way the flattery runs: fewer model turns per deterministic tool execution is the result this project would like to see, and the undercount is the bias that produces it -- so read every ratio here as an approximation of shape, not a precise figure. llm_turns_per_agent_tool_call in particular is near-1 BY CONSTRUCTION -- turns are defined as results + 1 and results track calls -- so it restates the definition above and carries no information about the system. It is not a finding; it is published only so the definition can be checked against the totals.",
+    "totals": {
+      "agent_tool_calls": 394,
+      "llm_turns": 409,
+      "tool_executions": 269
+    },
+    "totals_active": {
+      "agent_tool_calls": 334,
+      "llm_turns": 348,
+      "tool_executions": 269
+    }
+  }
+}

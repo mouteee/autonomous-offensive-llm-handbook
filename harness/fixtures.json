@@ -1,0 +1,5 @@
+{
+  "headers": {"status": 200, "body": "Access-Control-Allow-Origin: *\nThis header alone is not an exploit."},
+  "marker": {"status": 200, "body": "LAB_CONFIRMED: synthetic evidence for the offline tutorial only."},
+  "graphql": {"status": 404, "body": "This fixture is not selected: the profile field is unknown."}
+}

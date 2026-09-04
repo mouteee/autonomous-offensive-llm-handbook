@@ -1,0 +1,11 @@
+{
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "true_positives": 0,
+  "false_positives": 3,
+  "false_negatives": 20,
+  "ground_truth_count": 20,
+  "findings_count": 3,
+  "label": "truncated run"
+}

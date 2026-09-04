@@ -1,0 +1,354 @@
+{
+  "findings": [
+    {
+      "evidence": "Access-Control-Allow-Origin: * returned for Origin: null. The header is static rather than reflected, and no Access-Control-Allow-Credentials is present.",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "prod",
+        "evidence_grade": "strong",
+        "final_severity": "medium",
+        "original_severity": "critical",
+        "rules_fired": [
+          "cors-wildcard"
+        ],
+        "skipped": []
+      },
+      "id": "f0000",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "headers": {
+              "Origin": "null"
+            },
+            "method": "GET",
+            "url": "https://billing.claims.example.com/"
+          },
+          "response": {
+            "body_length": 26,
+            "body_snippet": "{\"quotes\": [], \"count\": 0}",
+            "headers": {
+              "Access-Control-Allow-Origin": "*",
+              "content-type": "application/json"
+            },
+            "status": 200,
+            "url": "https://billing.claims.example.com/"
+          }
+        },
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "prod",
+          "evidence_grade": "strong",
+          "final_severity": "medium",
+          "original_severity": "critical",
+          "rules_fired": [
+            "cors-wildcard"
+          ],
+          "skipped": []
+        },
+        "rule_id": "cors-wildcard",
+        "source_fixture": "01-cors-wildcard.json"
+      },
+      "rules_fired": [
+        "cors-wildcard"
+      ],
+      "severity": "medium",
+      "title": "CORS: Access-Control-Allow-Origin returns a static wildcard",
+      "type": "wildcard",
+      "url": "https://billing.claims.example.com/"
+    },
+    {
+      "evidence": "script-src allows 'unsafe-inline' and 'unsafe-eval', so the policy does not stop an injected script from executing.",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "uat",
+        "evidence_grade": "strong",
+        "final_severity": "medium",
+        "original_severity": "high",
+        "rules_fired": [
+          "csp-weakness"
+        ],
+        "skipped": []
+      },
+      "id": "f0001",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "method": "GET",
+            "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+          },
+          "response": {
+            "headers": {
+              "content-security-policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://claims.account.example.com/; object-src 'self' https://quotes.portal.example.com/; base-uri 'none'; connect-src 'self' https://shop.account.example.com/; img-src 'self' https://billing.shop.example.com/ https://account.console.example.com/ https://shop.example.com/ https://pay.example.com/; style-src 'self' 'unsafe-inline' https://portal.billing.example.com/; font-src 'self' https://shop.example.com/; frame-ancestors 'self'; media-src https://pay.claims.example.com/"
+            },
+            "status": 200,
+            "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+          }
+        },
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "uat",
+          "evidence_grade": "strong",
+          "final_severity": "medium",
+          "original_severity": "high",
+          "rules_fired": [
+            "csp-weakness"
+          ],
+          "skipped": []
+        },
+        "rule_id": "csp-weakness",
+        "source_fixture": "02-csp-weakness.json"
+      },
+      "rules_fired": [
+        "csp-weakness"
+      ],
+      "severity": "medium",
+      "title": "Content-Security-Policy permits inline script",
+      "type": "csp_weakness",
+      "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+    },
+    {
+      "evidence": "{\"authorizationKey\": \"production_kkq2vfd7_wmz49tqx\", \"tokenExID\": \"tex-4471-ab\"} returned by GET /api/config with no session cookie.",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "prod",
+        "evidence_grade": "strong",
+        "final_severity": "high",
+        "original_severity": "critical",
+        "rules_fired": [
+          "tokenization-key-public"
+        ],
+        "skipped": []
+      },
+      "id": "f0002",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "method": "GET",
+            "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+          },
+          "response": {
+            "body_length": 122,
+            "body_snippet": "{\"gateway\": {\"authorizationKey\": \"production_kkq2vfd7_wmz49tqx\", \"tokenExID\": \"tex-4471-ab\", \"environment\": \"production\"}}",
+            "headers": {
+              "content-type": "application/json"
+            },
+            "status": 200,
+            "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+          }
+        },
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "prod",
+          "evidence_grade": "strong",
+          "final_severity": "high",
+          "original_severity": "critical",
+          "rules_fired": [
+            "tokenization-key-public"
+          ],
+          "skipped": []
+        },
+        "rule_id": "tokenization-key-public",
+        "source_fixture": "03-tokenization-key-public.json"
+      },
+      "rules_fired": [
+        "tokenization-key-public"
+      ],
+      "severity": "high",
+      "title": "Payment gateway configuration is served to unauthenticated callers",
+      "type": "secret_exposure",
+      "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+    },
+    {
+      "evidence": "POST returned 200 with a text/html body reading \"Your session has expired. Please log in to continue.\" -- the 200 is a login bounce, not a write.",
+      "false_positive": true,
+      "fp_reason": "read-via-post-bounce",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "prod",
+        "evidence_grade": "strong",
+        "final_severity": "info",
+        "original_severity": "high",
+        "rules_fired": [
+          "read-via-post-bounce"
+        ],
+        "skipped": []
+      },
+      "id": "f0003",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "body": "{\"reference\": \"QT-4471\", \"amount\": \"1240.00\"}",
+            "headers": {
+              "content-type": "application/json"
+            },
+            "method": "POST",
+            "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+          },
+          "response": {
+            "body_length": 291,
+            "body_snippet": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Sign in</title></head><body><div class=\"notice\">Your session has expired. Please log in to continue.</div><form method=\"post\" action=\"/login\"><input name=\"username\"><input name=\"password\" type=\"password\"></form></body></html>",
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "status": 200,
+            "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+          }
+        },
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "prod",
+          "evidence_grade": "strong",
+          "final_severity": "info",
+          "original_severity": "high",
+          "rules_fired": [
+            "read-via-post-bounce"
+          ],
+          "skipped": []
+        },
+        "rule_id": "read-via-post-bounce",
+        "source_fixture": "04-read-via-post-bounce.json"
+      },
+      "rules_fired": [
+        "read-via-post-bounce"
+      ],
+      "severity": "info",
+      "title": "Unauthenticated write succeeded via POST",
+      "type": "access_control",
+      "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+    },
+    {
+      "evidence": "GET /api/quotes returned 200 with text/html: <!doctype html> ... <app-root></app-root> -- the router's catch-all shell, not the endpoint.",
+      "false_positive": true,
+      "fp_reason": "spa-fallback-api-200",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "uat",
+        "evidence_grade": "strong",
+        "final_severity": "info",
+        "original_severity": "high",
+        "rules_fired": [
+          "spa-fallback-api-200"
+        ],
+        "skipped": []
+      },
+      "id": "f0004",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "method": "GET",
+            "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+          },
+          "response": {
+            "body_length": 227,
+            "body_snippet": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Quote Console</title><link rel=\"stylesheet\" href=\"/static/main.css\"></head><body><app-root></app-root><script src=\"/static/main.js\" defer></script></body></html>",
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "status": 200,
+            "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+          }
+        },
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "uat",
+          "evidence_grade": "strong",
+          "final_severity": "info",
+          "original_severity": "high",
+          "rules_fired": [
+            "spa-fallback-api-200"
+          ],
+          "skipped": []
+        },
+        "rule_id": "spa-fallback-api-200",
+        "source_fixture": "05-spa-fallback-api-200.json"
+      },
+      "rules_fired": [
+        "spa-fallback-api-200"
+      ],
+      "severity": "info",
+      "title": "API endpoint answers 200 to an unauthenticated GET",
+      "type": "sensitive_data_exposure",
+      "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+    },
+    {
+      "evidence": "POST body email=' OR 1=1-- returned a database error in the response body, and the same payload authenticated as the first user.",
+      "id": "f0005",
+      "raw_data": {
+        "evidence": {
+          "request": {
+            "body": "{\"email\": \"' OR 1=1--\", \"password\": \"alph\"}",
+            "headers": {
+              "content-type": "application/json"
+            },
+            "method": "POST",
+            "url": "http://quotes.example.com:3000/rest/nimb/login"
+          },
+          "response": {
+            "body_length": 115,
+            "body_snippet": "{\"error\": {\"message\": \"SQLITE_ERROR: near \\\"OR\\\": syntax error\", \"query\": \"SELECT * FROM Users WHERE email = ...\"}}",
+            "headers": {
+              "content-type": "application/json"
+            },
+            "status": 200,
+            "url": "http://quotes.example.com:3000/rest/nimb/login"
+          }
+        },
+        "rule_id": "no-public-rule-matches",
+        "source_fixture": "06-no-rule-matches.json"
+      },
+      "severity": "critical",
+      "title": "Error-based SQL injection in the login form",
+      "type": "sqli",
+      "url": "http://quotes.example.com:3000/rest/nimb/login"
+    },
+    {
+      "evidence": "200; body differs from baseline",
+      "governance_record": {
+        "ceiling_enforced": true,
+        "cvss_source": "none",
+        "environment": "uat",
+        "evidence_grade": "thin",
+        "final_severity": "medium",
+        "original_severity": "critical",
+        "rules_fired": [
+          "evidence-ceiling"
+        ],
+        "skipped": []
+      },
+      "id": "f0006",
+      "raw_data": {
+        "governance": {
+          "ceiling_enforced": true,
+          "cvss_source": "none",
+          "environment": "uat",
+          "evidence_grade": "thin",
+          "final_severity": "medium",
+          "original_severity": "critical",
+          "rules_fired": [
+            "evidence-ceiling"
+          ],
+          "skipped": []
+        },
+        "rule_id": "evidence-ceiling",
+        "source_fixture": "07-evidence-ceiling.json"
+      },
+      "rules_fired": [
+        "evidence-ceiling"
+      ],
+      "severity": "medium",
+      "title": "Unauthenticated response differs from the baseline",
+      "type": "unauth_data_leak",
+      "url": "https://quotes-test.account.example.com/lume/gamm.php"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "thesis": "Keep the model probabilistic. Make authority, actions, evidence and acceptance deterministic.",
+  "qualification": "Control decisions replay given frozen inputs and policy. Live model and target outputs do not.",
+  "phases": [
+    {"id": "bound", "title": "Bound", "steps": [0, 1]},
+    {"id": "describe", "title": "Describe", "steps": [2, 3]},
+    {"id": "prove", "title": "Prove", "steps": [4, 5, 6]},
+    {"id": "account", "title": "Control and account", "steps": [7, 8, 9, 10]}
+  ],
+  "decisions": [
+    {"id": 0, "title": "One write path", "action": "Grade before persistence", "test": "test_policy_validated_raise_keeps_human_acceptance_and_copies"},
+    {"id": 1, "title": "Fixed stages", "action": "Enforce order, not membership", "test": "test_out_of_stage_and_unplanned_tools_never_call_adapter"},
+    {"id": 2, "title": "Measured profile", "action": "Keep unknown distinct from false", "test": "test_unknown_is_not_false_and_catalogue_scoring_is_explicit"},
+    {"id": 3, "title": "Relevance catalogue", "action": "Rank explicit inputs by policy", "test": "test_reverse_plan_order_cannot_choose_budget_winner"},
+    {"id": 4, "title": "Evidence schema", "action": "Bind every claim to a capture", "test": "test_cross_finding_evidence_and_forged_digest_are_rejected"},
+    {"id": 5, "title": "Downward governor", "action": "Cap before storing", "test": "test_governor_never_raises_across_severity_domain"},
+    {"id": 6, "title": "Verdict acceptance", "action": "Require citation and independent policy", "test": "test_real_quote_without_independent_predicate_is_insufficient"},
+    {"id": 7, "title": "Scope function", "action": "Authorize before dispatch", "test": "test_scope_blocks_callback_for_unauthorized_origins"},
+    {"id": 8, "title": "Recorded gate", "action": "Treat missing inputs as indeterminate", "test": "test_missing_each_gate_key_stops_callbacks"},
+    {"id": 9, "title": "Runtime contract", "action": "Freeze capabilities and budget", "test": "test_budget_and_passive_gate_are_applied_before_callback"},
+    {"id": 10, "title": "Honest accounting", "action": "Publish coverage, errors and skips", "test": "test_coverage_is_independently_recountable_and_stage_order_is_exact"}
+  ],
+  "port_surfaces": ["Observation adapter and profile", "Tool catalogue and rules", "Authorization and scope policy", "Evidence extraction and proof policy"],
+  "laws": [
+    "The model proposes; deterministic code disposes.",
+    "Claims about the past must quote. Proposals about the future must execute.",
+    "Severity falls by default and rises only against proof.",
+    "Scope is a function, not a sentence.",
+    "Report what you didn't do."
+  ],
+  "laws_note": "Conference teaching revision. Historical formulations remain in chapter 00 with corrections in chapter 07. Quote matching alone is not proof; downward errors can hide vulnerabilities."
+}

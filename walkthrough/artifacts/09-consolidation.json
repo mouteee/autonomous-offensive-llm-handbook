@@ -1,0 +1,87 @@
+{
+  "deduped": {
+    "critical": 1,
+    "high": 1,
+    "medium": 3
+  },
+  "groups": [
+    {
+      "absorbed_ids": [],
+      "affected_hosts": [
+        "billing.claims.example.com"
+      ],
+      "primary_id": "f0000",
+      "severity": "medium",
+      "signature": [
+        "wildcard",
+        "cors: access-control-allow-origin returns a static wildcard"
+      ]
+    },
+    {
+      "absorbed_ids": [],
+      "affected_hosts": [
+        "console-test.portal.example.com"
+      ],
+      "primary_id": "f0001",
+      "severity": "medium",
+      "signature": [
+        "csp_weakness",
+        "content-security-policy permits inline script"
+      ]
+    },
+    {
+      "absorbed_ids": [],
+      "affected_hosts": [
+        "billing-account.shop.example.com"
+      ],
+      "primary_id": "f0002",
+      "severity": "high",
+      "signature": [
+        "secret_exposure",
+        "payment gateway configuration is served to unauthenticated callers"
+      ]
+    },
+    {
+      "absorbed_ids": [],
+      "affected_hosts": [
+        "quotes.example.com"
+      ],
+      "primary_id": "f0005",
+      "severity": "critical",
+      "signature": [
+        "sqli",
+        "error-based sql injection in the login form"
+      ]
+    },
+    {
+      "absorbed_ids": [],
+      "affected_hosts": [
+        "quotes-test.account.example.com"
+      ],
+      "primary_id": "f0006",
+      "severity": "medium",
+      "signature": [
+        "unauth_data_leak",
+        "unauthenticated response differs from the baseline"
+      ]
+    }
+  ],
+  "headline": "critical",
+  "per_host": {
+    "billing-account.shop.example.com": {
+      "high": 1
+    },
+    "billing.claims.example.com": {
+      "medium": 1
+    },
+    "console-test.portal.example.com": {
+      "medium": 1
+    },
+    "quotes-test.account.example.com": {
+      "medium": 1
+    },
+    "quotes.example.com": {
+      "critical": 1
+    }
+  }
+}

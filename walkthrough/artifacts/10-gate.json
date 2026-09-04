@@ -1,0 +1,34 @@
+{
+  "decision": {
+    "allowed_stages": [
+      "full"
+    ],
+    "detail": "",
+    "evidence": {
+      "error_rate": 0.0,
+      "forms_found": 1,
+      "pages_crawled": 7,
+      "parameters_found": 1,
+      "scripts_found": 1,
+      "total_responses": 7,
+      "waf_detected": false
+    },
+    "reason": "",
+    "status": "proceed"
+  },
+  "inputs": {
+    "error_rate": 0.0,
+    "forms_found": 1,
+    "pages_crawled": 7,
+    "parameters_found": 1,
+    "scripts_found": 1,
+    "total_responses": 7,
+    "waf_detected": false
+  },
+  "inputs_also_named_by_store_coverage": [],
+  "status_unchanged_by_these_inputs": true,
+  "store_coverage": {
+    "findings": 7,
+    "tools_run": 0
+  }
+}

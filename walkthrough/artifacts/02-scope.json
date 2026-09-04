@@ -1,0 +1,63 @@
+{
+  "decisions": [
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "01-cors-wildcard.json",
+      "url": "https://billing.claims.example.com/"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "02-csp-weakness.json",
+      "url": "https://console-test.portal.example.com/brav/indigoro/lumenn-mbusdel.php?dummy=99320"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "03-tokenization-key-public.json",
+      "url": "https://billing-account.shop.example.com/api/kestrelm/brav"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "04-read-via-post-bounce.json",
+      "url": "https://claims.billing.example.com/umberind/api/lumenkes/indigove"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "05-spa-fallback-api-200.json",
+      "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "06-no-rule-matches.json",
+      "url": "http://quotes.example.com:3000/rest/nimb/login"
+    },
+    {
+      "in_scope": true,
+      "role": "fixture",
+      "source": "07-evidence-ceiling.json",
+      "url": "https://quotes-test.account.example.com/lume/gamm.php"
+    },
+    {
+      "in_scope": true,
+      "role": "registrable_parent",
+      "source": "guard.base",
+      "url": "https://example.com/"
+    },
+    {
+      "in_scope": false,
+      "role": "deliberate_out_of_scope",
+      "source": "_OUT_OF_SCOPE_PROBE",
+      "url": "https://evil.invalid/"
+    }
+  ],
+  "guard_enabled": true,
+  "guard_seeded": true,
+  "known_parent_domain_admission": true,
+  "registrable_base": "example.com",
+  "target": "https://billing.claims.example.com/"
+}

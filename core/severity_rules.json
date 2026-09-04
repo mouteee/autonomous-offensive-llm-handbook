@@ -1,0 +1,70 @@
+{
+  "_format": [
+    "Deterministic semantic rules for the severity governor.",
+    "Each rule: an id, a match block whose conditions ALL AND together, an action, and a rationale.",
+    "Actions: mark_fp | downgrade_to (severity) | cap_at (severity_uat/severity_prod, or severity).",
+    "Match conditions: type (list) | exclude_type (list) | evidence_regex | title_regex | url_regex.",
+    "The rationale is the point of the file: it is the operator correction, written down once so it does not have to be remembered. Add a rule whenever you correct a finding.",
+    "JSON here where the original is YAML, because core/ in this repository is stdlib-only and there is no yaml module to read: json is in the standard library and a hand-written YAML subset parser would mis-read exactly the regex characters these patterns need."
+  ],
+  "rules": [
+    {
+      "id": "tokenization-key-public",
+      "match": {
+        "type": ["secret", "api_key", "credential", "secret_exposure"],
+        "evidence_regex": "(sandbox|production)_[a-z0-9]+_[a-z0-9]+|tokenExID|authorizationKey"
+      },
+      "action": "cap_at",
+      "severity_uat": "medium",
+      "severity_prod": "high",
+      "rationale": "A payment-gateway client-side authorization key and a tokenization-vault identifier are public-by-design: they are shipped to the browser on purpose, they cannot process a transaction and they cannot read the vault. Real, so not a false positive, but not a secret either. Capped rather than dismissed, and the cap splits by environment because the same key in production is worth more attention than in a test tier."
+    },
+    {
+      "id": "read-via-post-bounce",
+      "match": {
+        "title_regex": "(?i)unauth.*writ|writ.*succeed",
+        "evidence_regex": "(?i)session (has )?expired|please (log|sign) ?in|login required|redirect(ing)? to login"
+      },
+      "action": "mark_fp",
+      "rationale": "An unauthenticated POST that comes back with a login or session-expired page changed no state. The status code says 200 and the detector reads a write that succeeded; the body says the request bounced. Read the body before believing the code."
+    },
+    {
+      "id": "spa-fallback-api-200",
+      "match": {
+        "url_regex": "/api/",
+        "evidence_regex": "(?i)<app-root|window\\.__INITIAL_STATE__|<div id=['\"]?root",
+        "exclude_type": ["xss", "injection", "sqli", "ssrf", "rce", "idor", "bola", "access_control", "broken_access", "authoriz", "ssti", "xxe", "deserial"]
+      },
+      "action": "mark_fp",
+      "rationale": "A single-page app serves its index shell for any unmatched path, so an /api/ route answering 200 with that shell is client-side routing and not an API response at all. Excluded types are the ones where a reflected shell can still be the real bug, so an injection or access-control finding is never silenced by this rule."
+    },
+    {
+      "id": "source-map-disclosure",
+      "match": {
+        "title_regex": "(?i)source ?map|sourcemap|\\.map exposed"
+      },
+      "action": "cap_at",
+      "severity_uat": "low",
+      "severity_prod": "low",
+      "rationale": "An exposed source map hands over readable client code, which is low impact on its own; it earns more only when the map itself carries a secret, and that secret is its own finding with its own evidence. Capped at low in both environments, and the split is kept rather than collapsed so raising one tier later is a one-line change."
+    },
+    {
+      "id": "csp-weakness",
+      "match": {
+        "type": ["csp_weakness"]
+      },
+      "action": "cap_at",
+      "severity": "medium",
+      "rationale": "unsafe-inline, unsafe-eval and wildcard sources weaken defence in depth; they are not themselves an exploited path. Capped at medium so a page of policy findings cannot outrank the injection, object-authorization and authentication findings a reader is looking for."
+    },
+    {
+      "id": "cors-wildcard",
+      "match": {
+        "type": ["wildcard"]
+      },
+      "action": "cap_at",
+      "severity": "medium",
+      "rationale": "A literal Access-Control-Allow-Origin: * is not credential-exploitable: a browser refuses to honour the wildcard together with Access-Control-Allow-Credentials, so no credentialed cross-origin read is possible. A check that raises the severity when it sees the credentials header is reading the pair backwards. Scoped to type=wildcard ONLY, because a reflected origin and a null origin CAN be exploited with credentials and are left to the evidence ceiling and to human review."
+    }
+  ]
+}

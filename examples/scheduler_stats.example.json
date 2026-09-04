@@ -1,0 +1,154 @@
+{
+  "_comment": "Example v2 scheduler stats — synthetic data only. No real hostnames, credentials, or identifiers.",
+  "version": 2,
+  "tool_stats": {
+    "test_sqli": {
+      "total_executions": 47,
+      "successes": 12,
+      "consecutive_failures": 0
+    },
+    "test_xss": {
+      "total_executions": 38,
+      "successes": 9,
+      "consecutive_failures": 1
+    },
+    "test_idor": {
+      "total_executions": 22,
+      "successes": 6,
+      "consecutive_failures": 0
+    },
+    "test_injection_nosql": {
+      "total_executions": 14,
+      "successes": 1,
+      "consecutive_failures": 3
+    },
+    "test_auth": {
+      "total_executions": 19,
+      "successes": 4,
+      "consecutive_failures": 0
+    },
+    "test_upload": {
+      "total_executions": 11,
+      "successes": 2,
+      "consecutive_failures": 2
+    },
+    "test_graphql": {
+      "total_executions": 8,
+      "successes": 3,
+      "consecutive_failures": 0
+    }
+  },
+  "contextual_stats": {
+    "test_sqli": {
+      "php:mysql:waf:cloudflare:rest:laravel": {
+        "total": 15,
+        "successes": 12,
+        "findings": 10
+      },
+      "php:mysql:nowaf:none:rest:laravel": {
+        "total": 10,
+        "successes": 9,
+        "findings": 8
+      },
+      "nodejs:mongodb:nowaf:none:rest:express": {
+        "total": 8,
+        "successes": 1,
+        "findings": 0
+      },
+      "python:postgresql:waf:cloudflare:rest:django": {
+        "total": 6,
+        "successes": 3,
+        "findings": 2
+      },
+      "java:mysql:waf:akamai:rest:spring": {
+        "total": 8,
+        "successes": 5,
+        "findings": 4
+      }
+    },
+    "test_xss": {
+      "php:mysql:waf:cloudflare:rest:laravel": {
+        "total": 12,
+        "successes": 7,
+        "findings": 5
+      },
+      "nodejs:mongodb:nowaf:none:rest:express": {
+        "total": 9,
+        "successes": 5,
+        "findings": 4
+      },
+      "python:postgresql:nowaf:none:rest:flask": {
+        "total": 7,
+        "successes": 4,
+        "findings": 3
+      }
+    },
+    "test_injection_nosql": {
+      "nodejs:mongodb:nowaf:none:rest:express": {
+        "total": 8,
+        "successes": 6,
+        "findings": 5
+      },
+      "php:mysql:waf:cloudflare:rest:laravel": {
+        "total": 6,
+        "successes": 0,
+        "findings": 0
+      }
+    },
+    "test_idor": {
+      "php:mysql:waf:cloudflare:rest:laravel": {
+        "total": 10,
+        "successes": 5,
+        "findings": 4
+      },
+      "nodejs:mongodb:nowaf:none:rest:express": {
+        "total": 7,
+        "successes": 4,
+        "findings": 3
+      }
+    },
+    "test_graphql": {
+      "nodejs:mongodb:nowaf:none:graphql:express": {
+        "total": 6,
+        "successes": 4,
+        "findings": 3
+      },
+      "java:postgresql:waf:akamai:graphql:spring": {
+        "total": 4,
+        "successes": 2,
+        "findings": 2
+      }
+    }
+  },
+  "correlations": {
+    "test_sqli→test_idor": {
+      "cooccurrence": 12,
+      "tool1_successes": 15
+    },
+    "test_sqli→test_auth": {
+      "cooccurrence": 7,
+      "tool1_successes": 15
+    },
+    "test_xss→test_idor": {
+      "cooccurrence": 5,
+      "tool1_successes": 12
+    },
+    "test_idor→test_sqli": {
+      "cooccurrence": 10,
+      "tool1_successes": 14
+    },
+    "test_graphql→test_idor": {
+      "cooccurrence": 4,
+      "tool1_successes": 7
+    }
+  },
+  "tool_success_count": {
+    "test_sqli": 15,
+    "test_xss": 12,
+    "test_idor": 14,
+    "test_graphql": 7,
+    "test_auth": 4,
+    "test_upload": 2,
+    "test_injection_nosql": 1
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "records": [
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "prod",
+      "evidence_grade": "strong",
+      "final_severity": "medium",
+      "finding_id": "f0000",
+      "original_severity": "critical",
+      "rules_fired": [
+        "cors-wildcard"
+      ],
+      "skipped": [],
+      "source": "01-cors-wildcard.json"
+    },
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "uat",
+      "evidence_grade": "strong",
+      "final_severity": "medium",
+      "finding_id": "f0001",
+      "original_severity": "high",
+      "rules_fired": [
+        "csp-weakness"
+      ],
+      "skipped": [],
+      "source": "02-csp-weakness.json"
+    },
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "prod",
+      "evidence_grade": "strong",
+      "final_severity": "high",
+      "finding_id": "f0002",
+      "original_severity": "critical",
+      "rules_fired": [
+        "tokenization-key-public"
+      ],
+      "skipped": [],
+      "source": "03-tokenization-key-public.json"
+    },
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "prod",
+      "evidence_grade": "strong",
+      "final_severity": "info",
+      "finding_id": "f0003",
+      "original_severity": "high",
+      "rules_fired": [
+        "read-via-post-bounce"
+      ],
+      "skipped": [],
+      "source": "04-read-via-post-bounce.json"
+    },
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "uat",
+      "evidence_grade": "strong",
+      "final_severity": "info",
+      "finding_id": "f0004",
+      "original_severity": "high",
+      "rules_fired": [
+        "spa-fallback-api-200"
+      ],
+      "skipped": [],
+      "source": "05-spa-fallback-api-200.json"
+    },
+    {
+      "evidence_grade": "strong",
+      "final_severity": null,
+      "finding_id": "f0005",
+      "note": "no rule matched and no ceiling applied",
+      "original_severity": "critical",
+      "source": "06-no-rule-matches.json"
+    },
+    {
+      "ceiling_enforced": true,
+      "cvss_source": "none",
+      "environment": "uat",
+      "evidence_grade": "thin",
+      "final_severity": "medium",
+      "finding_id": "f0006",
+      "original_severity": "critical",
+      "rules_fired": [
+        "evidence-ceiling"
+      ],
+      "skipped": [],
+      "source": "07-evidence-ceiling.json"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "evidence_grade": "strong",
+    "false_positive": true,
+    "final_severity": "info",
+    "original_severity": "high",
+    "rules_fired": [
+      "spa-fallback-api-200"
+    ]
+  },
+  "finding": {
+    "evidence": "GET /api/quotes returned 200 with text/html: <!doctype html> ... <app-root></app-root> -- the router's catch-all shell, not the endpoint.",
+    "severity": "high",
+    "title": "API endpoint answers 200 to an unauthenticated GET",
+    "type": "sensitive_data_exposure",
+    "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "sensitive_data_exposure",
+    "rule_id": "spa-fallback-api-200"
+  },
+  "regeneration": {
+    "kept_substrings": [],
+    "note": "Museum entry: an SPA catch-all answering 200 under /api/ is not an endpoint. The /api/ path segment is kept because the rule's url regex reads it.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "absent",
+    "response_body": "authored (the source capture carried no body)",
+    "severity_origin": "from the corpus row",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "",
+    "headers": {},
+    "method": "GET",
+    "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+  },
+  "response": {
+    "body": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Quote Console</title><link rel=\"stylesheet\" href=\"/static/main.css\"></head><body><app-root></app-root><script src=\"/static/main.js\" defer></script></body></html>",
+    "cookies": {},
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "status": 200,
+    "url": "https://quotes-claims-uat.example.com/api/ke-trelh"
+  }
+}

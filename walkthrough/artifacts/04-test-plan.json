@@ -1,0 +1,101 @@
+{
+  "adjusted_order": [
+    {
+      "reason": "HIGH PRIORITY; boosted by backend_language [new_tool×1.5]",
+      "score": 39.0,
+      "tool": "test_injection_cmdi"
+    },
+    {
+      "reason": "HIGH PRIORITY; boosted by backend_language [new_tool×1.5]",
+      "score": 27.0,
+      "tool": "test_injection_lfi"
+    },
+    {
+      "reason": "HIGH PRIORITY; boosted by api_types, cors_enabled [new_tool×1.5]",
+      "score": 24.57,
+      "tool": "test_cors"
+    },
+    {
+      "reason": "HIGH PRIORITY [new_tool×1.5]",
+      "score": 22.5,
+      "tool": "test_csp"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by backend_language, waf_detected [new_tool×1.5]",
+      "score": 21.6,
+      "tool": "test_sqli"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 17.505,
+      "tool": "test_injection_ssti"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by api_types [new_tool×1.5]",
+      "score": 15.600000000000001,
+      "tool": "test_race"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 15.0,
+      "tool": "test_clickjacking"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 13.995000000000001,
+      "tool": "test_injection_ssrf"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 13.995000000000001,
+      "tool": "test_takeover"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by api_types [new_tool×1.5]",
+      "score": 13.649999999999999,
+      "tool": "test_idor"
+    },
+    {
+      "reason": "MEDIUM PRIORITY; boosted by backend_language [new_tool×1.5]",
+      "score": 13.649999999999999,
+      "tool": "test_deserialize"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 13.5,
+      "tool": "test_redirect"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 13.125,
+      "tool": "test_smuggling"
+    },
+    {
+      "reason": "MEDIUM PRIORITY [new_tool×1.5]",
+      "score": 12.0,
+      "tool": "test_cache"
+    },
+    {
+      "reason": "LOW PRIORITY [new_tool×1.5]",
+      "score": 11.25,
+      "tool": "test_injection_prototype"
+    },
+    {
+      "reason": "LOW PRIORITY; boosted by api_types [new_tool×1.5]",
+      "score": 10.8,
+      "tool": "test_logic"
+    },
+    {
+      "reason": "LOW PRIORITY; boosted by waf_detected; penalized by frontend_framework [new_tool×1.5]",
+      "score": 8.504999999999999,
+      "tool": "test_xss"
+    },
+    {
+      "reason": "SKIP; boosted by waf_detected [new_tool×1.5]",
+      "score": 4.32,
+      "tool": "fuzz_endpoint"
+    }
+  ],
+  "profile_hash": "php:sqlite:nowaf:none:rest:unknown",
+  "scheduler_enabled": true
+}

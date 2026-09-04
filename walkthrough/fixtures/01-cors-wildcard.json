@@ -1,0 +1,52 @@
+{
+  "expected": {
+    "attach_exchange_evidence": true,
+    "evidence_grade": "strong",
+    "final_severity": "medium",
+    "original_severity": "critical",
+    "rules_fired": [
+      "cors-wildcard"
+    ]
+  },
+  "finding": {
+    "evidence": "Access-Control-Allow-Origin: * returned for Origin: null. The header is static rather than reflected, and no Access-Control-Allow-Credentials is present.",
+    "severity": "critical",
+    "title": "CORS: Access-Control-Allow-Origin returns a static wildcard",
+    "type": "wildcard",
+    "url": "https://billing.claims.example.com/"
+  },
+  "kind": "exchange",
+  "provenance": {
+    "finding_type": "wildcard",
+    "rule_id": "cors-wildcard"
+  },
+  "regeneration": {
+    "kept_substrings": [
+      "*"
+    ],
+    "note": "Museum entry: a wildcard CORS header on a read-only endpoint is real and is not critical.",
+    "prose": "title and evidence authored from the finding type and the rule marker; no source prose is carried",
+    "request_body": "absent",
+    "response_body": "authored (the source capture carried no body)",
+    "severity_origin": "authored. The two corpus wildcard rows are stored at medium and low, and a cap_at rule only fires when its target ranks BELOW the current severity, so either stored value would make cors-wildcard silent. Critical is the pre-governance severity this rule exists to correct.",
+    "url": "host synthesized to a reserved domain; scheme, port, depth, tier token, generic path segments and query keys kept"
+  },
+  "request": {
+    "body": "",
+    "headers": {
+      "Origin": "null"
+    },
+    "method": "GET",
+    "url": "https://billing.claims.example.com/"
+  },
+  "response": {
+    "body": "{\"quotes\": [], \"count\": 0}",
+    "cookies": {},
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "content-type": "application/json"
+    },
+    "status": 200,
+    "url": "https://billing.claims.example.com/"
+  }
+}

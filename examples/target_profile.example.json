@@ -1,0 +1,69 @@
+{
+  "_comment": "Synthetic example profile for shop.example — PHP/Laravel/MySQL, Cloudflare WAF, REST + GraphQL.",
+  "target_url": "https://shop.example",
+  "base_domain": "shop.example",
+  "technology": {
+    "backend_language": "php",
+    "backend_confidence": 0.95,
+    "framework": "laravel",
+    "framework_confidence": 0.95,
+    "frontend_framework": "vue",
+    "server_software": "nginx"
+  },
+  "api": {
+    "api_types": ["rest", "graphql"],
+    "content_types_accepted": ["json", "form"],
+    "has_graphql": true,
+    "has_websocket": false
+  },
+  "security": {
+    "waf_detected": true,
+    "waf_vendor": "cloudflare",
+    "waf_confidence": 0.95,
+    "rate_limited": false,
+    "security_headers": {
+      "X-Frame-Options": true,
+      "X-Content-Type-Options": true,
+      "X-XSS-Protection": false,
+      "Content-Security-Policy": true,
+      "Strict-Transport-Security": true,
+      "Referrer-Policy": true
+    },
+    "cors_enabled": false,
+    "cors_permissive": false
+  },
+  "authentication": {
+    "auth_mechanisms": ["session", "oauth"],
+    "jwt_detected": false,
+    "session_cookie_name": "laravel_session"
+  },
+  "database": {
+    "likely_database": "mysql",
+    "database_confidence": 0.9,
+    "database_hints": [
+      "mysql:You have an error in your SQL syntax",
+      "mysql:SQLSTATE[42000]"
+    ]
+  },
+  "attack_surface": {
+    "has_file_upload": true,
+    "has_search": true,
+    "accepts_xml": false,
+    "error_verbosity": "low"
+  },
+  "profile_hash": "php:mysql:waf:cloudflare:rest:laravel",
+  "evidence": {
+    "backend": [
+      "header:Set-Cookie.*PHPSESSID",
+      "url:\\.php(\\?|$|/)"
+    ],
+    "framework": [
+      "header:Set-Cookie.*laravel_session",
+      "body:csrf_token"
+    ],
+    "waf": [
+      "header:CF-RAY",
+      "header:cf-cache-status"
+    ]
+  }
+}

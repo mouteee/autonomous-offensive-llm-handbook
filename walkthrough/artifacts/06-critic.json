@@ -1,0 +1,50 @@
+{
+  "dropped": [
+    {
+      "confidence": 0.35,
+      "critic_containment_score": 0.35,
+      "critic_notes": "grounded:ref=False,snippet=False",
+      "evidence": {
+        "ref": "/internal/console",
+        "snippet": "no evidence in the crawl summary"
+      },
+      "insight": "An administrative console is probably served under /internal/, which the crawl never reached.",
+      "phase": "surface"
+    },
+    {
+      "confidence": 0.35,
+      "critic_containment_score": 0.35,
+      "critic_notes": "grounded:ref=False,snippet=False",
+      "evidence": {
+        "ref": "/session/refresh",
+        "snippet": "no Set-Cookie was captured"
+      },
+      "insight": "The session cookie is probably missing SameSite, so a cross-site POST would carry it.",
+      "phase": "surface"
+    }
+  ],
+  "dropped_count": 2,
+  "kept": [
+    {
+      "confidence": 0.85,
+      "critic_containment_score": 0.85,
+      "critic_notes": "grounded:ref=True,snippet=True",
+      "evidence": {
+        "ref": "/api/quotes",
+        "snippet": "answers POST without a session cookie"
+      },
+      "insight": "The quote endpoint accepts an unauthenticated POST, so quote creation is reachable before login.",
+      "phase": "surface"
+    }
+  ],
+  "kept_count": 1,
+  "phase": "surface",
+  "scores": {
+    "0": 0.85,
+    "1": 0.35,
+    "2": 0.35
+  },
+  "scores_key_type_in_python": "int",
+  "source": "08-critic-containment.json",
+  "threshold": 0.55
+}

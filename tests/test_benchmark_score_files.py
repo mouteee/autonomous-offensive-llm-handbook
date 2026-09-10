@@ -33,9 +33,9 @@ STATS = ROOT / "data" / "stats.json"
 # the directory, and the first test below is what makes that true rather than
 # hoped for.
 PUBLISHED_AT = {
-    "automator_juiceshop_run1.score.json": ("juice_shop", "excluded", 0),
-    "automator_juiceshop_run2.score.json": ("juice_shop", "excluded", 1),
-    "automator_juiceshop_run3.score.json": ("juice_shop", "included", 0),
+    "harness_juiceshop_run1.score.json": ("juice_shop", "excluded", 0),
+    "harness_juiceshop_run2.score.json": ("juice_shop", "excluded", 1),
+    "harness_juiceshop_run3.score.json": ("juice_shop", "included", 0),
     "zap_juiceshop_baseline_result.score.json": ("zap_baseline",),
 }
 
@@ -56,6 +56,65 @@ JUICE_FIELDS = frozenset({"_unmeasured_reason", "excluded", "f1", "included",
                           "n", "note", "precision", "recall"})
 METRIC_FIELDS = frozenset({"mean", "stdev", "values"})
 ZAP_FIELDS = frozenset(COUNTS + METRICS + ("label", "note"))
+
+# The verifier-ablation block's own allowlist, held to the same discipline as
+# JUICE_FIELDS and ZAP_FIELDS above: an arm's raw per-run arrays are medians'
+# worth of numbers, never a target id, a scan id, or a finding, so this
+# allowlist is what makes adding one of those to the block a failure here
+# rather than a silent pass.
+VERIFIER_ABLATION_FIELDS = frozenset({
+    "study_type", "n_per_arm", "n_total", "state", "commit_note", "exclusions",
+    "adjudicator", "separation_note", "arms", "suppression",
+    "blinded_precision", "recall", "recall_dedup", "p2", "mass_assignment_runs",
+    "prompt_periods", "canary", "note",
+})
+VERIFIER_ABLATION_ARMS_FIELDS = frozenset({"FULL", "NOVERIFY"})
+VERIFIER_ABLATION_SUPPRESSION_FIELDS = frozenset({
+    "metric", "FULL_runs", "NOVERIFY_runs", "FULL_median", "NOVERIFY_median",
+    "test", "u", "u_of", "p_one_sided", "note",
+})
+VERIFIER_ABLATION_PRECISION_FIELDS = frozenset({
+    "metric", "FULL_runs", "NOVERIFY_runs", "FULL_median", "NOVERIFY_median",
+    "test", "u", "u_of", "p_one_sided",
+})
+VERIFIER_ABLATION_RECALL_FIELDS = frozenset({
+    "metric", "FULL_median", "NOVERIFY_median", "test", "p_two_sided",
+    "significant", "note",
+})
+VERIFIER_ABLATION_RECALL_DEDUP_FIELDS = frozenset({
+    "metric", "FULL_median", "NOVERIFY_median", "test", "p_two_sided", "note",
+})
+VERIFIER_ABLATION_P2_FIELDS = frozenset({
+    "metric", "FULL_runs", "NOVERIFY_runs", "FULL_total", "NOVERIFY_total",
+    "test", "p_two_sided", "note",
+})
+VERIFIER_ABLATION_MASS_ASSIGNMENT_FIELDS = frozenset({"FULL", "NOVERIFY", "note"})
+VERIFIER_ABLATION_PROMPT_PERIODS_FIELDS = frozenset({
+    "period_1_runs", "period_2_runs", "note",
+    "suppression_FULL_median_pre", "suppression_FULL_median_post",
+    "suppression_NOVERIFY_median_pre", "suppression_NOVERIFY_median_post",
+    "sensitivity_note",
+})
+VERIFIER_ABLATION_CANARY_FIELDS = frozenset({"measured_runs", "contacts"})
+FACTORIAL_FIELDS = frozenset({
+    "study_type", "n_total", "n_per_cell", "targets", "arms", "r_enforcement",
+    "adjudicator", "h1_suppression", "h2_interaction", "j1_juice_medians",
+    "j1_vampi_note", "j2", "h4_sensitivity", "h5_recall", "layers",
+    "replication", "quoteless_raises_all_arms", "canary", "adjudication"})
+FACTORIAL_ARMS = frozenset({"A0", "A1", "A2", "A3"})
+FACTORIAL_H1_FIELDS = frozenset({
+    "contrast", "test", "U", "p_one_sided", "holm_adjusted",
+    "juice_medians", "vampi_medians"})
+FACTORIAL_H2_FIELDS = frozenset({"contrast", "test", "T", "p_two_sided", "result"})
+FACTORIAL_J2_ENTRY_FIELDS = frozenset({"sensitivity", "specificity"})
+FACTORIAL_H4_FIELDS = frozenset({"point", "lower_95CI", "margin", "result"})
+FACTORIAL_H5_FIELDS = frozenset({
+    "juice_median_all_arms", "vampi_median_all_arms",
+    "max_cross_arm_median_diff", "result"})
+FACTORIAL_LAYERS_FIELDS = frozenset({
+    "verifier_fp_marks", "base_heuristic_fp_marks", "governor_fp_marks", "note"})
+FACTORIAL_ADJ_FIELDS = frozenset({
+    "items", "shipped", "rejected_included", "tp", "fp", "inconclusive"})
 
 
 def _stats():
@@ -196,7 +255,7 @@ def test_every_published_benchmark_aggregate_has_an_explicit_schema():
     every existing arithmetic relation still holds.
     """
     bench = _stats()
-    assert set(bench) == {"juice_shop", "zap_baseline"}
+    assert set(bench) == {"juice_shop", "zap_baseline", "verifier_ablation", "factorial"}
     juice = bench["juice_shop"]
     assert set(juice) == JUICE_FIELDS
     for metric in METRICS:
@@ -206,6 +265,56 @@ def test_every_published_benchmark_aggregate_has_an_explicit_schema():
     for entry in juice["excluded"]:
         assert set(entry) == EXCLUDED_FIELDS
     assert set(bench["zap_baseline"]) == ZAP_FIELDS
+
+    ablation = bench["verifier_ablation"]
+    assert set(ablation) == VERIFIER_ABLATION_FIELDS
+    assert set(ablation["arms"]) == VERIFIER_ABLATION_ARMS_FIELDS
+    assert set(ablation["suppression"]) == VERIFIER_ABLATION_SUPPRESSION_FIELDS
+    assert set(ablation["blinded_precision"]) == VERIFIER_ABLATION_PRECISION_FIELDS
+    assert set(ablation["recall"]) == VERIFIER_ABLATION_RECALL_FIELDS
+    assert set(ablation["recall_dedup"]) == VERIFIER_ABLATION_RECALL_DEDUP_FIELDS
+    assert set(ablation["p2"]) == VERIFIER_ABLATION_P2_FIELDS
+    assert set(ablation["mass_assignment_runs"]) == VERIFIER_ABLATION_MASS_ASSIGNMENT_FIELDS
+    assert set(ablation["prompt_periods"]) == VERIFIER_ABLATION_PROMPT_PERIODS_FIELDS
+    assert set(ablation["canary"]) == VERIFIER_ABLATION_CANARY_FIELDS
+    # Per-arm arrays are counts and floats only -- n_per_arm entries each,
+    # never a scan id, a target id, or a raw finding riding along with them.
+    assert len(ablation["suppression"]["FULL_runs"]) == ablation["n_per_arm"]
+    assert len(ablation["suppression"]["NOVERIFY_runs"]) == ablation["n_per_arm"]
+    assert len(ablation["blinded_precision"]["FULL_runs"]) == ablation["n_per_arm"]
+    assert len(ablation["blinded_precision"]["NOVERIFY_runs"]) == ablation["n_per_arm"]
+    assert len(ablation["p2"]["FULL_runs"]) == ablation["n_per_arm"]
+    assert len(ablation["p2"]["NOVERIFY_runs"]) == ablation["n_per_arm"]
+    assert sum(ablation["p2"]["FULL_runs"]) == ablation["p2"]["FULL_total"]
+    assert sum(ablation["p2"]["NOVERIFY_runs"]) == ablation["p2"]["NOVERIFY_total"]
+    assert ablation["n_total"] == ablation["n_per_arm"] * 2
+
+    factorial = bench["factorial"]
+    assert set(factorial) == FACTORIAL_FIELDS
+    assert set(factorial["arms"]) == FACTORIAL_ARMS
+    assert set(factorial["h1_suppression"]) == FACTORIAL_H1_FIELDS
+    assert set(factorial["h1_suppression"]["juice_medians"]) == {"A2", "A0"}
+    assert set(factorial["h1_suppression"]["vampi_medians"]) == {"A2", "A0"}
+    assert set(factorial["h2_interaction"]) == FACTORIAL_H2_FIELDS
+    assert set(factorial["j1_juice_medians"]) == FACTORIAL_ARMS
+    assert set(factorial["j2"]) == FACTORIAL_ARMS
+    for arm_entry in factorial["j2"].values():
+        assert set(arm_entry) == FACTORIAL_J2_ENTRY_FIELDS
+    assert set(factorial["h4_sensitivity"]) == FACTORIAL_H4_FIELDS
+    assert set(factorial["h5_recall"]) == FACTORIAL_H5_FIELDS
+    assert set(factorial["layers"]) == FACTORIAL_LAYERS_FIELDS
+    assert set(factorial["canary"]) == VERIFIER_ABLATION_CANARY_FIELDS
+    assert set(factorial["adjudication"]) == FACTORIAL_ADJ_FIELDS
+    # Arithmetic relations the published numbers must keep among themselves --
+    # the run total is the product of arm count, target count and n_per_cell
+    # (the literal below is that product's arm-and-target factor), the packet
+    # is shipped plus rejected, and every packet item carries exactly one verdict.
+    assert factorial["n_total"] == factorial["n_per_cell"] * 8
+    adj = factorial["adjudication"]
+    assert adj["items"] == adj["shipped"] + adj["rejected_included"]
+    assert adj["items"] == adj["tp"] + adj["fp"] + adj["inconclusive"]
+    assert factorial["canary"]["measured_runs"] == factorial["n_total"]
+    assert factorial["layers"]["governor_fp_marks"] == 0
 
 
 def test_every_committed_score_file_has_an_explicit_schema():

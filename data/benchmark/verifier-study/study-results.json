@@ -1,0 +1,451 @@
+{
+ "runs": [
+  {
+   "scan_id": "852104bcef68bfb9",
+   "status": "complete",
+   "wall_s": 1281.4900115132332,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 1
+  },
+  {
+   "scan_id": "b152e245defa0713",
+   "status": "complete",
+   "wall_s": 1213.9379739761353,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 0,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 2
+  },
+  {
+   "scan_id": "4de044f543a0d7f5",
+   "status": "complete",
+   "wall_s": 1594.0080106258392,
+   "P1_suppressed": 2,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-idor-002",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.3,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 1
+  },
+  {
+   "scan_id": "788740e72e088653",
+   "status": "complete",
+   "wall_s": 1243.3010011911392,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 0,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 3
+  },
+  {
+   "scan_id": "6b31132f519bd5f8",
+   "status": "complete",
+   "wall_s": 1420.7290068268776,
+   "P1_suppressed": 2,
+   "P2_undershipped_strong_criticals": 2,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 2
+  },
+  {
+   "scan_id": "7ab00b61b6275f02",
+   "status": "complete",
+   "wall_s": 1937.1959701180458,
+   "P1_suppressed": 8,
+   "P2_undershipped_strong_criticals": 1,
+   "P3_shipped": 9,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-002",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 3
+  },
+  {
+   "scan_id": "6384997965528700",
+   "status": "complete",
+   "wall_s": 1493.9900055527687,
+   "P1_suppressed": 1,
+   "P2_undershipped_strong_criticals": 2,
+   "P3_shipped": 19,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 4
+  },
+  {
+   "scan_id": "bd98b9c3fb2b937e",
+   "status": "complete",
+   "wall_s": 1071.995995938778,
+   "P1_suppressed": 2,
+   "P2_undershipped_strong_criticals": 2,
+   "P3_shipped": 16,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.15,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 4
+  },
+  {
+   "scan_id": "99404ce3c9bc4eba",
+   "status": "complete",
+   "wall_s": 918.9830258488655,
+   "P1_suppressed": 1,
+   "P2_undershipped_strong_criticals": 0,
+   "P3_shipped": 16,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.15,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 5
+  },
+  {
+   "scan_id": "3795e4c62acaecc1",
+   "status": "complete",
+   "wall_s": 1676.792997121811,
+   "P1_suppressed": 2,
+   "P2_undershipped_strong_criticals": 2,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 5
+  },
+  {
+   "scan_id": "fbdd0da88f510ab7",
+   "status": "complete",
+   "wall_s": 1893.1369855999947,
+   "P1_suppressed": 1,
+   "P2_undershipped_strong_criticals": 0,
+   "P3_shipped": 20,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 6
+  },
+  {
+   "scan_id": "d62d57954fae2ad5",
+   "status": "complete",
+   "wall_s": 1397.2569957375526,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 21,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 6
+  },
+  {
+   "scan_id": "29b42bf11492784f",
+   "status": "complete",
+   "wall_s": 1356.582985818386,
+   "P1_suppressed": 10,
+   "P2_undershipped_strong_criticals": 1,
+   "P3_shipped": 8,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.15,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 7
+  },
+  {
+   "scan_id": "25d14fe5926e60de",
+   "status": "complete",
+   "wall_s": 1003.0799746513367,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 0,
+   "P3_shipped": 18,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 7
+  },
+  {
+   "scan_id": "6515cce61e0ad3e6",
+   "status": "complete",
+   "wall_s": 1167.3360139131546,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 1,
+   "P3_shipped": 15,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.15,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 8
+  },
+  {
+   "scan_id": "696fee51aa468f50",
+   "status": "complete",
+   "wall_s": 1331.1939865350723,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 18,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 9
+  },
+  {
+   "scan_id": "d7d349957b632197",
+   "status": "complete",
+   "wall_s": 1386.5100011229515,
+   "P1_suppressed": 1,
+   "P2_undershipped_strong_criticals": 1,
+   "P3_shipped": 17,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 8
+  },
+  {
+   "scan_id": "dab2359508a533c9",
+   "status": "complete",
+   "wall_s": 1204.9299761652946,
+   "P1_suppressed": 0,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 21,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-nosql-001",
+    "juice-redirect-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.3,
+   "canary_delta": 0,
+   "arm": "NOVERIFY",
+   "run": 10
+  },
+  {
+   "scan_id": "c4497b21ee8265b8",
+   "status": "complete",
+   "wall_s": 1433.0650091171265,
+   "P1_suppressed": 2,
+   "P2_undershipped_strong_criticals": 2,
+   "P3_shipped": 16,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.2,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 9
+  },
+  {
+   "scan_id": "e9c8af2067a9615a",
+   "status": "complete",
+   "wall_s": 1443.1160107254982,
+   "P1_suppressed": 8,
+   "P2_undershipped_strong_criticals": 3,
+   "P3_shipped": 11,
+   "P5_gt_matched": [
+    "juice-auth-001",
+    "juice-idor-001",
+    "juice-idor-002",
+    "juice-sqli-001",
+    "juice-sqli-002"
+   ],
+   "P5_recall": 0.25,
+   "canary_delta": 0,
+   "arm": "FULL",
+   "run": 10
+  }
+ ],
+ "stats": {
+  "P1_suppressed": {
+   "FULL_median": 2.0,
+   "NOVERIFY_median": 0.0,
+   "U": 98.0,
+   "p_one_sided_full_greater": 3e-05
+  },
+  "P3_shipped": {
+   "FULL_median": 16.5,
+   "NOVERIFY_median": 17.5,
+   "U": 25.0,
+   "p_one_sided_full_greater": 0.97489,
+   "p_two_sided": 0.05436
+  },
+  "P5_recall": {
+   "FULL_median": 0.25,
+   "NOVERIFY_median": 0.2,
+   "U": 67.5,
+   "p_one_sided_full_greater": 0.07897,
+   "p_two_sided": 0.15794
+  },
+  "P2_descriptive": {
+   "FULL": [
+    3,
+    2,
+    1,
+    2,
+    2,
+    0,
+    1,
+    1,
+    2,
+    3
+   ],
+   "NOVERIFY": [
+    3,
+    0,
+    0,
+    2,
+    0,
+    3,
+    0,
+    1,
+    3,
+    3
+   ]
+  },
+  "P4_blinded_precision": {
+   "FULL_median": 0.471,
+   "NOVERIFY_median": 0.353,
+   "U": 81.0,
+   "p_one_sided_full_greater": 0.00869,
+   "FULL_runs": [
+    0.471,
+    0.471,
+    0.667,
+    0.438,
+    0.471,
+    0.5,
+    0.75,
+    0.294,
+    0.438,
+    0.727
+   ],
+   "NOVERIFY_runs": [
+    0.353,
+    0.353,
+    0.353,
+    0.421,
+    0.312,
+    0.476,
+    0.333,
+    0.267,
+    0.389,
+    0.476
+   ]
+  }
+ },
+ "canary_measured_runs": 20,
+ "canary_total_contacts": 0
+}

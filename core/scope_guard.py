@@ -39,7 +39,7 @@ of the whole module: consult the lists the other way round and the same pair of
 declarations admits the host the operator wrote down to exclude.
 
 Two fail-open paths, both fixed before any URL is seen: the guard is disabled
-when the `AUTOMATOR_SCOPE_TRACKING` environment variable is set to `0`, and it
+when the `HARNESS_SCOPE_TRACKING` environment variable is set to `0`, and it
 is unseeded when it has no base. Unseeded is a statement about the base and not
 about the argument: the base is empty when the target is empty and also when the
 target reduces to no host, so a caller that checked only for a missing target
@@ -62,7 +62,7 @@ import os
 from typing import List, Optional
 from urllib.parse import urlparse
 
-_ENV_SWITCH = "AUTOMATOR_SCOPE_TRACKING"
+_ENV_SWITCH = "HARNESS_SCOPE_TRACKING"
 _OFF = "0"
 
 

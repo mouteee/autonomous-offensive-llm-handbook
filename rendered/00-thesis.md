@@ -140,7 +140,7 @@ This is one system's argument drawn from one corpus. It is not a controlled stud
 
 The corpus, exactly. `206` scans against `104` distinct hosts, across `7259` tool executions, between `2026-05-06` and `2026-08-18`. Read the first of those figures as scans attempted, not scans that finished: `39` of them failed outright and `3` were killed. The scans produced `2988` stored findings, `2869` of which survived false-positive review, and `1961` of those survivors are informational severity, so the majority of what cleared review is not a vulnerability anyone will act on. What is left of it went to real targets in real engagements, in reports people did act on.
 
-What that supports is a claim about operation. A system built this way ran at that scale, stayed in scope, and produced findings that survived review. What it cannot support is a comparison, because there is no arm of it where the deterministic layers were switched off. The scheduler carries ablation flags, [`scheduler.py:AUTOMATOR_SCHEDULER_ENABLED`](../core/scheduler.py) among them, and the study that would use them has not been run. The reason is mundane and specific rather than principled, and chapter 05 gives it. Until that study exists the central thesis of this handbook is argued, not measured, and every chapter should be read with that discount applied.
+What that supports is a claim about operation. A system built this way ran at that scale, stayed in scope, and produced findings that survived review. What it could not support, when this chapter was first written, was a comparison, because there was no arm of it where the controls were switched off. Two of those arms have since been run as pre-registered studies on lab targets: appendix D ablates the verifier-and-acceptance stage as a package, and appendix E pulls the package apart and throws each switch independently. What they measured obeys the discount this section asks for, in both directions. The verification stage changes what a run ships -- pre-report suppression and blinded precision move with the model verifier, replicated across both studies -- and the deterministic acceptance layer behind it marked 0 false positives in 40 runs, so the cleaner-report effect belongs to the verifier, not to the ruleset this book spends chapters on; the ruleset's measured place is severity governance, duplicate control and auditability. The scheduler and ranking layers still carry their ablation flags unexercised, [`scheduler.py:HARNESS_SCHEDULER_ENABLED`](../core/scheduler.py) among them -- the study that would use them has not been run, chapter 05 gives the mundane reason, and for those layers the thesis remains argued, not measured, with the discount applied in full.
 
 The selected public-target aggregate has an `n` of `1`. One author-recorded run. Chapter 05 reports its numbers, the two runs excluded from it, and why one of those exclusions is better justified than the other. The repository does not carry the raw findings, ground truth or matcher needed to reproduce its labels, so it is not presented as a benchmark result.
 
@@ -166,10 +166,6 @@ These five sentences are the spine of everything that follows. Each is design in
 Each remaining chapter opens on a specific way autonomous offensive agents break, shows the control that fixes it, then admits what the control still gets wrong. The reference implementation in `core/` is clean-room and deliberately non-functional: the profiling, the scoring, the scheduling, and the validation are real and runnable, and everything that would put a packet on the wire is withheld. Read it, disagree with parts of it, build your own.
 
 One request, and it is the point of every honesty section in this handbook. If you build this and it works better, measure it against the version with the deterministic layers switched off and publish both numbers, because that is the experiment I owe you and have not run.
-
----
-
-*Theodoros Moutesidis.*
 
 ---
 

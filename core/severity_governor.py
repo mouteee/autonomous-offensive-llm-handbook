@@ -39,8 +39,8 @@ a claim inside it. A finding arriving with `evidence_grade: "strong"` and
 nothing but a title still grades `thin`, because `evidence_grade` looks at
 requests, responses and proof-of-concept output and never at that key.
 
-`govern_scan` sits behind two environment switches, `AUTOMATOR_GOVERNANCE` and
-`AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING`, both defaulting to on, which is what
+`govern_scan` sits behind two environment switches, `HARNESS_GOVERNANCE` and
+`HARNESS_GOVERNANCE_EVIDENCE_CEILING`, both defaulting to on, which is what
 the system this is re-expressed from does and where it does it.
 `govern_finding` itself is unswitched: a caller reaching it directly is
 governed unconditionally, and the switches gate the scan-wide pass. Nothing in
@@ -129,8 +129,8 @@ _DERIVED = "derived"
 _SKIPPED_UNATTRIBUTED = "cvss-reconcile-skipped-unattributed"
 
 # The scan-wide pass reads both, defaulting to on. See govern_scan.
-_GOVERNANCE_SWITCH = "AUTOMATOR_GOVERNANCE"
-_CEILING_SWITCH = "AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING"
+_GOVERNANCE_SWITCH = "HARNESS_GOVERNANCE"
+_CEILING_SWITCH = "HARNESS_GOVERNANCE_EVIDENCE_CEILING"
 
 # Hostname segments that mark a non-production tier. See resolve_environment.
 _NONPROD_SEGMENT = re.compile(
@@ -774,9 +774,9 @@ async def govern_scan(store, scan_id=None, rules=None) -> dict:
 
     Two environment switches gate this pass and both default to on, which is
     where and how the system this is re-expressed from puts them.
-    `AUTOMATOR_GOVERNANCE` set to `0` returns the zero summary without reading a
+    `HARNESS_GOVERNANCE` set to `0` returns the zero summary without reading a
     single finding, so governance can be taken out of a run entirely.
-    `AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING` set to `0` runs the reconciliation
+    `HARNESS_GOVERNANCE_EVIDENCE_CEILING` set to `0` runs the reconciliation
     and the ruleset but not the thin-evidence cap, which is the switch a corpus
     needs while its tools do not yet capture evidence: capping before capture
     would penalise a finding for missing artifacts nothing was collecting.

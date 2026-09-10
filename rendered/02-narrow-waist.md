@@ -201,10 +201,6 @@ And the gate needs a threshold, which means it needs tuning, which means somebod
 
 ---
 
-*Theodoros Moutesidis.*
-
----
-
 ## Number annotations
 
 These notes were written inline in the handbook source beside the numbers they explain; the renderer collects them here and leaves a `[num-ok N]` marker at each point of use above.

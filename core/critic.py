@@ -112,8 +112,8 @@ from typing import Any
 # docstring: this frozenset is where the surface/proposal split is written down.
 GROUNDED_PHASES = frozenset({"surface"})
 
-_ENV_ENABLED = "AUTOMATOR_DT_CRITIC"
-_ENV_THRESHOLD = "AUTOMATOR_DT_CRITIC_THRESHOLD"
+_ENV_ENABLED = "HARNESS_DT_CRITIC"
+_ENV_THRESHOLD = "HARNESS_DT_CRITIC_THRESHOLD"
 _DEFAULT_THRESHOLD = 0.55
 
 # The containment ladder, in the order the checks are made. Named rather than
@@ -238,12 +238,12 @@ class Critic:
 # That is a publication decision and not an oversight. Wiring either into the
 # scoring function would install an off switch inside a core scoring path, in a
 # handbook that argues at chapter 03 and again at chapter 04 that a control with
-# a documented off switch is a control and not a guarantee. The private system
-# this module is re-expressed from makes that call for itself, at its own call
+# a documented off switch is a control and not a guarantee. An external integration
+# may make that call for itself, at its own call
 # sites, which are not published here. tests/test_environment_switches.py holds
 # the accessors unconsulted, so wiring one reddens instead of passing quietly.
 def critic_enabled() -> bool:
-    """Whether the critic pass runs, read from `AUTOMATOR_DT_CRITIC`.
+    """Whether the critic pass runs, read from `HARNESS_DT_CRITIC`.
 
     The condition is an equality: True when the variable is absent or reads
     exactly `1`, and False for every other value. It is not an inequality
@@ -253,7 +253,7 @@ def critic_enabled() -> bool:
 
 
 def critic_threshold() -> float:
-    """The drop threshold, read from `AUTOMATOR_DT_CRITIC_THRESHOLD`.
+    """The drop threshold, read from `HARNESS_DT_CRITIC_THRESHOLD`.
 
     A value that will not parse as a float falls back to the default rather
     than raising, so a malformed environment cannot stop a scan. The cost of

@@ -26,3 +26,5 @@ The source of truth is `handbook/`, which keeps the macros and stays under the c
 - [appendix-a-orchestrator-contract.md](appendix-a-orchestrator-contract.md)
 - [appendix-b-schemas.md](appendix-b-schemas.md)
 - [appendix-c-failure-museum.md](appendix-c-failure-museum.md)
+- [appendix-d-verifier-study.md](appendix-d-verifier-study.md)
+- [appendix-e-factorial-study.md](appendix-e-factorial-study.md)

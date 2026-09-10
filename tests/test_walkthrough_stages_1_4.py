@@ -157,8 +157,8 @@ def test_an_unseeded_guard_is_refused():
 
 
 def test_the_scope_stage_refuses_a_disabled_guard(monkeypatch):
-    """AUTOMATOR_SCOPE_TRACKING=0 fails the whole run rather than flipping the artifact."""
-    monkeypatch.setenv("AUTOMATOR_SCOPE_TRACKING", "0")
+    """HARNESS_SCOPE_TRACKING=0 fails the whole run rather than flipping the artifact."""
+    monkeypatch.setenv("HARNESS_SCOPE_TRACKING", "0")
     with pytest.raises(RuntimeError, match="disabled"):
         asyncio.run(runner.run_all(ROOT))
 

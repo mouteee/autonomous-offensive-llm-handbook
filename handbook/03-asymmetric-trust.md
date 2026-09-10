@@ -187,7 +187,7 @@ The evidence that this is worth doing is the file's own history, and it does not
 
 That is the right failure mode for the most dangerous action in the system. A rule that marks a finding false positive removes it from every published count, and it does so silently, and the finding it removes might be the one that mattered. Three corrections to one rule reads to me as a control being watched rather than a control being wrong.
 
-In this corpus that action never fired. No finding in the whole governance pass was marked false positive; the non-false-positive population came out of the pass exactly as large as it went in. I do not read that as vindication. It is one corpus, and a rule that has never fired is a rule nobody has tested against real data.
+In this corpus that action never fired. No finding in the whole governance pass was marked false positive; the non-false-positive population came out of the pass exactly as large as it went in. I do not read that as vindication. It is one corpus, and a rule that has never fired is a rule nobody has tested against real data. The factorial study in appendix E has since widened that corpus by [[stats:benchmark.factorial.n_total]] runs across two targets, and the count stayed where it was: [[stats:benchmark.factorial.layers.governor_fp_marks]] firings. Measured against a blinded adjudication, the false-positive suppression this system actually achieves comes from the verifier, not from this ruleset -- so the claim this chapter is allowed to make for these rules is severity governance, duplicate control and auditability, and the mark-false-positive action is a guarded emergency brake that field data has still never justified pulling.
 
 The obvious weakness is that these matches are regular expressions over titles, URLs and a concatenated blob of evidence text. That is brittle in the ordinary way. A rule keyed on a phrase in a login bounce page stops firing the day the application rewrites that page, and nothing announces it, and the false positives quietly come back. I would rather have brittle rules I can read than robust judgement I cannot, but those are the terms of the trade and they should be stated.
 
@@ -218,7 +218,3 @@ The evidence ceiling imposes a requirement on every tool, retroactively. Turn it
 The verifier costs a model call for every finding in the gray area, and it is the single place in this design where a model is permitted to move a number upward. All of that trust is paid for by the check at the recording site, and that check is currently one condition of the three the contract advertises. I have known that for the length of one section and it is still true at the end of the chapter.
 
 The last cost is the one nobody warns you about. An honestly governed report looks worse. Two highs and a page of mediums is a harder document to hand to a client than nine criticals, and it is a harder document to show your own management, and the pressure to loosen the ceiling arrives from your own side of the table wearing the language of not underselling the work. Every mechanism in this chapter exists because I do not trust myself in that meeting either. A structural incapacity to escalate is a promise you make once, in code, at a moment when nobody is asking you to break it.
-
----
-
-*Theodoros Moutesidis.*

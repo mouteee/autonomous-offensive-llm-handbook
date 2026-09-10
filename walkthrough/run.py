@@ -16,7 +16,7 @@ artifact came out non-empty" is not evidence that a stage ran, because an empty 
 be the correct answer.
 
 The scope stage refuses to decide anything against a fail-open guard. `core/scope_guard.py`
-names two such conditions -- `AUTOMATOR_SCOPE_TRACKING=0`, and a guard with no base -- and
+names two such conditions -- `HARNESS_SCOPE_TRACKING=0`, and a guard with no base -- and
 on either one every URL answers in-scope while the out-of-scope list cannot take that back.
 Both are read before any URL is, so a run under either would publish an artifact in which
 the URL chosen to be rejected is admitted. That is the same shape as `load_rules()`
@@ -223,12 +223,12 @@ def _require_live_guard(guard):
     Both conditions are read inside `is_in_scope` before the URL is, so neither can be
     undone by the out-of-scope list, and a run under either would publish an artifact in
     which the URL chosen to be rejected is admitted. The message names which condition
-    tripped, because the two fixes are different ones: unset `AUTOMATOR_SCOPE_TRACKING`, or
+    tripped, because the two fixes are different ones: unset `HARNESS_SCOPE_TRACKING`, or
     seed the guard with a target.
     """
     if not guard.enabled:
         raise RuntimeError(
-            "the scope guard is disabled (AUTOMATOR_SCOPE_TRACKING=0), so every URL answers "
+            "the scope guard is disabled (HARNESS_SCOPE_TRACKING=0), so every URL answers "
             "in-scope and the out-of-scope list cannot take that back"
         )
     if not guard.base:
@@ -343,10 +343,10 @@ def _stage_schedule(store, profile, recommendations):
     artifact = {
         "profile_hash": profile.profile_hash(),
         # Read off the scheduler rather than out of the environment a second time. Measured,
-        # and stated no wider than it was measured: with AUTOMATOR_SCHEDULER_ENABLED=0 every
+        # and stated no wider than it was measured: with HARNESS_SCHEDULER_ENABLED=0 every
         # score below changes and every reason loses its adjustment suffix, while the ranking
         # is unchanged -- so this flag moves the numbers in this artifact, and an ambient
-        # override would otherwise be invisible in them. AUTOMATOR_AGGRESSION_LEVEL is NOT
+        # override would otherwise be invisible in them. HARNESS_AGGRESSION_LEVEL is NOT
         # recorded beside it: with stats_file=None and no record() call it changes nothing
         # here -- the adjusted list comes out identical, tool for tool, score for score,
         # reason for reason -- so a setting with no effect on these bytes has no place in
@@ -503,7 +503,7 @@ async def _stage_write(store, fixtures, exchanges):
 async def _stage_consolidate(store):
     """Stage `consolidate`: the cross-host grouping pass, and a refusal when it grouped nothing.
 
-    `AUTOMATOR_GOVERNANCE=0` turns `consolidate_scan` into a no-op that returns empty groups,
+    `HARNESS_GOVERNANCE=0` turns `consolidate_scan` into a no-op that returns empty groups,
     an empty per-host map and an `info` headline, and writes nothing to the store -- without
     raising. Publishing that record would state this scan's own rollups as empty, which is
     the same fail-open shape the scope stage refuses, so an empty grouping is refused here
@@ -515,7 +515,7 @@ async def _stage_consolidate(store):
     if not record.get("groups"):
         raise RuntimeError(
             "consolidate_scan grouped nothing, so this artifact would publish empty rollups "
-            "as though they were this scan's answer; AUTOMATOR_GOVERNANCE=0 returns exactly "
+            "as though they were this scan's answer; HARNESS_GOVERNANCE=0 returns exactly "
             "that record without raising, and so does a scan with no surviving finding"
         )
     store.stages_run.append("consolidate")

@@ -142,7 +142,7 @@ def test_the_per_host_rollup_and_affected_hosts_disagree_by_construction():
 
 
 def test_it_is_a_no_op_when_governance_is_off(monkeypatch):
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE", "0")
+    monkeypatch.setenv("HARNESS_GOVERNANCE", "0")
     store = FakeStore(_pair())
     out = asyncio.run(consolidate_scan(store))
     assert out == {"groups": [], "per_host": {}, "deduped": {}, "headline": "info"}

@@ -174,7 +174,7 @@ At minimum, on the evidence the rest of this book already gives you: the stage o
 
 **The invariant: a claim about how well this works is a measurement against a ground truth somebody else can inspect, or it is nothing.**
 
-There is no `core/` file for this step, because there is nothing here for enforcing code to be a claim about: measuring a system is not a control the system runs under, it is a practice you hold yourself to from outside it. The artifacts are score files under `data/benchmark/` -- `automator_juiceshop_run1.score.json`, `run2` and `run3`, plus `zap_juiceshop_baseline_result.score.json` -- and the aggregated figures in `data/stats.json`, which this step only reads and does not touch.
+There is no `core/` file for this step, because there is nothing here for enforcing code to be a claim about: measuring a system is not a control the system runs under, it is a practice you hold yourself to from outside it. The artifacts are score files under `data/benchmark/` -- `harness_juiceshop_run1.score.json`, `run2` and `run3`, plus `zap_juiceshop_baseline_result.score.json` -- and the aggregated figures in `data/stats.json`, which this step only reads and does not touch.
 
 Read the score files themselves before the aggregate, because they show exactly what is and is not published. Three carry the label of an attempt by the system; the fourth is labelled as an OWASP ZAP passive scan. All four contain aggregate counts only. They do not contain raw findings, ground-truth entries, matcher identity, target identity or run identity, so equal `ground_truth_count` values cannot establish that the inputs or scoring procedure were the same. `Author-recorded OWASP ZAP passive-scan aggregate. This repository does not publish the raw findings, ground-truth entries, matcher, target identifiers or run identifiers needed to establish an identical evaluation procedure; do not treat this row and the scanner rows as a controlled head-to-head.` records this evidence limit instead of presenting the pair as a controlled head-to-head. The practice you should copy is stricter: publish inspectable ground truth, raw tool output, target and run identifiers, the matcher and its version, repeated runs, and a comparison tool evaluated by the same declared procedure.
 
@@ -195,6 +195,21 @@ allowed to decide on its own.
 That is the portability claim this manual can support. The ordered development path and
 the constraints travel; the target-bound inputs are visible instead of being hidden in a
 prompt or treated as universal by accident.
+
+## What the verifier study says about these steps
+
+None of the steps above rests only on argument now. Appendix D ran a study against two of them; the failure museum in appendix C pins several more as things the study's own artifacts, and the runs behind it, actually caught going wrong; the rest are still exactly where they were, unmeasured. Keep the three kinds apart, because they earn different amounts of trust.
+
+| Step, or the chapter that covers it | What the study says |
+|---|---|
+| The verifier's asymmetric raise (step six) | Supported: pre-report suppression and blinded shipped precision both moved with the gate, in the direction the design predicts. Appendix D. |
+| The scope guard (step seven) | Supported: the decoy sat untouched in every measured run, including the runs given no scope declaration at all. Appendix D. |
+| The evidence contract and the write path (steps zero, four and five) | Defect-corrected: a structured proof once sat beside the value the grader actually read, serialized and ignored rather than inside it, so a verified critical shipped labeled medium. Appendix C, "Two correct rules, one wrong severity". |
+| Evidence capture on the probe path (step four) | Defect-corrected: an attach path once copied a raw, unredacted capture underneath an already-redacted summary. Appendix C, "The attachment that unredacted the finding". |
+| Consolidation and dedup (chapter 05) | Defect-corrected: a correction carrying strictly better evidence was once silently absorbed as a duplicate and never reached governance. Appendix C, "Dedup ate the correction". |
+| A memory-system kill switch | Defect-corrected: two read paths and a fallback writer once ignored the flag entirely, so a study arm built on it measured nothing. Appendix C, "The kill-switch that half-killed". |
+| The relevance table and the scheduler (step three) | Untested: this study measured one control, not the ranking layer. The study chapter 05 asks for is still unrun. |
+| The grounding critic (step six's neighbor) | Untested: appendix D's two arms never touched it either. |
 
 ## What it costs to build this
 

@@ -245,17 +245,17 @@ class SmartScheduler:
         stats_file: Optional[str] = None,
     ) -> None:
         self._aggression = (
-            os.getenv("AUTOMATOR_AGGRESSION_LEVEL", aggression_level or "moderate")
+            os.getenv("HARNESS_AGGRESSION_LEVEL", aggression_level or "moderate")
         )
 
         # Feature flags (for ablation studies)
-        self._scheduler_enabled = os.getenv("AUTOMATOR_SCHEDULER_ENABLED", "1") != "0"
+        self._scheduler_enabled = os.getenv("HARNESS_SCHEDULER_ENABLED", "1") != "0"
         self._fatigue_enabled = (
-            os.getenv("AUTOMATOR_FATIGUE_ENABLED", "1") != "0"
+            os.getenv("HARNESS_FATIGUE_ENABLED", "1") != "0"
             and self._aggression != "aggressive"
         )
         self._budgets_enabled = (
-            os.getenv("AUTOMATOR_CATEGORY_BUDGETS_ENABLED", "1") != "0"
+            os.getenv("HARNESS_CATEGORY_BUDGETS_ENABLED", "1") != "0"
         )
 
         # Per-tool aggregate stats

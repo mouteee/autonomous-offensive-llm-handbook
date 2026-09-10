@@ -156,7 +156,7 @@ The measurement makes that pairing worse rather than better, and it belongs in t
 
 One modest thing the ratio does establish, and it is about cost, not determinism. If turns track executions at a roughly fixed rate, the token bill scales with how many tools you run, not with how large the space of things you might have run happens to be. That is a useful budgeting property. It is not the thesis of this handbook, and I would rather name it small than let it stand in for the claim it does not prove.
 
-None of this shows determinism helped. Chapter 00 conceded that the ablation has not been run, the scheduler carries the flags for it, `[[code:scheduler.py:AUTOMATOR_SCHEDULER_ENABLED]]` among them, and the study remains owed. What the layers in this chapter give you is a system where the question is answerable at all, because the deterministic half can be switched off and replayed. Ask the same question of an agent that improvises its methodology each run and there is nothing to switch off.
+None of this shows determinism helped. The scheduler-and-ranking ablation has not been run -- the scheduler carries the flags for it, `[[code:scheduler.py:HARNESS_SCHEDULER_ENABLED]]` among them, and that study remains owed; the verification-stage studies in appendices D and E measured a different layer, and what they attribute to determinism is governance, not detection. What the layers in this chapter give you is a system where the question is answerable at all, because the deterministic half can be switched off and replayed. Ask the same question of an agent that improvises its methodology each run and there is nothing to switch off.
 
 ## What is actually left for the model
 
@@ -177,7 +177,3 @@ And the stage machine binds you, on purpose. The first time a run would obviousl
 The last cost is the one I did not anticipate. Every defect in this chapter sat in a repository I have read many times, and I found all of them in writing sweeps for a book chapter, not in operating the system. Deterministic layers are auditable. That is not the same as audited, and the gap between those two words is where I would point anyone building this next.
 
 Two of this chapter's own sentences were wrong when it was first written, and both are worth naming because they are failure modes you will hit too. One stated a margin as a whole quantity when the arithmetic makes it a half, and it got that way because I had a number the citation gate would not take and paraphrased it into a mechanism instead of annotating it. Paraphrase is where facts go to die; if a number resists your process, fix the process. The other named a cause that a two-line swap disproves. A wrong root cause is worse than none, because it is actionable, and someone acting on it changes a line and fixes nothing. Both were caught by tests that assert against `core/` rather than against my recollection of it, which is the argument for writing them.
-
----
-
-*Theodoros Moutesidis.*

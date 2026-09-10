@@ -74,7 +74,7 @@ def test_the_consolidation_rollup_describes_this_run_s_own_surviving_findings():
 
 
 def test_a_consolidation_that_grouped_nothing_is_refused(monkeypatch):
-    """`AUTOMATOR_GOVERNANCE=0` turns the whole pass into a no-op that returns empty rollups.
+    """`HARNESS_GOVERNANCE=0` turns the whole pass into a no-op that returns empty rollups.
 
     Nothing raises on that path -- `consolidate_scan` returns its zero record and writes
     nothing -- so the run would publish empty groups, an empty per-host map and an `info`
@@ -82,11 +82,11 @@ def test_a_consolidation_that_grouped_nothing_is_refused(monkeypatch):
     beside the refusal, because a guard widened to refuse everything satisfies the refusal
     alone.
     """
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE", "0")
+    monkeypatch.setenv("HARNESS_GOVERNANCE", "0")
     with pytest.raises(RuntimeError, match="grouped nothing"):
         asyncio.run(runner.run_all(ROOT))
 
-    monkeypatch.delenv("AUTOMATOR_GOVERNANCE")
+    monkeypatch.delenv("HARNESS_GOVERNANCE")
     assert asyncio.run(runner.run_all(ROOT))["09-consolidation.json"]["groups"]
 
 

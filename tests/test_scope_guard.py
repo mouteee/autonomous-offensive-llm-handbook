@@ -29,9 +29,9 @@ def test_both_fail_open_paths_and_only_those(monkeypatch):
     guard is unseeded when its base came out empty, and an absent target and a
     target that reduces to no host both produce that.
     """
-    monkeypatch.setenv("AUTOMATOR_SCOPE_TRACKING", "0")
+    monkeypatch.setenv("HARNESS_SCOPE_TRACKING", "0")
     assert ScopeGuard(target="https://shop.example").is_in_scope("https://anything.else/") is True
-    monkeypatch.setenv("AUTOMATOR_SCOPE_TRACKING", "1")
+    monkeypatch.setenv("HARNESS_SCOPE_TRACKING", "1")
     for unseeded in ("", "   ", "/some/path", "."):                                     # unseeded
         assert ScopeGuard(target=unseeded).is_in_scope("https://anything.else/") is True
     # Seeded and enabled: no third fail-open, at any label count, and not even

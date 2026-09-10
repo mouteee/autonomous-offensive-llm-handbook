@@ -198,7 +198,3 @@ The one function is also one function that can be wrong about everything. It wri
 The evidence pointer is a tax on the model's output. Every proposal has to carry a quote, which costs tokens and occasionally costs a good idea from a model that could not find a snippet to justify an instinct. I think the trade is obviously right, and I notice that "obviously" is doing work I have not measured.
 
 And the gate needs a threshold, which means it needs tuning, which means somebody has to decide how much false-dropping is acceptable. There is no principled answer. There is a number in a file, an environment variable to change it, and the observation that both directions have a cost, one loud and one silent, and the silent one is the one that eats scans.
-
----
-
-*Theodoros Moutesidis.*

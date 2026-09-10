@@ -16,11 +16,11 @@ its value. The observables live in the ledger entry for this docstring in
 `tests/docstring_claims_audited.txt`, where they cannot rot into this paragraph.
 
 Not every museum entry has a test here, and that is the honest outcome rather
-than a shortfall. The spec describes the private system and this repository is a
-subset of it. An unanchored `injectable` match in a tool's negative output, an
-analyst verdict written into `raw_data` against its own evidence, and a WAF-block
-heuristic downgrading access control are all corrected somewhere in that private
-system, and nothing in `core/` refuses any of them. `analyst_verdict`,
+than a shortfall. The spec includes genericized historical patterns that this
+repository does not implement. An unanchored `injectable` match in a tool's
+negative output, an analyst verdict written into `raw_data` against its own
+evidence, and a WAF-block heuristic downgrading access control are all examples;
+nothing in `core/` refuses any of them. `analyst_verdict`,
 `analyst_notes` and `forbidden` appear nowhere under `core/`, and the scope of that
 needs stating more carefully than it once was here. The first two appear nowhere in
 this repository at all, outside prose about them; an earlier wording said each of the

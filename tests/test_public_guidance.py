@@ -48,15 +48,18 @@ def test_removing_a_reviewed_limit_breaks_the_editorial_check(limit):
         check_reviewed_limits(text.replace(limit, "", 1))
 
 
-def test_public_attributions_name_the_author_only():
-    files = [ROOT / "README.md", *(ROOT / "handbook").glob("*.md")]
-    attributions = []
+def test_public_prose_uses_author_neutral_attribution():
+    # Specific private identities belong in the untracked publication denylist,
+    # never in a public test. This checked-in guard instead pins the neutral
+    # attribution policy and refuses common reintroductions of a byline.
+    byline_markers = ("\n## Author\n", "\nAuthor: ", "\nWritten by ", "\n© ")
+    files = [ROOT / "README.md", ROOT / "LICENSE",
+             *(ROOT / "handbook").glob("*.md"), *(ROOT / "rendered").glob("*.md")]
     for path in files:
-        for line in path.read_text().splitlines():
-            if line.startswith("*Theodoros Moutesidis"):
-                attributions.append((path.name, line))
-                assert line == "*Theodoros Moutesidis.*", path
-    assert attributions
+        text = path.read_text()
+        for marker in byline_markers:
+            assert marker not in text, (path.name, marker)
+    assert "Copyright (c) 2026 the handbook author" in (ROOT / "LICENSE").read_text()
 
 
 def test_recommended_lab_is_linked_as_source_and_rendered_chapter():

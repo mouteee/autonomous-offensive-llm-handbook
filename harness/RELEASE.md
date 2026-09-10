@@ -13,7 +13,7 @@ The suite also recounts historical store coverage from actual stored records, ra
 ## Publication clearance
 
 <!-- num-ok: 2026-09-03 is the date of the owner's publication authorization in the review conversation, not a measurement from a target -->
-The owner confirmed publication clearance on 2026-09-03, with the condition that employer, client and target specifics are not named. Public attribution is the author's name only. This records the owner's authorization; it is not an independent private-identifier or legal-rights audit. The published-pattern audit remains a limited check, not a substitute for that authorization.
+The owner confirmed publication clearance on 2026-09-03, with the condition that employer, client and target specifics are not named. Public attribution uses neutral handbook-author wording. This records the owner's authorization; it is not an independent private-identifier or legal-rights audit. The published-pattern audit remains a limited check, not a substitute for that authorization.
 
 ## Not established
 

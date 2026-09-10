@@ -2202,7 +2202,7 @@ def test_the_ablation_flag_switches_the_whole_adjustment_off(monkeypatch):
     profile_hash = "php:mysql:nowaf:none:rest:laravel"
 
     def run(flag):
-        monkeypatch.setenv("AUTOMATOR_SCHEDULER_ENABLED", flag)
+        monkeypatch.setenv("HARNESS_SCHEDULER_ENABLED", flag)
         sched = SmartScheduler()
         for url in ("http://app.shop.example/a", "http://app.shop.example/b"):
             sched.record("test_sqli", ExecutionResult.FAIL, profile_hash, target=url)
@@ -2467,7 +2467,7 @@ def _num_ok_reasons():
 
 @chapter_claim(
     'README.md',
-    "Across chapters 00 through 05 and this README, thirteen annotations name a constant or a property of the code, thirty-five cover a spelled quantity the digit check cannot read, five name an HTTP status code, and one names a comparison between two of this repository's own published snapshots.",
+    "Across chapters 00 through 05 and this README, fourteen annotations name a constant or a property of the code, thirty-five cover a spelled quantity the digit check cannot read, five name an HTTP status code, and one names a comparison between two of this repository's own published snapshots.",
 )
 def test_the_readme_census_of_its_own_annotations_is_the_real_one():
     reasons = _num_ok_reasons()
@@ -2482,18 +2482,18 @@ def test_the_readme_census_of_its_own_annotations_is_the_real_one():
     assert len(set(map(id, categorised))) == len(categorised)
     assert len(code) + len(categorised) == len(reasons)
 
-    assert len(code) == 13, [r[0] for r in code]
+    assert len(code) == 14, [r[0] for r in code]
     assert len(spelled) == 35, [r[0] for r in spelled]
     assert len(http) == 5, [r[0] for r in http]
     assert len(snapshot) == 1, [r[0] for r in snapshot]
-    assert len(reasons) == 54
+    assert len(reasons) == 55
 
 
 @chapter_claim(
     'README.md',
-    '*Theodoros Moutesidis.*',
+    'It holds assertions against the reference implementation and the published statistics, and each is anchored to the verbatim sentence it backs, so an edit that changes a fact fails a test instead of quietly shipping.',
 )
-def test_every_chapter_is_linked_and_ends_on_the_same_attribution():
+def test_every_chapter_is_linked_at_source_and_rendered():
     """A chapter counts as linked when a markdown link points at it.
 
     A chapter is now linked TWICE and both links are asserted, because the
@@ -2515,7 +2515,6 @@ def test_every_chapter_is_linked_and_ends_on_the_same_attribution():
     """
     root = _repo_root()
     readme = (root / "README.md").read_text(encoding="utf-8")
-    attributions = set()
     for rel in CHAPTER_FILES:
         path = root / rel
         assert path.exists(), rel
@@ -2526,12 +2525,6 @@ def test_every_chapter_is_linked_and_ends_on_the_same_attribution():
         rendered = rel.replace("handbook/", "rendered/", 1)
         assert (root / rendered).exists(), rendered
         assert f"]({rendered})" in readme, rendered
-        lines = [l for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
-        attributions.add(lines[-1])
-    # One attribution line, identical across every chapter and the README.
-    assert len(attributions) == 1, attributions
-    readme_lines = [l for l in readme.splitlines() if l.strip()]
-    assert readme_lines[-1] == attributions.pop()
 @chapter_claim(
     'README.md',
     "Chapter 05 reports the system's F1 against a public deliberately-vulnerable application and places it beside an OWASP ZAP passive-scan score. This repository proves the arithmetic and keeps the four aggregate score files synchronized with data/stats.json; it does not contain the raw findings, ground-truth entries, matcher, target identifiers or run identifiers needed to prove that the two tools were evaluated in a controlled head-to-head. Treat the pair as historical, author-recorded data points, not a fair benchmark.",

@@ -718,14 +718,14 @@ def test_the_governance_switch_takes_the_whole_pass_out(monkeypatch):
     one direction only cannot tell 'disabled' from 'did nothing'."""
     import asyncio
     rows = [dict(_finding("critical", "thin"), id="1")]
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE", "0")
+    monkeypatch.setenv("HARNESS_GOVERNANCE", "0")
     off = _Store(rows)
     assert asyncio.run(govern_scan(off, rules=load_rules())) == {
         "total": 0, "changed": 0, "skipped": 0, "changes": []}
     assert off.governed == []
     assert off.rows[0]["severity"] == "critical"
 
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE", "1")
+    monkeypatch.setenv("HARNESS_GOVERNANCE", "1")
     on = _Store(rows)
     assert asyncio.run(govern_scan(on, rules=load_rules()))["changed"] == 1
     assert on.rows[0]["severity"] == "medium"
@@ -739,7 +739,7 @@ def test_the_evidence_ceiling_switch_leaves_the_rest_of_the_pass_running(monkeyp
     thin_critical = dict(_finding("critical", "thin"), id="1")
     capped = dict(_finding("critical", "thin"), id="2", type="csp_weakness",
                   title="CSP allows unsafe-inline")
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING", "0")
+    monkeypatch.setenv("HARNESS_GOVERNANCE_EVIDENCE_CEILING", "0")
     store = _Store([thin_critical, capped])
     summary = asyncio.run(govern_scan(store, rules=load_rules()))
     by_id = {r["id"]: r for r in store.rows}
@@ -747,7 +747,7 @@ def test_the_evidence_ceiling_switch_leaves_the_rest_of_the_pass_running(monkeyp
     assert by_id["2"]["severity"] == "medium"         # the csp rule still did
     assert summary["changed"] == 1
 
-    monkeypatch.setenv("AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING", "1")
+    monkeypatch.setenv("HARNESS_GOVERNANCE_EVIDENCE_CEILING", "1")
     store = _Store([dict(_finding("critical", "thin"), id="1")])
     asyncio.run(govern_scan(store, rules=load_rules()))
     assert store.rows[0]["severity"] == "medium"

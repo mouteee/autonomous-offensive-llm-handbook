@@ -10,7 +10,7 @@ The entries are the spec's own failure museum, in the order it lists them, and c
 
 ## The honesty constraint, stated before the entries rather than after them
 
-`read-via-post-bounce`, `csp-weakness`, `cors-wildcard`, `spa-fallback-api-200` and `tokenization-key-public` ship in `core/severity_rules.json` and each carries a named test in `tests/test_failure_museum.py`. The unanchored substring match, the analyst verdict written into `raw_data`, and the access-control downgrade on a response body are corrected in the private system this repository is a subset of, and nothing under `core/` refuses any of them. Those entries are marked as such where they appear, and no test name is offered for them.
+`read-via-post-bounce`, `csp-weakness`, `cors-wildcard`, `spa-fallback-api-200` and `tokenization-key-public` ship in `core/severity_rules.json` and each carries a named test in `tests/test_failure_museum.py`. The unanchored substring match, the analyst verdict written into `raw_data`, and the access-control downgrade on a response body are genericized historical patterns; nothing under `core/` refuses any of them. Those entries are marked as unenforced where they appear, and no test name is offered for them.
 
 The acceptance criterion behind this appendix asks for a regression test beside every entry. That cannot be met here, and the reason is worth more to a reader than the appearance of meeting it would be: writing a test for a mechanism this repository does not carry produces a test that cannot fail, and a test that cannot fail is the exact defect the entries below are about. The museum's own module docstring reaches the same conclusion in the same words, calling such a test "the decorative-gate failure at test scale". Reporting them as unpinnable is the honest outcome rather than a shortfall to be hidden.
 
@@ -18,7 +18,7 @@ The acceptance criterion behind this appendix asks for a regression test beside 
 
 The finding claimed a SQL injection, at critical, with an empty evidence block. What made it look real was that the parser had genuinely matched the words `injectable` and `is vulnerable` in the tool's own output. What was true is that the tool had said the parameter was **not** injectable, and the parser was matching those words unanchored, so the negative sentence containing them scored the same as a positive one. The evidence block was empty because there was nothing to quote: a finding with no quotable evidence and a confident severity is the shape to distrust.
 
-The rule is to anchor the match to the tool's verdict line rather than to its prose, and to refuse a finding whose evidence block is empty regardless of what the parser believes. **This entry is a private-system finding. Nothing in this repository enforces it**, and the only `injectable` under `core/` is an unrelated dependency-injection hook in `core/llm_control.py`.
+The rule is to anchor the match to the tool's verdict line rather than to its prose, and to refuse a finding whose evidence block is empty regardless of what the parser believes. **This is a genericized historical pattern. Nothing in this repository enforces it**, and the only `injectable` under `core/` is an unrelated dependency-injection hook in `core/llm_control.py`.
 
 [num-ok 1]
 ## A login bounce behind a 200 read as a successful unauthenticated write
@@ -34,13 +34,13 @@ The rule is `read-via-post-bounce`, which marks the finding as a false positive 
 
 The finding carried an enrichment note asserting a conclusion its own evidence did not support, and downstream consumers read the note rather than the evidence. What made it look real was that the note was well written and sat in the same record as the capture. What was true is that a model had been asked to comment on a finding and its comment had been stored as though it were an observation.
 
-The rule is that a model's commentary never enters the same field as a capture, and that anything written by a model is stored where a reader can tell it apart from a request and a response. **This entry is a private-system finding.** `analyst_verdict`, `analyst_notes` and `forbidden` appear nowhere under `core/`. Stating the scope of that check needs more care than the museum's own docstring gives it: the first two appear nowhere in this repository at all outside prose about them, while `forbidden` does occur elsewhere -- as a body snippet in an evidence test, and inside the symbol `_FORBIDDEN_PROVENANCE` in `walkthrough/fixture_schema.py`, whose entries are `host`, `client`, `scan_id` and `url` rather than anything about an analyst. A bare `analyst` also sits in a fixture's provenance prose. None of those is a governance decision path.
+The rule is that a model's commentary never enters the same field as a capture, and that anything written by a model is stored where a reader can tell it apart from a request and a response. **This is a genericized historical pattern.** `analyst_verdict`, `analyst_notes` and `forbidden` appear nowhere under `core/`. Stating the scope of that check needs more care than the museum's own docstring gives it: the first two appear nowhere in this repository at all outside prose about them, while `forbidden` does occur elsewhere -- as a body snippet in an evidence test, and inside the symbol `_FORBIDDEN_PROVENANCE` in `walkthrough/fixture_schema.py`, whose entries are `host`, `client`, `scan_id` and `url` rather than anything about an analyst. A bare `analyst` also sits in a fixture's provenance prose. None of those is a governance decision path.
 
 ## A response body containing "forbidden" downgrading a real access-control finding
 
 The finding was a genuine access-control break, and it was quietly lowered because the response body contained the word `forbidden`. What made the downgrade look reasonable is that a body carrying that word often does mean the request was refused. What was true is that the word appeared in the page's own content, and the request had in fact succeeded -- so a heuristic meant to suppress noise was suppressing the finding class the engagement existed to find.
 
-The rule is that a downgrade may never be driven by a substring in a body when the finding's class is one where that substring is expected to appear, and that any automatic lowering of an access-control finding records what it matched. **This entry is a private-system finding.** The nearest thing in the public tree is a WAF-block classification constant, `WAF_BLOCK` in `core/response_analyzer.py`, which is defined and read nowhere under `core/`.
+The rule is that a downgrade may never be driven by a substring in a body when the finding's class is one where that substring is expected to appear, and that any automatic lowering of an access-control finding records what it matched. **This is a genericized historical pattern.** The nearest thing in the public tree is a WAF-block classification constant, `WAF_BLOCK` in `core/response_analyzer.py`, which is defined and read nowhere under `core/`.
 
 ## Policy advice holding critical
 
@@ -83,6 +83,41 @@ Each of the five rules was deleted in turn from a copy of the rules file, and ea
 
 The scope worth carrying away is the one the three narrow entries above make explicit. A test named for a claim usually asserts something smaller than the claim, and the gap is where a reader stops being protected. The policy-advice and index-shell tests say so outright, one naming the tier it does not drive and the other the exclusion list it does not exercise. The wildcard test makes the same point from the other side, asserting the rule that fired and the evidence grade because at thin evidence deleting the rule lands the finding on that same severity through `evidence-ceiling`, and a final-severity assertion could not tell a present rule from an absent one. Read the body of a test before citing it, including the ones this appendix cites.
 
+## Failures of the rules themselves
+
+The entries above are findings a human threw away. These five are not findings at all -- they are the rules that were supposed to catch a bad finding, quietly failing to, surfaced by a run against the same kind of public lab target the rest of this book measures against.
+
+## The attachment that unredacted the finding
+
+The finding carried a redacted summary, and its author believed that was what it stored. What made it look real is that the summary was redacted -- the author had done the careful thing. What was true is that a convenience parameter on the reporting call copied the underlying probe's raw request and response -- bearer tokens, password hashes -- into the same record, beneath the summary, where the report renderer and every downstream consumer could read them. The finding was redacted the way a postcard is sealed.
+
+The rule is that redaction applies at every copy a record carries, not at the field the author is looking at; an attach path that can write evidence must run the same masking as the field it bypasses. **This is a genericized historical pattern. Nothing in this repository enforces it.**
+
+## The kill-switch that half-killed
+
+An environment flag promised memory disabled. What made it look real is that the memory engine genuinely refused to construct under it, and write paths through that engine genuinely went quiet. What was true is that two read endpoints assembled prior-scan history from the database directly -- never asking the flag -- and one direct record endpoint fell back to an older writer that predated the flag entirely. A study arm built on that switch measured memory off while receiving the full recall of every previous scan.
+
+The rule is chapter 06's runtime contract taken literally: a capability freeze is every path or it is fiction, and a switch inventory has to hold read lanes and fallbacks, not just the engine constructor. **This is a genericized historical pattern. Nothing in this repository enforces it.**
+
+## Two correct rules, one wrong severity
+
+[num-ok 4]
+The finding was a proven unauthenticated admin takeover, submitted with verbatim quoted proof in the canonical structured shape. What made the stored severity look real is that every rule that touched it worked as written: the hygiene rule had stripped the secrets, the grader graded what it was shown, the downward governor capped what the grade allowed, and the asymmetric raise rule correctly refused to repair a grade it must not overrule. What was true is that the store's mirror accepted only string evidence, so the structured proof never reached the grader at all -- it sat one field away, serialized and ignored -- and a verified critical shipped labeled medium. Three separate configurations reproduced it. This is the byte-identity argument of chapter 02 happening in production: every component byte-correct, the composition wrong.
+
+The rule is to grade content wherever the record carries it, to canonicalize at the single write path rather than trusting authors to know the blessed field, and to treat "the safety rule made the evidence look thin" as a composition test case in its own right. **This is a genericized historical pattern. Nothing in this repository enforces it.**
+
+## Dedup ate the correction
+
+An author noticed the under-labeled finding above and resubmitted it with the proof attached. What made the outcome look real is that deduplication did exactly its job: same type, same URL, same title -- duplicate, absorbed, existing record returned. What was true is that the resubmission was not a duplicate claim but a correction carrying strictly better evidence, and the absorption meant no governance pass could ever see it. The audit trail recorded a duplicate skipped, not a repair refused -- the most dangerous kind of log line, the one that reads as health.
+
+The rule is that a write path which collapses duplicates must distinguish a repeated claim from the same claim now carrying proof, and must let the second kind through to grading. **This is a genericized historical pattern. Nothing in this repository enforces it.**
+
+## Coverage that could not see the work
+
+The coverage metric credited catalogued tool runs against exact URL strings. What made it look real is that it was conservative by design -- built, after an earlier incident, to stop a scan from claiming coverage it had not earned. What was true is that it also could not see the hand-driven probe channel that produced every confirmed exploit in the study, and its denominator contained miner-reconstructed URLs with a malformed origin that nothing could ever test. The same metric family had once reported near-total coverage on a scan that ran no active tool; here it reported near-zero on scans that were dumping tables with bounded proof. Both directions, one root: the denominator was not the work.
+
+The rule is chapter 05's accounting demand pointed at the metric itself: coverage must count the mechanism that produces results, and a denominator entry nothing can test is a defect in the denominator. **This is a genericized historical pattern. Nothing in this repository enforces it.**
+
 ---
 
 ## Number annotations
@@ -94,3 +129,5 @@ These notes were written inline in the handbook source beside the numbers they e
 **[num-ok 2]** 200 is the HTTP status code for OK, the protocol constant this entry is about: the whole defect is a success status believed over the body beneath it. It identifies a response rather than counting anything.
 
 **[num-ok 3]** 200 is the HTTP status code for OK, the protocol constant this entry is about: the whole defect is a success status believed over the body beneath it. It identifies a response rather than counting anything.
+
+**[num-ok 4]** one field is a spelled quantity counting a code artifact: how far the structured proof sat from the field the grader actually read, in this genericized incident rather than in a shape core/ carries

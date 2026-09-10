@@ -30,15 +30,15 @@ HANDBOOK = ROOT / "handbook"
 # switch -> the module basenames that read it. Declared, not derived, because a
 # right-hand side computed from the same walk as the left could only ever agree.
 SWITCHES = {
-    "AUTOMATOR_AGGRESSION_LEVEL": ("scheduler.py",),
-    "AUTOMATOR_CATEGORY_BUDGETS_ENABLED": ("scheduler.py",),
-    "AUTOMATOR_DT_CRITIC": ("critic.py",),
-    "AUTOMATOR_DT_CRITIC_THRESHOLD": ("critic.py",),
-    "AUTOMATOR_FATIGUE_ENABLED": ("scheduler.py",),
-    "AUTOMATOR_GOVERNANCE": ("consolidator.py", "severity_governor.py"),
-    "AUTOMATOR_GOVERNANCE_EVIDENCE_CEILING": ("severity_governor.py",),
-    "AUTOMATOR_SCHEDULER_ENABLED": ("scheduler.py",),
-    "AUTOMATOR_SCOPE_TRACKING": ("scope_guard.py",),
+    "HARNESS_AGGRESSION_LEVEL": ("scheduler.py",),
+    "HARNESS_CATEGORY_BUDGETS_ENABLED": ("scheduler.py",),
+    "HARNESS_DT_CRITIC": ("critic.py",),
+    "HARNESS_DT_CRITIC_THRESHOLD": ("critic.py",),
+    "HARNESS_FATIGUE_ENABLED": ("scheduler.py",),
+    "HARNESS_GOVERNANCE": ("consolidator.py", "severity_governor.py"),
+    "HARNESS_GOVERNANCE_EVIDENCE_CEILING": ("severity_governor.py",),
+    "HARNESS_SCHEDULER_ENABLED": ("scheduler.py",),
+    "HARNESS_SCOPE_TRACKING": ("scope_guard.py",),
 }
 
 # The grounding gate's accessors. Their being unwired is the property; see the

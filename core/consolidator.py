@@ -22,7 +22,7 @@ A reader told only `idempotent` and then finding the record change would assume 
 bug; the record changing is correct, and calling this module simply `idempotent`
 is the private docstring's own misleading word, not repeated here.
 
-Turning governance off with `AUTOMATOR_GOVERNANCE=0` makes this a no-op that
+Turning governance off with `HARNESS_GOVERNANCE=0` makes this a no-op that
 returns exactly `{"groups": [], "per_host": {}, "deduped": {}, "headline":
 "info"}` and writes nothing. That is not the same as `duplicates survive when
 governance is off`: in the system this re-expresses, an older host-blind merge
@@ -130,7 +130,7 @@ async def consolidate_scan(store, scan_id=None) -> dict:
     here than closing it quietly.
     """
     record = {"groups": [], "per_host": {}, "deduped": {}, "headline": "info"}
-    if os.getenv("AUTOMATOR_GOVERNANCE", "1") == "0":
+    if os.getenv("HARNESS_GOVERNANCE", "1") == "0":
         return record
 
     findings = await fetch_all_findings(store, exclude_fp=True)

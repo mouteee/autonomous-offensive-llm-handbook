@@ -1,0 +1,91 @@
+name: Handbook checks and website
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the public handbook to GitHub Pages
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: handbook-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      HANDBOOK_ROOT: .
+      HANDBOOK_REPOSITORY: ${{ github.repository }}
+      HANDBOOK_REPOSITORY_URL: https://github.com/${{ github.repository }}
+      HANDBOOK_REF: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-docs.txt
+      - name: Install test and website dependencies
+        run: python -m pip install -r requirements.txt -r requirements-docs.txt
+      - name: Published identifier patterns and prose gates
+        run: |
+          bash scripts/audit.sh .
+          for target in handbook README.md docs; do
+            bash scripts/prose_check.sh "$target"
+            bash scripts/verify_claims.sh "$target"
+          done
+          bash tests/test_gates.sh
+      - name: Reference tests and reproducible lab report
+        run: |
+          python -m pytest tests/ -q
+          python -m harness.demo --out /tmp/harness-report.json
+          diff -u harness/report.json /tmp/harness-report.json
+          python -m examples.model_bridge --out /tmp/model-bridge-report.json
+      - name: Build the handbook website
+        run: |
+          python scripts/build_site.py
+          python -m mkdocs build --strict
+          python scripts/check_site.py
+      - name: Save the private review artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: handbook-site-preview
+          path: site/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Prepare the approved public Pages artifact
+        if: >-
+          github.event_name == 'workflow_dispatch' && inputs.publish &&
+          github.repository == 'mouteee/autonomous-offensive-llm-handbook' &&
+          github.event.repository.private == false && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: site/
+
+  deploy:
+    needs: check
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.publish &&
+      github.repository == 'mouteee/autonomous-offensive-llm-handbook' &&
+      github.event.repository.private == false && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the public handbook
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

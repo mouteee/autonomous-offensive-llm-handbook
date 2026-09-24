@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 956 300" width="956" height="300" role="img" aria-labelledby="t d">
+<title id="t">The run sequence and who owns each decision</title><desc id="d">Five stages in order: observe, plan, execute, review, report. Each stage names the host function that owns its decision and the artifact it leaves behind. Model proposals enter only at the execute stage, through validation.</desc>
+<rect x="0" y="0" width="956" height="300" rx="10" fill="#1a1a19"/>
+<text x="64" y="44" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">One run, five stages, one owner per decision</text>
+<text x="64" y="68" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">every stage is host code; a model may propose, and only the execute stage's checks admit</text>
+<rect x="64" y="100" width="148" height="64" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="138" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="650">observe</text>
+<text x="138" y="147" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">strict_gate</text>
+<line x1="138" y1="164" x2="138" y2="182" stroke="#383835" stroke-width="1" stroke-linecap="butt"/>
+<text x="138" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">leaves behind:</text>
+<text x="138" y="214" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">gate record with</text>
+<text x="138" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">its inputs</text>
+<rect x="234" y="100" width="148" height="64" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="308" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="650">plan</text>
+<text x="308" y="147" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">plan</text>
+<line x1="214" y1="132" x2="232" y2="132" stroke="#52c78d" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 227 128 L 232 132 L 227 136" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<line x1="308" y1="164" x2="308" y2="182" stroke="#383835" stroke-width="1" stroke-linecap="butt"/>
+<text x="308" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">leaves behind:</text>
+<text x="308" y="214" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">frozen ranked plan,</text>
+<text x="308" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">with reasons</text>
+<rect x="404" y="100" width="148" height="64" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="478" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="650">execute</text>
+<text x="478" y="147" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">execute / skip</text>
+<line x1="384" y1="132" x2="402" y2="132" stroke="#52c78d" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 397 128 L 402 132 L 397 136" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<line x1="478" y1="164" x2="478" y2="182" stroke="#383835" stroke-width="1" stroke-linecap="butt"/>
+<text x="478" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">leaves behind:</text>
+<text x="478" y="214" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">evidence records and</text>
+<text x="478" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">outcomes</text>
+<rect x="574" y="100" width="148" height="64" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="648" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="650">review</text>
+<text x="648" y="147" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">propose_finding, verify_raise</text>
+<line x1="554" y1="132" x2="572" y2="132" stroke="#52c78d" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 567 128 L 572 132 L 567 136" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<line x1="648" y1="164" x2="648" y2="182" stroke="#383835" stroke-width="1" stroke-linecap="butt"/>
+<text x="648" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">leaves behind:</text>
+<text x="648" y="214" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">governed findings</text>
+<rect x="744" y="100" width="148" height="64" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="818" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="650">report</text>
+<text x="818" y="147" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">finish / abort</text>
+<line x1="724" y1="132" x2="742" y2="132" stroke="#52c78d" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 737 128 L 742 132 L 737 136" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<line x1="818" y1="164" x2="818" y2="182" stroke="#383835" stroke-width="1" stroke-linecap="butt"/>
+<text x="818" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">leaves behind:</text>
+<text x="818" y="214" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">terminal report, human</text>
+<text x="818" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">review required</text>
+<text x="64" y="276" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">advancement is positional: a stage opens only when the previous one is complete, and prompt text cannot move it</text>
+</svg>

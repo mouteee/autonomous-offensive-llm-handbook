@@ -25,8 +25,7 @@ The transition table is worth reading row by row rather than as a total, because
 | high to medium | `48` |
 | medium to low | `3` |
 
-[num-ok 1]
-Every transition in it goes down. The critical band's loss is the two rows that leave it; the high band's loss is what it shipped to medium less what it received from critical; and the movement out of the combined band is the two rows that land on medium, which is exactly the combined delta above. Nothing appears from nowhere.
+Every transition in it goes down. The critical band's loss is the two rows that leave it; the high band's loss is what it shipped to medium less what it received from critical; and the movement out of the combined band is the two rows that land on medium, which is exactly the combined delta above. Nothing appears from nowhere. [^num-1]
 
 No transition in that table ends at informational. A false-positive mark is the one action here that sets a finding to informational, so its absence from the table means the governor never once removed a finding from the published population across the whole pass. That second step is an inference from how the mark works rather than something the table proves on its own; the mark itself is the `mark_fp` branch of [`severity_governor.py:govern_finding`](../core/severity_governor.py), which sets a finding to informational.
 
@@ -34,7 +33,7 @@ One precision, because I would rather give it than have someone find it. Those c
 
 The audit of that pass split the changes into `17` it recognised as intended behaviour and `52` it refused to bless, and the flagged ones went to a human. I come back to that split near the end, along with what was wrong with the first version of it.
 
-## The last word
+## Who may change severity
 
 Chapter 00's first law originally read that the model never sets a severity. That was wrong, and it was wrong in an instructive way: it contradicted the third law two paragraphs below it. The third law says severity rises only against proof, and the thing that supplies proof and asks for a raise is a model. Both sentences cannot be true. The law now says the model never has the last word on severity, and this chapter is what that phrase has to mean if it is going to mean anything.
 
@@ -47,7 +46,7 @@ The historical verifier is a model that can request changes in either direction;
 
 The governor cannot do the verifier's raising job. That is the useful split, and it took me longer to arrive at than it should have. The separation is about permissions and independent acceptance checks, not a claim that a verifier can never recommend a downgrade. Both components can be wrong. Keep the rationale, capture and applied policy beside a change so that somebody outside the component can challenge it, and test the false negative a lowering rule could create as carefully as the false positive a raise could preserve.
 
-Before the mechanism, an accounting of what now runs and what does not. The governor, its rules file and the consolidation pass behind them ship in `core/` -- [`severity_governor.py:govern_finding`](../core/severity_governor.py), the rules file it loads, and [`consolidator.py:consolidate_scan`](../core/consolidator.py) -- so the deterministic side of this chapter is something you can run from this repository. The verifier is not here: it makes a model call and stays in the working system, the way chapters 01 and 02 flagged their own withheld pieces. The measurements are real and were taken against the corpus, whose governance predates parts of the shipped code; where the two part company, the section says so rather than papering over it.
+Before the mechanism, an accounting of what now runs and what does not. The governor, its rules file and the consolidation pass behind them ship in `core/` ([`severity_governor.py:govern_finding`](../core/severity_governor.py), the rules file it loads, and [`consolidator.py:consolidate_scan`](../core/consolidator.py)) so the deterministic side of this chapter is something you can run from this repository. The verifier is not here: it makes a model call and stays in the working system, the way chapters 01 and 02 flagged their own withheld pieces. The measurements are real and were taken against the corpus, whose governance predates parts of the shipped code; where the two part company, the section says so rather than papering over it.
 
 ## A governor that cannot escalate
 
@@ -56,9 +55,9 @@ The governor reconciles a severity from three signals, in a fixed order.
 <!-- cvss_base_score in core/cvss.py scores the vector and band_from_score maps that score to a band; the reconciliation reads the result -->
 First, a CVSS reconciliation. If the finding carries a vector, the vector is scored by [`cvss.py:cvss_base_score`](../core/cvss.py) and mapped to a band. Vectors the system derived from the severity it already claimed are meant to be skipped, and the reason is good: a derived vector is the severity wearing a different notation, so letting it vote would be the finding agreeing with itself.
 
-The test for that is where I got the chapter wrong on my first pass, and where the public re-expression and the corpus part company. I wrote that the branch admits authored vectors, because that is what the surrounding comment in the working system said. [`severity_governor.py:_reconcile_cvss`](../core/severity_governor.py) asks the question positively instead: only a vector whose recorded source is `authored` reconciles. A `derived` vector is skipped in silence, since a vector computed from a band is not evidence against that band; anything else -- no label at all, or a label the module does not recognise -- is skipped and recorded as `cvss-reconcile-skipped-unattributed`. That is fail-closed. An unattributed vector could have been written by anything, a model included, so lowering a severity on it would suppress a finding on evidence nobody vouched for, and the conservative outcome is to leave the asserted severity where it stands.
+The test for that is where I got the chapter wrong on my first pass, and where the public re-expression and the corpus part company. I wrote that the branch admits authored vectors, because that is what the surrounding comment in the working system said. [`severity_governor.py:_reconcile_cvss`](../core/severity_governor.py) asks the question positively instead: only a vector whose recorded source is `authored` reconciles. A `derived` vector is skipped in silence, since a vector computed from a band is not evidence against that band; anything else (no label at all, or a label the module does not recognise) is skipped and recorded as `cvss-reconcile-skipped-unattributed`. That is fail-closed. An unattributed vector could have been written by anything, a model included, so lowering a severity on it would suppress a finding on evidence nobody vouched for, and the conservative outcome is to leave the asserted severity where it stands.
 
-The corpus reads the other way, and the gap is the point rather than a footnote. Those downgrades were taken under the older fail-open rule the working system ran at the time -- a known open finding, since closed in the re-expression -- which asked only whether the provenance began with the word derived and treated a missing label as authored. Under that rule, of the rows the branch downgraded, all but one carried no provenance field whatsoever and exactly one was labelled authored, so the reconciliation was mostly running on vectors whose origin nobody recorded. The module in `core/` would skip every one of those today. So the corpus figure describes the data under the rule that produced it, and the fail-closed behaviour describes the code you can run; both only ever lower, which is why the damage was bounded either way.
+The corpus reads the other way, and the gap is the point rather than a footnote. Those downgrades were taken under the older fail-open rule the working system ran at the time (a known open finding, since closed in the re-expression) which asked only whether the provenance began with the word derived and treated a missing label as authored. Under that rule, of the rows the branch downgraded, all but one carried no provenance field whatsoever and exactly one was labelled authored, so the reconciliation was mostly running on vectors whose origin nobody recorded. The module in `core/` would skip every one of those today. So the corpus figure describes the data under the rule that produced it, and the fail-closed behaviour describes the code you can run; both only ever lower, which is why the damage was bounded either way.
 
 Second, the semantic ruleset, which is the next section but one.
 
@@ -74,7 +73,7 @@ What the governor writes alongside the decision is the part I would keep if I ha
 
 Two honest limits, one of which chapter 02 already named and I am not going to quietly drop here. The governor sits behind environment switches, one for governance as a whole and one for the evidence ceiling specifically, both defaulting to on, and the whole pass no-ops when the first is off. A control with a documented off switch is a control, not a guarantee. And the record-count statistic looks like a coverage number and is not one: `124` findings in the corpus carry a governance record and `2864` do not, and the second figure is not a population that escaped governance. The mechanism is not, as I first wrote, that the record is only written on change: the governor builds that record on every call, and the write-time path stores it whether or not anything moved. Of the records in the corpus, better than a third carry an empty list of fired rules, meaning evaluated and left alone. What varies is which passes persist the row, not whether the record was produced. Coverage is established by a different pair, `206` scans governed of `206`. I published the misleading pair anyway, with a note on it, because the alternative is a reader reconstructing it wrongly from something else.
 
-## Evidence is the currency
+## Bind findings to captured evidence
 
 The grade is computed from what the row can prove, not from what it claims.
 
@@ -101,7 +100,7 @@ The exploit-output findings are worse and more instructive. Several of the cappe
 
 That is a tooling defect presenting as a severity decision, and the severity is not the broken part. Given a row with no exchange in it, medium is the honest band. The fix belongs upstream in the tools, and each of those cappings points at a capture path that somebody, meaning me, never wired up.
 
-## The only way up
+## Conditions for raising severity
 
 The verifier is the only thing in the system that can raise a severity, and it is a model.
 
@@ -123,14 +122,11 @@ Read the third and fourth rows, because that is where the honest version diverge
 
 Between the verdict call and the reconciliation call, a thin finding sits at the raised band in a live table the dashboard is polling. In the pipeline those two calls are adjacent, so the window is small, and a window that is small because of call ordering is not a window that is closed.
 
-[num-ok 2]
-The fix is one condition, in the branch that already has everything it needs. That branch has the finding row in hand, and the function that computes the evidence grade lives in the module the same function already imports from, and the CVSS vector is already being read one line further down. I patched it to require all three and re-ran the same five cases: the thin-evidence raise and the vectorless raise both stop raising and are recorded as needing review, and the fully-evidenced raise still goes through. That is a two-line change and it is not shipped.
+The fix is one condition, in the branch that already has everything it needs. That branch has the finding row in hand, and the function that computes the evidence grade lives in the module the same function already imports from, and the CVSS vector is already being read one line further down. I patched it to require all three and re-ran the same five cases: the thin-evidence raise and the vectorless raise both stop raising and are recorded as needing review, and the fully-evidenced raise still goes through. That is a two-line change and it is not shipped. [^num-2]
 
-[num-ok 3]
-What the corpus says about all this is modest and I would rather state it small. The verifier landed near the end of the window, so its operating history is a few weeks and not the whole corpus. In that time it recorded verdicts on a small set of findings, and exactly one of them raised a severity. That one carried moderate evidence, which is the floor the contract asks for.
+What the corpus says about all this is modest and I would rather state it small. The verifier landed near the end of the window, so its operating history is a few weeks and not the whole corpus. In that time it recorded verdicts on a small set of findings, and exactly one of them raised a severity. That one carried moderate evidence, which is the floor the contract asks for. [^num-3]
 
-[num-ok 4]
-One raise. That admits two readings and the data does not separate them: either the asymmetry is working as designed and raises are genuinely rare, or the raise path is decorative and nobody exercises it. I had written that the verifier issued plenty of downgrades over the same set and so was clearly awake, which is not what the verdicts say. Almost all of them were true-positive verdicts that changed no severity at all. That is a component agreeing with the existing severity nearly every time. It does not tell me whether raises are rare because the bar works or because nobody pushes on it, and I am leaving the question open rather than settling it with a number I rounded in my own favour.
+One raise. That admits two readings and the data does not separate them: either the asymmetry is working as designed and raises are genuinely rare, or the raise path is decorative and nobody exercises it. I had written that the verifier issued plenty of downgrades over the same set and so was clearly awake, which is not what the verdicts say. Almost all of them were true-positive verdicts that changed no severity at all. That is a component agreeing with the existing severity nearly every time. It does not tell me whether raises are rare because the bar works or because nobody pushes on it, and I am leaving the question open rather than settling it with a number I rounded in my own favour. [^num-4]
 
 ## The chains cannot be proved
 
@@ -140,11 +136,9 @@ An attack chain is the most valuable thing a report contains. Individual finding
 
 Every attack chain that reached the governor graded as thin evidence and was capped. Not most of them. All of them. The audit records `17` attack-chain changes, the corpus holds exactly that many chain findings, each entered at high, each left at medium, and the rule that moved every one was the evidence ceiling.
 
-[num-ok 5]
-That sentence needs a qualifier, and the qualifier is bigger than the sentence. Those are the chains that became findings, and there are `17` of them. The same corpus holds `210` chain objects that were written into the analysis store instead, never became findings, and were therefore never evaluated by anything. Out of `227` chains altogether, that is better than nine in ten which the governor never saw. The exact share is stored in the same block and I am not going to print it here: two counts that size do not support the decimals it carries.
+That sentence needs a qualifier, and the qualifier is bigger than the sentence. Those are the chains that became findings, and there are `17` of them. The same corpus holds `210` chain objects that were written into the analysis store instead, never became findings, and were therefore never evaluated by anything. Out of `227` chains altogether, that is better than nine in ten which the governor never saw. The exact share is stored in the same block and I am not going to print it here: two counts that size do not support the decimals it carries. [^num-5]
 
-[num-ok 6]
-Chain data of some kind turns up in `101` of the `206` scans in the corpus, which is a little under half of them. I first wrote that as "most", which it is not, in the paragraph whose job was to correct an over-claim. The universal above is true of the governed population and true of nothing wider, and I wrote the wider version first.
+Chain data of some kind turns up in `101` of the `206` scans in the corpus, which is a little under half of them. I first wrote that as "most", which it is not, in the paragraph whose job was to correct an over-claim. The universal above is true of the governed population and true of nothing wider, and I wrote the wider version first. [^num-6]
 
 The mechanism is unglamorous. The synthesis stage is handed the run's critical and high findings rendered one per line as severity, title and URL. It returns chain objects: a name, an ordered list of steps, an impact paragraph, and a list of references to what the chain builds on. The writer stores that object as the finding's raw data under a fixed severity. Then the grader goes looking for a request and a response inside it and finds a list of prose references instead.
 
@@ -156,8 +150,7 @@ The part that stings is where the evidence was sitting the whole time. Every one
 
 The cap is correct. I want to be unambiguous about that, because the tempting move is to carve out an exception for chains on the grounds that a chain is a different kind of object and the ceiling is unfair to it. That reasoning is how ceilings die. A chain that cannot show a single captured exchange is a narrative, and a narrative that reaches a client wearing a high severity is precisely the failure this chapter opened on.
 
-[num-ok 7]
-The synthesis is what is broken. The system generates its strongest claims through the one path in it that discards evidence, and then a control correctly refuses to let those claims outrank a header misconfiguration. Both halves of that sentence are working as designed and the combination is indefensible.
+The synthesis is what is broken. The system generates its strongest claims through the one path in it that discards evidence, and then a control correctly refuses to let those claims outrank a header misconfiguration. Both halves of that sentence are working as designed and the combination is indefensible. [^num-7]
 
 The fix has two parts and neither is hard. Put the finding identifier in the summary line the synthesizer reads, and require the chain schema to cite identifiers rather than prose. Then resolve those identifiers at write time and copy the constituent findings' captured exchanges into the chain's evidence before the row exists. After that a chain is graded on the evidence of its parts, which is the only grading of a chain that means anything, and a chain built from three thin findings stays capped, which is also correct.
 
@@ -178,7 +171,7 @@ The middle of the governor's three signals is a file of rules, and the file is t
 The natural thing is to remember it. Someone reviews a report, spots that the tokenization identifier the scanner flagged as a leaked secret is public by design, says so, and the severity comes down. Everyone involved now knows. The knowledge lives in the people who were in that conversation, gets applied when one of them happens to be reviewing, and leaves when they do.
 
 <!-- load_rules in core/severity_governor.py parses the JSON rules file and validates each rule; the three actions are the _ACTIONS tuple mark_fp, downgrade_to and cap_at -->
-The alternative is to write it as a rule with an identifier, a match block, an action, and the reason in prose. Three actions exist: mark false positive, downgrade to a band, cap at a band, with the cap allowed to differ between a production and a pre-production host, because the same public-by-design identifier is a different conversation on a live payment page. This file is JSON in the public repository -- `core/` is kept to the standard library, so no YAML parser is available to it -- and [`severity_governor.py:load_rules`](../core/severity_governor.py) parses it and refuses a rule with no id, an action it does not recognise, or a pattern that will not compile, rather than skipping the broken rule in silence. The rule then applies to every finding of that shape, forever, carrying its reason with it. When it turns out to be wrong there is a diff, with a date and a commit message, instead of an argument about what was decided.
+The alternative is to write it as a rule with an identifier, a match block, an action, and the reason in prose. Three actions exist: mark false positive, downgrade to a band, cap at a band, with the cap allowed to differ between a production and a pre-production host, because the same public-by-design identifier is a different conversation on a live payment page. This file is JSON in the public repository (`core/` is kept to the standard library, so no YAML parser is available to it) and [`severity_governor.py:load_rules`](../core/severity_governor.py) parses it and refuses a rule with no id, an action it does not recognise, or a pattern that will not compile, rather than skipping the broken rule in silence. The rule then applies to every finding of that shape, forever, carrying its reason with it. When it turns out to be wrong there is a diff, with a date and a commit message, instead of an argument about what was decided.
 
 <!-- resolve_environment in core/severity_governor.py is the host classifier this paragraph describes; it matches non-production markers on whole dot- or hyphen-delimited segments -->
 Which raises how the system knows which kind of host it is looking at, and the answer is a small piece of code I like more than its size warrants. [`severity_governor.py:resolve_environment`](../core/severity_governor.py) splits the hostname on dots and hyphens and asks whether any whole segment is a non-production marker, optionally prefixed with www and optionally carrying trailing digits. Whole segments, because the obvious substring version finds "sit" inside deposits, website, positions and visitor, and "test" inside latest. Five perfectly ordinary hostnames that a substring check would demote to test environments and cap a band below what they had earned, on the strength of a pattern that was almost right. The version in the code splits first and anchors the match, and gets all five correct. I checked, because a rule whose cap depends on the answer deserves better than my confidence in a regular expression.
@@ -187,7 +180,7 @@ The evidence that this is worth doing is the file's own history, and it does not
 
 That is the right failure mode for the most dangerous action in the system. A rule that marks a finding false positive removes it from every published count, and it does so silently, and the finding it removes might be the one that mattered. Three corrections to one rule reads to me as a control being watched rather than a control being wrong.
 
-In this corpus that action never fired. No finding in the whole governance pass was marked false positive; the non-false-positive population came out of the pass exactly as large as it went in. I do not read that as vindication. It is one corpus, and a rule that has never fired is a rule nobody has tested against real data. The factorial study in appendix E has since widened that corpus by 40 runs across two targets, and the count stayed where it was: 0 firings. Measured against a blinded adjudication, the false-positive suppression this system actually achieves comes from the verifier, not from this ruleset -- so the claim this chapter is allowed to make for these rules is severity governance, duplicate control and auditability, and the mark-false-positive action is a guarded emergency brake that field data has still never justified pulling.
+In this corpus that action never fired. No finding in the whole governance pass was marked false positive; the non-false-positive population came out of the pass exactly as large as it went in. I do not read that as vindication. It is one corpus, and a rule that has never fired is a rule nobody has tested against real data. The factorial study in appendix E has since widened that corpus by 40 runs across two targets, and the count stayed where it was: 0 firings. Measured against a blinded adjudication, the false-positive suppression this system actually achieves comes from the verifier, not from this ruleset. So the claim this chapter is allowed to make for these rules is severity governance, duplicate control and auditability, and the mark-false-positive action is a guarded emergency brake that field data has still never justified pulling.
 
 The obvious weakness is that these matches are regular expressions over titles, URLs and a concatenated blob of evidence text. That is brittle in the ordinary way. A rule keyed on a phrase in a login bounce page stops firing the day the application rewrites that page, and nothing announces it, and the false positives quietly come back. I would rather have brittle rules I can read than robust judgement I cannot, but those are the terms of the trade and they should be stated.
 
@@ -195,7 +188,7 @@ There is a second-order version of the same problem, and it caught me. The scrip
 
 The flagged half is the half that matters, and it is conservative on purpose. A finding type the list does not recognise is flagged. A false-positive mark is flagged unconditionally, regardless of type and regardless of whether severity moved. The attack chains are all in there, which is how I came to spend an afternoon on them. An audit that only flags what the author expected to be flagged has told you nothing you did not already believe.
 
-## Gravity points down
+## Risks of lowering severity
 
 The third law says severity falls by default and rises only against proof, and the consequence is that this system's failure mode is under-reporting.
 
@@ -223,18 +216,18 @@ The last cost is the one nobody warns you about. An honestly governed report loo
 
 ## Number annotations
 
-These notes were written inline in the handbook source beside the numbers they explain; the renderer collects them here and leaves a `[num-ok N]` marker at each point of use above.
+These notes were written inline in the handbook source beside the numbers they explain; each renders as a footnote at its point of use above.
 
-**[num-ok 1]** two rows is a spelled quantity counting a code artifact, used twice on this line for rows of the transition table immediately above: the two that leave critical, and the two that land on medium
+[^num-1]: two rows is a spelled quantity counting a code artifact, used twice on this line for rows of the transition table immediately above: the two that leave critical, and the two that land on medium
 
-**[num-ok 2]** one line is a spelled quantity counting a code artifact: the distance between two reads in the branch this paragraph patches, in the verifier this repository withholds rather than in core/
+[^num-2]: one line is a spelled quantity counting a code artifact: the distance between two reads in the branch this paragraph patches, in the verifier this repository withholds rather than in core/
 
-**[num-ok 3]** exactly one is a spelled quantity counting a corpus query rather than a published figure: the verifier verdicts that raised a severity, counted in the engagement database this repository does not carry, with no data/stats.json key behind it. No pattern in this gate reads it, which is the below-twenty exemption working as documented. The hedges beside it, a small set and a few weeks, assert no quantity on purpose
+[^num-3]: exactly one is a spelled quantity counting a corpus query rather than a published figure: the verifier verdicts that raised a severity, counted in the engagement database this repository does not carry, with no data/stats.json key behind it. No pattern in this gate reads it, which is the below-twenty exemption working as documented. The hedges beside it, a small set and a few weeks, assert no quantity on purpose
 
-**[num-ok 4]** One raise is the same spelled quantity as the paragraph above restated as a sentence: the single verifier verdict that raised a severity, from the same uncited corpus query, with no data/stats.json key behind it
+[^num-4]: One raise is the same spelled quantity as the paragraph above restated as a sentence: the single verifier verdict that raised a severity, from the same uncited corpus query, with no data/stats.json key behind it
 
-**[num-ok 5]** nine in ten is a spelled quantity, a worded ratio over published statistics: corpus.chains.ungoverned over corpus.chains.total in data/stats.json. The inequality behind the words is pinned in test_the_chain_populations_partition_the_total, and the exact share this paragraph declines to print is the ungoverned_share key in the same block
+[^num-5]: nine in ten is a spelled quantity, a worded ratio over published statistics: corpus.chains.ungoverned over corpus.chains.total in data/stats.json. The inequality behind the words is pinned in test_the_chain_populations_partition_the_total, and the exact share this paragraph declines to print is the ungoverned_share key in the same block
 
-**[num-ok 6]** a little under half of is a spelled quantity, a worded ratio over published statistics: corpus.chains.scans_with_chain_objects over corpus.scans.total in data/stats.json, pinned as a bounded fraction in test_scans_with_chain_data_are_a_little_under_half_the_corpus
+[^num-6]: a little under half of is a spelled quantity, a worded ratio over published statistics: corpus.chains.scans_with_chain_objects over corpus.scans.total in data/stats.json, pinned as a bounded fraction in test_scans_with_chain_data_are_a_little_under_half_the_corpus
 
-**[num-ok 7]** halves of is a spelled quantity used rhetorically: it names the two clauses of the sentence immediately before it and quantifies nothing
+[^num-7]: halves of is a spelled quantity used rhetorically: it names the two clauses of the sentence immediately before it and quantifies nothing

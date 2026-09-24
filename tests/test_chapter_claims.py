@@ -2306,7 +2306,7 @@ COST_HEADING = "## What it costs to build this"
 # The claim's locator and its scoping phrase, kept apart on purpose: the first
 # finds the README sentence whatever else is edited around it, the second is the
 # quantifier that has to survive.
-ADMISSION_CLAIM = "admitting what its control still gets wrong"
+ADMISSION_CLAIM = "a section on the control's costs and remaining gaps"
 ADMISSION_SCOPE = "after the first"
 # The subject the scope phrase modifies, which bounds it on the left.
 ADMISSION_SUBJECT = "Every chapter"
@@ -2332,12 +2332,12 @@ ADMISSION_SUBJECT = "Every chapter"
 # left open deliberately, not overlooked: closing it means pinning the whole
 # sentence here, and that only adds a third copy for a coordinated edit to
 # update.
-ADMISSION_CLAUSE = f"{ADMISSION_SUBJECT} {ADMISSION_SCOPE} ends by {ADMISSION_CLAIM}"
+ADMISSION_CLAUSE = f"{ADMISSION_SUBJECT} {ADMISSION_SCOPE} ends with {ADMISSION_CLAIM}"
 
 
 @chapter_claim(
     'README.md',
-    'Every chapter after the first ends by admitting what its control still gets wrong, and the honesty sections carry the measurements that show it.',
+    "Every chapter after the first ends with a section on the control's costs and remaining gaps.",
 )
 def test_every_chapter_after_the_first_ends_on_the_cost_admission():
     """The quantifier is the claim: "after the first", not "each".

@@ -82,7 +82,14 @@ VERIFIER_ABLATION_RECALL_FIELDS = frozenset({
     "significant", "note",
 })
 VERIFIER_ABLATION_RECALL_DEDUP_FIELDS = frozenset({
-    "metric", "FULL_median", "NOVERIFY_median", "test", "p_two_sided", "note",
+    "metric", "duplicate_pair", "FULL_median", "NOVERIFY_median", "test", "u",
+    "p_two_sided", "derivation", "note", "correction",
+})
+VERIFIER_ABLATION_DEDUP_PAIR_FIELDS = frozenset({
+    "ids", "condition", "not_to_be_confused_with",
+})
+VERIFIER_ABLATION_DEDUP_CORRECTION_FIELDS = frozenset({
+    "date", "changed", "reason", "authoritative_inputs",
 })
 VERIFIER_ABLATION_P2_FIELDS = frozenset({
     "metric", "FULL_runs", "NOVERIFY_runs", "FULL_total", "NOVERIFY_total",
@@ -273,6 +280,10 @@ def test_every_published_benchmark_aggregate_has_an_explicit_schema():
     assert set(ablation["blinded_precision"]) == VERIFIER_ABLATION_PRECISION_FIELDS
     assert set(ablation["recall"]) == VERIFIER_ABLATION_RECALL_FIELDS
     assert set(ablation["recall_dedup"]) == VERIFIER_ABLATION_RECALL_DEDUP_FIELDS
+    assert set(ablation["recall_dedup"]["duplicate_pair"]) == \
+        VERIFIER_ABLATION_DEDUP_PAIR_FIELDS
+    assert set(ablation["recall_dedup"]["correction"]) == \
+        VERIFIER_ABLATION_DEDUP_CORRECTION_FIELDS
     assert set(ablation["p2"]) == VERIFIER_ABLATION_P2_FIELDS
     assert set(ablation["mass_assignment_runs"]) == VERIFIER_ABLATION_MASS_ASSIGNMENT_FIELDS
     assert set(ablation["prompt_periods"]) == VERIFIER_ABLATION_PROMPT_PERIODS_FIELDS

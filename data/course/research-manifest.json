@@ -1,0 +1,45 @@
+{
+ "body": {
+  "code_revision": "committed-with-this-tree",
+  "controllers": [
+   {
+    "learn": false,
+    "name": "priority"
+   },
+   {
+    "learn": false,
+    "name": "legacy"
+   },
+   {
+    "learn": true,
+    "name": "linucb"
+   },
+   {
+    "label": "linucb-frozen",
+    "learn": false,
+    "name": "linucb"
+   },
+   {
+    "learn": false,
+    "name": "mb"
+   },
+   {
+    "learn": true,
+    "name": "mb-plastic"
+   }
+  ],
+  "feedback_weights": "feedback-v1",
+  "payout_threshold": 0.5,
+  "schema": "controller-research-manifest/v1",
+  "seeds": [
+   7
+  ],
+  "worlds": [
+   "steady-families",
+   "drifting-signal",
+   "delayed-credit",
+   "decoy-delay"
+  ]
+ },
+ "digest": "3cc0636b65ea2e25"
+}

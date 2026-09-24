@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" aria-labelledby="t d">
+<title id="t">The lifecycle's states and the one-way closure</title><desc id="d">A running plan can stop on budgets, gate, cancellation or no progress, with the remainder recorded as skips. An interruption checkpoints; resume folds the ledger back and an action without a recorded outcome comes back unresolved. Reconciliation settles it only on evidence; re-dispatch needs a declared idempotent tool; an action still unresolved is named in the gated finish's coverage rather than blocking it. Finish closes the run; abort closes it early from the running side; a closed run refuses every later effect, and there is no reopen.</desc>
+<rect x="0" y="0" width="720" height="470" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">Stop, recover, finish</text>
+<text x="40" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">when work may resume, and when a possible side effect must never repeat</text>
+<rect x="40" y="88" width="180" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="130" y="111" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">running</text>
+<text x="130" y="130" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">admitted per attempt</text>
+<rect x="270" y="88" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="360" y="111" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">checkpointed</text>
+<text x="360" y="130" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">the ledger, folded</text>
+<rect x="500" y="88" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="590" y="111" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">resumed</text>
+<text x="590" y="130" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">same write boundary</text>
+<line x1="220" y1="117" x2="266" y2="117" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 260 113 L 266 117 L 260 121" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="243" y="82" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">interrupt</text>
+<line x1="450" y1="117" x2="496" y2="117" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 490 113 L 496 117 L 490 121" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="473" y="82" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">fold back</text>
+<rect x="500" y="196" width="180" height="58" rx="8" fill="none" stroke="#d95926" stroke-width="1.5"/>
+<text x="590" y="219" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">unresolved</text>
+<text x="590" y="238" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">maybe it ran; prove it</text>
+<line x1="590" y1="146" x2="590" y2="192" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 586 186 L 590 192 L 594 186" fill="none" stroke="#898781" stroke-width="1.5"/>
+<rect x="270" y="196" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="360" y="219" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">reconciled</text>
+<text x="360" y="238" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">capture found: settled</text>
+<line x1="500" y1="225" x2="458" y2="225" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 460 221 L 454 225 L 460 229" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="360" y="274" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">no capture: stays unresolved;</text>
+<text x="360" y="290" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">re-dispatch only if declared idempotent</text>
+<rect x="40" y="196" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="130" y="219" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">stopped remainder</text>
+<text x="130" y="238" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">skips, reasons recorded</text>
+<line x1="130" y1="146" x2="130" y2="192" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 126 186 L 130 192 L 134 186" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="146" y="172" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">budget / gate / cancel</text>
+<rect x="40" y="330" width="300" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="190" y="353" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">finished</text>
+<text x="190" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">gated on complete accounting</text>
+<rect x="380" y="330" width="300" height="58" rx="8" fill="none" stroke="#d95926" stroke-width="1.5"/>
+<text x="530" y="353" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">aborted</text>
+<text x="530" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">the early close, reason kept</text>
+<line x1="130" y1="254" x2="130" y2="326" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 126 320 L 130 326 L 134 320" fill="none" stroke="#898781" stroke-width="1.5"/>
+<line x1="590" y1="254" x2="590" y2="276" stroke="#898781" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line x1="590" y1="276" x2="190" y2="276" stroke="#898781" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line x1="190" y1="276" x2="190" y2="326" stroke="#898781" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<path d="M 186 320 L 190 326 L 194 320" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="390" y="312" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">still unresolved: named in the finish's coverage</text>
+<line x1="60" y1="146" x2="60" y2="306" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="6 4"/>
+<line x1="60" y1="306" x2="430" y2="306" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="6 4"/>
+<line x1="430" y1="306" x2="430" y2="326" stroke="#898781" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="6 4"/>
+<path d="M 426 320 L 430 326 L 434 320" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="72" y="302" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">abort: the operator ends it early</text>
+<text x="40" y="430" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">finished and aborted are both closed: later effects are refused at the write boundary,</text>
+<text x="40" y="450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">closure survives resume, and continuing means a new run</text>
+</svg>

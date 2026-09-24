@@ -1,5 +1,7 @@
 # The determinism gradient
 
+If you came to build, start with [the build sequence](../docs/BUILD_ROADMAP.md): a course of executable lessons, each ending in a working component and a saved artifact. This chapter is the design argument behind those lessons, kept for the reader who wants to know why the controls exist before typing them in.
+
 For the recommended runnable teaching path, see [the harness lab](07-harness-lab.md). This chapter records the historical system and its design argument. The laws below retain that argument while distinguishing the controls to build from the defects the case study actually contains.
 
 Point a capable model at a host, hand it a toolbox, and tell it to run a penetration test. It will do something sensible. Run it again tomorrow against the same host and it will do something else sensible. Both runs find real things. Neither can be replayed, and neither can tell you why it skipped what the other one caught.
@@ -56,18 +58,15 @@ There is no clever code here. Mine is a markdown contract the orchestrator reads
 
 ## Layer 1: scoring, not deciding
 
-[num-ok 1]
-Once the target has been fingerprinted into a profile, which tools are worth running is arithmetic. Every tool in the catalogue carries a small record of scoring parameters and profile-match rules, [`tool_recommender.py:ToolRelevance`](../core/tool_recommender.py), and the score is one line:
+Once the target has been fingerprinted into a profile, which tools are worth running is arithmetic. Every tool in the catalogue carries a small record of scoring parameters and profile-match rules, [`tool_recommender.py:ToolRelevance`](../core/tool_recommender.py), and the score is one line: [^num-1]
 
 ```
 Score = (Base x Relevance x Impact) / Cost
 ```
 
-[num-ok 2]
-Base is the tool's inherent priority, Impact is the severity if it finds something, Cost is roughly how long it takes, and Relevance is a product of multipliers earned from conditions that hold on this profile. The tier thresholds are constants, [`tool_recommender.py:TIER_HIGH`](../core/tool_recommender.py) and its two siblings: 15 and above runs first, 8 and above runs if there is time, 3 and above only on a comprehensive pass, and anything below 3 is labelled SKIP. The tiers label a ranked list rather than filtering it: `recommend()` hands back the SKIP-tier tools too, and drops a tool only when its requirements fail or its score falls to zero.
+Base is the tool's inherent priority, Impact is the severity if it finds something, Cost is roughly how long it takes, and Relevance is a product of multipliers earned from conditions that hold on this profile. The tier thresholds are constants, [`tool_recommender.py:TIER_HIGH`](../core/tool_recommender.py) and its two siblings: 15 and above runs first, 8 and above runs if there is time, 3 and above only on a comprehensive pass, and anything below 3 is labelled SKIP. The tiers label a ranked list rather than filtering it: `recommend()` hands back the SKIP-tier tools too, and drops a tool only when its requirements fail or its score falls to zero. [^num-2]
 
-[num-ok 3]
-The interesting fields are the ones that keep tools out, and they come in two kinds. `requires` and `requires_any` are hard gates: fail one and the tool is dropped before it is ever scored. `penalizes` is soft, a multiplier applied to a tool that still runs. The SQL injection entry carries both, and its `mongodb` penalty of 0.1 can never fire: `requires_any` has already excluded MongoDB by the time that multiplier would apply, so the condition gets evaluated on every scoring pass and cannot come back true. A trimmed excerpt:
+The interesting fields are the ones that keep tools out, and they come in two kinds. `requires` and `requires_any` are hard gates: fail one and the tool is dropped before it is ever scored. `penalizes` is soft, a multiplier applied to a tool that still runs. The SQL injection entry carries both, and its `mongodb` penalty of 0.1 can never fire: `requires_any` has already excluded MongoDB by the time that multiplier would apply, so the condition gets evaluated on every scoring pass and cannot come back true. A trimmed excerpt: [^num-3]
 
 ```python
 "test_sqli": ToolRelevance(
@@ -89,8 +88,7 @@ The interesting fields are the ones that keep tools out, and they come in two ki
 )
 ```
 
-[num-ok 4]
-Run the reference implementation in `core/` against a PHP, Laravel, MySQL profile and the NoSQL injection tool never enters the ranked list at all. Its `requires` gate asks for `likely_database == 'mongodb'`, that is false on this profile, and the tool is dropped before scoring. The SQL injection tool is scored and present. Change those three fields to Node, Express, MongoDB and the exclusion reverses exactly: the NoSQL tool is scored, and the SQL injection tool is the one that never appears, because MongoDB is missing from its `requires_any` list. The profile decides which tools are in the conversation at all, before it decides their order.
+Run the reference implementation in `core/` against a PHP, Laravel, MySQL profile and the NoSQL injection tool never enters the ranked list at all. Its `requires` gate asks for `likely_database == 'mongodb'`, that is false on this profile, and the tool is dropped before scoring. The SQL injection tool is scored and present. Change those three fields to Node, Express, MongoDB and the exclusion reverses exactly: the NoSQL tool is scored, and the SQL injection tool is the one that never appears, because MongoDB is missing from its `requires_any` list. The profile decides which tools are in the conversation at all, before it decides their order. [^num-4]
 
 Say membership rather than order, because order is the weaker claim and I cannot stand behind it. Sweep every profile that satisfies the description I just gave you, varying only the fields that sentence leaves unsaid, and the SQL injection tool refuses to stay put. Sometimes first. Sometimes down in the medium tier behind the CORS and XXE checks, on a target with a WAF and no content-type hints, where the command injection tool costs half as much to run and takes no WAF penalty at all. Membership does not move. It is the property worth putting your name on, and the one a skeptic can falsify.
 
@@ -102,13 +100,11 @@ Detection confidence is folded in rather than ignored, [`tool_recommender.py:_fi
 
 Layer 1 knows what the target looks like. It knows nothing about what has worked before. That is [`scheduler.py:adjust`](../core/scheduler.py), which takes the ranked list from Layer 1 and multiplies it by history along several independent axes.
 
-[num-ok 5]
-Fatigue is the simplest. A tool that keeps failing decays at `0.8 ** consecutive_failures`, floored at 0.3 so nothing is ever permanently dead. Aggressive mode switches fatigue off, on the argument that when you have explicitly asked for thoroughness you do not want productive tools soft-capped by a bad streak.
+Fatigue is the simplest. A tool that keeps failing decays at `0.8 ** consecutive_failures`, floored at 0.3 so nothing is ever permanently dead. Aggressive mode switches fatigue off, on the argument that when you have explicitly asked for thoroughness you do not want productive tools soft-capped by a bad streak. [^num-5]
 
 Contextual success rates are the axis I get the most out of in practice. Rather than one global success rate per tool, the scheduler keys its statistics by a compact profile hash, [`fingerprint.py:profile_hash`](../core/fingerprint.py), of the form `php:mysql:waf:cloudflare:rest:laravel`. Tool performance is contextual. An injection tool that lands constantly on PHP and MySQL tells you almost nothing about how it will do on Node and MongoDB, and a single blended average destroys exactly that signal. When the exact hash has no data behind it, similarity matching over the components carries a partial answer across, [`fingerprint.py:hash_similarity`](../core/fingerprint.py), weighted so that backend language and database dominate the comparison.
 
-[num-ok 6]
-Correlations are the third axis. When two tools keep succeeding on the same URL, a hit from one raises the other, at a threshold of 0.4 and only after enough observations that the ratio means something.
+Correlations are the third axis. When two tools keep succeeding on the same URL, a hit from one raises the other, at a threshold of 0.4 and only after enough observations that the ratio means something. [^num-6]
 
 Calling any of this learning oversells it. There is no gradient and no model anywhere in it, just counters in a JSON file and arithmetic over them. Same history, same answer, and you can open the file and read why. A prior you cannot inspect is a hunch with better manners.
 
@@ -116,13 +112,11 @@ Calling any of this learning oversells it. There is no gradient and no model any
 
 After a fixed sequence and two layers of arithmetic, what remains genuinely is not derivable, and it happens to be the part worth paying for.
 
-[num-ok 7]
-Which endpoints in a minified bundle look like they touch other people's data. Whether an information leak in one place and a weak identifier in another compose into something worse than either alone. Given a response that reads as an authentication bypass, is it one, or is it the single-page application's catch-all route politely handing back its index shell with a 200? And the judgement the whole report rests on, asked of each finding in the exact shape it took on this target: is it real?
+Which endpoints in a minified bundle look like they touch other people's data. Whether an information leak in one place and a weak identifier in another compose into something worse than either alone. Given a response that reads as an authentication bypass, is it one, or is it the single-page application's catch-all route politely handing back its index shell with a 200? And the judgement the whole report rests on, asked of each finding in the exact shape it took on this target: is it real? [^num-7]
 
 Those are judgements. Pattern matching does them badly and a competent model does them well enough to be worth both the cost and the variance.
 
-[num-ok 8]
-The intended boundary is strict: a proposed tool call passes schema validation and a repair loop before an executor will look at it, [`llm_control.py:ToolCallValidator`](../core/llm_control.py), and admitted executions are recorded. An invented endpoint may return 404, a login page or a catch-all application shell. None of those responses becomes proof merely because it was captured. A claim about something already observed needs a quote from its own artifact, then a separate check of what that quote supports. The historical severity endpoint checks a quote for a raise; the authored score requested by its contract is not enforced, as chapter 03 shows. The boundary is the design, and the following exceptions are why its enforcement has to be tested.
+The intended boundary is strict: a proposed tool call passes schema validation and a repair loop before an executor will look at it, [`llm_control.py:ToolCallValidator`](../core/llm_control.py), and admitted executions are recorded. An invented endpoint may return 404, a login page or a catch-all application shell. None of those responses becomes proof merely because it was captured. A claim about something already observed needs a quote from its own artifact, then a separate check of what that quote supports. The historical severity endpoint checks a quote for a raise; the authored score requested by its contract is not enforced, as chapter 03 shows. The boundary is the design, and the following exceptions are why its enforcement has to be tested. [^num-8]
 
 On the agent-driven path three of those conditions hold by the orchestrator's good behaviour rather than by construction. It has a terminal outside the tool surface, so nothing physically stops it reaching the target off the record. The write path carries a subcommand that stores a finding, so an assertion can become a row without a tool having run. And the quote test has an escape hatch that keeps one item per batch and a channel by which a caller supplies its own score. Chapter 02 takes all three apart. The severity condition is the one that is not path-dependent, and chapter 03 tests it, kill switches and all.
 
@@ -140,7 +134,7 @@ This is one system's argument drawn from one corpus. It is not a controlled stud
 
 The corpus, exactly. `206` scans against `104` distinct hosts, across `7259` tool executions, between `2026-05-06` and `2026-08-18`. Read the first of those figures as scans attempted, not scans that finished: `39` of them failed outright and `3` were killed. The scans produced `2988` stored findings, `2869` of which survived false-positive review, and `1961` of those survivors are informational severity, so the majority of what cleared review is not a vulnerability anyone will act on. What is left of it went to real targets in real engagements, in reports people did act on.
 
-What that supports is a claim about operation. A system built this way ran at that scale, stayed in scope, and produced findings that survived review. What it could not support, when this chapter was first written, was a comparison, because there was no arm of it where the controls were switched off. Two of those arms have since been run as pre-registered studies on lab targets: appendix D ablates the verifier-and-acceptance stage as a package, and appendix E pulls the package apart and throws each switch independently. What they measured obeys the discount this section asks for, in both directions. The verification stage changes what a run ships -- pre-report suppression and blinded precision move with the model verifier, replicated across both studies -- and the deterministic acceptance layer behind it marked 0 false positives in 40 runs, so the cleaner-report effect belongs to the verifier, not to the ruleset this book spends chapters on; the ruleset's measured place is severity governance, duplicate control and auditability. The scheduler and ranking layers still carry their ablation flags unexercised, [`scheduler.py:HARNESS_SCHEDULER_ENABLED`](../core/scheduler.py) among them -- the study that would use them has not been run, chapter 05 gives the mundane reason, and for those layers the thesis remains argued, not measured, with the discount applied in full.
+What that supports is a claim about operation. A system built this way ran at that scale, stayed in scope, and produced findings that survived review. What it could not support, when this chapter was first written, was a comparison, because there was no arm of it where the controls were switched off. Two of those arms have since been run as pre-registered studies on lab targets: appendix D ablates the verifier-and-acceptance stage as a package, and appendix E pulls the package apart and throws each switch independently. What they measured obeys the discount this section asks for, in both directions. The verification stage changes what a run ships (pre-report suppression and blinded precision move with the model verifier, replicated across both studies) and the deterministic acceptance layer behind it marked 0 false positives in 40 runs, so the cleaner-report effect belongs to the verifier, not to the ruleset this book spends chapters on; the ruleset's measured place is severity governance, duplicate control and auditability. The scheduler and ranking layers still carry their ablation flags unexercised, [`scheduler.py:HARNESS_SCHEDULER_ENABLED`](../core/scheduler.py) among them: the study that would use them has not been run, chapter 05 gives the mundane reason, and for those layers the thesis remains argued, not measured, with the discount applied in full. That "has not been run" is a dated claim, not a standing one: [the evidence register](appendix-f-evidence-register.md) carries it with a register date, beside the execution, analysis and review status of every other study this book leans on.
 
 The selected public-target aggregate has an `n` of `1`. One author-recorded run. Chapter 05 reports its numbers, the two runs excluded from it, and why one of those exclusions is better justified than the other. The repository does not carry the raw findings, ground truth or matcher needed to reproduce its labels, so it is not presented as a benchmark result.
 
@@ -150,8 +144,7 @@ I did not enjoy writing this section and I think it is the most useful one in th
 
 These five sentences are the spine of everything that follows. Each is design intent, and the chapter named at the end of a law is where this system is held against it: which parts hold by construction, which hold on only one of the two orchestration paths, which hold on the orchestrator's good behaviour, and which do not hold yet.
 
-[num-ok 9]
-1. **The model proposes; deterministic code disposes.** Give the model a proposal interface, not direct access to the target, raw storage or the last word on severity. Deterministic code validates, executes and records admitted work. The historical system does not enforce that boundary everywhere: both orchestrators can reach a shell, and its write path carries a subcommand that stores a finding without an execution. An invented endpoint might return 404, a login page or an application shell; record the response and judge the claim separately. A shared writer is not a sandbox. Chapters 01 and 02.
+1. **The model proposes; deterministic code disposes.** Give the model a proposal interface, not direct access to the target, raw storage or the last word on severity. Deterministic code validates, executes and records admitted work. The historical system does not enforce that boundary everywhere: both orchestrators can reach a shell, and its write path carries a subcommand that stores a finding without an execution. An invented endpoint might return 404, a login page or an application shell; record the response and judge the claim separately. A shared writer is not a sandbox. Chapters 01 and 02. [^num-9]
 
 2. **Claims about the past must quote. Proposals about the future must execute.** These are different kinds of statement and they need different gates. A claim about something already observed must cite its own capture; a matching quote establishes citation integrity, not that the conclusion is true. The historical gate leaks: it keeps an item per batch even if none passes, and on one orchestration path a caller-supplied confidence can stand in for the check. A proposed test cannot be validated by quoting an observation it has not made. It may run only after authorization, scope, gate and budget checks permit it, and its outcome still needs interpretation. The law is not permission to execute every proposal. Chapter 02.
 
@@ -171,22 +164,22 @@ One request, and it is the point of every honesty section in this handbook. If y
 
 ## Number annotations
 
-These notes were written inline in the handbook source beside the numbers they explain; the renderer collects them here and leaves a `[num-ok N]` marker at each point of use above.
+These notes were written inline in the handbook source beside the numbers they explain; each renders as a footnote at its point of use above.
 
-**[num-ok 1]** one line is a spelled quantity counting a code artifact: the score expression the formula below transcribes is a single statement in core/tool_recommender.py
+[^num-1]: one line is a spelled quantity counting a code artifact: the score expression the formula below transcribes is a single statement in core/tool_recommender.py
 
-**[num-ok 2]** 15, 8 and 3 are TIER_HIGH, TIER_MEDIUM and TIER_LOW, module-level literals in core/tool_recommender.py that this sentence quotes directly; they are cutoffs written into the code, not counts of anything observed
+[^num-2]: 15, 8 and 3 are TIER_HIGH, TIER_MEDIUM and TIER_LOW, module-level literals in core/tool_recommender.py that this sentence quotes directly; they are cutoffs written into the code, not counts of anything observed
 
-**[num-ok 3]** 0.1 is the mongodb entry in this tool's penalizes map in core/tool_recommender.py, a multiplier written into the catalogue by hand, not a rate measured from anything
+[^num-3]: 0.1 is the mongodb entry in this tool's penalizes map in core/tool_recommender.py, a multiplier written into the catalogue by hand, not a rate measured from anything
 
-**[num-ok 4]** three fields is a spelled quantity counting a code artifact: the profile attributes this sentence changes, PHP/Laravel/MySQL to Node/Express/MongoDB, each of them named in the sentence itself. The membership gates that reverse read only likely_database, in the catalogue entries core/tool_recommender.py holds for these two tools
+[^num-4]: three fields is a spelled quantity counting a code artifact: the profile attributes this sentence changes, PHP/Laravel/MySQL to Node/Express/MongoDB, each of them named in the sentence itself. The membership gates that reverse read only likely_database, in the catalogue entries core/tool_recommender.py holds for these two tools
 
-**[num-ok 5]** 0.3 is FATIGUE_FLOOR in core/scheduler.py, the literal floor the fatigue multiplier is clamped to, quoted from the code path this paragraph describes
+[^num-5]: 0.3 is FATIGUE_FLOOR in core/scheduler.py, the literal floor the fatigue multiplier is clamped to, quoted from the code path this paragraph describes
 
-**[num-ok 6]** 0.4 is CORRELATION_THRESHOLD in core/scheduler.py, the literal rate a correlation must reach before the scheduler acts on it
+[^num-6]: 0.4 is CORRELATION_THRESHOLD in core/scheduler.py, the literal rate a correlation must reach before the scheduler acts on it
 
-**[num-ok 7]** 200 is the HTTP status code for OK, a protocol constant naming the response a catch-all SPA route returns; it identifies a response, it does not count one. "one place" on the same line contrasts two locations in a target's surface and counts nothing in the code
+[^num-7]: 200 is the HTTP status code for OK, a protocol constant naming the response a catch-all SPA route returns; it identifies a response, it does not count one. "one place" on the same line contrasts two locations in a target's surface and counts nothing in the code
 
-**[num-ok 8]** 404 is the HTTP status code for Not Found, one possible response to an invented endpoint, not a guaranteed outcome
+[^num-8]: 404 is the HTTP status code for Not Found, one possible response to an invented endpoint, not a guaranteed outcome
 
-**[num-ok 9]** 404 is the HTTP status code for Not Found, the same protocol constant used in the Layer 3 section above, restated here in the law it illustrates
+[^num-9]: 404 is the HTTP status code for Not Found, the same protocol constant used in the Layer 3 section above, restated here in the law it illustrates

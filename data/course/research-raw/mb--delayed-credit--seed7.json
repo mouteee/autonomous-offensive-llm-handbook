@@ -1,0 +1,374 @@
+{
+ "body_digest": "212b04b69bffff95",
+ "condition": {
+  "learn": false,
+  "name": "mb",
+  "seed": 7,
+  "world": "delayed-credit"
+ },
+ "manifest_digest": "3cc0636b65ea2e25",
+ "schema": "controller-research-raw/v1",
+ "total_reward": 26.878614,
+ "trace": [
+  {
+   "cum": 0.63017,
+   "family": "fam-inject",
+   "reward": 0.63017,
+   "step": 0
+  },
+  {
+   "cum": 1.337346,
+   "family": "fam-inject",
+   "reward": 0.707176,
+   "step": 1
+  },
+  {
+   "cum": 2.038833,
+   "family": "fam-inject",
+   "reward": 0.701487,
+   "step": 2
+  },
+  {
+   "cum": 2.156976,
+   "family": "fam-recon",
+   "reward": 0.118143,
+   "step": 3
+  },
+  {
+   "cum": 2.281736,
+   "family": "fam-recon",
+   "reward": 0.12476,
+   "step": 4
+  },
+  {
+   "cum": 2.571278,
+   "family": "fam-recon",
+   "reward": 0.289542,
+   "step": 5
+  },
+  {
+   "cum": 2.986699,
+   "family": "fam-authz",
+   "reward": 0.415421,
+   "step": 6
+  },
+  {
+   "cum": 3.296016,
+   "family": "fam-authz",
+   "reward": 0.309317,
+   "step": 7
+  },
+  {
+   "cum": 3.624867,
+   "family": "fam-authz",
+   "reward": 0.328851,
+   "step": 8
+  },
+  {
+   "cum": 4.261012,
+   "family": "fam-inject",
+   "reward": 0.636145,
+   "step": 9
+  },
+  {
+   "cum": 4.935492,
+   "family": "fam-inject",
+   "reward": 0.67448,
+   "step": 10
+  },
+  {
+   "cum": 5.547412,
+   "family": "fam-inject",
+   "reward": 0.61192,
+   "step": 11
+  },
+  {
+   "cum": 5.710241,
+   "family": "fam-recon",
+   "reward": 0.162829,
+   "step": 12
+  },
+  {
+   "cum": 5.870194,
+   "family": "fam-recon",
+   "reward": 0.159953,
+   "step": 13
+  },
+  {
+   "cum": 6.019013,
+   "family": "fam-recon",
+   "reward": 0.148819,
+   "step": 14
+  },
+  {
+   "cum": 6.29404,
+   "family": "fam-recon",
+   "reward": 0.275027,
+   "step": 15
+  },
+  {
+   "cum": 6.739929,
+   "family": "fam-authz",
+   "reward": 0.445889,
+   "step": 16
+  },
+  {
+   "cum": 7.063542,
+   "family": "fam-authz",
+   "reward": 0.323613,
+   "step": 17
+  },
+  {
+   "cum": 7.761335,
+   "family": "fam-inject",
+   "reward": 0.697793,
+   "step": 18
+  },
+  {
+   "cum": 8.514249,
+   "family": "fam-inject",
+   "reward": 0.752914,
+   "step": 19
+  },
+  {
+   "cum": 9.176999,
+   "family": "fam-inject",
+   "reward": 0.66275,
+   "step": 20
+  },
+  {
+   "cum": 9.892978,
+   "family": "fam-inject",
+   "reward": 0.715979,
+   "step": 21
+  },
+  {
+   "cum": 10.681914,
+   "family": "fam-inject",
+   "reward": 0.788936,
+   "step": 22
+  },
+  {
+   "cum": 10.922212,
+   "family": "fam-recon",
+   "reward": 0.240298,
+   "step": 23
+  },
+  {
+   "cum": 11.186597,
+   "family": "fam-recon",
+   "reward": 0.264385,
+   "step": 24
+  },
+  {
+   "cum": 11.420328,
+   "family": "fam-recon",
+   "reward": 0.233731,
+   "step": 25
+  },
+  {
+   "cum": 11.724841,
+   "family": "fam-authz",
+   "reward": 0.304513,
+   "step": 26
+  },
+  {
+   "cum": 12.04826,
+   "family": "fam-authz",
+   "reward": 0.323419,
+   "step": 27
+  },
+  {
+   "cum": 12.374128,
+   "family": "fam-authz",
+   "reward": 0.325868,
+   "step": 28
+  },
+  {
+   "cum": 12.990244,
+   "family": "fam-inject",
+   "reward": 0.616116,
+   "step": 29
+  },
+  {
+   "cum": 13.766921,
+   "family": "fam-inject",
+   "reward": 0.776677,
+   "step": 30
+  },
+  {
+   "cum": 14.422605,
+   "family": "fam-inject",
+   "reward": 0.655684,
+   "step": 31
+  },
+  {
+   "cum": 15.199444,
+   "family": "fam-inject",
+   "reward": 0.776839,
+   "step": 32
+  },
+  {
+   "cum": 15.345835,
+   "family": "fam-recon",
+   "reward": 0.146391,
+   "step": 33
+  },
+  {
+   "cum": 15.56366,
+   "family": "fam-recon",
+   "reward": 0.217825,
+   "step": 34
+  },
+  {
+   "cum": 15.747449,
+   "family": "fam-recon",
+   "reward": 0.183789,
+   "step": 35
+  },
+  {
+   "cum": 16.1213,
+   "family": "fam-authz",
+   "reward": 0.373851,
+   "step": 36
+  },
+  {
+   "cum": 16.559399,
+   "family": "fam-authz",
+   "reward": 0.438099,
+   "step": 37
+  },
+  {
+   "cum": 16.994639,
+   "family": "fam-authz",
+   "reward": 0.43524,
+   "step": 38
+  },
+  {
+   "cum": 17.769542,
+   "family": "fam-inject",
+   "reward": 0.774903,
+   "step": 39
+  },
+  {
+   "cum": 18.449338,
+   "family": "fam-inject",
+   "reward": 0.679796,
+   "step": 40
+  },
+  {
+   "cum": 19.061788,
+   "family": "fam-inject",
+   "reward": 0.61245,
+   "step": 41
+  },
+  {
+   "cum": 19.229799,
+   "family": "fam-recon",
+   "reward": 0.168011,
+   "step": 42
+  },
+  {
+   "cum": 19.360052,
+   "family": "fam-recon",
+   "reward": 0.130253,
+   "step": 43
+  },
+  {
+   "cum": 19.465152,
+   "family": "fam-recon",
+   "reward": 0.1051,
+   "step": 44
+  },
+  {
+   "cum": 19.594862,
+   "family": "fam-recon",
+   "reward": 0.12971,
+   "step": 45
+  },
+  {
+   "cum": 20.26434,
+   "family": "fam-inject",
+   "reward": 0.669478,
+   "step": 46
+  },
+  {
+   "cum": 21.034127,
+   "family": "fam-inject",
+   "reward": 0.769787,
+   "step": 47
+  },
+  {
+   "cum": 21.730894,
+   "family": "fam-inject",
+   "reward": 0.696767,
+   "step": 48
+  },
+  {
+   "cum": 22.051332,
+   "family": "fam-authz",
+   "reward": 0.320438,
+   "step": 49
+  },
+  {
+   "cum": 22.517103,
+   "family": "fam-authz",
+   "reward": 0.465771,
+   "step": 50
+  },
+  {
+   "cum": 23.0073,
+   "family": "fam-authz",
+   "reward": 0.490197,
+   "step": 51
+  },
+  {
+   "cum": 23.415934,
+   "family": "fam-authz",
+   "reward": 0.408634,
+   "step": 52
+  },
+  {
+   "cum": 23.655173,
+   "family": "fam-recon",
+   "reward": 0.239239,
+   "step": 53
+  },
+  {
+   "cum": 23.788581,
+   "family": "fam-recon",
+   "reward": 0.133408,
+   "step": 54
+  },
+  {
+   "cum": 24.044392,
+   "family": "fam-recon",
+   "reward": 0.255811,
+   "step": 55
+  },
+  {
+   "cum": 24.689,
+   "family": "fam-inject",
+   "reward": 0.644608,
+   "step": 56
+  },
+  {
+   "cum": 25.459526,
+   "family": "fam-inject",
+   "reward": 0.770526,
+   "step": 57
+  },
+  {
+   "cum": 26.207501,
+   "family": "fam-inject",
+   "reward": 0.747975,
+   "step": 58
+  },
+  {
+   "cum": 26.878614,
+   "family": "fam-inject",
+   "reward": 0.671113,
+   "step": 59
+  }
+ ]
+}

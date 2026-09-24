@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 336" width="720" height="336" role="img" aria-labelledby="t d">
+<title id="t">Delayed credit over decaying traces</title><desc id="d">Selection A lays traces for family A; selection B decays them and lays its own; when A's reward finally arrives, the update applies to every trace still alive -- A's, now smaller, and B's, fresh. Shared traces are the mechanism and the interference, both on purpose and both visible in the ledger.</desc>
+<rect x="0" y="0" width="720" height="336" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">Two selections, one late reward</text>
+<line x1="60" y1="96" x2="660" y2="96" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<circle cx="120" cy="96" r="5" fill="#52c78d"/>
+<text x="120" y="82" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="normal">select A</text>
+<circle cx="330" cy="96" r="5" fill="#52c78d"/>
+<text x="330" y="82" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="normal">select B</text>
+<circle cx="560" cy="96" r="5" fill="#d95926"/>
+<text x="560" y="82" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="normal">reward for A arrives</text>
+<text x="120" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">traces(A) = 1.0</text>
+<text x="330" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">traces(A) decay to 0.8;</text>
+<text x="330" y="136" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">traces(B) = 1.0</text>
+<text x="560" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">update touches A at 0.8</text>
+<text x="560" y="136" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">and B at 1.0</text>
+<text x="40" y="196" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">w &lt;- clip(w + eta * modulation * eligibility):</text>
+<text x="40" y="216" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">the late reward still finds A's smaller trace, and also credits B's --</text>
+<text x="40" y="236" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">the intentional interference lesson 13 measures instead of hiding</text>
+<text x="40" y="272" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">shadow selections lay no trace and tick no clock; an unexecuted selection leaves only a decaying trace</text>
+<text x="40" y="320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">numbers here are the lesson's toy constants, not measurements</text>
+</svg>

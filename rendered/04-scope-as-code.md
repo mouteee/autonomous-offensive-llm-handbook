@@ -34,7 +34,7 @@ That return value is carrying more than it looks like it is. A refusal that is a
 
 Chapters 01, 02 and 03 each made this admission about their own subject; here the guard has since landed. [`scope_guard.py:ScopeGuard`](../core/scope_guard.py) ships in `core/`, so what follows is behaviour I ran against fictional hosts out of a scratch copy of it. It is the one part of this chapter that is code you can run: the crawler's separate check below, and the bundle miner two sections on, stay in the working system.
 
-## Where the fact stops being a fact
+## Limits of scope checking
 
 Three ways the answer is wrong, and I found all three by writing the sentence I wanted to publish and then trying to break it.
 
@@ -80,7 +80,7 @@ The value of that is easiest to see from the receiving end. Handed a report with
 
 The limit is the familiar one. On the fan-out path, where one scan spreads across many hosts, the ledger is built by the orchestrating agent following a markdown contract and persisted through the analysis store. That is convention, the same species as chapter 01's stage machine and chapter 02's agent-path waist: an instruction that works in practice, enforced by an agent that has generally done what it was told. The skip the executor performs is code and returns a reason. The ledger of hosts is prose that has been reliable so far. Those are different properties, and a report cannot tell them apart.
 
-## The floor
+## Actions requiring operator approval
 
 Some things need a human regardless of what any scope declaration says.
 
@@ -88,8 +88,7 @@ Denial of service, load and stress testing. Destructive actions: deleting data, 
 
 That list is not a smaller scope. It is a different axis. Scope answers whom you may touch; the floor answers what you may do to them, and an authorised host does not authorise you to take it down or empty its database. The two get conflated constantly, usually by an authorisation letter that grants a domain and says nothing about behaviour, and the conflation is comfortable because it lets everyone skip the harder conversation.
 
-[num-ok 1]
-I do not want that list automated, and this is the one place in the handbook where I argue against a function. Whether a load test is acceptable depends on the target being in its quiet window, on whether the environment shares infrastructure with production, on whether the account you are about to lock belongs to a real customer, and on whether somebody is on call. None of those facts are in the system. A function that returned a boolean here would be returning a confident answer to a question it cannot see the inputs for, which is worse than a pause.
+I do not want that list automated, and this is the one place in the handbook where I argue against a function. Whether a load test is acceptable depends on the target being in its quiet window, on whether the environment shares infrastructure with production, on whether the account you are about to lock belongs to a real customer, and on whether somebody is on call. None of those facts are in the system. A function that returned a boolean here would be returning a confident answer to a question it cannot see the inputs for, which is worse than a pause. [^num-1]
 
 What I will not do is dress that up as a control. Nothing in the executor refuses a tool call for being destructive; its only pre-execution refusal is the scope one. The nearest thing in the code is a program-brief mechanism that disables named tools when a bug-bounty programme excludes a class, plus a rate limiter that backs off when the target starts complaining. The rate limiter is politeness. Neither is authorisation. What actually holds the floor is the operator, plus the instructions the orchestrator reads at the start of a run, and I have no measurement of how often either has been tested.
 
@@ -103,15 +102,13 @@ A scoping gap in the author's retained account, not an independently reproducibl
 
 Running the miner over a synthetic bundle shows how a host reaches that position. The miner keeps a quoted string when the string starts with a slash, which is a decent test for a path and admits one shape that is not a path: a protocol-relative URL, `//geo.vendor.example/v1/city`, the form that leaves the scheme off and lets the browser fill it in. An absolute URL carrying `https://` is not picked up at all, in either the config-object form or the fetch-call form, and neither is a bare hostname with no leading slash. Whatever survives that filter then has a base prefixed to it, taken from the bundle's own declared API base, or from observed traffic, or from a seed list whose first entry is `/api`. Only the first candidate is probed. The probe URL is that candidate with leading slashes stripped, joined onto the scan target's scheme and host, and it comes out as a request to the target with the vendor's name in the path, which is the shape the retained account describes.
 
-[num-ok 2]
-No packet left the target for anybody. All three rows record a request to the target's own host and port, and the two genuine third-party hosts appear inside the path of those requests rather than in front of them. What the run produced is an artifact that names other people's infrastructure in a finding title. That is embarrassing and it is not a trespass.
+No packet left the target for anybody. All three rows record a request to the target's own host and port, and the two genuine third-party hosts appear inside the path of those requests rather than in front of them. What the run produced is an artifact that names other people's infrastructure in a finding title. That is embarrassing and it is not a trespass. [^num-2]
 
 Two separate things kept those requests on the target, and I first credited the wrong one, in a sentence saying the leading-slash strip was the only reason. Replay the shape the rows actually carry, a protocol-relative host sitting under the `/api` base, and it lands on the target either way: `/api//geo.vendor.example/v1/city` resolves to the target with the strip and to the target without it, because the base in front means the string no longer opens with two slashes and the join has nothing to read as a network-path reference. The base prefix is the guard that fired here. The disconfirming row was sitting in my own replay output, next to the row I generalised from.
 
 The strip is load-bearing in a narrower case: when the candidate reaches the join bare. That case is reachable rather than theoretical. When the run has observed a request whose path matches one the miner recovered, the resolved base comes out empty, the candidate stays `//geo.vendor.example/v1/city`, and with the strip removed the probe resolves to that host instead of the target.
 
-[num-ok 3]
-And neither guard applies when the bundle declares its API base as an absolute URL, which the rule that reads those bases accepts. Then the candidate is itself an absolute URL, stripping leading slashes does nothing to a string that opens with a scheme, and the join hands it back unchanged. The probe leaves the target host. So the tidy sentence I wanted, that the miner cannot go off-host, is false. The true one is smaller: a bare protocol-relative candidate is held on the target by one line of string handling, and a declared absolute base is held by nothing at all. How often bundles declare one I have not measured.
+And neither guard applies when the bundle declares its API base as an absolute URL, which the rule that reads those bases accepts. Then the candidate is itself an absolute URL, stripping leading slashes does nothing to a string that opens with a scheme, and the join hands it back unchanged. The probe leaves the target host. So the tidy sentence I wanted, that the miner cannot go off-host, is false. The true one is smaller: a bare protocol-relative candidate is held on the target by one line of string handling, and a declared absolute base is held by nothing at all. How often bundles declare one I have not measured. [^num-3]
 
 And the scope function was not involved in any of it. It runs at the tool boundary, against the target the tool was called with, and the tool in question was called with the target: the in-scope host, correctly admitted. Every probe that tool then fired at a reconstructed endpoint went out without anyone asking the question a second time. The crawler is the one component that asks again, with the narrower rule from three sections back, and the crawler was not in this path. A boolean asked once at the top of a tool does not govern the requests the tool goes on to make.
 
@@ -133,10 +130,10 @@ And the floor costs you the unattended runs you wanted. A pipeline that stops an
 
 ## Number annotations
 
-These notes were written inline in the handbook source beside the numbers they explain; the renderer collects them here and leaves a `[num-ok N]` marker at each point of use above.
+These notes were written inline in the handbook source beside the numbers they explain; each renders as a footnote at its point of use above.
 
-**[num-ok 1]** one place is a spelled quantity counting a position in this handbook's own argument rather than anything in the code, which is what the sentence itself says it is
+[^num-1]: one place is a spelled quantity counting a position in this handbook's own argument rather than anything in the code, which is what the sentence itself says it is
 
-**[num-ok 2]** three rows is a spelled quantity counting a code artifact: the three findings this section counts out of the run's reported false positives, each of them described individually above
+[^num-2]: three rows is a spelled quantity counting a code artifact: the three findings this section counts out of the run's reported false positives, each of them described individually above
 
-**[num-ok 3]** one line is a spelled quantity counting a code artifact: the single line of string handling this sentence names, in the bundle miner this repository withholds rather than in core/
+[^num-3]: one line is a spelled quantity counting a code artifact: the single line of string handling this sentence names, in the bundle miner this repository withholds rather than in core/

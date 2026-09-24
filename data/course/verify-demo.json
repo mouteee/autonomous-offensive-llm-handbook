@@ -1,0 +1,723 @@
+{
+ "consolidation": [
+  {
+   "absorbed_ids": [
+    "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0"
+   ],
+   "affected_hosts": [
+    "lab-three.example",
+    "lab.example"
+   ],
+   "primary_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+   "signature": [
+    "unauth_data_leak",
+    "unauthenticated get returns -byte response"
+   ]
+  },
+  {
+   "absorbed_ids": [
+    "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20"
+   ],
+   "affected_hosts": [
+    "lab-two.example",
+    "lab.example"
+   ],
+   "primary_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+   "signature": [
+    "weak_tls",
+    "tls . supported"
+   ]
+  }
+ ],
+ "host_refusals": {
+  "fabricated_quote_raise": {
+   "applied": false,
+   "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+   "reason": "the raise quote does not occur verbatim in the finding's own capture"
+  },
+  "unknown_verdict": {
+   "applied": false,
+   "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+   "reason": "unknown verdict 'CONFIRMED'; a verdict is one of accept, reject, needs_review, adjust_severity"
+  }
+ },
+ "human_review": {
+  "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+  "reason": "review recorded",
+  "recorded": true
+ },
+ "pipeline": {
+  "governed": {
+   "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20": {
+    "capture_id": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "ceiling_enforced": false,
+    "consolidated_into": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "evidence_grade": "strong",
+    "false_positive": false,
+    "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+    "kind": "weak_tls",
+    "original_severity": "medium",
+    "quote": "TLS 1.0 supported",
+    "severity": "low",
+    "status": "absorbed",
+    "title": "TLS 1.0 supported",
+    "verdicts": [
+     {
+      "after": "low",
+      "applied": true,
+      "before": "medium",
+      "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+      "reason": "verifier judged legacy TLS minor here (a wrong downward call the record keeps visible)",
+      "verdict": "adjust_severity"
+     }
+    ]
+   },
+   "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df": {
+    "capture_id": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "ceiling_enforced": false,
+    "evidence_grade": "strong",
+    "false_positive": true,
+    "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+    "kind": "unauth_data_leak",
+    "original_severity": "medium",
+    "quote": "Access-Control-Allow-Origin: *",
+    "severity": "medium",
+    "status": "rejected",
+    "title": "Unauthenticated GET returns 1602-byte response",
+    "verdicts": [
+     {
+      "after": "medium",
+      "applied": true,
+      "before": "medium",
+      "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+      "reason": "verifier saw no impact (a wrong call: the capture shows the same wildcard)",
+      "verdict": "reject"
+     }
+    ]
+   },
+   "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102": {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "ceiling_enforced": false,
+    "evidence_grade": "strong",
+    "false_positive": false,
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "kind": "lab_marker",
+    "original_severity": "medium",
+    "quote": "X-Lab-Marker: LAB_CONFIRMED",
+    "severity": "high",
+    "status": "governed",
+    "title": "Synthetic lab marker present",
+    "verdicts": [
+     {
+      "after": "high",
+      "applied": true,
+      "before": "medium",
+      "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+      "raised_against_proof": true,
+      "reason": "marker quoted verbatim; raise within the strong-grade ceiling",
+      "verdict": "adjust_severity"
+     }
+    ]
+   },
+   "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29": {
+    "affected_hosts": [
+     "lab-two.example",
+     "lab.example"
+    ],
+    "capture_id": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "ceiling_enforced": false,
+    "evidence_grade": "moderate",
+    "false_positive": false,
+    "finding_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "kind": "weak_tls",
+    "original_severity": "low",
+    "quote": "TLS 1.2 supported",
+    "severity": "low",
+    "status": "governed",
+    "title": "TLS 1.2 supported",
+    "verdicts": []
+   },
+   "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb": {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "ceiling_enforced": false,
+    "evidence_grade": "strong",
+    "false_positive": false,
+    "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+    "kind": "csp_weakness",
+    "original_severity": "high",
+    "quote": "'unsafe-inline'",
+    "severity": "medium",
+    "status": "needs_review",
+    "title": "Content Security Policy allows unsafe-inline",
+    "verdicts": [
+     {
+      "after": "medium",
+      "applied": true,
+      "before": "high",
+      "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+      "reason": "policy weakness, not a demonstrated path; the skeptical default caps an unverified high at medium",
+      "verdict": "needs_review"
+     }
+    ]
+   },
+   "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f": {
+    "affected_hosts": [
+     "lab-three.example",
+     "lab.example"
+    ],
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "ceiling_enforced": false,
+    "evidence_grade": "strong",
+    "false_positive": false,
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "kind": "unauth_data_leak",
+    "original_severity": "high",
+    "quote": "Access-Control-Allow-Origin: *",
+    "severity": "high",
+    "status": "governed",
+    "title": "Unauthenticated GET returns 3389-byte response",
+    "verdicts": [
+     {
+      "after": "high",
+      "applied": true,
+      "before": "high",
+      "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+      "reason": "wildcard origin confirmed in capture",
+      "verdict": "accept"
+     }
+    ]
+   },
+   "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0": {
+    "capture_id": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "ceiling_enforced": false,
+    "consolidated_into": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "evidence_grade": "strong",
+    "false_positive": false,
+    "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+    "kind": "unauth_data_leak",
+    "original_severity": "medium",
+    "quote": "Access-Control-Allow-Origin: *",
+    "severity": "medium",
+    "status": "absorbed",
+    "title": "Unauthenticated GET returns 2048-byte response",
+    "verdicts": [
+     {
+      "after": "medium",
+      "applied": true,
+      "before": "medium",
+      "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+      "reason": "same wildcard origin, third host",
+      "verdict": "accept"
+     }
+    ]
+   }
+  },
+  "verdict_ledger": [
+   {
+    "after": "high",
+    "applied": true,
+    "before": "high",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "reason": "wildcard origin confirmed in capture",
+    "verdict": "accept"
+   },
+   {
+    "after": "medium",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+    "reason": "verifier saw no impact (a wrong call: the capture shows the same wildcard)",
+    "verdict": "reject"
+   },
+   {
+    "after": "medium",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+    "reason": "same wildcard origin, third host",
+    "verdict": "accept"
+   },
+   {
+    "after": "medium",
+    "applied": true,
+    "before": "high",
+    "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+    "reason": "policy weakness, not a demonstrated path; the skeptical default caps an unverified high at medium",
+    "verdict": "needs_review"
+   },
+   {
+    "after": "low",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+    "reason": "verifier judged legacy TLS minor here (a wrong downward call the record keeps visible)",
+    "verdict": "adjust_severity"
+   },
+   {
+    "applied": false,
+    "finding_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "reason": "the finding's evidence grade (moderate) caps a raise at high"
+   },
+   {
+    "after": "high",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "raised_against_proof": true,
+    "reason": "marker quoted verbatim; raise within the strong-grade ceiling",
+    "verdict": "adjust_severity"
+   },
+   {
+    "applied": false,
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "reason": "unknown verdict 'CONFIRMED'; a verdict is one of accept, reject, needs_review, adjust_severity"
+   },
+   {
+    "applied": false,
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "reason": "the raise quote does not occur verbatim in the finding's own capture"
+   }
+  ]
+ },
+ "run_report": {
+  "captures": {
+   "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0": {
+    "action_id": "tls_probe -> https://lab.example:443/",
+    "body": "handshake ok\nprotocol: TLS 1.0 supported",
+    "status": 200
+   },
+   "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96": {
+    "action_id": "inspect_headers -> https://lab-three.example:443/",
+    "body": "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\nUnauthenticated GET returns 2048-byte response body",
+    "status": 200
+   },
+   "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a": {
+    "action_id": "tls_probe -> https://lab-two.example:443/",
+    "body": "handshake ok\nprotocol: TLS 1.2 supported",
+    "status": 200
+   },
+   "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0": {
+    "action_id": "inspect_headers -> https://lab-two.example:443/",
+    "body": "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\nUnauthenticated GET returns 1602-byte response body",
+    "status": 200
+   },
+   "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935": {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "body": "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\nContent-Security-Policy: default-src * 'unsafe-inline'\nX-Lab-Marker: LAB_CONFIRMED\nUnauthenticated GET returns 3389-byte response body",
+    "status": 200
+   },
+   "efd7ab7e297055332ad9e6f51a9a168ecf8f2b4df75832e9319aab0cde51350e": {
+    "action_id": "tls_probe -> https://lab-three.example:443/",
+    "body": "handshake ok\nprotocol: TLS 1.3 supported",
+    "status": 200
+   }
+  },
+  "closed": null,
+  "counts": {
+   "events": 29,
+   "refusals": 3
+  },
+  "events": [
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "destination": "https://lab.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab.example/",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "detail": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-two.example:443/",
+    "destination": "https://lab-two.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab-two.example/",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-two.example:443/",
+    "capture_id": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-two.example:443/",
+    "detail": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-three.example:443/",
+    "destination": "https://lab-three.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab-three.example/",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-three.example:443/",
+    "capture_id": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab-three.example:443/",
+    "detail": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "tls_probe -> https://lab.example:443/",
+    "destination": "https://lab.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab.example/",
+    "tool": "tls_probe"
+   },
+   {
+    "action_id": "tls_probe -> https://lab.example:443/",
+    "capture_id": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "tls_probe -> https://lab.example:443/",
+    "detail": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "tls_probe -> https://lab-two.example:443/",
+    "destination": "https://lab-two.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab-two.example/",
+    "tool": "tls_probe"
+   },
+   {
+    "action_id": "tls_probe -> https://lab-two.example:443/",
+    "capture_id": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "tls_probe -> https://lab-two.example:443/",
+    "detail": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "tls_probe -> https://lab-three.example:443/",
+    "destination": "https://lab-three.example:443/",
+    "event": "action_authorized",
+    "requested_destination": "https://lab-three.example/",
+    "tool": "tls_probe"
+   },
+   {
+    "action_id": "tls_probe -> https://lab-three.example:443/",
+    "capture_id": "efd7ab7e297055332ad9e6f51a9a168ecf8f2b4df75832e9319aab0cde51350e",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "tls_probe -> https://lab-three.example:443/",
+    "detail": "efd7ab7e297055332ad9e6f51a9a168ecf8f2b4df75832e9319aab0cde51350e",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "event": "finding",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "kind": "unauth_data_leak",
+    "severity": "high"
+   },
+   {
+    "capture_id": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "event": "finding",
+    "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+    "kind": "unauth_data_leak",
+    "severity": "medium"
+   },
+   {
+    "capture_id": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "event": "finding",
+    "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+    "kind": "unauth_data_leak",
+    "severity": "medium"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "event": "finding",
+    "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+    "kind": "csp_weakness",
+    "severity": "high"
+   },
+   {
+    "capture_id": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "event": "finding",
+    "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+    "kind": "weak_tls",
+    "severity": "medium"
+   },
+   {
+    "capture_id": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "event": "finding",
+    "finding_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "kind": "weak_tls",
+    "severity": "low"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "event": "finding",
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "kind": "lab_marker",
+    "severity": "medium"
+   },
+   {
+    "event": "refused",
+    "kind": "verdict",
+    "payload_keys": [
+     "finding_id",
+     "run_id"
+    ],
+    "reason": "the finding's evidence grade (moderate) caps a raise at high"
+   },
+   {
+    "event": "refused",
+    "kind": "verdict",
+    "payload_keys": [
+     "finding_id",
+     "run_id"
+    ],
+    "reason": "unknown verdict 'CONFIRMED'; a verdict is one of accept, reject, needs_review, adjust_severity"
+   },
+   {
+    "event": "refused",
+    "kind": "verdict",
+    "payload_keys": [
+     "finding_id",
+     "run_id"
+    ],
+    "reason": "the raise quote does not occur verbatim in the finding's own capture"
+   },
+   {
+    "actor": "human reviewer",
+    "decision": "accepted",
+    "event": "review",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "reason": "verified and consolidated; primary for the wildcard-origin class"
+   }
+  ],
+  "findings": [
+   {
+    "capture_id": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+    "kind": "weak_tls",
+    "quote": "TLS 1.0 supported",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "medium",
+    "title": "TLS 1.0 supported"
+   },
+   {
+    "capture_id": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+    "kind": "unauth_data_leak",
+    "quote": "Access-Control-Allow-Origin: *",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "medium",
+    "title": "Unauthenticated GET returns 1602-byte response"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "kind": "lab_marker",
+    "quote": "X-Lab-Marker: LAB_CONFIRMED",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "medium",
+    "title": "Synthetic lab marker present"
+   },
+   {
+    "capture_id": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "finding_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "kind": "weak_tls",
+    "quote": "TLS 1.2 supported",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "low",
+    "title": "TLS 1.2 supported"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+    "kind": "csp_weakness",
+    "quote": "'unsafe-inline'",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "high",
+    "title": "Content Security Policy allows unsafe-inline"
+   },
+   {
+    "capture_id": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "kind": "unauth_data_leak",
+    "quote": "Access-Control-Allow-Origin: *",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "high",
+    "title": "Unauthenticated GET returns 3389-byte response"
+   },
+   {
+    "capture_id": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+    "kind": "unauth_data_leak",
+    "quote": "Access-Control-Allow-Origin: *",
+    "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+    "severity": "medium",
+    "title": "Unauthenticated GET returns 2048-byte response"
+   }
+  ],
+  "gate": null,
+  "observations": {},
+  "outcomes": {
+   "inspect_headers -> https://lab-three.example:443/": {
+    "action_id": "inspect_headers -> https://lab-three.example:443/",
+    "detail": "6c8ebafb90e79b70480132fefe5d5a941566245153d21f8a8224ae5639535f96",
+    "status": "clean"
+   },
+   "inspect_headers -> https://lab-two.example:443/": {
+    "action_id": "inspect_headers -> https://lab-two.example:443/",
+    "detail": "c685c17b010d5bc4d0e1ec42ac5d340f7f55c48f4ad9caef23c89d414c9252a0",
+    "status": "clean"
+   },
+   "inspect_headers -> https://lab.example:443/": {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "detail": "e56f62dc5068143bfb7ab5e14c966f96455f5c4132e0d3822b24d32862b55935",
+    "status": "clean"
+   },
+   "tls_probe -> https://lab-three.example:443/": {
+    "action_id": "tls_probe -> https://lab-three.example:443/",
+    "detail": "efd7ab7e297055332ad9e6f51a9a168ecf8f2b4df75832e9319aab0cde51350e",
+    "status": "clean"
+   },
+   "tls_probe -> https://lab-two.example:443/": {
+    "action_id": "tls_probe -> https://lab-two.example:443/",
+    "detail": "9082349999ff44bcd923124e701a1795f20332ac3c7f870d30e652b1e29fd83a",
+    "status": "clean"
+   },
+   "tls_probe -> https://lab.example:443/": {
+    "action_id": "tls_probe -> https://lab.example:443/",
+    "detail": "49b20e8ccbff929ca77c1c888c9b4af90fc2260bcabcfc0dc341e3e148f2ccb0",
+    "status": "clean"
+   }
+  },
+  "policy_digest": "404dba73e26b29afb301cc49037f798b8a19831e9453875da839b6ca97ce2d51",
+  "reviews": [
+   {
+    "actor": "human reviewer",
+    "decision": "accepted",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "reason": "verified and consolidated; primary for the wildcard-origin class"
+   }
+  ],
+  "run_id": "594edec224ea46e0ec1a830c04581f4e47a74eaf98ed44427e5a0faa23d082be",
+  "schema": "course-run-report/v1",
+  "stage": null
+ },
+ "schema": "verify-demo/v1",
+ "verdicts": [
+  {
+   "finding": "cors_a",
+   "grade": "strong",
+   "packet_capture": "e56f62dc5068",
+   "result": {
+    "after": "high",
+    "applied": true,
+    "before": "high",
+    "finding_id": "80f27dde264ee10ee674d44bd538de19d522fd9d7a28df455e85ef6ecba7821f",
+    "reason": "wildcard origin confirmed in capture",
+    "verdict": "accept"
+   }
+  },
+  {
+   "finding": "cors_b",
+   "grade": "strong",
+   "packet_capture": "c685c17b010d",
+   "result": {
+    "after": "medium",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "2a6d9831741525ce55d29e013b716dafab6c83c35494218a7d4d57cab20ba7df",
+    "reason": "verifier saw no impact (a wrong call: the capture shows the same wildcard)",
+    "verdict": "reject"
+   }
+  },
+  {
+   "finding": "cors_c",
+   "grade": "strong",
+   "packet_capture": "6c8ebafb90e7",
+   "result": {
+    "after": "medium",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "da2fded303372b88fa728a44ae753117fef2e00f0018c44a3c6450231b5c44e0",
+    "reason": "same wildcard origin, third host",
+    "verdict": "accept"
+   }
+  },
+  {
+   "finding": "csp",
+   "grade": "strong",
+   "packet_capture": "e56f62dc5068",
+   "result": {
+    "after": "medium",
+    "applied": true,
+    "before": "high",
+    "finding_id": "6043976baf9ee0bb771da4d9d771c2c394d6ef8bebce8e37fe97ea6d4da1fccb",
+    "reason": "policy weakness, not a demonstrated path; the skeptical default caps an unverified high at medium",
+    "verdict": "needs_review"
+   }
+  },
+  {
+   "finding": "tls_a",
+   "grade": "strong",
+   "packet_capture": "49b20e8ccbff",
+   "result": {
+    "after": "low",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "1e01af4fd49819a309531acc2112a863195b228e688bfc2363a41a84653e9f20",
+    "reason": "verifier judged legacy TLS minor here (a wrong downward call the record keeps visible)",
+    "verdict": "adjust_severity"
+   }
+  },
+  {
+   "finding": "tls_b",
+   "grade": "moderate",
+   "packet_capture": "9082349999ff",
+   "result": {
+    "applied": false,
+    "finding_id": "510d9de74854fdedd70b8462589d32ef6579f5a019d6c5047153bb4933872d29",
+    "reason": "the finding's evidence grade (moderate) caps a raise at high"
+   }
+  },
+  {
+   "finding": "marker",
+   "grade": "strong",
+   "packet_capture": "e56f62dc5068",
+   "result": {
+    "after": "high",
+    "applied": true,
+    "before": "medium",
+    "finding_id": "3a70b621c986e3835395ee7f89ce6f6c704f2e9b990f7ec5eca447f8b646d102",
+    "raised_against_proof": true,
+    "reason": "marker quoted verbatim; raise within the strong-grade ceiling",
+    "verdict": "adjust_severity"
+   }
+  }
+ ]
+}

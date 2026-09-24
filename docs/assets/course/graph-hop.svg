@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 348" width="720" height="348" role="img" aria-labelledby="t d">
+<title id="t">One graph hop, six nodes</title><desc id="d">Two input nodes start active; one hop propagates activation along weighted association edges; the top-k most activated nodes form the active set the fixed readout scores. The edges that joined active nodes are the eligible ones -- the only place this arm's learning applies.</desc>
+<rect x="0" y="0" width="720" height="348" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">One hop, then top-k</text>
+<text x="40" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">the full topology figure is the evidence view; this is the mechanism</text>
+<line x1="140" y1="130" x2="320" y2="100" stroke="#52c78d" stroke-width="2" stroke-linecap="butt"/>
+<text x="230" y="109" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.9</text>
+<line x1="140" y1="130" x2="320" y2="180" stroke="#52c78d" stroke-width="2" stroke-linecap="butt"/>
+<text x="230" y="149" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.4</text>
+<line x1="140" y1="230" x2="320" y2="180" stroke="#52c78d" stroke-width="2" stroke-linecap="butt"/>
+<text x="230" y="199" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.7</text>
+<line x1="140" y1="230" x2="320" y2="260" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<text x="230" y="239" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.2</text>
+<line x1="320" y1="180" x2="500" y2="180" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<text x="410" y="174" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.6</text>
+<line x1="320" y1="100" x2="500" y2="180" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<text x="410" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0.3</text>
+<circle cx="140" cy="130" r="15" fill="#1a1a19" stroke="#52c78d" stroke-width="2"/>
+<text x="140" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">a</text>
+<circle cx="140" cy="230" r="15" fill="#1a1a19" stroke="#52c78d" stroke-width="2"/>
+<text x="140" y="234" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">b</text>
+<circle cx="320" cy="100" r="15" fill="#1a1a19" stroke="#52c78d" stroke-width="2"/>
+<text x="320" y="104" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">c</text>
+<circle cx="320" cy="180" r="15" fill="#1a1a19" stroke="#52c78d" stroke-width="2"/>
+<text x="320" y="184" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">d</text>
+<circle cx="320" cy="260" r="15" fill="#1a1a19" stroke="#898781" stroke-width="2"/>
+<text x="320" y="264" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">e</text>
+<circle cx="500" cy="180" r="15" fill="#1a1a19" stroke="#898781" stroke-width="2"/>
+<text x="500" y="184" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">f</text>
+<text x="140" y="275" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">inputs: a, b active</text>
+<text x="320" y="296" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">after the hop: c and d join (top-k), e misses</text>
+<text x="560" y="150" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">readout scores the</text>
+<text x="560" y="166" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">active set; edges</text>
+<text x="560" y="182" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">a-c, a-d, b-d are</text>
+<text x="560" y="198" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">eligible to learn</text>
+<text x="40" y="314" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">toy weights for the walkthrough; this arm learns association edges under a fixed</text>
+<text x="40" y="332" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">readout -- a different family from readout plasticity</text>
+</svg>

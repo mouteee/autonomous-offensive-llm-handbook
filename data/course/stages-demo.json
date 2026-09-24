@@ -1,0 +1,291 @@
+{
+ "action_requirement_with_missing_observation": {
+  "allowed": false,
+  "reason": "has_form: not observed"
+ },
+ "clean_report": {
+  "captures": {},
+  "closed": null,
+  "counts": {
+   "events": 15,
+   "refusals": 0
+  },
+  "events": [
+   {
+    "event": "stage",
+    "stage": "discovery"
+   },
+   {
+    "event": "observation",
+    "field": "landing_status",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": 200
+   },
+   {
+    "event": "observation",
+    "field": "landing_has_form",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": false
+   },
+   {
+    "event": "observation",
+    "field": "landing_has_script",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": true
+   },
+   {
+    "event": "observation",
+    "field": "login_status",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": 200
+   },
+   {
+    "event": "observation",
+    "field": "login_has_form",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": true
+   },
+   {
+    "event": "observation",
+    "field": "login_has_script",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": false
+   },
+   {
+    "event": "observation",
+    "field": "waf_vendor",
+    "source": "",
+    "state": "unknown",
+    "value": null
+   },
+   {
+    "event": "gate",
+    "inputs": {
+     "error_rate": 0.0,
+     "responses": 2
+    },
+    "mode": "full",
+    "status": "proceed"
+   },
+   {
+    "event": "stage",
+    "stage": "detection"
+   },
+   {
+    "event": "stage",
+    "stage": "crawling"
+   },
+   {
+    "event": "stage",
+    "stage": "mining"
+   },
+   {
+    "event": "stage",
+    "stage": "scanning"
+   },
+   {
+    "event": "stage",
+    "stage": "active_testing"
+   },
+   {
+    "event": "stage",
+    "stage": "reporting"
+   }
+  ],
+  "findings": [],
+  "gate": {
+   "inputs": {
+    "error_rate": 0.0,
+    "responses": 2
+   },
+   "mode": "full",
+   "status": "proceed"
+  },
+  "observations": {
+   "landing_has_form": {
+    "field": "landing_has_form",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": false
+   },
+   "landing_has_script": {
+    "field": "landing_has_script",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": true
+   },
+   "landing_status": {
+    "field": "landing_status",
+    "source": "fixture:landing",
+    "state": "measured",
+    "value": 200
+   },
+   "login_has_form": {
+    "field": "login_has_form",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": true
+   },
+   "login_has_script": {
+    "field": "login_has_script",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": false
+   },
+   "login_status": {
+    "field": "login_status",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": 200
+   },
+   "waf_vendor": {
+    "field": "waf_vendor",
+    "source": "",
+    "state": "unknown",
+    "value": null
+   }
+  },
+  "outcomes": {},
+  "policy_digest": "724330529cbcb21950ee25f141f929c2e8cee34f227812d56029ac4703806a80",
+  "reviews": [],
+  "run_id": "7c0eb50202eb358105f7f251ee88f0b3344f5092e356b9045fa063ad6cc88cdf",
+  "schema": "course-run-report/v1",
+  "stage": "reporting"
+ },
+ "clean_walk": [
+  {
+   "allowed": true,
+   "harness_stages": [
+    "observe"
+   ],
+   "reason": "advanced"
+  },
+  {
+   "allowed": true,
+   "harness_stages": [
+    "observe"
+   ],
+   "reason": "advanced"
+  },
+  {
+   "allowed": true,
+   "harness_stages": [
+    "plan"
+   ],
+   "reason": "advanced"
+  },
+  {
+   "allowed": true,
+   "harness_stages": [
+    "execute"
+   ],
+   "reason": "advanced"
+  },
+  {
+   "allowed": true,
+   "harness_stages": [
+    "execute"
+   ],
+   "reason": "advanced"
+  },
+  {
+   "allowed": true,
+   "harness_stages": [
+    "review",
+    "report"
+   ],
+   "reason": "advanced"
+  }
+ ],
+ "harness_mapping": {
+  "active_testing": [
+   "execute"
+  ],
+  "crawling": [
+   "observe"
+  ],
+  "detection": [
+   "observe"
+  ],
+  "discovery": [
+   "observe"
+  ],
+  "mining": [
+   "plan"
+  ],
+  "reporting": [
+   "review",
+   "report"
+  ],
+  "scanning": [
+   "execute"
+  ]
+ },
+ "operational_stages": [
+  "discovery",
+  "detection",
+  "crawling",
+  "mining",
+  "scanning",
+  "active_testing",
+  "reporting"
+ ],
+ "refusal_report": {
+  "captures": {},
+  "closed": null,
+  "counts": {
+   "events": 3,
+   "refusals": 2
+  },
+  "events": [
+   {
+    "event": "stage",
+    "stage": "discovery"
+   },
+   {
+    "event": "refused",
+    "kind": "stage",
+    "payload_keys": [
+     "run_id",
+     "stage"
+    ],
+    "reason": "stage 'active_testing' is not the next declared stage (expected 'detection')"
+   },
+   {
+    "event": "refused",
+    "kind": "stage",
+    "payload_keys": [
+     "run_id",
+     "stage"
+    ],
+    "reason": "detection requires at least one recorded observation"
+   }
+  ],
+  "findings": [],
+  "gate": null,
+  "observations": {},
+  "outcomes": {},
+  "policy_digest": "724330529cbcb21950ee25f141f929c2e8cee34f227812d56029ac4703806a80",
+  "reviews": [],
+  "run_id": "17a38d4341f2ba3daf65a11393909811058eb4d7078ad81dea85f7eb1dafabca",
+  "schema": "course-run-report/v1",
+  "stage": "discovery"
+ },
+ "refusals": [
+  {
+   "allowed": false,
+   "reason": "stage 'active_testing' is not the next declared stage (expected 'detection')"
+  },
+  {
+   "allowed": false,
+   "reason": "detection requires at least one recorded observation"
+  }
+ ],
+ "schema": "stages-demo/v1"
+}

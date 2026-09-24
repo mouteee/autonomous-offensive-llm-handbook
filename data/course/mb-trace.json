@@ -1,0 +1,675 @@
+{
+ "final_snapshot_habituation": {
+  "api:d2:nq||fam-inject||error": 0.42095839982956595
+ },
+ "schema": "mb-lesson-trace/v1",
+ "seed": 0,
+ "steps": [
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.870208,
+     "activation_before_inhibition": 1.086892,
+     "cost": 0.3,
+     "habituation": 0.0,
+     "novelty": 1.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.595015,
+     "activation_before_inhibition": 0.866738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 1.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-inject",
+    "penalty_after": 0.503415,
+    "signature": "error",
+    "surface": "api:d2:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.275193,
+   "outcome_status": "tool_error",
+   "runner_up": "fam-recon",
+   "step": 0,
+   "winner": "fam-inject"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.0972,
+     "activation_before_inhibition": 0.119484,
+     "cost": 0.3,
+     "habituation": 0.467408,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.836867,
+     "activation_before_inhibition": 0.866738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 1.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.934067,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 1,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.062432,
+     "activation_before_inhibition": 0.154117,
+     "cost": 0.3,
+     "habituation": 0.432775,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.328209,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.265777,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 2,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.095523,
+     "activation_before_inhibition": 0.187207,
+     "cost": 0.3,
+     "habituation": 0.399685,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.319936,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.224413,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 3,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.126952,
+     "activation_before_inhibition": 0.218637,
+     "cost": 0.3,
+     "habituation": 0.368255,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.312079,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": true,
+   "habituation_after": {
+    "family": "fam-inject",
+    "penalty_after": 0.686285,
+    "signature": "error",
+    "surface": "api:d2:nq"
+   },
+   "kc_active": 10,
+   "margin": -0.185127,
+   "outcome_status": "tool_error",
+   "runner_up": "fam-recon",
+   "step": 4,
+   "winner": "fam-inject"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.152518,
+     "activation_before_inhibition": -0.060833,
+     "cost": 0.3,
+     "habituation": 0.647725,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.366738,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.519256,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 5,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.113778,
+     "activation_before_inhibition": -0.022093,
+     "cost": 0.3,
+     "habituation": 0.608985,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.366738,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.480516,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 6,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.075282,
+     "activation_before_inhibition": 0.016403,
+     "cost": 0.3,
+     "habituation": 0.570489,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.362637,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.437919,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 7,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.037406,
+     "activation_before_inhibition": 0.054279,
+     "cost": 0.3,
+     "habituation": 0.532613,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.353168,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.390574,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 8,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": -0.000469,
+     "activation_before_inhibition": 0.091215,
+     "cost": 0.3,
+     "habituation": 0.495676,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.343934,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.344403,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 9,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.035263,
+     "activation_before_inhibition": 0.126947,
+     "cost": 0.3,
+     "habituation": 0.459945,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.335001,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.299738,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 10,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.069581,
+     "activation_before_inhibition": 0.161266,
+     "cost": 0.3,
+     "habituation": 0.425626,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.326422,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.256841,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 11,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.102328,
+     "activation_before_inhibition": 0.194013,
+     "cost": 0.3,
+     "habituation": 0.392879,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.318235,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.215907,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 12,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.133393,
+     "activation_before_inhibition": 0.225078,
+     "cost": 0.3,
+     "habituation": 0.361814,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.310469,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.177076,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 13,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.16271,
+     "activation_before_inhibition": 0.254394,
+     "cost": 0.3,
+     "habituation": 0.332498,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.30314,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.14043,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 14,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.190244,
+     "activation_before_inhibition": 0.281928,
+     "cost": 0.3,
+     "habituation": 0.304964,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.296256,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.106012,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 15,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.215994,
+     "activation_before_inhibition": 0.307679,
+     "cost": 0.3,
+     "habituation": 0.279213,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.289818,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.073824,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 16,
+   "winner": "fam-recon"
+  },
+  {
+   "by_family": {
+    "fam-inject": {
+     "activation": 0.239984,
+     "activation_before_inhibition": 0.331669,
+     "cost": 0.3,
+     "habituation": 0.255223,
+     "novelty": 0.0,
+     "prior": 0.6,
+     "size": 1,
+     "w_dot": 0.016892
+    },
+    "fam-recon": {
+     "activation": 0.283821,
+     "activation_before_inhibition": 0.366738,
+     "cost": 0.1,
+     "habituation": 0.0,
+     "novelty": 0.0,
+     "prior": 0.4,
+     "size": 1,
+     "w_dot": -0.023262
+    }
+   },
+   "exploration": false,
+   "habituation_after": {
+    "family": "fam-recon",
+    "penalty_after": 0.0,
+    "signature": "hit",
+    "surface": "page:d1:nq"
+   },
+   "kc_active": 10,
+   "margin": 0.043837,
+   "outcome_status": "verified_evidence",
+   "runner_up": "fam-inject",
+   "step": 17,
+   "winner": "fam-recon"
+  }
+ ]
+}

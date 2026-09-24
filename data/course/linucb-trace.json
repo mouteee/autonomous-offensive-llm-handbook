@@ -1,0 +1,265 @@
+{
+ "alpha": 0.5,
+ "feature_schema": "toy-v1",
+ "final_families": {
+  "fam-a": {
+   "A": [
+    [
+     7.0,
+     2.0
+    ],
+    [
+     2.0,
+     3.0
+    ]
+   ],
+   "b": [
+    4.0,
+    0.0
+   ]
+  },
+  "fam-b": {
+   "A": [
+    [
+     3.0,
+     2.0
+    ],
+    [
+     2.0,
+     3.0
+    ]
+   ],
+   "b": [
+    2.0,
+    2.0
+   ]
+  }
+ },
+ "schema": "linucb-lesson-trace/v1",
+ "steps": [
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.5,
+     "predicted": 0.0,
+     "score": 0.5
+    },
+    "fam-b": {
+     "bonus": 0.5,
+     "predicted": 0.0,
+     "score": 0.5
+    }
+   },
+   "candidate_id": "fam-a:step0",
+   "chosen_family": "fam-a",
+   "decision_id": "612c7daeb058c653",
+   "reward": 1.0,
+   "step": 0,
+   "x": [
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.3535533905932738,
+     "predicted": 0.5,
+     "score": 0.8535533905932737
+    },
+    "fam-b": {
+     "bonus": 0.5,
+     "predicted": 0.0,
+     "score": 0.5
+    }
+   },
+   "candidate_id": "fam-a:step1",
+   "chosen_family": "fam-a",
+   "decision_id": "0af2fd0828aabc61",
+   "reward": 1.0,
+   "step": 1,
+   "x": [
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.28867513459481287,
+     "predicted": 0.6666666666666666,
+     "score": 0.9553418012614795
+    },
+    "fam-b": {
+     "bonus": 0.5,
+     "predicted": 0.0,
+     "score": 0.5
+    }
+   },
+   "candidate_id": "fam-a:step2",
+   "chosen_family": "fam-a",
+   "decision_id": "2043f078f25d272d",
+   "reward": 1.0,
+   "step": 2,
+   "x": [
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.25,
+     "predicted": 0.75,
+     "score": 1.0
+    },
+    "fam-b": {
+     "bonus": 0.5,
+     "predicted": 0.0,
+     "score": 0.5
+    }
+   },
+   "candidate_id": "fam-a:step3",
+   "chosen_family": "fam-a",
+   "decision_id": "b69f755c92b30417",
+   "reward": 1.0,
+   "step": 3,
+   "x": [
+    1.0,
+    0.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 0.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.5477225575051661,
+     "predicted": 0.8,
+     "score": 1.3477225575051661
+    },
+    "fam-b": {
+     "bonus": 0.7071067811865476,
+     "predicted": 0.0,
+     "score": 0.7071067811865476
+    }
+   },
+   "candidate_id": "fam-a:step4",
+   "chosen_family": "fam-a",
+   "decision_id": "c48e511165e4431e",
+   "reward": 0.0,
+   "step": 4,
+   "x": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-a",
+    "reward": 0.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.3692744729379982,
+     "predicted": 0.36363636363636354,
+     "score": 0.7329108365743617
+    },
+    "fam-b": {
+     "bonus": 0.7071067811865476,
+     "predicted": 0.0,
+     "score": 0.7071067811865476
+    }
+   },
+   "candidate_id": "fam-a:step5",
+   "chosen_family": "fam-a",
+   "decision_id": "8e792f60f632978a",
+   "reward": 0.0,
+   "step": 5,
+   "x": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-b",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.2970442628930023,
+     "predicted": 0.23529411764705893,
+     "score": 0.5323383805400612
+    },
+    "fam-b": {
+     "bonus": 0.7071067811865476,
+     "predicted": 0.0,
+     "score": 0.7071067811865476
+    }
+   },
+   "candidate_id": "fam-b:step6",
+   "chosen_family": "fam-b",
+   "decision_id": "d4e58e5e3d4a067f",
+   "reward": 1.0,
+   "step": 6,
+   "x": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "attribution": {
+    "applied": true,
+    "family": "fam-b",
+    "reward": 1.0
+   },
+   "by_family": {
+    "fam-a": {
+     "bonus": 0.2970442628930023,
+     "predicted": 0.23529411764705893,
+     "score": 0.5323383805400612
+    },
+    "fam-b": {
+     "bonus": 0.408248290463863,
+     "predicted": 0.6666666666666667,
+     "score": 1.0749149571305296
+    }
+   },
+   "candidate_id": "fam-b:step7",
+   "chosen_family": "fam-b",
+   "decision_id": "ea6e474090c76ca9",
+   "reward": 1.0,
+   "step": 7,
+   "x": [
+    1.0,
+    1.0
+   ]
+  }
+ ]
+}

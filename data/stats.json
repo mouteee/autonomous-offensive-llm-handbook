@@ -154,12 +154,28 @@
     "note": "no pre-registered direction for this endpoint; the study was not designed to establish equivalent recall (no non-inferiority margin was set), so this is an absence of detected difference, not evidence of equivalence -- see recall_dedup for the ground-truth double-count this figure carries"
    },
    "recall_dedup": {
-    "metric": "curated ground-truth recall, deduplicated to 19 distinct conditions (the frozen 20-entry list double-counts the login SQL injection as both sqli and auth_bypass at the same endpoint, satisfied by one finding in all 20 runs)",
+    "metric": "curated ground-truth recall, deduplicated to 19 distinct conditions: the frozen 20-entry list carries the login SQL injection twice, as an auth_bypass entry and a sqli entry at the same endpoint, and the committed per-run match lists contain both entries in every one of the 20 runs",
+    "duplicate_pair": {
+     "ids": [
+      "juice-auth-001",
+      "juice-sqli-002"
+     ],
+     "condition": "SQL injection through the login request's email parameter (POST /rest/user/login), listed once as auth_bypass and once as sqli",
+     "not_to_be_confused_with": "juice-sqli-001 is the distinct product-search injection (GET /rest/products/search, parameter q), matched in 17 of the 20 runs; it is not part of the duplicated pair"
+    },
     "FULL_median": 0.211,
     "NOVERIFY_median": 0.158,
     "test": "exact two-sided Mann-Whitney U",
+    "u": 67.5,
     "p_two_sided": "0.158",
-    "note": "the double-count inflates the recall block above by roughly five percentage points, uniformly across both arms, so it changes the absolute values but not which arm they favor"
+    "derivation": "union rule over the per-run P5_gt_matched lists in data/benchmark/verifier-study/study-results.json: the pair counts once when either entry is matched, every other entry counts unchanged, denominator 19. Both pair entries are matched in all 20 runs, so each run's deduplicated score is a strictly increasing function of its raw matched count; the ranks are unchanged, U stays 67.5, and the deduplicated p equals the recall block's p by construction rather than by reuse. Exact medians 4/19 = 0.21052631578947367 and 3/19 = 0.15789473684210525; exact two-sided p 0.15793803719500313. tests/test_error_pit.py re-derives all of it from the committed matches, including the union rule's behavior when only one pair entry appears",
+    "note": "removing the double-count lowers every run in both arms, moving the medians down by roughly four percentage points apiece, and changes neither which arm is higher nor the rank test",
+    "correction": {
+     "date": "2026-09-23",
+     "changed": "the duplicated pair's entry ids, the u statistic and this derivation were added, and the metric text now states what the per-run match lists support; no historical match set or published statistic changed. One auxiliary prose sentence was wrong and was replaced: the earlier note said the double-count inflated recall by roughly five percentage points uniformly across both arms, but the median drops are about four points and the per-run drops vary",
+     "reason": "an independent recheck (2026-09-22) could not identify the duplicated pair from the distributed package -- the earlier metric text said the list double-counts the login SQL injection as both sqli and auth_bypass without naming entry ids -- and reasonably paired juice-auth-001 with juice-sqli-001. Under that pairing three runs (FULL run 7, NOVERIFY runs 2 and 5) contain only one of the two entries, and union deduplication yields the same rounded medians with U 66.0 and an exact two-sided p of 0.22153543051375868, which contradicted the published value until the pair was identified",
+     "authoritative_inputs": "the originating project's frozen 20-entry ground-truth list, which places juice-auth-001 and juice-sqli-002 at the same login endpoint and juice-sqli-001 at the product-search endpoint, and the committed per-run match lists, which contain both pair entries in every run; the two records agree"
+    }
    },
    "p2": {
     "metric": "severity-integrity events (shipped findings whose evidence supported a higher band than they shipped at), per run",
@@ -238,9 +254,9 @@
     "A3": "verifier on, deterministic acceptance on (shipped design)"
    },
    "r_enforcement": "environment-enforced (HARNESS_GOVERNANCE, HARNESS_VERDICT_POLICY), invisible to the orchestrator's instructions; verified in the container env and in every verdict's recorded policy field",
-   "adjudicator": "model_blinded_human_pass_pending (Opus adjudicator; distinct model from the Sonnet orchestrators, same family -- no non-Claude adjudicator available)",
+   "adjudicator": "model_blinded_human_pass_pending (Opus adjudicator; distinct model from the Sonnet orchestrators, same family; no non-Claude adjudicator available)",
    "h1_suppression": {
-    "contrast": "verifier main effect, A2 vs A0, stratified by target",
+    "contrast": "verifier simple effect with deterministic acceptance disabled, A2 vs A0, stratified by target -- a simple effect, not a main effect averaged across rules settings",
     "test": "exact permutation of summed Mann-Whitney U within targets, one-sided",
     "U": 40.0,
     "p_one_sided": "p = 0.002",
@@ -255,7 +271,7 @@
     }
    },
    "h2_interaction": {
-    "contrast": "(A3-A1)-(A2-A0) on blinded precision, stratified sum",
+    "contrast": "(A3-A1)-(A2-A0) on blinded precision, stratified sum -- a non-additivity test: whether the verifier's effect changes with the rules setting, not whether either layer adds value of its own",
     "test": "seeded 200,000-draw Monte Carlo permutation, two-sided",
     "T": "+0.04",
     "p_two_sided": "p = 0.72",
@@ -267,7 +283,7 @@
     "A2": 0.444,
     "A3": 0.5
    },
-   "j1_vampi_note": "all four arms at or near 1.0 -- the small wholly-vulnerable API sits at the precision ceiling and carries no discrimination power",
+   "j1_vampi_note": "all four arms at or near 1.0; the small wholly-vulnerable API sits at the precision ceiling and carries no discrimination power",
    "j2": {
     "A0": {
      "sensitivity": "0.962 (76/79)",
@@ -290,7 +306,7 @@
     "point": "0.938 (76/81)",
     "lower_95CI": 0.875,
     "margin": 0.9,
-    "result": "non-inferiority NOT established -- the full design discards about 6 percent of adjudicated-true candidates and this study cannot rule out a true sensitivity below 0.90"
+    "result": "non-inferiority NOT established; the full design discards about 6 percent of adjudicated-true candidates and this study cannot rule out a true sensitivity below 0.90"
    },
    "h5_recall": {
     "juice_median_all_arms": 0.158,
@@ -438,7 +454,7 @@
   "llm_turns_per_agent_tool_call": 1.0380710659898478,
   "llm_turns_per_tool_execution": 1.520446096654275,
   "llm_turns_per_tool_execution_active": 1.2936802973977695,
-  "note": "llm_turns is a PROXY for assistant turns, not a transcript-accurate count: it is defined as tool results + 1 (one model turn per tool result, plus the turn that precedes the first tool use), because both transcript formats record tool results reliably and neither marks an assistant-turn boundary. Two known biases, pulling in opposite directions: a turn that emits only text and calls no tool is not counted at all (UNDERCOUNT), and a single turn issuing several tool calls in parallel is counted once per result (OVERCOUNT). Which one dominates is not measured. Note which way the flattery runs: fewer model turns per deterministic tool execution is the result this project would like to see, and the undercount is the bias that produces it -- so read every ratio here as an approximation of shape, not a precise figure. llm_turns_per_agent_tool_call in particular is near-1 BY CONSTRUCTION -- turns are defined as results + 1 and results track calls -- so it restates the definition above and carries no information about the system. It is not a finding; it is published only so the definition can be checked against the totals.",
+  "note": "llm_turns is a PROXY for assistant turns, not a transcript-accurate count: it is defined as tool results + 1 (one model turn per tool result, plus the turn that precedes the first tool use), because both transcript formats record tool results reliably and neither marks an assistant-turn boundary. Two known biases, pulling in opposite directions: a turn that emits only text and calls no tool is not counted at all (UNDERCOUNT), and a single turn issuing several tool calls in parallel is counted once per result (OVERCOUNT). Which one dominates is not measured. Note which way the flattery runs: fewer model turns per deterministic tool execution is the result this project would like to see, and the undercount is the bias that produces it. Read every ratio here as an approximation of shape, not a precise figure. llm_turns_per_agent_tool_call in particular is near-1 BY CONSTRUCTION: turns are defined as results + 1 and results track calls. It restates the definition above and carries no information about the system. It is not a finding; it is published only so the definition can be checked against the totals.",
   "totals": {
    "agent_tool_calls": 394,
    "llm_turns": 409,
@@ -448,6 +464,216 @@
    "agent_tool_calls": 334,
    "llm_turns": 348,
    "tool_executions": 269
+  }
+ },
+ "course": {
+  "note": "Derived from the committed artifacts under data/course/ by scripts/update_course_stats.py; tests/test_course_artifacts.py re-derives this section, so these values cannot drift from the artifacts they cite.",
+  "linucb_toy": {
+   "alpha": 0.5,
+   "feature_schema": "toy-v1",
+   "steps": 8,
+   "initial_score": 0.5,
+   "score_after_one_reward": 0.853553,
+   "predicted_after_one_reward": 0.5,
+   "bonus_after_one_reward": 0.353553,
+   "first_fam_b_step": 6
+  },
+  "compare": {
+   "steady-families": {
+    "steps": 120,
+    "seed": 7,
+    "best_fixed_family": "fam-inject",
+    "best_fixed_reward": 83.391417,
+    "legacy": {
+     "total_reward": 23.715881,
+     "regret": 59.675536,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb": {
+     "total_reward": 81.43584,
+     "regret": 1.955577,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "priority": {
+     "total_reward": 83.391417,
+     "regret": 0.0,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb_minus_priority": -1.955577
+   },
+   "drifting-signal": {
+    "steps": 120,
+    "seed": 7,
+    "best_fixed_family": "fam-recon",
+    "best_fixed_reward": 59.715881,
+    "legacy": {
+     "total_reward": 59.715881,
+     "regret": 0.0,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb": {
+     "total_reward": 83.538598,
+     "regret": -23.822717,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "priority": {
+     "total_reward": 47.391417,
+     "regret": 12.324464,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb_minus_priority": 36.147181
+   },
+   "error-pit-broken": {
+    "steps": 120,
+    "seed": 7,
+    "best_fixed_family": "fam-authz",
+    "best_fixed_reward": 48.05507,
+    "legacy": {
+     "total_reward": 23.715881,
+     "regret": 24.339189,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb": {
+     "total_reward": 45.586538,
+     "regret": 2.468532,
+     "statuses": {
+      "clean": 119,
+      "tool_error": 1
+     }
+    },
+    "priority": {
+     "total_reward": -90.0,
+     "regret": 138.05507,
+     "statuses": {
+      "tool_error": 120
+     }
+    },
+    "linucb_minus_priority": 135.586538
+   },
+   "error-pit-repaired": {
+    "steps": 120,
+    "seed": 7,
+    "best_fixed_family": "fam-inject",
+    "best_fixed_reward": 83.391417,
+    "legacy": {
+     "total_reward": 23.715881,
+     "regret": 59.675536,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb": {
+     "total_reward": 81.43584,
+     "regret": 1.955577,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "priority": {
+     "total_reward": 83.391417,
+     "regret": 0.0,
+     "statuses": {
+      "clean": 120
+     }
+    },
+    "linucb_minus_priority": -1.955577
+   }
+  },
+  "mb": {
+   "seed": 0,
+   "steps": 18,
+   "n_kc": 512,
+   "k_active": 10,
+   "claws": 3,
+   "originating_n_kc": 8192,
+   "originating_k_active": 164,
+   "originating_claws": 6,
+   "first_switch_step": 1,
+   "exploration_steps": [
+    4
+   ],
+   "peak_inject_penalty": 0.647725,
+   "final_inject_penalty": 0.255223,
+   "final_inject_activation": 0.239984,
+   "final_recon_activation": 0.283821
+  },
+  "plasticity": {
+   "seed": 0,
+   "first_reward_delta": 0.5,
+   "first_reward_w_dot": 0.05,
+   "stale_fam_a_w_dot_before": 0.49816,
+   "stale_fam_a_w_dot_after": 0.557332,
+   "stale_fam_b_w_dot_after": 0.263984,
+   "first_clipped_count": 10,
+   "saturated_delta": 0.0,
+   "final_total_change": 20.0
+  },
+  "graph": {
+   "seed": 7,
+   "world": "decoy-delay",
+   "nodes": 40,
+   "edges": 150,
+   "k_active": 6,
+   "toy_total": -7.705076,
+   "toy_frozen_total": -11.938258,
+   "toy_decoy_picks": 50,
+   "toy_side_picks": 10,
+   "toy_pay_picks": 0,
+   "frozen_decoy_picks": 59,
+   "frozen_side_picks": 1,
+   "toy_learned_edges": 8,
+   "toy_median_abs_learned": 0.706894351,
+   "random_learned_edges": 14,
+   "random_clipped_fraction": 0.285714,
+   "shuffled_total": -11.775106,
+   "random_total": -11.475123,
+   "no_hop_total": -11.475123
+  },
+  "research": {
+   "conditions": 24,
+   "worlds": 4,
+   "controllers": 6,
+   "seeds": 1,
+   "payout_threshold": 0.5,
+   "manifest_digest": "3cc0636b65ea2e25",
+   "linucb_decoy_total": 36.279849,
+   "linucb_decoy_regret": 4.898468,
+   "linucb_decoy_repeat_ratio": 0.932203,
+   "linucb_decoy_first_payout": 3,
+   "linucb_frozen_decoy_total": -12.340526,
+   "priority_decoy_total": -12.340526,
+   "priority_decoy_repeat_ratio": 1.0,
+   "priority_delayed_regret": 0.0,
+   "mb_decoy_total": 1.548489,
+   "mb_plastic_decoy_total": 7.359575
+  },
+  "memory": {
+   "wilson_one_of_one": 0.206543,
+   "wilson_twelve_of_twenty_three": 0.329624,
+   "vector_weight": 0.7,
+   "keyword_weight": 0.3,
+   "priors_top_tool": "test_sqli",
+   "priors_top_confidence": 0.272354,
+   "dry_tool_tries": 8,
+   "context_large_budget": 400,
+   "context_small_budget": 120,
+   "context_large_included": 9,
+   "context_small_included": 4,
+   "context_small_omitted": 7
   }
  }
 }

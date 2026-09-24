@@ -251,6 +251,13 @@ FILENAME_RE = re.compile(
 CHAPTER_REF_RE = re.compile(
     r"(?i)\bchapters?\s+\d{1,3}(?:\s*(?:,|and|&)\s*\d{1,3})*\b"
 )
+# A lesson ordinal is document navigation, the same category as a chapter
+# ordinal: "lesson 10" names a page of this book, not a quantity measured
+# anywhere. Same shape and same conjunction handling as CHAPTER_REF_RE, and
+# probed in both directions in tests/test_gates.sh beside the chapter probes.
+LESSON_REF_RE = re.compile(
+    r"(?i)\blessons?\s+\d{1,3}(?:\s*(?:,|and|&)\s*\d{1,3})*\b"
+)
 SECTION_MARK = chr(0xA7)  # section sign, spelled this way so the script's
                           # own source bytes stay plain ASCII regardless of
                           # the caller's locale -- see prose_check.sh's
@@ -292,6 +299,7 @@ def strip_exempt_spans(line):
     line = BARE_URL_RE.sub(" ", line)
     line = FILENAME_RE.sub(" ", line)
     line = CHAPTER_REF_RE.sub(" ", line)
+    line = LESSON_REF_RE.sub(" ", line)
     line = SECTION_REF_RE.sub(" ", line)
     line = LAYER_REF_RE.sub(" ", line)
     line = YEAR_RE.sub(" ", line)

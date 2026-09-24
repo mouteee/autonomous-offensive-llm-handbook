@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-labelledby="t d">
+<title id="t">LinUCB family scores over the scripted lesson</title><desc id="d">Line chart of the linucb score for two families across eight scripted steps; the signal feature flips mid-run and the chosen family per step is marked under the axis. Exact numbers are in data/course/linucb-trace.json.</desc>
+<rect x="0" y="0" width="900" height="480" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">Why a family wins: score = predicted + bonus</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">scripted trace, alpha 0.5, zero noise; filled dot = that step paid reward 1, open dot = 0</text>
+<line x1="64" y1="384" x2="710" y2="384" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="388" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0</text>
+<line x1="64" y1="291.09" x2="710" y2="291.09" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="295.09" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0.5</text>
+<line x1="64" y1="198.18" x2="710" y2="198.18" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="202.18" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">1</text>
+<line x1="64" y1="105.27" x2="710" y2="105.27" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="109.27" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">1.5</text>
+<line x1="64" y1="384" x2="710" y2="384" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="387" y1="96" x2="387" y2="424" stroke="#898781" stroke-width="1" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<text x="393" y="110" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">signal flips to 1</text>
+<polyline points="64,291.09 156.29,225.39 248.57,206.48 340.86,198.18 433.14,133.57 525.43,247.81 617.71,285.08 710,285.08" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="718" cy="285.08" r="4" fill="#3987e5"/>
+<text x="728" y="289.08" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-a</text>
+<polyline points="64,291.09 156.29,291.09 248.57,291.09 340.86,291.09 433.14,252.6 525.43,252.6 617.71,252.6 710,184.26" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="718" cy="184.26" r="4" fill="#d95926"/>
+<text x="728" y="188.26" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-b</text>
+<text x="64" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">0</text>
+<circle cx="64" cy="424" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="156.29" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">1</text>
+<circle cx="156.29" cy="424" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="248.57" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">2</text>
+<circle cx="248.57" cy="424" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="340.86" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">3</text>
+<circle cx="340.86" cy="424" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="433.14" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">4</text>
+<circle cx="433.14" cy="424" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<text x="525.43" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">5</text>
+<circle cx="525.43" cy="424" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<text x="617.71" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">6</text>
+<circle cx="617.71" cy="424" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="710" y="406" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">7</text>
+<circle cx="710" cy="424" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="54" y="428" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">chosen</text>
+<text x="387" y="460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">step</text>
+<text x="714" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">families</text>
+<line x1="714" y1="54" x2="732" y2="54" stroke="#3987e5" stroke-width="3" stroke-linecap="round"/>
+<text x="740" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-a</text>
+<line x1="714" y1="72" x2="732" y2="72" stroke="#d95926" stroke-width="3" stroke-linecap="round"/>
+<text x="740" y="76" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-b</text>
+</svg>

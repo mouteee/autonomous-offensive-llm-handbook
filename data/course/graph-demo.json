@@ -1,0 +1,98 @@
+{
+ "arms": {
+  "no-hop": {
+   "chosen_families": {
+    "fam-decoy": 59,
+    "fam-pay": 1
+   },
+   "parity": {
+    "clipped_fraction": 0.0,
+    "edges": 150,
+    "graph": "toy",
+    "hop": false,
+    "learn": true,
+    "learned_edges_n": 0,
+    "median_abs_learned": 0.0,
+    "nodes": 40,
+    "plastic_site": "association_edges"
+   },
+   "total_reward": -11.475123
+  },
+  "random": {
+   "chosen_families": {
+    "fam-decoy": 59,
+    "fam-pay": 1
+   },
+   "parity": {
+    "clipped_fraction": 0.285714,
+    "edges": 150,
+    "graph": "toy-random",
+    "hop": true,
+    "learn": true,
+    "learned_edges_n": 14,
+    "median_abs_learned": 0.314578185,
+    "nodes": 40,
+    "plastic_site": "association_edges"
+   },
+   "total_reward": -11.475123
+  },
+  "shuffled": {
+   "chosen_families": {
+    "fam-decoy": 59,
+    "fam-side": 1
+   },
+   "parity": {
+    "clipped_fraction": 0.0,
+    "edges": 150,
+    "graph": "toy-shuffled",
+    "hop": true,
+    "learn": true,
+    "learned_edges_n": 7,
+    "median_abs_learned": 0.021791,
+    "nodes": 40,
+    "plastic_site": "association_edges"
+   },
+   "total_reward": -11.775106
+  },
+  "toy": {
+   "chosen_families": {
+    "fam-decoy": 50,
+    "fam-side": 10
+   },
+   "parity": {
+    "clipped_fraction": 0.0,
+    "edges": 150,
+    "graph": "toy",
+    "hop": true,
+    "learn": true,
+    "learned_edges_n": 8,
+    "median_abs_learned": 0.706894351,
+    "nodes": 40,
+    "plastic_site": "association_edges"
+   },
+   "total_reward": -7.705076
+  },
+  "toy-frozen": {
+   "chosen_families": {
+    "fam-decoy": 59,
+    "fam-side": 1
+   },
+   "parity": {
+    "clipped_fraction": 0.0,
+    "edges": 150,
+    "graph": "toy",
+    "hop": true,
+    "learn": false,
+    "learned_edges_n": 0,
+    "median_abs_learned": 0.0,
+    "nodes": 40,
+    "plastic_site": "association_edges"
+   },
+   "total_reward": -11.938258
+  }
+ },
+ "fixture": "data/course/graph-toy.json",
+ "schema": "graph-lesson-demo/v1",
+ "seed": 7,
+ "world": "decoy-delay"
+}

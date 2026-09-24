@@ -1,0 +1,375 @@
+{
+ "body_digest": "449b85d859ec8f36",
+ "condition": {
+  "label": "linucb-frozen",
+  "learn": false,
+  "name": "linucb",
+  "seed": 7,
+  "world": "delayed-credit"
+ },
+ "manifest_digest": "3cc0636b65ea2e25",
+ "schema": "controller-research-raw/v1",
+ "total_reward": 23.659474,
+ "trace": [
+  {
+   "cum": 0.364767,
+   "family": "fam-authz",
+   "reward": 0.364767,
+   "step": 0
+  },
+  {
+   "cum": 0.679254,
+   "family": "fam-authz",
+   "reward": 0.314487,
+   "step": 1
+  },
+  {
+   "cum": 0.990854,
+   "family": "fam-authz",
+   "reward": 0.3116,
+   "step": 2
+  },
+  {
+   "cum": 1.377583,
+   "family": "fam-authz",
+   "reward": 0.386729,
+   "step": 3
+  },
+  {
+   "cum": 1.762487,
+   "family": "fam-authz",
+   "reward": 0.384904,
+   "step": 4
+  },
+  {
+   "cum": 2.107135,
+   "family": "fam-authz",
+   "reward": 0.344648,
+   "step": 5
+  },
+  {
+   "cum": 2.522556,
+   "family": "fam-authz",
+   "reward": 0.415421,
+   "step": 6
+  },
+  {
+   "cum": 2.831873,
+   "family": "fam-authz",
+   "reward": 0.309317,
+   "step": 7
+  },
+  {
+   "cum": 3.160724,
+   "family": "fam-authz",
+   "reward": 0.328851,
+   "step": 8
+  },
+  {
+   "cum": 3.623949,
+   "family": "fam-authz",
+   "reward": 0.463225,
+   "step": 9
+  },
+  {
+   "cum": 4.051732,
+   "family": "fam-authz",
+   "reward": 0.427783,
+   "step": 10
+  },
+  {
+   "cum": 4.36429,
+   "family": "fam-authz",
+   "reward": 0.312558,
+   "step": 11
+  },
+  {
+   "cum": 4.80037,
+   "family": "fam-authz",
+   "reward": 0.43608,
+   "step": 12
+  },
+  {
+   "cum": 5.217482,
+   "family": "fam-authz",
+   "reward": 0.417112,
+   "step": 13
+  },
+  {
+   "cum": 5.676358,
+   "family": "fam-authz",
+   "reward": 0.458876,
+   "step": 14
+  },
+  {
+   "cum": 6.091243,
+   "family": "fam-authz",
+   "reward": 0.414885,
+   "step": 15
+  },
+  {
+   "cum": 6.537132,
+   "family": "fam-authz",
+   "reward": 0.445889,
+   "step": 16
+  },
+  {
+   "cum": 6.860745,
+   "family": "fam-authz",
+   "reward": 0.323613,
+   "step": 17
+  },
+  {
+   "cum": 7.191142,
+   "family": "fam-authz",
+   "reward": 0.330397,
+   "step": 18
+  },
+  {
+   "cum": 7.624785,
+   "family": "fam-authz",
+   "reward": 0.433643,
+   "step": 19
+  },
+  {
+   "cum": 8.099881,
+   "family": "fam-authz",
+   "reward": 0.475096,
+   "step": 20
+  },
+  {
+   "cum": 8.518755,
+   "family": "fam-authz",
+   "reward": 0.418874,
+   "step": 21
+  },
+  {
+   "cum": 8.986749,
+   "family": "fam-authz",
+   "reward": 0.467994,
+   "step": 22
+  },
+  {
+   "cum": 9.419579,
+   "family": "fam-authz",
+   "reward": 0.43283,
+   "step": 23
+  },
+  {
+   "cum": 9.849005,
+   "family": "fam-authz",
+   "reward": 0.429426,
+   "step": 24
+  },
+  {
+   "cum": 10.205924,
+   "family": "fam-authz",
+   "reward": 0.356919,
+   "step": 25
+  },
+  {
+   "cum": 10.510437,
+   "family": "fam-authz",
+   "reward": 0.304513,
+   "step": 26
+  },
+  {
+   "cum": 10.833856,
+   "family": "fam-authz",
+   "reward": 0.323419,
+   "step": 27
+  },
+  {
+   "cum": 11.159724,
+   "family": "fam-authz",
+   "reward": 0.325868,
+   "step": 28
+  },
+  {
+   "cum": 11.634008,
+   "family": "fam-authz",
+   "reward": 0.474284,
+   "step": 29
+  },
+  {
+   "cum": 12.043896,
+   "family": "fam-authz",
+   "reward": 0.409888,
+   "step": 30
+  },
+  {
+   "cum": 12.516693,
+   "family": "fam-authz",
+   "reward": 0.472797,
+   "step": 31
+  },
+  {
+   "cum": 12.888447,
+   "family": "fam-authz",
+   "reward": 0.371754,
+   "step": 32
+  },
+  {
+   "cum": 13.218631,
+   "family": "fam-authz",
+   "reward": 0.330184,
+   "step": 33
+  },
+  {
+   "cum": 13.565298,
+   "family": "fam-authz",
+   "reward": 0.346667,
+   "step": 34
+  },
+  {
+   "cum": 13.917847,
+   "family": "fam-authz",
+   "reward": 0.352549,
+   "step": 35
+  },
+  {
+   "cum": 14.291698,
+   "family": "fam-authz",
+   "reward": 0.373851,
+   "step": 36
+  },
+  {
+   "cum": 14.729797,
+   "family": "fam-authz",
+   "reward": 0.438099,
+   "step": 37
+  },
+  {
+   "cum": 15.165037,
+   "family": "fam-authz",
+   "reward": 0.43524,
+   "step": 38
+  },
+  {
+   "cum": 15.621031,
+   "family": "fam-authz",
+   "reward": 0.455994,
+   "step": 39
+  },
+  {
+   "cum": 15.999507,
+   "family": "fam-authz",
+   "reward": 0.378476,
+   "step": 40
+  },
+  {
+   "cum": 16.426365,
+   "family": "fam-authz",
+   "reward": 0.426858,
+   "step": 41
+  },
+  {
+   "cum": 16.768118,
+   "family": "fam-authz",
+   "reward": 0.341753,
+   "step": 42
+  },
+  {
+   "cum": 17.078633,
+   "family": "fam-authz",
+   "reward": 0.310515,
+   "step": 43
+  },
+  {
+   "cum": 17.398926,
+   "family": "fam-authz",
+   "reward": 0.320293,
+   "step": 44
+  },
+  {
+   "cum": 17.873792,
+   "family": "fam-authz",
+   "reward": 0.474866,
+   "step": 45
+  },
+  {
+   "cum": 18.224244,
+   "family": "fam-authz",
+   "reward": 0.350452,
+   "step": 46
+  },
+  {
+   "cum": 18.548812,
+   "family": "fam-authz",
+   "reward": 0.324568,
+   "step": 47
+  },
+  {
+   "cum": 18.94201,
+   "family": "fam-authz",
+   "reward": 0.393198,
+   "step": 48
+  },
+  {
+   "cum": 19.262448,
+   "family": "fam-authz",
+   "reward": 0.320438,
+   "step": 49
+  },
+  {
+   "cum": 19.728219,
+   "family": "fam-authz",
+   "reward": 0.465771,
+   "step": 50
+  },
+  {
+   "cum": 20.218416,
+   "family": "fam-authz",
+   "reward": 0.490197,
+   "step": 51
+  },
+  {
+   "cum": 20.62705,
+   "family": "fam-authz",
+   "reward": 0.408634,
+   "step": 52
+  },
+  {
+   "cum": 21.12275,
+   "family": "fam-authz",
+   "reward": 0.4957,
+   "step": 53
+  },
+  {
+   "cum": 21.474973,
+   "family": "fam-authz",
+   "reward": 0.352223,
+   "step": 54
+  },
+  {
+   "cum": 21.929361,
+   "family": "fam-authz",
+   "reward": 0.454388,
+   "step": 55
+  },
+  {
+   "cum": 22.295294,
+   "family": "fam-authz",
+   "reward": 0.365933,
+   "step": 56
+  },
+  {
+   "cum": 22.792279,
+   "family": "fam-authz",
+   "reward": 0.496985,
+   "step": 57
+  },
+  {
+   "cum": 23.255946,
+   "family": "fam-authz",
+   "reward": 0.463667,
+   "step": 58
+  },
+  {
+   "cum": 23.659474,
+   "family": "fam-authz",
+   "reward": 0.403528,
+   "step": 59
+  }
+ ]
+}

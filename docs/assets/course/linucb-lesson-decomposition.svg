@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" role="img" aria-labelledby="t d">
+<title id="t">LinUCB scores decomposed into prediction and bonus</title><desc id="d">Stacked bar chart over the same eight scripted steps as the score line chart: for each step and family, the solid base is the learned prediction and the pale cap is the uncertainty bonus; their sum is the score. Exact numbers are in data/course/linucb-trace.json.</desc>
+<rect x="0" y="0" width="900" height="500" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">The same trace taken apart: solid = predicted, pale = bonus</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">reward grows the solid part and shrinks the pale cap; a context flip refills the caps</text>
+<line x1="64" y1="390" x2="710" y2="390" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="394" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0</text>
+<line x1="64" y1="295.15" x2="710" y2="295.15" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="299.15" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0.5</text>
+<line x1="64" y1="200.31" x2="710" y2="200.31" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="204.31" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">1</text>
+<line x1="64" y1="105.46" x2="710" y2="105.46" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="109.46" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">1.5</text>
+<line x1="64" y1="390" x2="710" y2="390" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="387" y1="96" x2="387" y2="430" stroke="#898781" stroke-width="1" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<text x="393" y="110" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">signal flips to 1</text>
+<rect x="78.38" y="295.15" width="22" height="94.85" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="108.38" y="295.15" width="22" height="94.85" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="159.12" y="295.15" width="22" height="94.85" fill="#3987e5"/>
+<rect x="159.12" y="228.09" width="22" height="67.07" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="189.12" y="295.15" width="22" height="94.85" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="239.88" y="263.54" width="22" height="126.46" fill="#3987e5"/>
+<rect x="239.88" y="208.78" width="22" height="54.76" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="269.88" y="295.15" width="22" height="94.85" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="320.62" y="247.73" width="22" height="142.27" fill="#3987e5"/>
+<rect x="320.62" y="200.31" width="22" height="47.42" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="350.62" y="295.15" width="22" height="94.85" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="401.38" y="238.25" width="22" height="151.75" fill="#3987e5"/>
+<rect x="401.38" y="134.35" width="22" height="103.9" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="431.38" y="255.87" width="22" height="134.13" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="482.12" y="321.02" width="22" height="68.98" fill="#3987e5"/>
+<rect x="482.12" y="250.97" width="22" height="70.05" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="512.12" y="255.87" width="22" height="134.13" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="562.88" y="345.37" width="22" height="44.63" fill="#3987e5"/>
+<rect x="562.88" y="289.02" width="22" height="56.35" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="592.88" y="255.87" width="22" height="134.13" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<rect x="643.62" y="345.37" width="22" height="44.63" fill="#3987e5"/>
+<rect x="643.62" y="289.02" width="22" height="56.35" fill="#3987e5" fill-opacity="0.3" stroke="#3987e5" stroke-width="1"/>
+<rect x="673.62" y="263.54" width="22" height="126.46" fill="#d95926"/>
+<rect x="673.62" y="186.1" width="22" height="77.44" fill="#d95926" fill-opacity="0.3" stroke="#d95926" stroke-width="1"/>
+<text x="104.38" y="285.15" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">all bonus</text>
+<text x="588.88" y="231.87" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">wins on bonus</text>
+<text x="588.88" y="245.87" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">alone (predicted 0)</text>
+<text x="104.38" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">0</text>
+<circle cx="104.38" cy="430" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="185.12" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">1</text>
+<circle cx="185.12" cy="430" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="265.88" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">2</text>
+<circle cx="265.88" cy="430" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="346.62" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">3</text>
+<circle cx="346.62" cy="430" r="5" fill="#3987e5" stroke="#1a1a19" stroke-width="2"/>
+<text x="427.38" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">4</text>
+<circle cx="427.38" cy="430" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<text x="508.12" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">5</text>
+<circle cx="508.12" cy="430" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<text x="588.88" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">6</text>
+<circle cx="588.88" cy="430" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="669.62" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">7</text>
+<circle cx="669.62" cy="430" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="54" y="434" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">chosen</text>
+<text x="387" y="480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">step</text>
+<text x="714" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">families</text>
+<line x1="714" y1="54" x2="732" y2="54" stroke="#3987e5" stroke-width="3" stroke-linecap="round"/>
+<text x="740" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-a</text>
+<line x1="714" y1="72" x2="732" y2="72" stroke="#d95926" stroke-width="3" stroke-linecap="round"/>
+<text x="740" y="76" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-b</text>
+<text x="714" y="108" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">per bar</text>
+<rect x="714" y="116" width="14" height="12" fill="#898781"/>
+<text x="736" y="126" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">predicted</text>
+<rect x="714" y="136" width="14" height="12" fill="#898781" fill-opacity="0.3" stroke="#898781" stroke-width="1"/>
+<text x="736" y="146" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">bonus</text>
+<text x="714" y="168" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">score = sum</text>
+</svg>

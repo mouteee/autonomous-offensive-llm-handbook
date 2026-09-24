@@ -1,0 +1,735 @@
+{
+ "body_digest": "b7bb400ec03780f3",
+ "condition": {
+  "label": "linucb-frozen",
+  "learn": false,
+  "name": "linucb",
+  "seed": 7,
+  "world": "drifting-signal"
+ },
+ "manifest_digest": "3cc0636b65ea2e25",
+ "schema": "controller-research-raw/v1",
+ "total_reward": 48.05507,
+ "trace": [
+  {
+   "cum": 0.364767,
+   "family": "fam-authz",
+   "reward": 0.364767,
+   "step": 0
+  },
+  {
+   "cum": 0.679254,
+   "family": "fam-authz",
+   "reward": 0.314487,
+   "step": 1
+  },
+  {
+   "cum": 0.990854,
+   "family": "fam-authz",
+   "reward": 0.3116,
+   "step": 2
+  },
+  {
+   "cum": 1.377583,
+   "family": "fam-authz",
+   "reward": 0.386729,
+   "step": 3
+  },
+  {
+   "cum": 1.762487,
+   "family": "fam-authz",
+   "reward": 0.384904,
+   "step": 4
+  },
+  {
+   "cum": 2.107135,
+   "family": "fam-authz",
+   "reward": 0.344648,
+   "step": 5
+  },
+  {
+   "cum": 2.522556,
+   "family": "fam-authz",
+   "reward": 0.415421,
+   "step": 6
+  },
+  {
+   "cum": 2.831873,
+   "family": "fam-authz",
+   "reward": 0.309317,
+   "step": 7
+  },
+  {
+   "cum": 3.160724,
+   "family": "fam-authz",
+   "reward": 0.328851,
+   "step": 8
+  },
+  {
+   "cum": 3.623949,
+   "family": "fam-authz",
+   "reward": 0.463225,
+   "step": 9
+  },
+  {
+   "cum": 4.051732,
+   "family": "fam-authz",
+   "reward": 0.427783,
+   "step": 10
+  },
+  {
+   "cum": 4.36429,
+   "family": "fam-authz",
+   "reward": 0.312558,
+   "step": 11
+  },
+  {
+   "cum": 4.80037,
+   "family": "fam-authz",
+   "reward": 0.43608,
+   "step": 12
+  },
+  {
+   "cum": 5.217482,
+   "family": "fam-authz",
+   "reward": 0.417112,
+   "step": 13
+  },
+  {
+   "cum": 5.676358,
+   "family": "fam-authz",
+   "reward": 0.458876,
+   "step": 14
+  },
+  {
+   "cum": 6.091243,
+   "family": "fam-authz",
+   "reward": 0.414885,
+   "step": 15
+  },
+  {
+   "cum": 6.537132,
+   "family": "fam-authz",
+   "reward": 0.445889,
+   "step": 16
+  },
+  {
+   "cum": 6.860745,
+   "family": "fam-authz",
+   "reward": 0.323613,
+   "step": 17
+  },
+  {
+   "cum": 7.191142,
+   "family": "fam-authz",
+   "reward": 0.330397,
+   "step": 18
+  },
+  {
+   "cum": 7.624785,
+   "family": "fam-authz",
+   "reward": 0.433643,
+   "step": 19
+  },
+  {
+   "cum": 8.099881,
+   "family": "fam-authz",
+   "reward": 0.475096,
+   "step": 20
+  },
+  {
+   "cum": 8.518755,
+   "family": "fam-authz",
+   "reward": 0.418874,
+   "step": 21
+  },
+  {
+   "cum": 8.986749,
+   "family": "fam-authz",
+   "reward": 0.467994,
+   "step": 22
+  },
+  {
+   "cum": 9.419579,
+   "family": "fam-authz",
+   "reward": 0.43283,
+   "step": 23
+  },
+  {
+   "cum": 9.849005,
+   "family": "fam-authz",
+   "reward": 0.429426,
+   "step": 24
+  },
+  {
+   "cum": 10.205924,
+   "family": "fam-authz",
+   "reward": 0.356919,
+   "step": 25
+  },
+  {
+   "cum": 10.510437,
+   "family": "fam-authz",
+   "reward": 0.304513,
+   "step": 26
+  },
+  {
+   "cum": 10.833856,
+   "family": "fam-authz",
+   "reward": 0.323419,
+   "step": 27
+  },
+  {
+   "cum": 11.159724,
+   "family": "fam-authz",
+   "reward": 0.325868,
+   "step": 28
+  },
+  {
+   "cum": 11.634008,
+   "family": "fam-authz",
+   "reward": 0.474284,
+   "step": 29
+  },
+  {
+   "cum": 12.043896,
+   "family": "fam-authz",
+   "reward": 0.409888,
+   "step": 30
+  },
+  {
+   "cum": 12.516693,
+   "family": "fam-authz",
+   "reward": 0.472797,
+   "step": 31
+  },
+  {
+   "cum": 12.888447,
+   "family": "fam-authz",
+   "reward": 0.371754,
+   "step": 32
+  },
+  {
+   "cum": 13.218631,
+   "family": "fam-authz",
+   "reward": 0.330184,
+   "step": 33
+  },
+  {
+   "cum": 13.565298,
+   "family": "fam-authz",
+   "reward": 0.346667,
+   "step": 34
+  },
+  {
+   "cum": 13.917847,
+   "family": "fam-authz",
+   "reward": 0.352549,
+   "step": 35
+  },
+  {
+   "cum": 14.291698,
+   "family": "fam-authz",
+   "reward": 0.373851,
+   "step": 36
+  },
+  {
+   "cum": 14.729797,
+   "family": "fam-authz",
+   "reward": 0.438099,
+   "step": 37
+  },
+  {
+   "cum": 15.165037,
+   "family": "fam-authz",
+   "reward": 0.43524,
+   "step": 38
+  },
+  {
+   "cum": 15.621031,
+   "family": "fam-authz",
+   "reward": 0.455994,
+   "step": 39
+  },
+  {
+   "cum": 15.999507,
+   "family": "fam-authz",
+   "reward": 0.378476,
+   "step": 40
+  },
+  {
+   "cum": 16.426365,
+   "family": "fam-authz",
+   "reward": 0.426858,
+   "step": 41
+  },
+  {
+   "cum": 16.768118,
+   "family": "fam-authz",
+   "reward": 0.341753,
+   "step": 42
+  },
+  {
+   "cum": 17.078633,
+   "family": "fam-authz",
+   "reward": 0.310515,
+   "step": 43
+  },
+  {
+   "cum": 17.398926,
+   "family": "fam-authz",
+   "reward": 0.320293,
+   "step": 44
+  },
+  {
+   "cum": 17.873792,
+   "family": "fam-authz",
+   "reward": 0.474866,
+   "step": 45
+  },
+  {
+   "cum": 18.224244,
+   "family": "fam-authz",
+   "reward": 0.350452,
+   "step": 46
+  },
+  {
+   "cum": 18.548812,
+   "family": "fam-authz",
+   "reward": 0.324568,
+   "step": 47
+  },
+  {
+   "cum": 18.94201,
+   "family": "fam-authz",
+   "reward": 0.393198,
+   "step": 48
+  },
+  {
+   "cum": 19.262448,
+   "family": "fam-authz",
+   "reward": 0.320438,
+   "step": 49
+  },
+  {
+   "cum": 19.728219,
+   "family": "fam-authz",
+   "reward": 0.465771,
+   "step": 50
+  },
+  {
+   "cum": 20.218416,
+   "family": "fam-authz",
+   "reward": 0.490197,
+   "step": 51
+  },
+  {
+   "cum": 20.62705,
+   "family": "fam-authz",
+   "reward": 0.408634,
+   "step": 52
+  },
+  {
+   "cum": 21.12275,
+   "family": "fam-authz",
+   "reward": 0.4957,
+   "step": 53
+  },
+  {
+   "cum": 21.474973,
+   "family": "fam-authz",
+   "reward": 0.352223,
+   "step": 54
+  },
+  {
+   "cum": 21.929361,
+   "family": "fam-authz",
+   "reward": 0.454388,
+   "step": 55
+  },
+  {
+   "cum": 22.295294,
+   "family": "fam-authz",
+   "reward": 0.365933,
+   "step": 56
+  },
+  {
+   "cum": 22.792279,
+   "family": "fam-authz",
+   "reward": 0.496985,
+   "step": 57
+  },
+  {
+   "cum": 23.255946,
+   "family": "fam-authz",
+   "reward": 0.463667,
+   "step": 58
+  },
+  {
+   "cum": 23.659474,
+   "family": "fam-authz",
+   "reward": 0.403528,
+   "step": 59
+  },
+  {
+   "cum": 23.965061,
+   "family": "fam-authz",
+   "reward": 0.305587,
+   "step": 60
+  },
+  {
+   "cum": 24.403565,
+   "family": "fam-authz",
+   "reward": 0.438504,
+   "step": 61
+  },
+  {
+   "cum": 24.890969,
+   "family": "fam-authz",
+   "reward": 0.487404,
+   "step": 62
+  },
+  {
+   "cum": 25.263896,
+   "family": "fam-authz",
+   "reward": 0.372927,
+   "step": 63
+  },
+  {
+   "cum": 25.603237,
+   "family": "fam-authz",
+   "reward": 0.339341,
+   "step": 64
+  },
+  {
+   "cum": 26.083299,
+   "family": "fam-authz",
+   "reward": 0.480062,
+   "step": 65
+  },
+  {
+   "cum": 26.513895,
+   "family": "fam-authz",
+   "reward": 0.430596,
+   "step": 66
+  },
+  {
+   "cum": 26.946012,
+   "family": "fam-authz",
+   "reward": 0.432117,
+   "step": 67
+  },
+  {
+   "cum": 27.39604,
+   "family": "fam-authz",
+   "reward": 0.450028,
+   "step": 68
+  },
+  {
+   "cum": 27.853867,
+   "family": "fam-authz",
+   "reward": 0.457827,
+   "step": 69
+  },
+  {
+   "cum": 28.348198,
+   "family": "fam-authz",
+   "reward": 0.494331,
+   "step": 70
+  },
+  {
+   "cum": 28.837557,
+   "family": "fam-authz",
+   "reward": 0.489359,
+   "step": 71
+  },
+  {
+   "cum": 29.162965,
+   "family": "fam-authz",
+   "reward": 0.325408,
+   "step": 72
+  },
+  {
+   "cum": 29.624265,
+   "family": "fam-authz",
+   "reward": 0.4613,
+   "step": 73
+  },
+  {
+   "cum": 30.120326,
+   "family": "fam-authz",
+   "reward": 0.496061,
+   "step": 74
+  },
+  {
+   "cum": 30.530058,
+   "family": "fam-authz",
+   "reward": 0.409732,
+   "step": 75
+  },
+  {
+   "cum": 31.024236,
+   "family": "fam-authz",
+   "reward": 0.494178,
+   "step": 76
+  },
+  {
+   "cum": 31.510961,
+   "family": "fam-authz",
+   "reward": 0.486725,
+   "step": 77
+  },
+  {
+   "cum": 31.976192,
+   "family": "fam-authz",
+   "reward": 0.465231,
+   "step": 78
+  },
+  {
+   "cum": 32.334785,
+   "family": "fam-authz",
+   "reward": 0.358593,
+   "step": 79
+  },
+  {
+   "cum": 32.686658,
+   "family": "fam-authz",
+   "reward": 0.351873,
+   "step": 80
+  },
+  {
+   "cum": 33.168661,
+   "family": "fam-authz",
+   "reward": 0.482003,
+   "step": 81
+  },
+  {
+   "cum": 33.585331,
+   "family": "fam-authz",
+   "reward": 0.41667,
+   "step": 82
+  },
+  {
+   "cum": 34.068875,
+   "family": "fam-authz",
+   "reward": 0.483544,
+   "step": 83
+  },
+  {
+   "cum": 34.473576,
+   "family": "fam-authz",
+   "reward": 0.404701,
+   "step": 84
+  },
+  {
+   "cum": 34.810198,
+   "family": "fam-authz",
+   "reward": 0.336622,
+   "step": 85
+  },
+  {
+   "cum": 35.144667,
+   "family": "fam-authz",
+   "reward": 0.334469,
+   "step": 86
+  },
+  {
+   "cum": 35.555962,
+   "family": "fam-authz",
+   "reward": 0.411295,
+   "step": 87
+  },
+  {
+   "cum": 35.96705,
+   "family": "fam-authz",
+   "reward": 0.411088,
+   "step": 88
+  },
+  {
+   "cum": 36.379109,
+   "family": "fam-authz",
+   "reward": 0.412059,
+   "step": 89
+  },
+  {
+   "cum": 36.833561,
+   "family": "fam-authz",
+   "reward": 0.454452,
+   "step": 90
+  },
+  {
+   "cum": 37.28556,
+   "family": "fam-authz",
+   "reward": 0.451999,
+   "step": 91
+  },
+  {
+   "cum": 37.708066,
+   "family": "fam-authz",
+   "reward": 0.422506,
+   "step": 92
+  },
+  {
+   "cum": 38.146612,
+   "family": "fam-authz",
+   "reward": 0.438546,
+   "step": 93
+  },
+  {
+   "cum": 38.542219,
+   "family": "fam-authz",
+   "reward": 0.395607,
+   "step": 94
+  },
+  {
+   "cum": 39.017526,
+   "family": "fam-authz",
+   "reward": 0.475307,
+   "step": 95
+  },
+  {
+   "cum": 39.429429,
+   "family": "fam-authz",
+   "reward": 0.411903,
+   "step": 96
+  },
+  {
+   "cum": 39.756856,
+   "family": "fam-authz",
+   "reward": 0.327427,
+   "step": 97
+  },
+  {
+   "cum": 40.071365,
+   "family": "fam-authz",
+   "reward": 0.314509,
+   "step": 98
+  },
+  {
+   "cum": 40.505259,
+   "family": "fam-authz",
+   "reward": 0.433894,
+   "step": 99
+  },
+  {
+   "cum": 40.836148,
+   "family": "fam-authz",
+   "reward": 0.330889,
+   "step": 100
+  },
+  {
+   "cum": 41.164744,
+   "family": "fam-authz",
+   "reward": 0.328596,
+   "step": 101
+  },
+  {
+   "cum": 41.508662,
+   "family": "fam-authz",
+   "reward": 0.343918,
+   "step": 102
+  },
+  {
+   "cum": 41.906114,
+   "family": "fam-authz",
+   "reward": 0.397452,
+   "step": 103
+  },
+  {
+   "cum": 42.238407,
+   "family": "fam-authz",
+   "reward": 0.332293,
+   "step": 104
+  },
+  {
+   "cum": 42.60623,
+   "family": "fam-authz",
+   "reward": 0.367823,
+   "step": 105
+  },
+  {
+   "cum": 43.05066,
+   "family": "fam-authz",
+   "reward": 0.44443,
+   "step": 106
+  },
+  {
+   "cum": 43.438752,
+   "family": "fam-authz",
+   "reward": 0.388092,
+   "step": 107
+  },
+  {
+   "cum": 43.863537,
+   "family": "fam-authz",
+   "reward": 0.424785,
+   "step": 108
+  },
+  {
+   "cum": 44.360554,
+   "family": "fam-authz",
+   "reward": 0.497017,
+   "step": 109
+  },
+  {
+   "cum": 44.68151,
+   "family": "fam-authz",
+   "reward": 0.320956,
+   "step": 110
+  },
+  {
+   "cum": 45.137309,
+   "family": "fam-authz",
+   "reward": 0.455799,
+   "step": 111
+  },
+  {
+   "cum": 45.52176,
+   "family": "fam-authz",
+   "reward": 0.384451,
+   "step": 112
+  },
+  {
+   "cum": 45.873482,
+   "family": "fam-authz",
+   "reward": 0.351722,
+   "step": 113
+  },
+  {
+   "cum": 46.287601,
+   "family": "fam-authz",
+   "reward": 0.414119,
+   "step": 114
+  },
+  {
+   "cum": 46.599106,
+   "family": "fam-authz",
+   "reward": 0.311505,
+   "step": 115
+  },
+  {
+   "cum": 46.913589,
+   "family": "fam-authz",
+   "reward": 0.314483,
+   "step": 116
+  },
+  {
+   "cum": 47.373915,
+   "family": "fam-authz",
+   "reward": 0.460326,
+   "step": 117
+  },
+  {
+   "cum": 47.68724,
+   "family": "fam-authz",
+   "reward": 0.313325,
+   "step": 118
+  },
+  {
+   "cum": 48.05507,
+   "family": "fam-authz",
+   "reward": 0.36783,
+   "step": 119
+  }
+ ]
+}

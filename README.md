@@ -1,10 +1,12 @@
+> 📖 **[Read the handbook online](https://mouteee.github.io/autonomous-offensive-llm-handbook/)**: follow the lessons from your first fixture run to an agent with clear limits.
+
 ![An autonomous machine agent inside a luminous control boundary, with observations entering through gates and evidence records leaving the system. Conceptual cover art.](docs/assets/autonomous-agent.png)
 
 # The model proposes, the code disposes
 
 `AUTONOMOUS SECURITY / THE BUILDER'S FIELD MANUAL`
 
-**[Start the course](rendered/course/01-first-run.md) · [Run the lab](rendered/07-harness-lab.md) · [Connect your model](docs/CONNECT_YOUR_MODEL.md) · [The build sequence](docs/BUILD_ROADMAP.md)**
+**[Read the website](https://mouteee.github.io/autonomous-offensive-llm-handbook/) · [Start the course](rendered/course/01-first-run.md) · [Run the lab](rendered/07-harness-lab.md) · [Connect your model](docs/CONNECT_YOUR_MODEL.md) · [The build sequence](docs/BUILD_ROADMAP.md)**
 
 A practical handbook for building autonomous security agents with explicit limits on what a model may decide. Learn how to turn observations into a plan, admit only permitted actions, bind findings to evidence, and account for work that could not be completed.
 
@@ -15,7 +17,7 @@ The model remains probabilistic. The host application owns authorization, allowe
 
 You should be comfortable reading basic Python, JSON and HTTP. Follow [the core route](docs/BUILD_ROADMAP.md) from the [first run](rendered/course/01-first-run.md) through [the assembled application](rendered/course/16-package-your-agent.md). The dispatch lesson points you to a short baseline selection contract; the adaptive controllers are optional after the core build. Along the way, you edit [starter files](starter/README.md) and run checks that fail until your code works. The course runs offline without an API key or target connection.
 
-A chapter-by-chapter website is available to build and preview; see [the reading website guide](docs/WEBSITE.md).
+The [reading website](https://mouteee.github.io/autonomous-offensive-llm-handbook/) presents the lessons in order, with navigation, diagrams and search. Use [the website guide](docs/WEBSITE.md) to build or preview it locally.
 
 From a local copy of this repository:
 

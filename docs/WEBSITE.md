@@ -40,6 +40,6 @@ In the public repository, open **Settings → Pages** and choose **GitHub Action
 
 The deployment job is restricted to the named public repository, its main branch, a public visibility check and that explicit workflow input. Ordinary pushes build an artifact without publishing. The private testing repository cannot deploy through this workflow. If the public repository is renamed or transferred, update the deployment conditions and canonical URL together.
 
-The intended public address is [the handbook on GitHub Pages](https://mouteee.github.io/autonomous-offensive-llm-handbook/); it becomes available after the first successful deployment.
+The public reading site is [the handbook on GitHub Pages](https://mouteee.github.io/autonomous-offensive-llm-handbook/). New content appears there after a successful deployment.
 
 See [GitHub's Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) for the hosting and reading theme.

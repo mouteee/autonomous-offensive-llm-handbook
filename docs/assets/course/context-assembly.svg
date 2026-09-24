@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" width="960" height="350" role="img" aria-labelledby="t d">
+<title id="t">From blocks to context, with the omissions on the record</title><desc id="d">Blocks grouped by tier fill per-tier budgets by priority, the unused budget pools into an overflow pass, and the assembler returns the context plus an omissions record naming every dropped block and why.</desc>
+<rect x="0" y="0" width="960" height="350" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">Budgets first, then overflow, and drops are recorded</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">blocks are kept or dropped whole; the omissions record is a deliverable, not debugging</text>
+<rect x="64" y="110" width="132" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="130" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">episodic</text>
+<text x="130" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">20% of budget</text>
+<rect x="204" y="110" width="97" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="252.5" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">knowledge</text>
+<text x="252.5" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">15% of budget</text>
+<rect x="309" y="110" width="167" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="392.5" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">longterm</text>
+<text x="392.5" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">25% of budget</text>
+<rect x="484" y="110" width="272" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="620" y="134" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">working</text>
+<text x="620" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">40% of budget</text>
+<text x="64" y="196" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">1. per tier: sort by priority, keep whole blocks that fit; a too-big block is skipped, a later smaller one may still fit</text>
+<text x="64" y="218" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">2. unused tier budget pools; remaining blocks admitted across tiers by priority until the pool is spent</text>
+<text x="64" y="240" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">3. expiry applies at assembly: an expired block never enters, and its omission says so</text>
+<rect x="64" y="268" width="330" height="52" rx="8" fill="none" stroke="#52c78d" stroke-width="1.8"/>
+<text x="229" y="290" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">assembled context</text>
+<text x="229" y="308" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#c3c2b7" text-anchor="middle" font-weight="normal">provenance headers kept; token sizes are estimates</text>
+<rect x="434" y="268" width="330" height="52" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="599" y="290" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">omissions record</text>
+<text x="599" y="308" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#c3c2b7" text-anchor="middle" font-weight="normal">every dropped block, with its reason</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" role="img" aria-labelledby="t d">
+<title id="t">The hybrid retrieval pipeline</title><desc id="d">A query is sanitized, runs through a keyword lane and an optional vector lane, each normalized separately, then a weighted merge produces ranked results carrying their component scores. When no embedder is configured the merge weights fall back to keyword-only.</desc>
+<rect x="0" y="0" width="960" height="380" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">Where a memory's rank comes from</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">each result carries its component scores, so the merge is inspectable instead of implied</text>
+<rect x="64" y="150" width="130" height="56" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="129" y="174" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">query</text>
+<text x="129" y="192" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">scope filters</text>
+<rect x="234" y="150" width="150" height="56" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="309" y="174" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">sanitize</text>
+<text x="309" y="192" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">strip, not escape</text>
+<rect x="434" y="96" width="210" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="539" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">keyword lane</text>
+<text x="539" y="138" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">FTS5 bm25, negate, min-max</text>
+<rect x="434" y="204" width="210" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="539" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">vector lane</text>
+<text x="539" y="246" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">embed, cosine, min-max</text>
+<rect x="694" y="150" width="200" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="794" y="174" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">weighted merge</text>
+<text x="794" y="192" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">vector 0.7 + keyword 0.3</text>
+<line x1="194" y1="178" x2="228" y2="178" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="384" y1="168" x2="428" y2="130" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="384" y1="188" x2="428" y2="226" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="644" y1="124" x2="688" y2="168" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="644" y1="232" x2="688" y2="188" stroke="#383835" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="794" y="236" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">ranked results, with</text>
+<text x="794" y="252" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">keyword, vector and final scores</text>
+<line x1="544" y1="264" x2="544" y2="306" stroke="#898781" stroke-width="1" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<text x="548" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">no embedder, or it raised: weights fall back to keyword-only, flagged in the trace</text>
+<text x="64" y="360" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">retrieval is advisory: nothing on this path can authorize a tool or widen scope</text>
+</svg>

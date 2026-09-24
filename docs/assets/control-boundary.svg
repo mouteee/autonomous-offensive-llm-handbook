@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="790" viewBox="0 0 1100 790" role="img" aria-labelledby="title desc">
+<title id="title">Autonomy with a boundary</title><desc id="desc">Operator policy and proposed work enter application controls. The application plans and authorizes work, invokes trusted adapters, captures evidence, governs findings and reports outcomes. The optional model bridge supplies action proposals. The offline lab uses fixtures and retains human review.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52c78d"/></marker></defs>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#ddffe8} .title{font-size:31px;font-weight:700} .sub{font-size:19px;fill:#93bda7} .label{font-size:15px;font-weight:700;letter-spacing:1px} .box-title{font-size:21px;font-weight:700} .body{font-size:18px;fill:#b6d7c4} .note{font-size:16px;fill:#93bda7} .line{fill:none;stroke:#52c78d;stroke-width:2.5;marker-end:url(#arrow)} .planned{stroke-dasharray:7 5}</style>
+<rect width="1100" height="790" rx="20" fill="#07110f"/>
+
+<text x="40" y="51" class="title">Autonomy with a boundary</text>
+<text x="40" y="85" class="sub">The model proposes work. The application decides what can happen.</text>
+<text x="50" y="127" class="label">OPERATOR</text>
+<rect x="40" y="143" width="300" height="110" rx="12" fill="#0d2a20" stroke="#45c985" stroke-width="2"/>
+<text x="60" y="177" class="box-title">Define the policy</text>
+<text x="60" y="207" class="body">Origins, tools and limits</text>
+<text x="60" y="234" class="body">remain outside model output.</text>
+<text x="410" y="127" class="label">MODEL PROPOSAL BRIDGE</text>
+<rect x="400" y="143" width="330" height="110" rx="12" fill="#142724" stroke="#68d5c4" stroke-width="2"/>
+<text x="420" y="177" class="box-title">Propose the next action</text>
+<text x="420" y="207" class="body">Read synthetic observations.</text>
+<text x="420" y="234" class="body">Return a structured proposal.</text>
+<text x="775" y="164" class="box-title">Tool boundary</text>
+<text x="775" y="197" class="body">Local fixtures</text>
+<text x="775" y="224" class="body">Fixture actions only</text>
+<text x="775" y="251" class="body">No live target request</text>
+<rect x="28" y="296" width="1044" height="416" rx="16" fill="#0b1c17" stroke="#285143" stroke-width="2"/>
+<text x="400" y="334" class="label">APPLICATION CONTROL BOUNDARY</text>
+<rect x="50" y="361" width="300" height="142" rx="12" fill="#10251d" stroke="#285143" stroke-width="2"/>
+<text x="70" y="395" class="box-title">Plan and admit work</text>
+<text x="70" y="425" class="body">Catalogue and observations</text>
+<text x="70" y="452" class="body">Scope, gate and stage</text>
+<text x="70" y="479" class="body">Action budget</text>
+<rect x="400" y="361" width="300" height="142" rx="12" fill="#10251d" stroke="#285143" stroke-width="2"/>
+<text x="420" y="395" class="box-title">Execute admitted work</text>
+<text x="420" y="425" class="body">Trusted fixture adapters</text>
+<text x="420" y="452" class="body">Live transport containment</text>
+<text x="420" y="479" class="body">is a separate integration.</text>
+<rect x="750" y="361" width="300" height="142" rx="12" fill="#10251d" stroke="#285143" stroke-width="2"/>
+<text x="770" y="395" class="box-title">Capture the evidence</text>
+<text x="770" y="425" class="body">Bind tool, URL and result.</text>
+<text x="770" y="452" class="body">Keep provenance.</text>
+<text x="770" y="479" class="body">Use exact citations.</text>
+<rect x="50" y="561" width="640" height="112" rx="12" fill="#10251d" stroke="#285143" stroke-width="2"/>
+<text x="70" y="595" class="box-title">Govern findings and record outcomes</text>
+<text x="70" y="625" class="body">Separate citation integrity, domain proof and severity policy.</text>
+<text x="70" y="652" class="body">Account for executed, failed, skipped and pending actions.</text>
+<rect x="750" y="561" width="300" height="112" rx="12" fill="#0d2a20" stroke="#45c985" stroke-width="2"/>
+<text x="770" y="595" class="box-title">Produce the report</text>
+<text x="770" y="625" class="body">Expose evidence and limits.</text>
+<text x="770" y="652" class="body">Require human review.</text>
+<path d="M190 253 V361" class="line"/>
+<path d="M565 253 V275 H270 V361" class="line"/>
+<path d="M350 432 H400" class="line"/>
+<path d="M700 432 H750" class="line"/>
+<path d="M900 503 V529 H370 V561" class="line"/>
+<path d="M690 618 H750" class="line"/>
+<text x="40" y="750" class="note">Reference design: trusted host and adapters; application checks are not an OS sandbox.</text>
+</svg>

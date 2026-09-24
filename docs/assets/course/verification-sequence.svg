@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" aria-labelledby="t d">
+<title id="t">From a capture to a reviewed finding</title><desc id="d">The verification sequence: a capture-bound finding is governed by the deterministic policy, packed with exactly its own capture for the verifier, and the verifier's reply is validated in host code against the closed verdict vocabulary -- accept, reject, needs_review, adjust_severity -- with unknown verdicts refused. Human acceptance stays a separate recorded decision.</desc>
+<rect x="0" y="0" width="720" height="470" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">The verdict path, with the host holding every gate</text>
+<text x="40" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">a quote must occur in the cited capture; a raise needs contained proof</text>
+<rect x="40" y="84" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="130" y="108" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">capture</text>
+<text x="130" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">content-addressed</text>
+<rect x="262" y="84" width="180" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="352" y="108" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">finding</text>
+<text x="352" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">verbatim quote required</text>
+<rect x="484" y="84" width="196" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="582" y="108" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">govern</text>
+<text x="582" y="127" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">grade, then ceiling</text>
+<line x1="220" y1="113" x2="258" y2="113" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="442" y1="113" x2="480" y2="113" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<rect x="40" y="186" width="300" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="190" y="210" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">verifier packet</text>
+<text x="190" y="229" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">one finding, its own capture, nothing else</text>
+<rect x="380" y="186" width="300" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="530" y="210" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">host validates the reply</text>
+<text x="530" y="229" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">closed vocabulary; unknown is refused</text>
+<line x1="582" y1="144" x2="582" y2="184" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="582" y1="164" x2="190" y2="164" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="190" y1="164" x2="190" y2="184" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="340" y1="215" x2="376" y2="215" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<rect x="40" y="296" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="190" y="320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">accept</text>
+<text x="190" y="339" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">severity holds</text>
+<line x1="530" y1="246" x2="190" y2="294" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<rect x="380" y="296" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="530" y="320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">reject</text>
+<text x="530" y="339" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">kept visible, with evidence</text>
+<line x1="530" y1="246" x2="530" y2="294" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<rect x="40" y="370" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="190" y="394" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">needs_review</text>
+<text x="190" y="413" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">unverified high caps</text>
+<line x1="530" y1="246" x2="190" y2="368" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<rect x="380" y="370" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="530" y="394" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">adjust_severity</text>
+<text x="530" y="413" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">down freely; up needs proof</text>
+<line x1="530" y1="246" x2="530" y2="368" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<text x="40" y="454" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#898781" text-anchor="start" font-weight="normal">human acceptance is a separate recorded decision; nothing on this path flips a finding to accepted</text>
+</svg>

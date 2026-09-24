@@ -75,7 +75,14 @@ if [ -r "$PRIVATE_DENY_FILE" ]; then
 fi
 echo "sanitization scope: $SCOPE"
 ERRS=$(mktemp); trap 'rm -f "$ERRS"' EXIT
-HITS=$(grep -rEinI "$DENY" "$TARGET" "$@" --exclude-dir=.git --exclude='audit.sh' --exclude='.denylist' 2>"$ERRS")
+# .venv is excluded because the README's own setup instructions create one
+# inside the repository, and a reader's installed dependencies are not this
+# tree's prose: an icon filename inside a wheel tripped the published
+# patterns for anyone following the front page verbatim. The exclusion does
+# not weaken publication: .venv is gitignored, so it never reaches the
+# tracked tree, and the publication gate audits a history-free staging tree
+# where no venv exists. Both directions are probed in tests/test_gates.sh.
+HITS=$(grep -rEinI "$DENY" "$TARGET" "$@" --exclude-dir=.git --exclude-dir='.venv' --exclude='audit.sh' --exclude='.denylist' 2>"$ERRS")
 STATUS=$?
 # grep exits 0 with matches and 1 with none; anything above that is an error,
 # and an error means the sweep did not cover what it was asked to cover.

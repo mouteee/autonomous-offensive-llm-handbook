@@ -1,0 +1,234 @@
+{
+ "checkpoint_counts": {
+  "budgets_used": {
+   "actions": 4.0,
+   "cost": 4.0,
+   "model_calls": 0.0,
+   "wall_seconds": 0.0
+  },
+  "events": 10
+ },
+ "finish_refused_while_pending": {
+  "completed": false,
+  "pending": [
+   "flaky_probe -> https://lab.example:443/ghost",
+   "steady_probe -> https://lab.example:443/"
+  ],
+  "reason": "every planned action needs a terminal or explicitly unresolved state first"
+ },
+ "ghost_action_id": "flaky_probe -> https://lab.example:443/ghost",
+ "movement_one": {
+  "dead_retries_exhausted": {
+   "action_id": "dead_probe -> https://lab.example:443/",
+   "attempts": 2,
+   "error_type": "ConnectionError",
+   "status": "tool_error"
+  },
+  "flaky_retry": {
+   "action_id": "flaky_probe -> https://lab.example:443/",
+   "attempts": 2,
+   "capture_id": "3beaa8cfbf05839d77b0a8fc962ce18815da4f493919410bad88f8c87dc27762",
+   "status": "clean"
+  }
+ },
+ "reconciliation": [
+  {
+   "action_id": "flaky_probe -> https://lab.example:443/ghost",
+   "settled": "unresolved"
+  },
+  {
+   "action_id": "steady_probe -> https://lab.example:443/",
+   "capture_id": "79b7f9876feb03dea202173127d724f12e2496fe4432941104041c30fb0054ff",
+   "settled": "clean"
+  }
+ ],
+ "schema": "lifecycle-demo/v1",
+ "terminal": {
+  "completed": true,
+  "report": {
+   "aborted": false,
+   "acceptance": "report acceptance is a separate human decision",
+   "attempts": [
+    {
+     "action_id": "flaky_probe -> https://lab.example:443/",
+     "attempt": 1,
+     "error_type": "TimeoutError",
+     "result": "error"
+    },
+    {
+     "action_id": "flaky_probe -> https://lab.example:443/",
+     "attempt": 2,
+     "capture_id": "3beaa8cfbf05839d77b0a8fc962ce18815da4f493919410bad88f8c87dc27762",
+     "result": "clean"
+    },
+    {
+     "action_id": "dead_probe -> https://lab.example:443/",
+     "attempt": 1,
+     "error_type": "ConnectionError",
+     "result": "error"
+    },
+    {
+     "action_id": "dead_probe -> https://lab.example:443/",
+     "attempt": 2,
+     "error_type": "ConnectionError",
+     "result": "error"
+    }
+   ],
+   "coverage": {
+    "planned": 4,
+    "terminal": 3,
+    "unresolved": [
+     "flaky_probe -> https://lab.example:443/ghost"
+    ]
+   },
+   "evidence_count": 2,
+   "omitted": [],
+   "outcomes_by_status": {
+    "clean": 2,
+    "tool_error": 1,
+    "unresolved": 1
+   },
+   "resource_use": {
+    "exhausted": [],
+    "limits": {
+     "actions": 10,
+     "cost": 20,
+     "model_calls": 4,
+     "wall_seconds": 600
+    },
+    "used": {
+     "actions": 4.0,
+     "cost": 4.0,
+     "model_calls": 0.0,
+     "wall_seconds": 0.0
+    }
+   },
+   "run_id": "b3df22bbfac701129d08d9013ab50bf7fb93b06e8187f80f0c361f9b54022b00",
+   "run_report": {
+    "captures": {
+     "3beaa8cfbf05839d77b0a8fc962ce18815da4f493919410bad88f8c87dc27762": {
+      "action_id": "flaky_probe -> https://lab.example:443/",
+      "body": "flaky response from https://lab.example/, retried",
+      "status": 200
+     },
+     "79b7f9876feb03dea202173127d724f12e2496fe4432941104041c30fb0054ff": {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "body": "response captured just before the crash",
+      "status": 200
+     }
+    },
+    "closed": "finished",
+    "counts": {
+     "events": 12,
+     "refusals": 1
+    },
+    "events": [
+     {
+      "action_id": "flaky_probe -> https://lab.example:443/",
+      "destination": "https://lab.example:443/",
+      "event": "action_authorized",
+      "tool": "flaky_probe"
+     },
+     {
+      "action_id": "flaky_probe -> https://lab.example:443/",
+      "capture_id": "3beaa8cfbf05839d77b0a8fc962ce18815da4f493919410bad88f8c87dc27762",
+      "event": "capture",
+      "status": 200
+     },
+     {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "destination": "https://lab.example:443/",
+      "event": "action_authorized",
+      "tool": "steady_probe"
+     },
+     {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "capture_id": "79b7f9876feb03dea202173127d724f12e2496fe4432941104041c30fb0054ff",
+      "event": "capture",
+      "status": 200
+     },
+     {
+      "action_id": "dead_probe -> https://lab.example:443/",
+      "destination": "https://lab.example:443/",
+      "event": "action_authorized",
+      "tool": "dead_probe"
+     },
+     {
+      "action_id": "flaky_probe -> https://lab.example:443/ghost",
+      "destination": "https://lab.example:443/ghost",
+      "event": "action_authorized",
+      "tool": "flaky_probe"
+     },
+     {
+      "action_id": "dead_probe -> https://lab.example:443/",
+      "detail": "ConnectionError after 2 attempts",
+      "event": "outcome",
+      "status": "tool_error"
+     },
+     {
+      "action_id": "flaky_probe -> https://lab.example:443/",
+      "detail": "attempt 2 of at most 2",
+      "event": "outcome",
+      "status": "clean"
+     },
+     {
+      "action_id": "flaky_probe -> https://lab.example:443/ghost",
+      "detail": "interrupted before its outcome was recorded",
+      "event": "outcome",
+      "status": "unresolved"
+     },
+     {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "detail": "interrupted before its outcome was recorded",
+      "event": "outcome",
+      "status": "unresolved"
+     },
+     {
+      "event": "refused",
+      "kind": "reconcile",
+      "payload_keys": [],
+      "reason": "flaky_probe -> https://lab.example:443/ghost stays unresolved: no capture found, and the tool is not declared idempotent, so the side effect may have happened and is not repeated"
+     },
+     {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "detail": "settled on reconciliation: capture 79b7f9876feb already existed",
+      "event": "outcome",
+      "status": "clean"
+     }
+    ],
+    "findings": [],
+    "gate": null,
+    "observations": {},
+    "outcomes": {
+     "dead_probe -> https://lab.example:443/": {
+      "action_id": "dead_probe -> https://lab.example:443/",
+      "detail": "ConnectionError after 2 attempts",
+      "status": "tool_error"
+     },
+     "flaky_probe -> https://lab.example:443/": {
+      "action_id": "flaky_probe -> https://lab.example:443/",
+      "detail": "attempt 2 of at most 2",
+      "status": "clean"
+     },
+     "flaky_probe -> https://lab.example:443/ghost": {
+      "action_id": "flaky_probe -> https://lab.example:443/ghost",
+      "detail": "interrupted before its outcome was recorded",
+      "status": "unresolved"
+     },
+     "steady_probe -> https://lab.example:443/": {
+      "action_id": "steady_probe -> https://lab.example:443/",
+      "detail": "settled on reconciliation: capture 79b7f9876feb already existed",
+      "status": "clean"
+     }
+    },
+    "policy_digest": "b007c3b5a64f17f87a42616a10d59362b92a5740b551aaa516cc5ea0b55277a3",
+    "reviews": [],
+    "run_id": "b3df22bbfac701129d08d9013ab50bf7fb93b06e8187f80f0c361f9b54022b00",
+    "schema": "course-run-report/v1",
+    "stage": null
+   },
+   "schema": "course-terminal-report/v1",
+   "stop_reason": null
+  }
+ }
+}

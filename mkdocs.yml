@@ -1,0 +1,98 @@
+site_name: Autonomous Security Handbook
+site_description: Build autonomous security agents with explicit limits, evidence and accountable control decisions.
+site_url: !ENV [HANDBOOK_SITE_URL, 'https://mouteee.github.io/autonomous-offensive-llm-handbook/']
+repo_url: !ENV [HANDBOOK_REPOSITORY_URL, 'https://github.com/mouteee/autonomous-offensive-llm-handbook']
+repo_name: Read the source
+edit_uri: ''
+docs_dir: .site-src
+site_dir: site
+theme:
+  name: material
+  font: false
+  icon:
+    logo: material/book-open-page-variant-outline
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - tables
+  - toc:
+      permalink: '#'
+      permalink_title: Link to this section
+  - pymdownx.highlight
+  - pymdownx.superfences
+extra_css:
+  - assets/handbook.css
+extra:
+  generator: false
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn
+nav:
+  - Start here: index.md
+  - Build the agent:
+      - '01 · Run the whole thing first': chapters/course/01-first-run.md
+      - '02 · Policy, records, write boundary': chapters/course/02-policy-and-records.md
+      - '03 · Stages and observations': chapters/course/03-stages-and-observations.md
+      - '04 · Model proposals': chapters/course/04-model-proposals.md
+      - '05 · Candidates and dispatch': chapters/course/05-candidates-and-dispatch.md
+      - '06 · Retrieval and memory': chapters/course/06-retrieval-and-memory.md
+      - '07 · Context assembly': chapters/course/07-context-assembly.md
+      - '08 · Evidence and verification': chapters/course/08-evidence-and-verification.md
+      - '09 · Stop, recover, finish': chapters/course/09-stop-recover-finish.md
+      - '16 · Package your agent (capstone)': chapters/course/16-package-your-agent.md
+  - 'Controllers (10-15, optional after the lesson-5 detour)':
+      - '10 · The controller laboratory': chapters/course/10-controller-laboratory.md
+      - '11 · LinUCB step by step': chapters/course/11-linucb.md
+      - '12 · The mushroom-body controller': chapters/course/12-mushroom-body-controller.md
+      - '13 · Plasticity and credit': chapters/course/13-plasticity-and-credit.md
+      - '14 · Graph controller experiments': chapters/course/14-graph-controller-experiments.md
+      - '15 · Comparisons and interpretation': chapters/course/15-comparisons-and-interpretation.md
+  - Foundations:
+      - 'Run the offline lab': chapters/07-harness-lab.md
+      - 'Connect your model': connect-your-model.md
+      - 'Build roadmap': roadmap.md
+  - Design notes:
+      - '00 · The determinism gradient': chapters/00-thesis.md
+      - '01 · The fixed procedure': chapters/01-fixed-procedure.md
+      - '02 · One recording path': chapters/02-narrow-waist.md
+      - '03 · Asymmetric trust': chapters/03-asymmetric-trust.md
+      - '04 · Scope as code': chapters/04-scope-as-code.md
+      - '05 · Honest reporting': chapters/05-honest-reporting.md
+      - '06 · Build your own': chapters/06-build-your-own.md
+  - Contracts and studies:
+      - 'A · Orchestrator contract': chapters/appendix-a-orchestrator-contract.md
+      - 'B · Schemas': chapters/appendix-b-schemas.md
+      - 'C · Failure museum': chapters/appendix-c-failure-museum.md
+      - 'D · Verifier study': chapters/appendix-d-verifier-study.md
+      - 'E · Factorial study': chapters/appendix-e-factorial-study.md
+      - 'F · Evidence register': chapters/appendix-f-evidence-register.md

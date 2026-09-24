@@ -243,13 +243,16 @@ def _code_link(payload, up="../"):
 
 
 def _extract_numok(text):
-    r"""Pull each inline num-ok annotation out, leaving a numbered marker in place.
+    r"""Pull each inline num-ok annotation out, leaving a footnote reference.
 
-    Returns the body with every num-ok annotation replaced by a `[num-ok N]`
-    marker at its own point of use, and the collected annotation texts in
-    document order. The texts are captured from the source verbatim and are
-    never macro- or prose-processed, because an annotation is commentary about
-    a number, not chapter content.
+    Returns the body with every num-ok annotation removed and a Markdown
+    footnote reference (`[^num-N]`) appended to the end of the first
+    non-empty line that follows it -- the paragraph the annotation sits
+    beside in the source -- plus the collected annotation texts in document
+    order. An annotation nothing follows is dropped from the body and kept
+    in the footer. The texts are captured from the source verbatim and are
+    never macro- or prose-processed, because an annotation is commentary
+    about a number, not chapter content.
 
     `_NUMOK_RE` is retyped from the citation gate's `NUM_OK_RE`, not extracted
     the way `gate_resolver` extracts and executes the gate's `resolve`. It
@@ -276,9 +279,15 @@ def _extract_numok(text):
 
     def repl(match):
         notes.append(match.group(1))
-        return f"[num-ok {len(notes)}]"
+        return f"\x00NUMOK{len(notes)}\x00"
 
     body = _NUMOK_RE.sub(repl, text)
+
+    def attach(match):
+        return f"{match.group(2)} [^num-{match.group(1)}]"
+
+    body = re.sub(r"\x00NUMOK(\d+)\x00\n+([^\n]+)", attach, body)
+    body = re.sub(r"\x00NUMOK\d+\x00\n?", "", body)
     return body, notes
 
 
@@ -290,13 +299,13 @@ def _footer(notes):
         "",
         "## Number annotations",
         "",
-        "These notes were written inline in the handbook source beside the numbers "
-        "they explain; the renderer collects them here and leaves a `[num-ok N]` "
-        "marker at each point of use above.",
+        "These notes were written inline in the handbook source beside the "
+        "numbers they explain; each renders as a footnote at its point of "
+        "use above.",
         "",
     ]
     for i, note in enumerate(notes, 1):
-        lines.append(f"**[num-ok {i}]** {note}")
+        lines.append(f"[^num-{i}]: {note}")
         lines.append("")
     return "\n".join(lines)
 

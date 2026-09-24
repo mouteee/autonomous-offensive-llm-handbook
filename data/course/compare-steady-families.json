@@ -1,0 +1,3403 @@
+{
+ "best_fixed_cumulative": [
+  0.63017,
+  1.337346,
+  2.038833,
+  2.652804,
+  3.418174,
+  4.143661,
+  4.822997,
+  5.594691,
+  6.218249,
+  6.854394,
+  7.528874,
+  8.140794,
+  8.826312,
+  9.516949,
+  10.256748,
+  10.961787,
+  11.619375,
+  12.303,
+  13.000793,
+  13.753707,
+  14.416457,
+  15.132436,
+  15.921372,
+  16.533506,
+  17.332125,
+  18.009283,
+  18.701622,
+  19.313413,
+  19.962936,
+  20.579052,
+  21.355729,
+  22.011413,
+  22.788252,
+  23.423496,
+  24.120489,
+  24.721308,
+  25.434576,
+  26.137674,
+  26.748473,
+  27.523376,
+  28.203172,
+  28.815622,
+  29.448083,
+  30.04813,
+  30.720852,
+  31.443666,
+  32.113144,
+  32.882931,
+  33.579698,
+  34.248225,
+  34.880513,
+  35.586164,
+  36.191572,
+  36.964237,
+  37.637577,
+  38.344095,
+  38.988703,
+  39.759229,
+  40.507204,
+  41.178317,
+  41.834201,
+  42.625504,
+  43.423112,
+  44.067204,
+  44.708079,
+  45.476166,
+  46.236095,
+  47.01805,
+  47.713657,
+  48.38016,
+  49.059328,
+  49.804288,
+  50.434518,
+  51.063753,
+  51.795207,
+  52.421404,
+  53.151339,
+  53.838101,
+  54.480309,
+  55.128417,
+  55.81222,
+  56.482977,
+  57.263836,
+  57.964166,
+  58.567907,
+  59.168693,
+  59.863392,
+  60.528588,
+  61.285442,
+  61.935141,
+  62.636684,
+  63.419182,
+  64.120293,
+  64.810762,
+  65.599062,
+  66.387498,
+  67.176151,
+  67.800475,
+  68.448603,
+  69.20539,
+  69.948614,
+  70.725181,
+  71.515682,
+  72.313656,
+  72.99996,
+  73.639109,
+  74.243006,
+  74.846622,
+  75.549074,
+  76.306747,
+  76.95986,
+  77.613949,
+  78.396232,
+  79.026106,
+  79.766189,
+  80.50383,
+  81.2915,
+  81.908249,
+  82.680804,
+  83.391417
+ ],
+ "best_fixed_family": "fam-inject",
+ "best_fixed_family_reward": 83.391417,
+ "controllers": {
+  "legacy": {
+   "learn": false,
+   "regret_vs_best_fixed_family": 59.675536,
+   "statuses": {
+    "clean": 120
+   },
+   "total_reward": 23.715881,
+   "trace": [
+    {
+     "candidate_id": "fam-recon:step0",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 0.230187,
+     "learning_applied": false,
+     "reward": 0.230187,
+     "status": "clean",
+     "step": 0
+    },
+    {
+     "candidate_id": "fam-recon:step1",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 0.403325,
+     "learning_applied": false,
+     "reward": 0.173138,
+     "status": "clean",
+     "step": 1
+    },
+    {
+     "candidate_id": "fam-recon:step2",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 0.510824,
+     "learning_applied": false,
+     "reward": 0.107499,
+     "status": "clean",
+     "step": 2
+    },
+    {
+     "candidate_id": "fam-recon:step3",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 0.628967,
+     "learning_applied": false,
+     "reward": 0.118143,
+     "status": "clean",
+     "step": 3
+    },
+    {
+     "candidate_id": "fam-recon:step4",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 0.753727,
+     "learning_applied": false,
+     "reward": 0.12476,
+     "status": "clean",
+     "step": 4
+    },
+    {
+     "candidate_id": "fam-recon:step5",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 1.043269,
+     "learning_applied": false,
+     "reward": 0.289542,
+     "status": "clean",
+     "step": 5
+    },
+    {
+     "candidate_id": "fam-recon:step6",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 1.33852,
+     "learning_applied": false,
+     "reward": 0.295251,
+     "status": "clean",
+     "step": 6
+    },
+    {
+     "candidate_id": "fam-recon:step7",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 1.496442,
+     "learning_applied": false,
+     "reward": 0.157922,
+     "status": "clean",
+     "step": 7
+    },
+    {
+     "candidate_id": "fam-recon:step8",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 1.658138,
+     "learning_applied": false,
+     "reward": 0.161696,
+     "status": "clean",
+     "step": 8
+    },
+    {
+     "candidate_id": "fam-recon:step9",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 1.874458,
+     "learning_applied": false,
+     "reward": 0.21632,
+     "status": "clean",
+     "step": 9
+    },
+    {
+     "candidate_id": "fam-recon:step10",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.084007,
+     "learning_applied": false,
+     "reward": 0.209549,
+     "status": "clean",
+     "step": 10
+    },
+    {
+     "candidate_id": "fam-recon:step11",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.225199,
+     "learning_applied": false,
+     "reward": 0.141192,
+     "status": "clean",
+     "step": 11
+    },
+    {
+     "candidate_id": "fam-recon:step12",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.388028,
+     "learning_applied": false,
+     "reward": 0.162829,
+     "status": "clean",
+     "step": 12
+    },
+    {
+     "candidate_id": "fam-recon:step13",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.547981,
+     "learning_applied": false,
+     "reward": 0.159953,
+     "status": "clean",
+     "step": 13
+    },
+    {
+     "candidate_id": "fam-recon:step14",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.6968,
+     "learning_applied": false,
+     "reward": 0.148819,
+     "status": "clean",
+     "step": 14
+    },
+    {
+     "candidate_id": "fam-recon:step15",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 2.971827,
+     "learning_applied": false,
+     "reward": 0.275027,
+     "status": "clean",
+     "step": 15
+    },
+    {
+     "candidate_id": "fam-recon:step16",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 3.267862,
+     "learning_applied": false,
+     "reward": 0.296035,
+     "status": "clean",
+     "step": 16
+    },
+    {
+     "candidate_id": "fam-recon:step17",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 3.51929,
+     "learning_applied": false,
+     "reward": 0.251428,
+     "status": "clean",
+     "step": 17
+    },
+    {
+     "candidate_id": "fam-recon:step18",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 3.627131,
+     "learning_applied": false,
+     "reward": 0.107841,
+     "status": "clean",
+     "step": 18
+    },
+    {
+     "candidate_id": "fam-recon:step19",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 3.841736,
+     "learning_applied": false,
+     "reward": 0.214605,
+     "status": "clean",
+     "step": 19
+    },
+    {
+     "candidate_id": "fam-recon:step20",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 4.080795,
+     "learning_applied": false,
+     "reward": 0.239059,
+     "status": "clean",
+     "step": 20
+    },
+    {
+     "candidate_id": "fam-recon:step21",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 4.272036,
+     "learning_applied": false,
+     "reward": 0.191241,
+     "status": "clean",
+     "step": 21
+    },
+    {
+     "candidate_id": "fam-recon:step22",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 4.466856,
+     "learning_applied": false,
+     "reward": 0.19482,
+     "status": "clean",
+     "step": 22
+    },
+    {
+     "candidate_id": "fam-recon:step23",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 4.707154,
+     "learning_applied": false,
+     "reward": 0.240298,
+     "status": "clean",
+     "step": 23
+    },
+    {
+     "candidate_id": "fam-recon:step24",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 4.971539,
+     "learning_applied": false,
+     "reward": 0.264385,
+     "status": "clean",
+     "step": 24
+    },
+    {
+     "candidate_id": "fam-recon:step25",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 5.20527,
+     "learning_applied": false,
+     "reward": 0.233731,
+     "status": "clean",
+     "step": 25
+    },
+    {
+     "candidate_id": "fam-recon:step26",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 5.33888,
+     "learning_applied": false,
+     "reward": 0.13361,
+     "status": "clean",
+     "step": 26
+    },
+    {
+     "candidate_id": "fam-recon:step27",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 5.592527,
+     "learning_applied": false,
+     "reward": 0.253647,
+     "status": "clean",
+     "step": 27
+    },
+    {
+     "candidate_id": "fam-recon:step28",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 5.770717,
+     "learning_applied": false,
+     "reward": 0.17819,
+     "status": "clean",
+     "step": 28
+    },
+    {
+     "candidate_id": "fam-recon:step29",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 5.960554,
+     "learning_applied": false,
+     "reward": 0.189837,
+     "status": "clean",
+     "step": 29
+    },
+    {
+     "candidate_id": "fam-recon:step30",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 6.22441,
+     "learning_applied": false,
+     "reward": 0.263856,
+     "status": "clean",
+     "step": 30
+    },
+    {
+     "candidate_id": "fam-recon:step31",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 6.407469,
+     "learning_applied": false,
+     "reward": 0.183059,
+     "status": "clean",
+     "step": 31
+    },
+    {
+     "candidate_id": "fam-recon:step32",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 6.699015,
+     "learning_applied": false,
+     "reward": 0.291546,
+     "status": "clean",
+     "step": 32
+    },
+    {
+     "candidate_id": "fam-recon:step33",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 6.845406,
+     "learning_applied": false,
+     "reward": 0.146391,
+     "status": "clean",
+     "step": 33
+    },
+    {
+     "candidate_id": "fam-recon:step34",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 7.063231,
+     "learning_applied": false,
+     "reward": 0.217825,
+     "status": "clean",
+     "step": 34
+    },
+    {
+     "candidate_id": "fam-recon:step35",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 7.24702,
+     "learning_applied": false,
+     "reward": 0.183789,
+     "status": "clean",
+     "step": 35
+    },
+    {
+     "candidate_id": "fam-recon:step36",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 7.53764,
+     "learning_applied": false,
+     "reward": 0.29062,
+     "status": "clean",
+     "step": 36
+    },
+    {
+     "candidate_id": "fam-recon:step37",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 7.761159,
+     "learning_applied": false,
+     "reward": 0.223519,
+     "status": "clean",
+     "step": 37
+    },
+    {
+     "candidate_id": "fam-recon:step38",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.041066,
+     "learning_applied": false,
+     "reward": 0.279907,
+     "status": "clean",
+     "step": 38
+    },
+    {
+     "candidate_id": "fam-recon:step39",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.300641,
+     "learning_applied": false,
+     "reward": 0.259575,
+     "status": "clean",
+     "step": 39
+    },
+    {
+     "candidate_id": "fam-recon:step40",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.421348,
+     "learning_applied": false,
+     "reward": 0.120707,
+     "status": "clean",
+     "step": 40
+    },
+    {
+     "candidate_id": "fam-recon:step41",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.534818,
+     "learning_applied": false,
+     "reward": 0.11347,
+     "status": "clean",
+     "step": 41
+    },
+    {
+     "candidate_id": "fam-recon:step42",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.702829,
+     "learning_applied": false,
+     "reward": 0.168011,
+     "status": "clean",
+     "step": 42
+    },
+    {
+     "candidate_id": "fam-recon:step43",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.833082,
+     "learning_applied": false,
+     "reward": 0.130253,
+     "status": "clean",
+     "step": 43
+    },
+    {
+     "candidate_id": "fam-recon:step44",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 8.938182,
+     "learning_applied": false,
+     "reward": 0.1051,
+     "status": "clean",
+     "step": 44
+    },
+    {
+     "candidate_id": "fam-recon:step45",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.067892,
+     "learning_applied": false,
+     "reward": 0.12971,
+     "status": "clean",
+     "step": 45
+    },
+    {
+     "candidate_id": "fam-recon:step46",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.240725,
+     "learning_applied": false,
+     "reward": 0.172833,
+     "status": "clean",
+     "step": 46
+    },
+    {
+     "candidate_id": "fam-recon:step47",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.539346,
+     "learning_applied": false,
+     "reward": 0.298621,
+     "status": "clean",
+     "step": 47
+    },
+    {
+     "candidate_id": "fam-recon:step48",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.656523,
+     "learning_applied": false,
+     "reward": 0.117177,
+     "status": "clean",
+     "step": 48
+    },
+    {
+     "candidate_id": "fam-recon:step49",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.809474,
+     "learning_applied": false,
+     "reward": 0.152951,
+     "status": "clean",
+     "step": 49
+    },
+    {
+     "candidate_id": "fam-recon:step50",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 9.914093,
+     "learning_applied": false,
+     "reward": 0.104619,
+     "status": "clean",
+     "step": 50
+    },
+    {
+     "candidate_id": "fam-recon:step51",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 10.043414,
+     "learning_applied": false,
+     "reward": 0.129321,
+     "status": "clean",
+     "step": 51
+    },
+    {
+     "candidate_id": "fam-recon:step52",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 10.249036,
+     "learning_applied": false,
+     "reward": 0.205622,
+     "status": "clean",
+     "step": 52
+    },
+    {
+     "candidate_id": "fam-recon:step53",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 10.488275,
+     "learning_applied": false,
+     "reward": 0.239239,
+     "status": "clean",
+     "step": 53
+    },
+    {
+     "candidate_id": "fam-recon:step54",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 10.621683,
+     "learning_applied": false,
+     "reward": 0.133408,
+     "status": "clean",
+     "step": 54
+    },
+    {
+     "candidate_id": "fam-recon:step55",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 10.877494,
+     "learning_applied": false,
+     "reward": 0.255811,
+     "status": "clean",
+     "step": 55
+    },
+    {
+     "candidate_id": "fam-recon:step56",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.139796,
+     "learning_applied": false,
+     "reward": 0.262302,
+     "status": "clean",
+     "step": 56
+    },
+    {
+     "candidate_id": "fam-recon:step57",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.401012,
+     "learning_applied": false,
+     "reward": 0.261216,
+     "status": "clean",
+     "step": 57
+    },
+    {
+     "candidate_id": "fam-recon:step58",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.54636,
+     "learning_applied": false,
+     "reward": 0.145348,
+     "status": "clean",
+     "step": 58
+    },
+    {
+     "candidate_id": "fam-recon:step59",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.652156,
+     "learning_applied": false,
+     "reward": 0.105796,
+     "status": "clean",
+     "step": 59
+    },
+    {
+     "candidate_id": "fam-recon:step60",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.803991,
+     "learning_applied": false,
+     "reward": 0.151835,
+     "status": "clean",
+     "step": 60
+    },
+    {
+     "candidate_id": "fam-recon:step61",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 11.993437,
+     "learning_applied": false,
+     "reward": 0.189446,
+     "status": "clean",
+     "step": 61
+    },
+    {
+     "candidate_id": "fam-recon:step62",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 12.284437,
+     "learning_applied": false,
+     "reward": 0.291,
+     "status": "clean",
+     "step": 62
+    },
+    {
+     "candidate_id": "fam-recon:step63",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 12.429806,
+     "learning_applied": false,
+     "reward": 0.145369,
+     "status": "clean",
+     "step": 63
+    },
+    {
+     "candidate_id": "fam-recon:step64",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 12.654619,
+     "learning_applied": false,
+     "reward": 0.224813,
+     "status": "clean",
+     "step": 64
+    },
+    {
+     "candidate_id": "fam-recon:step65",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 12.850514,
+     "learning_applied": false,
+     "reward": 0.195895,
+     "status": "clean",
+     "step": 65
+    },
+    {
+     "candidate_id": "fam-recon:step66",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 12.96747,
+     "learning_applied": false,
+     "reward": 0.116956,
+     "status": "clean",
+     "step": 66
+    },
+    {
+     "candidate_id": "fam-recon:step67",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 13.223931,
+     "learning_applied": false,
+     "reward": 0.256461,
+     "status": "clean",
+     "step": 67
+    },
+    {
+     "candidate_id": "fam-recon:step68",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 13.359635,
+     "learning_applied": false,
+     "reward": 0.135704,
+     "status": "clean",
+     "step": 68
+    },
+    {
+     "candidate_id": "fam-recon:step69",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 13.6198,
+     "learning_applied": false,
+     "reward": 0.260165,
+     "status": "clean",
+     "step": 69
+    },
+    {
+     "candidate_id": "fam-recon:step70",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 13.800077,
+     "learning_applied": false,
+     "reward": 0.180277,
+     "status": "clean",
+     "step": 70
+    },
+    {
+     "candidate_id": "fam-recon:step71",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 13.934078,
+     "learning_applied": false,
+     "reward": 0.134001,
+     "status": "clean",
+     "step": 71
+    },
+    {
+     "candidate_id": "fam-recon:step72",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 14.215048,
+     "learning_applied": false,
+     "reward": 0.28097,
+     "status": "clean",
+     "step": 72
+    },
+    {
+     "candidate_id": "fam-recon:step73",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 14.48035,
+     "learning_applied": false,
+     "reward": 0.265302,
+     "status": "clean",
+     "step": 73
+    },
+    {
+     "candidate_id": "fam-recon:step74",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 14.650432,
+     "learning_applied": false,
+     "reward": 0.170082,
+     "status": "clean",
+     "step": 74
+    },
+    {
+     "candidate_id": "fam-recon:step75",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 14.753281,
+     "learning_applied": false,
+     "reward": 0.102849,
+     "status": "clean",
+     "step": 75
+    },
+    {
+     "candidate_id": "fam-recon:step76",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 14.958597,
+     "learning_applied": false,
+     "reward": 0.205316,
+     "status": "clean",
+     "step": 76
+    },
+    {
+     "candidate_id": "fam-recon:step77",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 15.232946,
+     "learning_applied": false,
+     "reward": 0.274349,
+     "status": "clean",
+     "step": 77
+    },
+    {
+     "candidate_id": "fam-recon:step78",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 15.383313,
+     "learning_applied": false,
+     "reward": 0.150367,
+     "status": "clean",
+     "step": 78
+    },
+    {
+     "candidate_id": "fam-recon:step79",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 15.6006,
+     "learning_applied": false,
+     "reward": 0.217287,
+     "status": "clean",
+     "step": 79
+    },
+    {
+     "candidate_id": "fam-recon:step80",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 15.726815,
+     "learning_applied": false,
+     "reward": 0.126215,
+     "status": "clean",
+     "step": 80
+    },
+    {
+     "candidate_id": "fam-recon:step81",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 15.918447,
+     "learning_applied": false,
+     "reward": 0.191632,
+     "status": "clean",
+     "step": 81
+    },
+    {
+     "candidate_id": "fam-recon:step82",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 16.102573,
+     "learning_applied": false,
+     "reward": 0.184126,
+     "status": "clean",
+     "step": 82
+    },
+    {
+     "candidate_id": "fam-recon:step83",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 16.308938,
+     "learning_applied": false,
+     "reward": 0.206365,
+     "status": "clean",
+     "step": 83
+    },
+    {
+     "candidate_id": "fam-recon:step84",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 16.496963,
+     "learning_applied": false,
+     "reward": 0.188025,
+     "status": "clean",
+     "step": 84
+    },
+    {
+     "candidate_id": "fam-recon:step85",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 16.756797,
+     "learning_applied": false,
+     "reward": 0.259834,
+     "status": "clean",
+     "step": 85
+    },
+    {
+     "candidate_id": "fam-recon:step86",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.001836,
+     "learning_applied": false,
+     "reward": 0.245039,
+     "status": "clean",
+     "step": 86
+    },
+    {
+     "candidate_id": "fam-recon:step87",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.205506,
+     "learning_applied": false,
+     "reward": 0.20367,
+     "status": "clean",
+     "step": 87
+    },
+    {
+     "candidate_id": "fam-recon:step88",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.326728,
+     "learning_applied": false,
+     "reward": 0.121222,
+     "status": "clean",
+     "step": 88
+    },
+    {
+     "candidate_id": "fam-recon:step89",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.482111,
+     "learning_applied": false,
+     "reward": 0.155383,
+     "status": "clean",
+     "step": 89
+    },
+    {
+     "candidate_id": "fam-recon:step90",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.694457,
+     "learning_applied": false,
+     "reward": 0.212346,
+     "status": "clean",
+     "step": 90
+    },
+    {
+     "candidate_id": "fam-recon:step91",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 17.883107,
+     "learning_applied": false,
+     "reward": 0.18865,
+     "status": "clean",
+     "step": 91
+    },
+    {
+     "candidate_id": "fam-recon:step92",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 18.085539,
+     "learning_applied": false,
+     "reward": 0.202432,
+     "status": "clean",
+     "step": 92
+    },
+    {
+     "candidate_id": "fam-recon:step93",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 18.292196,
+     "learning_applied": false,
+     "reward": 0.206657,
+     "status": "clean",
+     "step": 93
+    },
+    {
+     "candidate_id": "fam-recon:step94",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 18.53204,
+     "learning_applied": false,
+     "reward": 0.239844,
+     "status": "clean",
+     "step": 94
+    },
+    {
+     "candidate_id": "fam-recon:step95",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 18.683958,
+     "learning_applied": false,
+     "reward": 0.151918,
+     "status": "clean",
+     "step": 95
+    },
+    {
+     "candidate_id": "fam-recon:step96",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 18.951958,
+     "learning_applied": false,
+     "reward": 0.268,
+     "status": "clean",
+     "step": 96
+    },
+    {
+     "candidate_id": "fam-recon:step97",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 19.140382,
+     "learning_applied": false,
+     "reward": 0.188424,
+     "status": "clean",
+     "step": 97
+    },
+    {
+     "candidate_id": "fam-recon:step98",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 19.255006,
+     "learning_applied": false,
+     "reward": 0.114624,
+     "status": "clean",
+     "step": 98
+    },
+    {
+     "candidate_id": "fam-recon:step99",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 19.534411,
+     "learning_applied": false,
+     "reward": 0.279405,
+     "status": "clean",
+     "step": 99
+    },
+    {
+     "candidate_id": "fam-recon:step100",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 19.766462,
+     "learning_applied": false,
+     "reward": 0.232051,
+     "status": "clean",
+     "step": 100
+    },
+    {
+     "candidate_id": "fam-recon:step101",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 20.059971,
+     "learning_applied": false,
+     "reward": 0.293509,
+     "status": "clean",
+     "step": 101
+    },
+    {
+     "candidate_id": "fam-recon:step102",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 20.239622,
+     "learning_applied": false,
+     "reward": 0.179651,
+     "status": "clean",
+     "step": 102
+    },
+    {
+     "candidate_id": "fam-recon:step103",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 20.506111,
+     "learning_applied": false,
+     "reward": 0.266489,
+     "status": "clean",
+     "step": 103
+    },
+    {
+     "candidate_id": "fam-recon:step104",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 20.709232,
+     "learning_applied": false,
+     "reward": 0.203121,
+     "status": "clean",
+     "step": 104
+    },
+    {
+     "candidate_id": "fam-recon:step105",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 20.872937,
+     "learning_applied": false,
+     "reward": 0.163705,
+     "status": "clean",
+     "step": 105
+    },
+    {
+     "candidate_id": "fam-recon:step106",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.083747,
+     "learning_applied": false,
+     "reward": 0.21081,
+     "status": "clean",
+     "step": 106
+    },
+    {
+     "candidate_id": "fam-recon:step107",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.250047,
+     "learning_applied": false,
+     "reward": 0.1663,
+     "status": "clean",
+     "step": 107
+    },
+    {
+     "candidate_id": "fam-recon:step108",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.362905,
+     "learning_applied": false,
+     "reward": 0.112858,
+     "status": "clean",
+     "step": 108
+    },
+    {
+     "candidate_id": "fam-recon:step109",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.657244,
+     "learning_applied": false,
+     "reward": 0.294339,
+     "status": "clean",
+     "step": 109
+    },
+    {
+     "candidate_id": "fam-recon:step110",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.765162,
+     "learning_applied": false,
+     "reward": 0.107918,
+     "status": "clean",
+     "step": 110
+    },
+    {
+     "candidate_id": "fam-recon:step111",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 21.891073,
+     "learning_applied": false,
+     "reward": 0.125911,
+     "status": "clean",
+     "step": 111
+    },
+    {
+     "candidate_id": "fam-recon:step112",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 22.154869,
+     "learning_applied": false,
+     "reward": 0.263796,
+     "status": "clean",
+     "step": 112
+    },
+    {
+     "candidate_id": "fam-recon:step113",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 22.438703,
+     "learning_applied": false,
+     "reward": 0.283834,
+     "status": "clean",
+     "step": 113
+    },
+    {
+     "candidate_id": "fam-recon:step114",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 22.556595,
+     "learning_applied": false,
+     "reward": 0.117892,
+     "status": "clean",
+     "step": 114
+    },
+    {
+     "candidate_id": "fam-recon:step115",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 22.741658,
+     "learning_applied": false,
+     "reward": 0.185063,
+     "status": "clean",
+     "step": 115
+    },
+    {
+     "candidate_id": "fam-recon:step116",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 22.968546,
+     "learning_applied": false,
+     "reward": 0.226888,
+     "status": "clean",
+     "step": 116
+    },
+    {
+     "candidate_id": "fam-recon:step117",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 23.239792,
+     "learning_applied": false,
+     "reward": 0.271246,
+     "status": "clean",
+     "step": 117
+    },
+    {
+     "candidate_id": "fam-recon:step118",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 23.430547,
+     "learning_applied": false,
+     "reward": 0.190755,
+     "status": "clean",
+     "step": 118
+    },
+    {
+     "candidate_id": "fam-recon:step119",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 23.715881,
+     "learning_applied": false,
+     "reward": 0.285334,
+     "status": "clean",
+     "step": 119
+    }
+   ]
+  },
+  "linucb": {
+   "learn": true,
+   "regret_vs_best_fixed_family": 1.955577,
+   "statuses": {
+    "clean": 120
+   },
+   "total_reward": 81.43584,
+   "trace": [
+    {
+     "candidate_id": "fam-authz:step0",
+     "chosen_family": "fam-authz",
+     "cumulative_reward": 0.364767,
+     "learning_applied": true,
+     "reward": 0.364767,
+     "status": "clean",
+     "step": 0
+    },
+    {
+     "candidate_id": "fam-inject:step1",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 1.071943,
+     "learning_applied": true,
+     "reward": 0.707176,
+     "status": "clean",
+     "step": 1
+    },
+    {
+     "candidate_id": "fam-inject:step2",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 1.77343,
+     "learning_applied": true,
+     "reward": 0.701487,
+     "status": "clean",
+     "step": 2
+    },
+    {
+     "candidate_id": "fam-inject:step3",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 2.387401,
+     "learning_applied": true,
+     "reward": 0.613971,
+     "status": "clean",
+     "step": 3
+    },
+    {
+     "candidate_id": "fam-inject:step4",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 3.152771,
+     "learning_applied": true,
+     "reward": 0.76537,
+     "status": "clean",
+     "step": 4
+    },
+    {
+     "candidate_id": "fam-inject:step5",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 3.878258,
+     "learning_applied": true,
+     "reward": 0.725487,
+     "status": "clean",
+     "step": 5
+    },
+    {
+     "candidate_id": "fam-inject:step6",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 4.557594,
+     "learning_applied": true,
+     "reward": 0.679336,
+     "status": "clean",
+     "step": 6
+    },
+    {
+     "candidate_id": "fam-inject:step7",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 5.329288,
+     "learning_applied": true,
+     "reward": 0.771694,
+     "status": "clean",
+     "step": 7
+    },
+    {
+     "candidate_id": "fam-inject:step8",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 5.952846,
+     "learning_applied": true,
+     "reward": 0.623558,
+     "status": "clean",
+     "step": 8
+    },
+    {
+     "candidate_id": "fam-recon:step9",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 6.169166,
+     "learning_applied": true,
+     "reward": 0.21632,
+     "status": "clean",
+     "step": 9
+    },
+    {
+     "candidate_id": "fam-inject:step10",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 6.843646,
+     "learning_applied": true,
+     "reward": 0.67448,
+     "status": "clean",
+     "step": 10
+    },
+    {
+     "candidate_id": "fam-inject:step11",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 7.455566,
+     "learning_applied": true,
+     "reward": 0.61192,
+     "status": "clean",
+     "step": 11
+    },
+    {
+     "candidate_id": "fam-inject:step12",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 8.141084,
+     "learning_applied": true,
+     "reward": 0.685518,
+     "status": "clean",
+     "step": 12
+    },
+    {
+     "candidate_id": "fam-inject:step13",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 8.831721,
+     "learning_applied": true,
+     "reward": 0.690637,
+     "status": "clean",
+     "step": 13
+    },
+    {
+     "candidate_id": "fam-inject:step14",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 9.57152,
+     "learning_applied": true,
+     "reward": 0.739799,
+     "status": "clean",
+     "step": 14
+    },
+    {
+     "candidate_id": "fam-inject:step15",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 10.276559,
+     "learning_applied": true,
+     "reward": 0.705039,
+     "status": "clean",
+     "step": 15
+    },
+    {
+     "candidate_id": "fam-inject:step16",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 10.934147,
+     "learning_applied": true,
+     "reward": 0.657588,
+     "status": "clean",
+     "step": 16
+    },
+    {
+     "candidate_id": "fam-inject:step17",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 11.617772,
+     "learning_applied": true,
+     "reward": 0.683625,
+     "status": "clean",
+     "step": 17
+    },
+    {
+     "candidate_id": "fam-inject:step18",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 12.315565,
+     "learning_applied": true,
+     "reward": 0.697793,
+     "status": "clean",
+     "step": 18
+    },
+    {
+     "candidate_id": "fam-inject:step19",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 13.068479,
+     "learning_applied": true,
+     "reward": 0.752914,
+     "status": "clean",
+     "step": 19
+    },
+    {
+     "candidate_id": "fam-inject:step20",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 13.731229,
+     "learning_applied": true,
+     "reward": 0.66275,
+     "status": "clean",
+     "step": 20
+    },
+    {
+     "candidate_id": "fam-inject:step21",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 14.447208,
+     "learning_applied": true,
+     "reward": 0.715979,
+     "status": "clean",
+     "step": 21
+    },
+    {
+     "candidate_id": "fam-inject:step22",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 15.236144,
+     "learning_applied": true,
+     "reward": 0.788936,
+     "status": "clean",
+     "step": 22
+    },
+    {
+     "candidate_id": "fam-inject:step23",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 15.848278,
+     "learning_applied": true,
+     "reward": 0.612134,
+     "status": "clean",
+     "step": 23
+    },
+    {
+     "candidate_id": "fam-inject:step24",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 16.646897,
+     "learning_applied": true,
+     "reward": 0.798619,
+     "status": "clean",
+     "step": 24
+    },
+    {
+     "candidate_id": "fam-inject:step25",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 17.324055,
+     "learning_applied": true,
+     "reward": 0.677158,
+     "status": "clean",
+     "step": 25
+    },
+    {
+     "candidate_id": "fam-inject:step26",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 18.016394,
+     "learning_applied": true,
+     "reward": 0.692339,
+     "status": "clean",
+     "step": 26
+    },
+    {
+     "candidate_id": "fam-inject:step27",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 18.628185,
+     "learning_applied": true,
+     "reward": 0.611791,
+     "status": "clean",
+     "step": 27
+    },
+    {
+     "candidate_id": "fam-inject:step28",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 19.277708,
+     "learning_applied": true,
+     "reward": 0.649523,
+     "status": "clean",
+     "step": 28
+    },
+    {
+     "candidate_id": "fam-inject:step29",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 19.893824,
+     "learning_applied": true,
+     "reward": 0.616116,
+     "status": "clean",
+     "step": 29
+    },
+    {
+     "candidate_id": "fam-inject:step30",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 20.670501,
+     "learning_applied": true,
+     "reward": 0.776677,
+     "status": "clean",
+     "step": 30
+    },
+    {
+     "candidate_id": "fam-inject:step31",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 21.326185,
+     "learning_applied": true,
+     "reward": 0.655684,
+     "status": "clean",
+     "step": 31
+    },
+    {
+     "candidate_id": "fam-inject:step32",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 22.103024,
+     "learning_applied": true,
+     "reward": 0.776839,
+     "status": "clean",
+     "step": 32
+    },
+    {
+     "candidate_id": "fam-inject:step33",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 22.738268,
+     "learning_applied": true,
+     "reward": 0.635244,
+     "status": "clean",
+     "step": 33
+    },
+    {
+     "candidate_id": "fam-inject:step34",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 23.435261,
+     "learning_applied": true,
+     "reward": 0.696993,
+     "status": "clean",
+     "step": 34
+    },
+    {
+     "candidate_id": "fam-inject:step35",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 24.03608,
+     "learning_applied": true,
+     "reward": 0.600819,
+     "status": "clean",
+     "step": 35
+    },
+    {
+     "candidate_id": "fam-inject:step36",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 24.749348,
+     "learning_applied": true,
+     "reward": 0.713268,
+     "status": "clean",
+     "step": 36
+    },
+    {
+     "candidate_id": "fam-inject:step37",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 25.452446,
+     "learning_applied": true,
+     "reward": 0.703098,
+     "status": "clean",
+     "step": 37
+    },
+    {
+     "candidate_id": "fam-inject:step38",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 26.063245,
+     "learning_applied": true,
+     "reward": 0.610799,
+     "status": "clean",
+     "step": 38
+    },
+    {
+     "candidate_id": "fam-inject:step39",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 26.838148,
+     "learning_applied": true,
+     "reward": 0.774903,
+     "status": "clean",
+     "step": 39
+    },
+    {
+     "candidate_id": "fam-inject:step40",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 27.517944,
+     "learning_applied": true,
+     "reward": 0.679796,
+     "status": "clean",
+     "step": 40
+    },
+    {
+     "candidate_id": "fam-inject:step41",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 28.130394,
+     "learning_applied": true,
+     "reward": 0.61245,
+     "status": "clean",
+     "step": 41
+    },
+    {
+     "candidate_id": "fam-inject:step42",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 28.762855,
+     "learning_applied": true,
+     "reward": 0.632461,
+     "status": "clean",
+     "step": 42
+    },
+    {
+     "candidate_id": "fam-inject:step43",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 29.362902,
+     "learning_applied": true,
+     "reward": 0.600047,
+     "status": "clean",
+     "step": 43
+    },
+    {
+     "candidate_id": "fam-inject:step44",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 30.035624,
+     "learning_applied": true,
+     "reward": 0.672722,
+     "status": "clean",
+     "step": 44
+    },
+    {
+     "candidate_id": "fam-inject:step45",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 30.758438,
+     "learning_applied": true,
+     "reward": 0.722814,
+     "status": "clean",
+     "step": 45
+    },
+    {
+     "candidate_id": "fam-inject:step46",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 31.427916,
+     "learning_applied": true,
+     "reward": 0.669478,
+     "status": "clean",
+     "step": 46
+    },
+    {
+     "candidate_id": "fam-inject:step47",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 32.197703,
+     "learning_applied": true,
+     "reward": 0.769787,
+     "status": "clean",
+     "step": 47
+    },
+    {
+     "candidate_id": "fam-inject:step48",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 32.89447,
+     "learning_applied": true,
+     "reward": 0.696767,
+     "status": "clean",
+     "step": 48
+    },
+    {
+     "candidate_id": "fam-inject:step49",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 33.562997,
+     "learning_applied": true,
+     "reward": 0.668527,
+     "status": "clean",
+     "step": 49
+    },
+    {
+     "candidate_id": "fam-inject:step50",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 34.195285,
+     "learning_applied": true,
+     "reward": 0.632288,
+     "status": "clean",
+     "step": 50
+    },
+    {
+     "candidate_id": "fam-inject:step51",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 34.900936,
+     "learning_applied": true,
+     "reward": 0.705651,
+     "status": "clean",
+     "step": 51
+    },
+    {
+     "candidate_id": "fam-inject:step52",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 35.506344,
+     "learning_applied": true,
+     "reward": 0.605408,
+     "status": "clean",
+     "step": 52
+    },
+    {
+     "candidate_id": "fam-inject:step53",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 36.279009,
+     "learning_applied": true,
+     "reward": 0.772665,
+     "status": "clean",
+     "step": 53
+    },
+    {
+     "candidate_id": "fam-inject:step54",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 36.952349,
+     "learning_applied": true,
+     "reward": 0.67334,
+     "status": "clean",
+     "step": 54
+    },
+    {
+     "candidate_id": "fam-inject:step55",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 37.658867,
+     "learning_applied": true,
+     "reward": 0.706518,
+     "status": "clean",
+     "step": 55
+    },
+    {
+     "candidate_id": "fam-inject:step56",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 38.303475,
+     "learning_applied": true,
+     "reward": 0.644608,
+     "status": "clean",
+     "step": 56
+    },
+    {
+     "candidate_id": "fam-inject:step57",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 39.074001,
+     "learning_applied": true,
+     "reward": 0.770526,
+     "status": "clean",
+     "step": 57
+    },
+    {
+     "candidate_id": "fam-inject:step58",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 39.821976,
+     "learning_applied": true,
+     "reward": 0.747975,
+     "status": "clean",
+     "step": 58
+    },
+    {
+     "candidate_id": "fam-inject:step59",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 40.493089,
+     "learning_applied": true,
+     "reward": 0.671113,
+     "status": "clean",
+     "step": 59
+    },
+    {
+     "candidate_id": "fam-inject:step60",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 41.148973,
+     "learning_applied": true,
+     "reward": 0.655884,
+     "status": "clean",
+     "step": 60
+    },
+    {
+     "candidate_id": "fam-inject:step61",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 41.940276,
+     "learning_applied": true,
+     "reward": 0.791303,
+     "status": "clean",
+     "step": 61
+    },
+    {
+     "candidate_id": "fam-inject:step62",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 42.737884,
+     "learning_applied": true,
+     "reward": 0.797608,
+     "status": "clean",
+     "step": 62
+    },
+    {
+     "candidate_id": "fam-inject:step63",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 43.381976,
+     "learning_applied": true,
+     "reward": 0.644092,
+     "status": "clean",
+     "step": 63
+    },
+    {
+     "candidate_id": "fam-inject:step64",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 44.022851,
+     "learning_applied": true,
+     "reward": 0.640875,
+     "status": "clean",
+     "step": 64
+    },
+    {
+     "candidate_id": "fam-inject:step65",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 44.790938,
+     "learning_applied": true,
+     "reward": 0.768087,
+     "status": "clean",
+     "step": 65
+    },
+    {
+     "candidate_id": "fam-inject:step66",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 45.550867,
+     "learning_applied": true,
+     "reward": 0.759929,
+     "status": "clean",
+     "step": 66
+    },
+    {
+     "candidate_id": "fam-inject:step67",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 46.332822,
+     "learning_applied": true,
+     "reward": 0.781955,
+     "status": "clean",
+     "step": 67
+    },
+    {
+     "candidate_id": "fam-inject:step68",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 47.028429,
+     "learning_applied": true,
+     "reward": 0.695607,
+     "status": "clean",
+     "step": 68
+    },
+    {
+     "candidate_id": "fam-inject:step69",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 47.694932,
+     "learning_applied": true,
+     "reward": 0.666503,
+     "status": "clean",
+     "step": 69
+    },
+    {
+     "candidate_id": "fam-inject:step70",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 48.3741,
+     "learning_applied": true,
+     "reward": 0.679168,
+     "status": "clean",
+     "step": 70
+    },
+    {
+     "candidate_id": "fam-inject:step71",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 49.11906,
+     "learning_applied": true,
+     "reward": 0.74496,
+     "status": "clean",
+     "step": 71
+    },
+    {
+     "candidate_id": "fam-inject:step72",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 49.74929,
+     "learning_applied": true,
+     "reward": 0.63023,
+     "status": "clean",
+     "step": 72
+    },
+    {
+     "candidate_id": "fam-inject:step73",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 50.378525,
+     "learning_applied": true,
+     "reward": 0.629235,
+     "status": "clean",
+     "step": 73
+    },
+    {
+     "candidate_id": "fam-inject:step74",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 51.109979,
+     "learning_applied": true,
+     "reward": 0.731454,
+     "status": "clean",
+     "step": 74
+    },
+    {
+     "candidate_id": "fam-inject:step75",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 51.736176,
+     "learning_applied": true,
+     "reward": 0.626197,
+     "status": "clean",
+     "step": 75
+    },
+    {
+     "candidate_id": "fam-inject:step76",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 52.466111,
+     "learning_applied": true,
+     "reward": 0.729935,
+     "status": "clean",
+     "step": 76
+    },
+    {
+     "candidate_id": "fam-inject:step77",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 53.152873,
+     "learning_applied": true,
+     "reward": 0.686762,
+     "status": "clean",
+     "step": 77
+    },
+    {
+     "candidate_id": "fam-inject:step78",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 53.795081,
+     "learning_applied": true,
+     "reward": 0.642208,
+     "status": "clean",
+     "step": 78
+    },
+    {
+     "candidate_id": "fam-inject:step79",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 54.443189,
+     "learning_applied": true,
+     "reward": 0.648108,
+     "status": "clean",
+     "step": 79
+    },
+    {
+     "candidate_id": "fam-inject:step80",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 55.126992,
+     "learning_applied": true,
+     "reward": 0.683803,
+     "status": "clean",
+     "step": 80
+    },
+    {
+     "candidate_id": "fam-inject:step81",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 55.797749,
+     "learning_applied": true,
+     "reward": 0.670757,
+     "status": "clean",
+     "step": 81
+    },
+    {
+     "candidate_id": "fam-inject:step82",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 56.578608,
+     "learning_applied": true,
+     "reward": 0.780859,
+     "status": "clean",
+     "step": 82
+    },
+    {
+     "candidate_id": "fam-inject:step83",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 57.278938,
+     "learning_applied": true,
+     "reward": 0.70033,
+     "status": "clean",
+     "step": 83
+    },
+    {
+     "candidate_id": "fam-inject:step84",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 57.882679,
+     "learning_applied": true,
+     "reward": 0.603741,
+     "status": "clean",
+     "step": 84
+    },
+    {
+     "candidate_id": "fam-inject:step85",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 58.483465,
+     "learning_applied": true,
+     "reward": 0.600786,
+     "status": "clean",
+     "step": 85
+    },
+    {
+     "candidate_id": "fam-inject:step86",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 59.178164,
+     "learning_applied": true,
+     "reward": 0.694699,
+     "status": "clean",
+     "step": 86
+    },
+    {
+     "candidate_id": "fam-inject:step87",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 59.84336,
+     "learning_applied": true,
+     "reward": 0.665196,
+     "status": "clean",
+     "step": 87
+    },
+    {
+     "candidate_id": "fam-authz:step88",
+     "chosen_family": "fam-authz",
+     "cumulative_reward": 60.254448,
+     "learning_applied": true,
+     "reward": 0.411088,
+     "status": "clean",
+     "step": 88
+    },
+    {
+     "candidate_id": "fam-inject:step89",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 60.904147,
+     "learning_applied": true,
+     "reward": 0.649699,
+     "status": "clean",
+     "step": 89
+    },
+    {
+     "candidate_id": "fam-inject:step90",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 61.60569,
+     "learning_applied": true,
+     "reward": 0.701543,
+     "status": "clean",
+     "step": 90
+    },
+    {
+     "candidate_id": "fam-inject:step91",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 62.388188,
+     "learning_applied": true,
+     "reward": 0.782498,
+     "status": "clean",
+     "step": 91
+    },
+    {
+     "candidate_id": "fam-inject:step92",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 63.089299,
+     "learning_applied": true,
+     "reward": 0.701111,
+     "status": "clean",
+     "step": 92
+    },
+    {
+     "candidate_id": "fam-inject:step93",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 63.779768,
+     "learning_applied": true,
+     "reward": 0.690469,
+     "status": "clean",
+     "step": 93
+    },
+    {
+     "candidate_id": "fam-inject:step94",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 64.568068,
+     "learning_applied": true,
+     "reward": 0.7883,
+     "status": "clean",
+     "step": 94
+    },
+    {
+     "candidate_id": "fam-inject:step95",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 65.356504,
+     "learning_applied": true,
+     "reward": 0.788436,
+     "status": "clean",
+     "step": 95
+    },
+    {
+     "candidate_id": "fam-inject:step96",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 66.145157,
+     "learning_applied": true,
+     "reward": 0.788653,
+     "status": "clean",
+     "step": 96
+    },
+    {
+     "candidate_id": "fam-inject:step97",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 66.769481,
+     "learning_applied": true,
+     "reward": 0.624324,
+     "status": "clean",
+     "step": 97
+    },
+    {
+     "candidate_id": "fam-inject:step98",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 67.417609,
+     "learning_applied": true,
+     "reward": 0.648128,
+     "status": "clean",
+     "step": 98
+    },
+    {
+     "candidate_id": "fam-inject:step99",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 68.174396,
+     "learning_applied": true,
+     "reward": 0.756787,
+     "status": "clean",
+     "step": 99
+    },
+    {
+     "candidate_id": "fam-inject:step100",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 68.91762,
+     "learning_applied": true,
+     "reward": 0.743224,
+     "status": "clean",
+     "step": 100
+    },
+    {
+     "candidate_id": "fam-inject:step101",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 69.694187,
+     "learning_applied": true,
+     "reward": 0.776567,
+     "status": "clean",
+     "step": 101
+    },
+    {
+     "candidate_id": "fam-inject:step102",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 70.484688,
+     "learning_applied": true,
+     "reward": 0.790501,
+     "status": "clean",
+     "step": 102
+    },
+    {
+     "candidate_id": "fam-inject:step103",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 71.282662,
+     "learning_applied": true,
+     "reward": 0.797974,
+     "status": "clean",
+     "step": 103
+    },
+    {
+     "candidate_id": "fam-inject:step104",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 71.968966,
+     "learning_applied": true,
+     "reward": 0.686304,
+     "status": "clean",
+     "step": 104
+    },
+    {
+     "candidate_id": "fam-inject:step105",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 72.608115,
+     "learning_applied": true,
+     "reward": 0.639149,
+     "status": "clean",
+     "step": 105
+    },
+    {
+     "candidate_id": "fam-inject:step106",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 73.212012,
+     "learning_applied": true,
+     "reward": 0.603897,
+     "status": "clean",
+     "step": 106
+    },
+    {
+     "candidate_id": "fam-inject:step107",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 73.815628,
+     "learning_applied": true,
+     "reward": 0.603616,
+     "status": "clean",
+     "step": 107
+    },
+    {
+     "candidate_id": "fam-inject:step108",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 74.51808,
+     "learning_applied": true,
+     "reward": 0.702452,
+     "status": "clean",
+     "step": 108
+    },
+    {
+     "candidate_id": "fam-inject:step109",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 75.275753,
+     "learning_applied": true,
+     "reward": 0.757673,
+     "status": "clean",
+     "step": 109
+    },
+    {
+     "candidate_id": "fam-inject:step110",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 75.928866,
+     "learning_applied": true,
+     "reward": 0.653113,
+     "status": "clean",
+     "step": 110
+    },
+    {
+     "candidate_id": "fam-inject:step111",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 76.582955,
+     "learning_applied": true,
+     "reward": 0.654089,
+     "status": "clean",
+     "step": 111
+    },
+    {
+     "candidate_id": "fam-inject:step112",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 77.365238,
+     "learning_applied": true,
+     "reward": 0.782283,
+     "status": "clean",
+     "step": 112
+    },
+    {
+     "candidate_id": "fam-inject:step113",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 77.995112,
+     "learning_applied": true,
+     "reward": 0.629874,
+     "status": "clean",
+     "step": 113
+    },
+    {
+     "candidate_id": "fam-inject:step114",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 78.735195,
+     "learning_applied": true,
+     "reward": 0.740083,
+     "status": "clean",
+     "step": 114
+    },
+    {
+     "candidate_id": "fam-inject:step115",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 79.472836,
+     "learning_applied": true,
+     "reward": 0.737641,
+     "status": "clean",
+     "step": 115
+    },
+    {
+     "candidate_id": "fam-inject:step116",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 80.260506,
+     "learning_applied": true,
+     "reward": 0.78767,
+     "status": "clean",
+     "step": 116
+    },
+    {
+     "candidate_id": "fam-inject:step117",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 80.877255,
+     "learning_applied": true,
+     "reward": 0.616749,
+     "status": "clean",
+     "step": 117
+    },
+    {
+     "candidate_id": "fam-recon:step118",
+     "chosen_family": "fam-recon",
+     "cumulative_reward": 81.06801,
+     "learning_applied": true,
+     "reward": 0.190755,
+     "status": "clean",
+     "step": 118
+    },
+    {
+     "candidate_id": "fam-authz:step119",
+     "chosen_family": "fam-authz",
+     "cumulative_reward": 81.43584,
+     "learning_applied": true,
+     "reward": 0.36783,
+     "status": "clean",
+     "step": 119
+    }
+   ]
+  },
+  "priority": {
+   "learn": false,
+   "regret_vs_best_fixed_family": 0.0,
+   "statuses": {
+    "clean": 120
+   },
+   "total_reward": 83.391417,
+   "trace": [
+    {
+     "candidate_id": "fam-inject:step0",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 0.63017,
+     "learning_applied": false,
+     "reward": 0.63017,
+     "status": "clean",
+     "step": 0
+    },
+    {
+     "candidate_id": "fam-inject:step1",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 1.337346,
+     "learning_applied": false,
+     "reward": 0.707176,
+     "status": "clean",
+     "step": 1
+    },
+    {
+     "candidate_id": "fam-inject:step2",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 2.038833,
+     "learning_applied": false,
+     "reward": 0.701487,
+     "status": "clean",
+     "step": 2
+    },
+    {
+     "candidate_id": "fam-inject:step3",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 2.652804,
+     "learning_applied": false,
+     "reward": 0.613971,
+     "status": "clean",
+     "step": 3
+    },
+    {
+     "candidate_id": "fam-inject:step4",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 3.418174,
+     "learning_applied": false,
+     "reward": 0.76537,
+     "status": "clean",
+     "step": 4
+    },
+    {
+     "candidate_id": "fam-inject:step5",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 4.143661,
+     "learning_applied": false,
+     "reward": 0.725487,
+     "status": "clean",
+     "step": 5
+    },
+    {
+     "candidate_id": "fam-inject:step6",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 4.822997,
+     "learning_applied": false,
+     "reward": 0.679336,
+     "status": "clean",
+     "step": 6
+    },
+    {
+     "candidate_id": "fam-inject:step7",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 5.594691,
+     "learning_applied": false,
+     "reward": 0.771694,
+     "status": "clean",
+     "step": 7
+    },
+    {
+     "candidate_id": "fam-inject:step8",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 6.218249,
+     "learning_applied": false,
+     "reward": 0.623558,
+     "status": "clean",
+     "step": 8
+    },
+    {
+     "candidate_id": "fam-inject:step9",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 6.854394,
+     "learning_applied": false,
+     "reward": 0.636145,
+     "status": "clean",
+     "step": 9
+    },
+    {
+     "candidate_id": "fam-inject:step10",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 7.528874,
+     "learning_applied": false,
+     "reward": 0.67448,
+     "status": "clean",
+     "step": 10
+    },
+    {
+     "candidate_id": "fam-inject:step11",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 8.140794,
+     "learning_applied": false,
+     "reward": 0.61192,
+     "status": "clean",
+     "step": 11
+    },
+    {
+     "candidate_id": "fam-inject:step12",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 8.826312,
+     "learning_applied": false,
+     "reward": 0.685518,
+     "status": "clean",
+     "step": 12
+    },
+    {
+     "candidate_id": "fam-inject:step13",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 9.516949,
+     "learning_applied": false,
+     "reward": 0.690637,
+     "status": "clean",
+     "step": 13
+    },
+    {
+     "candidate_id": "fam-inject:step14",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 10.256748,
+     "learning_applied": false,
+     "reward": 0.739799,
+     "status": "clean",
+     "step": 14
+    },
+    {
+     "candidate_id": "fam-inject:step15",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 10.961787,
+     "learning_applied": false,
+     "reward": 0.705039,
+     "status": "clean",
+     "step": 15
+    },
+    {
+     "candidate_id": "fam-inject:step16",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 11.619375,
+     "learning_applied": false,
+     "reward": 0.657588,
+     "status": "clean",
+     "step": 16
+    },
+    {
+     "candidate_id": "fam-inject:step17",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 12.303,
+     "learning_applied": false,
+     "reward": 0.683625,
+     "status": "clean",
+     "step": 17
+    },
+    {
+     "candidate_id": "fam-inject:step18",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 13.000793,
+     "learning_applied": false,
+     "reward": 0.697793,
+     "status": "clean",
+     "step": 18
+    },
+    {
+     "candidate_id": "fam-inject:step19",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 13.753707,
+     "learning_applied": false,
+     "reward": 0.752914,
+     "status": "clean",
+     "step": 19
+    },
+    {
+     "candidate_id": "fam-inject:step20",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 14.416457,
+     "learning_applied": false,
+     "reward": 0.66275,
+     "status": "clean",
+     "step": 20
+    },
+    {
+     "candidate_id": "fam-inject:step21",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 15.132436,
+     "learning_applied": false,
+     "reward": 0.715979,
+     "status": "clean",
+     "step": 21
+    },
+    {
+     "candidate_id": "fam-inject:step22",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 15.921372,
+     "learning_applied": false,
+     "reward": 0.788936,
+     "status": "clean",
+     "step": 22
+    },
+    {
+     "candidate_id": "fam-inject:step23",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 16.533506,
+     "learning_applied": false,
+     "reward": 0.612134,
+     "status": "clean",
+     "step": 23
+    },
+    {
+     "candidate_id": "fam-inject:step24",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 17.332125,
+     "learning_applied": false,
+     "reward": 0.798619,
+     "status": "clean",
+     "step": 24
+    },
+    {
+     "candidate_id": "fam-inject:step25",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 18.009283,
+     "learning_applied": false,
+     "reward": 0.677158,
+     "status": "clean",
+     "step": 25
+    },
+    {
+     "candidate_id": "fam-inject:step26",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 18.701622,
+     "learning_applied": false,
+     "reward": 0.692339,
+     "status": "clean",
+     "step": 26
+    },
+    {
+     "candidate_id": "fam-inject:step27",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 19.313413,
+     "learning_applied": false,
+     "reward": 0.611791,
+     "status": "clean",
+     "step": 27
+    },
+    {
+     "candidate_id": "fam-inject:step28",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 19.962936,
+     "learning_applied": false,
+     "reward": 0.649523,
+     "status": "clean",
+     "step": 28
+    },
+    {
+     "candidate_id": "fam-inject:step29",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 20.579052,
+     "learning_applied": false,
+     "reward": 0.616116,
+     "status": "clean",
+     "step": 29
+    },
+    {
+     "candidate_id": "fam-inject:step30",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 21.355729,
+     "learning_applied": false,
+     "reward": 0.776677,
+     "status": "clean",
+     "step": 30
+    },
+    {
+     "candidate_id": "fam-inject:step31",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 22.011413,
+     "learning_applied": false,
+     "reward": 0.655684,
+     "status": "clean",
+     "step": 31
+    },
+    {
+     "candidate_id": "fam-inject:step32",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 22.788252,
+     "learning_applied": false,
+     "reward": 0.776839,
+     "status": "clean",
+     "step": 32
+    },
+    {
+     "candidate_id": "fam-inject:step33",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 23.423496,
+     "learning_applied": false,
+     "reward": 0.635244,
+     "status": "clean",
+     "step": 33
+    },
+    {
+     "candidate_id": "fam-inject:step34",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 24.120489,
+     "learning_applied": false,
+     "reward": 0.696993,
+     "status": "clean",
+     "step": 34
+    },
+    {
+     "candidate_id": "fam-inject:step35",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 24.721308,
+     "learning_applied": false,
+     "reward": 0.600819,
+     "status": "clean",
+     "step": 35
+    },
+    {
+     "candidate_id": "fam-inject:step36",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 25.434576,
+     "learning_applied": false,
+     "reward": 0.713268,
+     "status": "clean",
+     "step": 36
+    },
+    {
+     "candidate_id": "fam-inject:step37",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 26.137674,
+     "learning_applied": false,
+     "reward": 0.703098,
+     "status": "clean",
+     "step": 37
+    },
+    {
+     "candidate_id": "fam-inject:step38",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 26.748473,
+     "learning_applied": false,
+     "reward": 0.610799,
+     "status": "clean",
+     "step": 38
+    },
+    {
+     "candidate_id": "fam-inject:step39",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 27.523376,
+     "learning_applied": false,
+     "reward": 0.774903,
+     "status": "clean",
+     "step": 39
+    },
+    {
+     "candidate_id": "fam-inject:step40",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 28.203172,
+     "learning_applied": false,
+     "reward": 0.679796,
+     "status": "clean",
+     "step": 40
+    },
+    {
+     "candidate_id": "fam-inject:step41",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 28.815622,
+     "learning_applied": false,
+     "reward": 0.61245,
+     "status": "clean",
+     "step": 41
+    },
+    {
+     "candidate_id": "fam-inject:step42",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 29.448083,
+     "learning_applied": false,
+     "reward": 0.632461,
+     "status": "clean",
+     "step": 42
+    },
+    {
+     "candidate_id": "fam-inject:step43",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 30.04813,
+     "learning_applied": false,
+     "reward": 0.600047,
+     "status": "clean",
+     "step": 43
+    },
+    {
+     "candidate_id": "fam-inject:step44",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 30.720852,
+     "learning_applied": false,
+     "reward": 0.672722,
+     "status": "clean",
+     "step": 44
+    },
+    {
+     "candidate_id": "fam-inject:step45",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 31.443666,
+     "learning_applied": false,
+     "reward": 0.722814,
+     "status": "clean",
+     "step": 45
+    },
+    {
+     "candidate_id": "fam-inject:step46",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 32.113144,
+     "learning_applied": false,
+     "reward": 0.669478,
+     "status": "clean",
+     "step": 46
+    },
+    {
+     "candidate_id": "fam-inject:step47",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 32.882931,
+     "learning_applied": false,
+     "reward": 0.769787,
+     "status": "clean",
+     "step": 47
+    },
+    {
+     "candidate_id": "fam-inject:step48",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 33.579698,
+     "learning_applied": false,
+     "reward": 0.696767,
+     "status": "clean",
+     "step": 48
+    },
+    {
+     "candidate_id": "fam-inject:step49",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 34.248225,
+     "learning_applied": false,
+     "reward": 0.668527,
+     "status": "clean",
+     "step": 49
+    },
+    {
+     "candidate_id": "fam-inject:step50",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 34.880513,
+     "learning_applied": false,
+     "reward": 0.632288,
+     "status": "clean",
+     "step": 50
+    },
+    {
+     "candidate_id": "fam-inject:step51",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 35.586164,
+     "learning_applied": false,
+     "reward": 0.705651,
+     "status": "clean",
+     "step": 51
+    },
+    {
+     "candidate_id": "fam-inject:step52",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 36.191572,
+     "learning_applied": false,
+     "reward": 0.605408,
+     "status": "clean",
+     "step": 52
+    },
+    {
+     "candidate_id": "fam-inject:step53",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 36.964237,
+     "learning_applied": false,
+     "reward": 0.772665,
+     "status": "clean",
+     "step": 53
+    },
+    {
+     "candidate_id": "fam-inject:step54",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 37.637577,
+     "learning_applied": false,
+     "reward": 0.67334,
+     "status": "clean",
+     "step": 54
+    },
+    {
+     "candidate_id": "fam-inject:step55",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 38.344095,
+     "learning_applied": false,
+     "reward": 0.706518,
+     "status": "clean",
+     "step": 55
+    },
+    {
+     "candidate_id": "fam-inject:step56",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 38.988703,
+     "learning_applied": false,
+     "reward": 0.644608,
+     "status": "clean",
+     "step": 56
+    },
+    {
+     "candidate_id": "fam-inject:step57",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 39.759229,
+     "learning_applied": false,
+     "reward": 0.770526,
+     "status": "clean",
+     "step": 57
+    },
+    {
+     "candidate_id": "fam-inject:step58",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 40.507204,
+     "learning_applied": false,
+     "reward": 0.747975,
+     "status": "clean",
+     "step": 58
+    },
+    {
+     "candidate_id": "fam-inject:step59",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 41.178317,
+     "learning_applied": false,
+     "reward": 0.671113,
+     "status": "clean",
+     "step": 59
+    },
+    {
+     "candidate_id": "fam-inject:step60",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 41.834201,
+     "learning_applied": false,
+     "reward": 0.655884,
+     "status": "clean",
+     "step": 60
+    },
+    {
+     "candidate_id": "fam-inject:step61",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 42.625504,
+     "learning_applied": false,
+     "reward": 0.791303,
+     "status": "clean",
+     "step": 61
+    },
+    {
+     "candidate_id": "fam-inject:step62",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 43.423112,
+     "learning_applied": false,
+     "reward": 0.797608,
+     "status": "clean",
+     "step": 62
+    },
+    {
+     "candidate_id": "fam-inject:step63",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 44.067204,
+     "learning_applied": false,
+     "reward": 0.644092,
+     "status": "clean",
+     "step": 63
+    },
+    {
+     "candidate_id": "fam-inject:step64",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 44.708079,
+     "learning_applied": false,
+     "reward": 0.640875,
+     "status": "clean",
+     "step": 64
+    },
+    {
+     "candidate_id": "fam-inject:step65",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 45.476166,
+     "learning_applied": false,
+     "reward": 0.768087,
+     "status": "clean",
+     "step": 65
+    },
+    {
+     "candidate_id": "fam-inject:step66",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 46.236095,
+     "learning_applied": false,
+     "reward": 0.759929,
+     "status": "clean",
+     "step": 66
+    },
+    {
+     "candidate_id": "fam-inject:step67",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 47.01805,
+     "learning_applied": false,
+     "reward": 0.781955,
+     "status": "clean",
+     "step": 67
+    },
+    {
+     "candidate_id": "fam-inject:step68",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 47.713657,
+     "learning_applied": false,
+     "reward": 0.695607,
+     "status": "clean",
+     "step": 68
+    },
+    {
+     "candidate_id": "fam-inject:step69",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 48.38016,
+     "learning_applied": false,
+     "reward": 0.666503,
+     "status": "clean",
+     "step": 69
+    },
+    {
+     "candidate_id": "fam-inject:step70",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 49.059328,
+     "learning_applied": false,
+     "reward": 0.679168,
+     "status": "clean",
+     "step": 70
+    },
+    {
+     "candidate_id": "fam-inject:step71",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 49.804288,
+     "learning_applied": false,
+     "reward": 0.74496,
+     "status": "clean",
+     "step": 71
+    },
+    {
+     "candidate_id": "fam-inject:step72",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 50.434518,
+     "learning_applied": false,
+     "reward": 0.63023,
+     "status": "clean",
+     "step": 72
+    },
+    {
+     "candidate_id": "fam-inject:step73",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 51.063753,
+     "learning_applied": false,
+     "reward": 0.629235,
+     "status": "clean",
+     "step": 73
+    },
+    {
+     "candidate_id": "fam-inject:step74",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 51.795207,
+     "learning_applied": false,
+     "reward": 0.731454,
+     "status": "clean",
+     "step": 74
+    },
+    {
+     "candidate_id": "fam-inject:step75",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 52.421404,
+     "learning_applied": false,
+     "reward": 0.626197,
+     "status": "clean",
+     "step": 75
+    },
+    {
+     "candidate_id": "fam-inject:step76",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 53.151339,
+     "learning_applied": false,
+     "reward": 0.729935,
+     "status": "clean",
+     "step": 76
+    },
+    {
+     "candidate_id": "fam-inject:step77",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 53.838101,
+     "learning_applied": false,
+     "reward": 0.686762,
+     "status": "clean",
+     "step": 77
+    },
+    {
+     "candidate_id": "fam-inject:step78",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 54.480309,
+     "learning_applied": false,
+     "reward": 0.642208,
+     "status": "clean",
+     "step": 78
+    },
+    {
+     "candidate_id": "fam-inject:step79",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 55.128417,
+     "learning_applied": false,
+     "reward": 0.648108,
+     "status": "clean",
+     "step": 79
+    },
+    {
+     "candidate_id": "fam-inject:step80",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 55.81222,
+     "learning_applied": false,
+     "reward": 0.683803,
+     "status": "clean",
+     "step": 80
+    },
+    {
+     "candidate_id": "fam-inject:step81",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 56.482977,
+     "learning_applied": false,
+     "reward": 0.670757,
+     "status": "clean",
+     "step": 81
+    },
+    {
+     "candidate_id": "fam-inject:step82",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 57.263836,
+     "learning_applied": false,
+     "reward": 0.780859,
+     "status": "clean",
+     "step": 82
+    },
+    {
+     "candidate_id": "fam-inject:step83",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 57.964166,
+     "learning_applied": false,
+     "reward": 0.70033,
+     "status": "clean",
+     "step": 83
+    },
+    {
+     "candidate_id": "fam-inject:step84",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 58.567907,
+     "learning_applied": false,
+     "reward": 0.603741,
+     "status": "clean",
+     "step": 84
+    },
+    {
+     "candidate_id": "fam-inject:step85",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 59.168693,
+     "learning_applied": false,
+     "reward": 0.600786,
+     "status": "clean",
+     "step": 85
+    },
+    {
+     "candidate_id": "fam-inject:step86",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 59.863392,
+     "learning_applied": false,
+     "reward": 0.694699,
+     "status": "clean",
+     "step": 86
+    },
+    {
+     "candidate_id": "fam-inject:step87",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 60.528588,
+     "learning_applied": false,
+     "reward": 0.665196,
+     "status": "clean",
+     "step": 87
+    },
+    {
+     "candidate_id": "fam-inject:step88",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 61.285442,
+     "learning_applied": false,
+     "reward": 0.756854,
+     "status": "clean",
+     "step": 88
+    },
+    {
+     "candidate_id": "fam-inject:step89",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 61.935141,
+     "learning_applied": false,
+     "reward": 0.649699,
+     "status": "clean",
+     "step": 89
+    },
+    {
+     "candidate_id": "fam-inject:step90",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 62.636684,
+     "learning_applied": false,
+     "reward": 0.701543,
+     "status": "clean",
+     "step": 90
+    },
+    {
+     "candidate_id": "fam-inject:step91",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 63.419182,
+     "learning_applied": false,
+     "reward": 0.782498,
+     "status": "clean",
+     "step": 91
+    },
+    {
+     "candidate_id": "fam-inject:step92",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 64.120293,
+     "learning_applied": false,
+     "reward": 0.701111,
+     "status": "clean",
+     "step": 92
+    },
+    {
+     "candidate_id": "fam-inject:step93",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 64.810762,
+     "learning_applied": false,
+     "reward": 0.690469,
+     "status": "clean",
+     "step": 93
+    },
+    {
+     "candidate_id": "fam-inject:step94",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 65.599062,
+     "learning_applied": false,
+     "reward": 0.7883,
+     "status": "clean",
+     "step": 94
+    },
+    {
+     "candidate_id": "fam-inject:step95",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 66.387498,
+     "learning_applied": false,
+     "reward": 0.788436,
+     "status": "clean",
+     "step": 95
+    },
+    {
+     "candidate_id": "fam-inject:step96",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 67.176151,
+     "learning_applied": false,
+     "reward": 0.788653,
+     "status": "clean",
+     "step": 96
+    },
+    {
+     "candidate_id": "fam-inject:step97",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 67.800475,
+     "learning_applied": false,
+     "reward": 0.624324,
+     "status": "clean",
+     "step": 97
+    },
+    {
+     "candidate_id": "fam-inject:step98",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 68.448603,
+     "learning_applied": false,
+     "reward": 0.648128,
+     "status": "clean",
+     "step": 98
+    },
+    {
+     "candidate_id": "fam-inject:step99",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 69.20539,
+     "learning_applied": false,
+     "reward": 0.756787,
+     "status": "clean",
+     "step": 99
+    },
+    {
+     "candidate_id": "fam-inject:step100",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 69.948614,
+     "learning_applied": false,
+     "reward": 0.743224,
+     "status": "clean",
+     "step": 100
+    },
+    {
+     "candidate_id": "fam-inject:step101",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 70.725181,
+     "learning_applied": false,
+     "reward": 0.776567,
+     "status": "clean",
+     "step": 101
+    },
+    {
+     "candidate_id": "fam-inject:step102",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 71.515682,
+     "learning_applied": false,
+     "reward": 0.790501,
+     "status": "clean",
+     "step": 102
+    },
+    {
+     "candidate_id": "fam-inject:step103",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 72.313656,
+     "learning_applied": false,
+     "reward": 0.797974,
+     "status": "clean",
+     "step": 103
+    },
+    {
+     "candidate_id": "fam-inject:step104",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 72.99996,
+     "learning_applied": false,
+     "reward": 0.686304,
+     "status": "clean",
+     "step": 104
+    },
+    {
+     "candidate_id": "fam-inject:step105",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 73.639109,
+     "learning_applied": false,
+     "reward": 0.639149,
+     "status": "clean",
+     "step": 105
+    },
+    {
+     "candidate_id": "fam-inject:step106",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 74.243006,
+     "learning_applied": false,
+     "reward": 0.603897,
+     "status": "clean",
+     "step": 106
+    },
+    {
+     "candidate_id": "fam-inject:step107",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 74.846622,
+     "learning_applied": false,
+     "reward": 0.603616,
+     "status": "clean",
+     "step": 107
+    },
+    {
+     "candidate_id": "fam-inject:step108",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 75.549074,
+     "learning_applied": false,
+     "reward": 0.702452,
+     "status": "clean",
+     "step": 108
+    },
+    {
+     "candidate_id": "fam-inject:step109",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 76.306747,
+     "learning_applied": false,
+     "reward": 0.757673,
+     "status": "clean",
+     "step": 109
+    },
+    {
+     "candidate_id": "fam-inject:step110",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 76.95986,
+     "learning_applied": false,
+     "reward": 0.653113,
+     "status": "clean",
+     "step": 110
+    },
+    {
+     "candidate_id": "fam-inject:step111",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 77.613949,
+     "learning_applied": false,
+     "reward": 0.654089,
+     "status": "clean",
+     "step": 111
+    },
+    {
+     "candidate_id": "fam-inject:step112",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 78.396232,
+     "learning_applied": false,
+     "reward": 0.782283,
+     "status": "clean",
+     "step": 112
+    },
+    {
+     "candidate_id": "fam-inject:step113",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 79.026106,
+     "learning_applied": false,
+     "reward": 0.629874,
+     "status": "clean",
+     "step": 113
+    },
+    {
+     "candidate_id": "fam-inject:step114",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 79.766189,
+     "learning_applied": false,
+     "reward": 0.740083,
+     "status": "clean",
+     "step": 114
+    },
+    {
+     "candidate_id": "fam-inject:step115",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 80.50383,
+     "learning_applied": false,
+     "reward": 0.737641,
+     "status": "clean",
+     "step": 115
+    },
+    {
+     "candidate_id": "fam-inject:step116",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 81.2915,
+     "learning_applied": false,
+     "reward": 0.78767,
+     "status": "clean",
+     "step": 116
+    },
+    {
+     "candidate_id": "fam-inject:step117",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 81.908249,
+     "learning_applied": false,
+     "reward": 0.616749,
+     "status": "clean",
+     "step": 117
+    },
+    {
+     "candidate_id": "fam-inject:step118",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 82.680804,
+     "learning_applied": false,
+     "reward": 0.772555,
+     "status": "clean",
+     "step": 118
+    },
+    {
+     "candidate_id": "fam-inject:step119",
+     "chosen_family": "fam-inject",
+     "cumulative_reward": 83.391417,
+     "learning_applied": false,
+     "reward": 0.710613,
+     "status": "clean",
+     "step": 119
+    }
+   ]
+  }
+ },
+ "drift_at": null,
+ "schema": "controller-comparison/v1",
+ "seed": 7,
+ "steps": 120,
+ "world": "steady-families"
+}

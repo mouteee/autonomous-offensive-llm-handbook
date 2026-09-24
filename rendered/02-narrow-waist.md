@@ -1,4 +1,4 @@
-# The narrow waist
+# One recording path
 
 A model reports SQL injection on a quote endpoint. There is no request in the record and no response. The finding carries a title, a severity of critical, and a paragraph of impact that reads like every other paragraph of impact you have ever read. It goes in the PDF. Someone forwards the PDF to a development team, and an engineer who actually looks writes back to say the endpoint returns the same page for every input.
 
@@ -8,19 +8,17 @@ The instinct is to write a better instruction. Tell it to report only what it ca
 
 So the control has to sit somewhere the model is not. Chapter 01 put the choosing outside the model. This chapter puts the recording outside it.
 
-## One door
+## Use one recording interface
 
 The rule is one sentence and everything after it in this chapter is a consequence: each kind of side effect has exactly one writer, and none of the writers is the model.
 
-[num-ok 1]
-In practice that is two waists at different heights. Everything downstream of a tool execution, the timeline entry, the coverage row, the status update the dashboard polls, the memory record, the chain triggers, goes through a single shared write path, [`result_processor.py:process_tool_result`](../core/result_processor.py), that takes the tool call and the tool result as its arguments and runs once per execution. Underneath it, findings have a waist of their own: one method on the store, with a single production definition, which every skill and every orchestrator calls. There is no second way to write a finding.
+In practice that is two waists at different heights. Everything downstream of a tool execution, the timeline entry, the coverage row, the status update the dashboard polls, the memory record, the chain triggers, goes through a single shared write path, [`result_processor.py:process_tool_result`](../core/result_processor.py), that takes the tool call and the tool result as its arguments and runs once per execution. Underneath it, findings have a waist of their own: one method on the store, with a single production definition, which every skill and every orchestrator calls. There is no second way to write a finding. [^num-1]
 
 That gives the model exactly one verb. It proposes. A proposal is a tool name and an argument dictionary, and what happens next is not up to it: deterministic code validates the proposal, executes it if it survives, and records what came back. The model's sentence about what it expects to happen is not recorded anywhere that a report can read. What gets recorded is what the executor observed.
 
 Follow a hallucination through that and the failure mode changes shape.
 
-[num-ok 2]
-The model invents an endpoint. It is a good invention, the kind of path a competent tester would also have guessed at. The executor requests it and gets a 404. The 404 is a fact about the target, it goes in the coverage table with the URL and the timestamp, and the next scoring pass can see that this path was tried and found absent. The invention cost one request and produced a true row. What it did not produce is a finding: the executor records what it observed, and the model's expectation is not one of its inputs.
+The model invents an endpoint. It is a good invention, the kind of path a competent tester would also have guessed at. The executor requests it and gets a 404. The 404 is a fact about the target, it goes in the coverage table with the URL and the timestamp, and the next scoring pass can see that this path was tried and found absent. The invention cost one request and produced a true row. What it did not produce is a finding: the executor records what it observed, and the model's expectation is not one of its inputs. [^num-2]
 
 Now the case that does not resolve so tidily, and I have to be careful here, because the tidy version is the one I would rather tell. Suppose the model skips the endpoint and asserts the finding directly. On the server-driven path it has no move: the executor accepts tool calls and nothing else, and findings are produced by tools returning them. On the agent-driven path there is a door. The command-line interface every skill writes through has a subcommand that stores a finding from a JSON blob, and an orchestrator that wants to record something it believes can use it.
 
@@ -63,7 +61,7 @@ out: ToolCall(name='fetch_url', arguments={'url': 'https://h/', 'timeout': 5})
 
 Coercing is the tolerance half, and it exists because models are sloppy about types in specific, predictable ways. [`llm_control.py:_validate_type`](../core/llm_control.py) turns a quoted integer into an integer, a bare number in a string field into a string, and the strings `true` and `false` into booleans. It refuses to treat a boolean as either an integer or a string, which is the one coercion that would be silently destructive. The tolerance is deliberate and I think it is correct. A run that dies because the model wrote `"30"` where the schema wanted an unquoted integer has spent a repair cycle on nothing.
 
-## Where the validator is quietly wrong
+## Known validation gaps
 
 I went looking for the seam between those two halves, because dropping and coercing are both silent and silence compounds.
 
@@ -78,8 +76,7 @@ The model asked for a longer timeout. It got the default. It was not told, the e
 
 That one is caused by the drop being a `continue` rather than an error, and I checked rather than assumed: subclass the validator so an unknown key returns a failure instead of skipping, feed it the same call, and the repair loop fires and re-prompts. Same input, different behaviour, so the mechanism I am blaming is the mechanism responsible.
 
-[num-ok 3]
-Three smaller ones, all in those same two functions.
+Three smaller ones, all in those same two functions. [^num-3]
 
 A required parameter that also carries a default is not required. Defaults are applied before the missing-argument check runs, so the check never sees a gap. A schema author who writes both is telling the validator two things and only one of them survives.
 
@@ -115,7 +112,7 @@ I want the containment one, and the reason is the property only it has: there is
 
 Now the part that took me two attempts to get right.
 
-### The split
+### Separate proposal and finding gates
 
 Run that check over everything a model proposes and you will destroy your scan. I know because that is what the first version did.
 
@@ -142,10 +139,9 @@ This is not hypothetical. The first version of this gate applied the quote test 
 
 I made this mistake myself, in the direction that goes blind, and it took a while to notice. What makes it easy to make is that both collapses read as reasonable in a design document: one says trust the model, the other says verify everything, and neither of them stops to ask what the verification is actually able to decide.
 
-### Where the split leaks
+### Remaining bypasses
 
-[num-ok 4]
-Three places, all real, all in the working system rather than in the argument. I found two of them while writing. A reviewer found the third, and the third is the one that matters.
+Three places, all real, all in the working system rather than in the argument. I found two of them while writing. A reviewer found the third, and the third is the one that matters. [^num-4]
 
 Start there, because it is the one a reviewer found and the one this section was first written to confess. In the system this chapter re-expresses, the containment implementation read a `confidence` field off the incoming item and, when the caller supplied a number, used it in place of the containment score it had just computed. The reference check and the snippet check ran first; the caller's number then won the branch after them. The server-driven path never reached that code, since it grades with the second model instead, so the channel lived on the agent-driven path only, where the caller is the orchestrator and the orchestrator is a model.
 
@@ -174,8 +170,7 @@ The cost of that second case deserves stating without decoration. The surviving 
 I keep the hatch, and I will defend the reasoning while admitting it is a trade rather than a fix. A scan that stalls produces nothing at all, and nothing is not a safer output than one weak proposal, it is a different failure that happens to be quieter. The blast radius is also smaller than it first looks, and that is the narrow waist paying for itself: the items this gate governs are proposals for tools to run, not findings. A forced-keep item becomes a tool execution against a possibly-invented URL, and before it gets there it meets the injection filter: unknown tool names go, so do parameter-hungry tools aimed at parameterless URLs and the small vocabulary of placeholder hostnames models reach for when they are guessing, and there is a cap on how many injections a run will take at all. Then the target gets the last word.
 
 <!-- score_grounded in core/critic.py writes the critic_forced_keep tag on a forced keep, and production code only ever writes it -->
-[num-ok 5]
-What I do not like is the tag. `critic_forced_keep` is written onto the item and, as far as I can find, nothing downstream ever reads it. Three tests assert on it and no production code branches on it. So the information exists and is not used, and the obvious improvement is to make the hatch a quarantine rather than a promotion: let the item through, but mark the results it produces as provisional and keep them out of any severity above the floor until something else corroborates them. That is maybe an afternoon of work and I have not done it, which is a more accurate statement about my priorities than about the design.
+What I do not like is the tag. `critic_forced_keep` is written onto the item and, as far as I can find, nothing downstream ever reads it. Three tests assert on it and no production code branches on it. So the information exists and is not used, and the obvious improvement is to make the hatch a quarantine rather than a promotion: let the item through, but mark the results it produces as provisional and keep them out of any severity above the floor until something else corroborates them. That is maybe an afternoon of work and I have not done it, which is a more accurate statement about my priorities than about the design. [^num-5]
 
 ## What the gate does not do
 
@@ -189,11 +184,9 @@ The rest of the distance is severity governance and verification, which is chapt
 
 ## What it costs to build this
 
-[num-ok 6]
-The discipline is the cost, and it is paid continuously. Every new side effect has to be routed through the one function, and every new side effect arrives with a reason it should be an exception. This one is just a log line. This one only writes to a cache. Each exception is individually reasonable and the second write path is where the property dies, because the moment there are two, "everything went through here" stops being true and every count built on it becomes an estimate.
+The discipline is the cost, and it is paid continuously. Every new side effect has to be routed through the one function, and every new side effect arrives with a reason it should be an exception. This one is just a log line. This one only writes to a cache. Each exception is individually reasonable and the second write path is where the property dies, because the moment there are two, "everything went through here" stops being true and every count built on it becomes an estimate. [^num-6]
 
-[num-ok 7]
-The one function is also one function that can be wrong about everything. It writes in a deliberate order because later steps read state earlier steps wrote, and each step catches its own exception and appends to an error list rather than raising, so one failed side effect does not take the rest down. That is the right call under load and it means a partially-written result is a normal outcome that callers have to actually inspect. A caller that ignores the error list gets silence where it wanted a guarantee.
+The one function is also one function that can be wrong about everything. It writes in a deliberate order because later steps read state earlier steps wrote, and each step catches its own exception and appends to an error list rather than raising, so one failed side effect does not take the rest down. That is the right call under load and it means a partially-written result is a normal outcome that callers have to actually inspect. A caller that ignores the error list gets silence where it wanted a guarantee. [^num-7]
 
 The evidence pointer is a tax on the model's output. Every proposal has to carry a quote, which costs tokens and occasionally costs a good idea from a model that could not find a snippet to justify an instinct. I think the trade is obviously right, and I notice that "obviously" is doing work I have not measured.
 
@@ -203,18 +196,18 @@ And the gate needs a threshold, which means it needs tuning, which means somebod
 
 ## Number annotations
 
-These notes were written inline in the handbook source beside the numbers they explain; the renderer collects them here and leaves a `[num-ok N]` marker at each point of use above.
+These notes were written inline in the handbook source beside the numbers they explain; each renders as a footnote at its point of use above.
 
-**[num-ok 1]** one method is a spelled quantity counting a code artifact: the single finding-write method this chapter is about, add_finding in core/store_protocol.py; the concrete store behind that interface is withheld
+[^num-1]: one method is a spelled quantity counting a code artifact: the single finding-write method this chapter is about, add_finding in core/store_protocol.py; the concrete store behind that interface is withheld
 
-**[num-ok 2]** 404 is the HTTP status code for Not Found, the protocol constant naming what a server returns for a path that does not exist; it identifies a response, it does not count one
+[^num-2]: 404 is the HTTP status code for Not Found, the protocol constant naming what a server returns for a path that does not exist; it identifies a response, it does not count one
 
-**[num-ok 3]** two functions is a spelled quantity counting a code artifact: _validate_args and _validate_type, the two ToolCallValidator methods in core/llm_control.py where the dropping and the coercing this section opens on happen, and where all three defects below sit
+[^num-3]: two functions is a spelled quantity counting a code artifact: _validate_args and _validate_type, the two ToolCallValidator methods in core/llm_control.py where the dropping and the coercing this section opens on happen, and where all three defects below sit
 
-**[num-ok 4]** Three places is a spelled quantity counting a code artifact: the three this section then describes one at a time, and the same sentence splits them two found while writing plus one found by a reviewer
+[^num-4]: Three places is a spelled quantity counting a code artifact: the three this section then describes one at a time, and the same sentence splits them two found while writing plus one found by a reviewer
 
-**[num-ok 5]** Three tests is a spelled quantity counting a code artifact: the tests that assert on this tag, in tests/test_critic.py
+[^num-5]: Three tests is a spelled quantity counting a code artifact: the tests that assert on this tag, in tests/test_critic.py
 
-**[num-ok 6]** one function is a spelled quantity counting a code artifact: the single shared write path this whole chapter is about, process_tool_result in core/result_processor.py
+[^num-6]: one function is a spelled quantity counting a code artifact: the single shared write path this whole chapter is about, process_tool_result in core/result_processor.py
 
-**[num-ok 7]** one function is a spelled quantity counting a code artifact, used twice on this line for the same single shared write path named in the paragraph above
+[^num-7]: one function is a spelled quantity counting a code artifact, used twice on this line for the same single shared write path named in the paragraph above

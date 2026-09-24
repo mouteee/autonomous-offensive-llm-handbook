@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" width="720" height="316" role="img" aria-labelledby="t d">
+<title id="t">How the sparse controller computes one family score</title><desc id="d">The state vector passes a fixed random sign projection; only the top strictly-positive expansion units stay active (the sparse code); the family readout averages its fixed weights over exactly those active units, and the family signal adds prior, novelty, habituation and cost around it.</desc>
+<rect x="0" y="0" width="720" height="316" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">State to sparse code to family score</text>
+<rect x="40" y="70" width="140" height="56" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="110" y="93" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">state x</text>
+<text x="110" y="112" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">d numbers</text>
+<rect x="220" y="70" width="180" height="56" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="310" y="93" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">sign projection</text>
+<text x="310" y="112" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">fixed, seeded, sparse</text>
+<rect x="440" y="70" width="130" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="505" y="93" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">top-k units</text>
+<text x="505" y="112" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">the sparse code</text>
+<rect x="40" y="176" width="250" height="56" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="165" y="199" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">family readout</text>
+<text x="165" y="218" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">mean fixed weight over active</text>
+<rect x="330" y="176" width="350" height="56" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="505" y="199" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">activation</text>
+<text x="505" y="218" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">prior + novelty + w_dot - habituation - cost</text>
+<line x1="180" y1="98" x2="216" y2="98" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 210 94 L 216 98 L 210 102" fill="none" stroke="#898781" stroke-width="1.5"/>
+<line x1="400" y1="98" x2="436" y2="98" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 430 94 L 436 98 L 430 102" fill="none" stroke="#898781" stroke-width="1.5"/>
+<line x1="505" y1="126" x2="505" y2="146" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="505" y1="146" x2="165" y2="146" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<line x1="165" y1="146" x2="165" y2="172" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 161 166 L 165 172 L 169 166" fill="none" stroke="#898781" stroke-width="1.5"/>
+<line x1="290" y1="204" x2="326" y2="204" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 320 200 L 326 204 L 320 208" fill="none" stroke="#898781" stroke-width="1.5"/>
+<circle cx="452" cy="120" r="3.4" fill="#52c78d"/>
+<circle cx="466" cy="120" r="3.4" fill="#2c2c2a"/>
+<circle cx="480" cy="120" r="3.4" fill="#52c78d"/>
+<circle cx="494" cy="120" r="3.4" fill="#2c2c2a"/>
+<circle cx="508" cy="120" r="3.4" fill="#52c78d"/>
+<text x="524" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">active</text>
+<text x="40" y="256" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">habituation keys on (surface class, family, signature):</text>
+<text x="40" y="274" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">a family erroring on one surface shape is suppressed there, nowhere else</text>
+<text x="40" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">no learned weights anywhere on this page; the next lesson adds the one learning site</text>
+</svg>

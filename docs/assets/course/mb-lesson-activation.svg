@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 500" width="940" height="500" role="img" aria-labelledby="t d">
+<title id="t">Mushroom-body activation per family over the scripted episode</title><desc id="d">Line chart of post-inhibition activation for two families across the scripted steps; exploration steps are marked, and the winner row underneath shows which family was chosen and whether its outcome paid. Exact values are in data/course/mb-trace.json.</desc>
+<rect x="0" y="0" width="940" height="500" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">Why a family loses attention</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">post-inhibition activation; filled dot = the chosen step paid</text>
+<line x1="64" y1="346.16" x2="770" y2="346.16" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<text x="54" y="350.16" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0</text>
+<line x1="64" y1="221.17" x2="770" y2="221.17" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="225.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">0.5</text>
+<line x1="64" y1="96.18" x2="770" y2="96.18" stroke="#2c2c2a" stroke-width="1" stroke-linecap="butt"/>
+<text x="54" y="100.18" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">1</text>
+<polyline points="64,128.63 105.53,370.45 147.06,330.55 188.59,322.28 230.12,314.42 271.65,384.28 313.18,374.6 354.71,364.97 396.24,355.51 437.76,346.27 479.29,337.34 520.82,328.76 562.35,320.58 603.88,312.81 645.41,305.48 686.94,298.6 728.47,292.16 770,286.17" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="64,197.42 105.53,136.96 147.06,264.11 188.59,266.18 230.12,268.15 271.65,254.48 313.18,254.48 354.71,255.51 396.24,257.87 437.76,260.18 479.29,262.42 520.82,264.56 562.35,266.61 603.88,268.55 645.41,270.38 686.94,272.1 728.47,273.71 770,275.21" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="778" cy="275.21" r="4" fill="#d95926"/>
+<text x="788" y="279.21" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-recon</text>
+<circle cx="778" cy="291.21" r="4" fill="#3987e5"/>
+<text x="788" y="295.21" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-inject</text>
+<text x="64" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">0</text>
+<circle cx="64" cy="436" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<circle cx="105.53" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="147.06" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">2</text>
+<circle cx="147.06" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="188.59" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="230.12" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">4</text>
+<line x1="230.12" y1="96" x2="230.12" y2="390" stroke="#898781" stroke-width="1" stroke-linecap="butt" stroke-dasharray="3 4"/>
+<circle cx="230.12" cy="436" r="5" fill="#1a1a19" stroke="#3987e5" stroke-width="2"/>
+<circle cx="271.65" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="313.18" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">6</text>
+<circle cx="313.18" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="354.71" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="396.24" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">8</text>
+<circle cx="396.24" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="437.76" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="479.29" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">10</text>
+<circle cx="479.29" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="520.82" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="562.35" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">12</text>
+<circle cx="562.35" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="603.88" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="645.41" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">14</text>
+<circle cx="645.41" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="686.94" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="728.47" y="414" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">16</text>
+<circle cx="728.47" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<circle cx="770" cy="436" r="5" fill="#d95926" stroke="#1a1a19" stroke-width="2"/>
+<text x="54" y="440" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">chosen</text>
+<text x="417" y="480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">step (dashed verticals are exploration draws)</text>
+<text x="774" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">families</text>
+<line x1="774" y1="54" x2="792" y2="54" stroke="#3987e5" stroke-width="3" stroke-linecap="round"/>
+<text x="800" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-inject</text>
+<line x1="774" y1="72" x2="792" y2="72" stroke="#d95926" stroke-width="3" stroke-linecap="round"/>
+<text x="800" y="76" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">fam-recon</text>
+</svg>

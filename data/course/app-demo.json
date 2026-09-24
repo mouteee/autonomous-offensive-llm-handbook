@@ -1,0 +1,948 @@
+{
+ "complete_run": {
+  "candidate_table": {
+   "eligible": [
+    "inspect_headers -> https://lab.example:443/",
+    "form_probe -> https://lab.example:443/login",
+    "inspect_headers -> https://lab.example:443/login",
+    "inspect_headers -> https://beta.lab.example:443/"
+   ],
+   "excluded": [
+    {
+     "action_id": "form_probe -> https://lab.example:443/",
+     "reasons": [
+      "has_form: observed False, requires True"
+     ],
+     "scope": "destination"
+    },
+    {
+     "action_id": "form_probe -> https://beta.lab.example:443/",
+     "reasons": [
+      "has_form: observed False, requires True"
+     ],
+     "scope": "destination"
+    }
+   ]
+  },
+  "config": {
+   "controller": {
+    "learn": false,
+    "name": "priority",
+    "seed": 0
+   },
+   "feedback_weights": "feedback-v1",
+   "policy_digest": "5fa80647402ff112940e0e16f5b07292b0d4cb16433d5d47192a9b00b3e34254",
+   "provider": "configured",
+   "retrieval_enabled": false,
+   "verifier": "configured"
+  },
+  "consolidation": [
+   {
+    "absorbed_ids": [
+     "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c"
+    ],
+    "affected_hosts": [
+     "beta.lab.example",
+     "lab.example"
+    ],
+    "primary_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+    "signature": [
+     "shared-banner",
+     "shared lab banner disclosed"
+    ]
+   }
+  ],
+  "decisions": [
+   {
+    "candidate_id": "form_probe -> https://lab.example:443/login",
+    "controller": "priority",
+    "decision_id": "7b9cd863feac6142",
+    "family": "fam-inject",
+    "feedback": {
+     "learning": {
+      "applied": false,
+      "reason": "this controller does not learn"
+     },
+     "value": 0.15000000000000002,
+     "weights": "feedback-v1"
+    },
+    "result_status": "clean",
+    "scores": {
+     "by_candidate": {
+      "form_probe -> https://lab.example:443/login": 4.0,
+      "inspect_headers -> https://beta.lab.example:443/": 3.0,
+      "inspect_headers -> https://lab.example:443/": 3.0,
+      "inspect_headers -> https://lab.example:443/login": 3.0
+     },
+     "rule": "priority"
+    },
+    "shadow": false,
+    "step": 0
+   },
+   {
+    "candidate_id": "inspect_headers -> https://beta.lab.example:443/",
+    "controller": "priority",
+    "decision_id": "cdf5ff6fb7c1cb70",
+    "family": "fam-recon",
+    "feedback": {
+     "learning": {
+      "applied": false,
+      "reason": "this controller does not learn"
+     },
+     "value": 0.17500000000000002,
+     "weights": "feedback-v1"
+    },
+    "result_status": "clean",
+    "scores": {
+     "by_candidate": {
+      "inspect_headers -> https://beta.lab.example:443/": 3.0,
+      "inspect_headers -> https://lab.example:443/": 3.0,
+      "inspect_headers -> https://lab.example:443/login": 3.0
+     },
+     "rule": "priority"
+    },
+    "shadow": false,
+    "step": 1
+   },
+   {
+    "candidate_id": "inspect_headers -> https://lab.example:443/",
+    "controller": "priority",
+    "decision_id": "5c169fc8ac0160f6",
+    "family": "fam-recon",
+    "feedback": {
+     "learning": {
+      "applied": false,
+      "reason": "this controller does not learn"
+     },
+     "value": 0.17500000000000002,
+     "weights": "feedback-v1"
+    },
+    "result_status": "clean",
+    "scores": {
+     "by_candidate": {
+      "inspect_headers -> https://lab.example:443/": 3.0,
+      "inspect_headers -> https://lab.example:443/login": 3.0
+     },
+     "rule": "priority"
+    },
+    "shadow": false,
+    "step": 2
+   },
+   {
+    "candidate_id": "inspect_headers -> https://lab.example:443/login",
+    "controller": "priority",
+    "decision_id": "307bfd11b644f399",
+    "family": "fam-recon",
+    "feedback": {
+     "learning": {
+      "applied": false,
+      "reason": "this controller does not learn"
+     },
+     "value": 0.17500000000000002,
+     "weights": "feedback-v1"
+    },
+    "result_status": "clean",
+    "scores": {
+     "by_candidate": {
+      "inspect_headers -> https://lab.example:443/login": 3.0
+     },
+     "rule": "priority"
+    },
+    "shadow": false,
+    "step": 3
+   }
+  ],
+  "finish": {
+   "completed": true,
+   "report": {
+    "aborted": false,
+    "acceptance": "report acceptance is a separate human decision",
+    "attempts": [
+     {
+      "action_id": "form_probe -> https://lab.example:443/login",
+      "attempt": 1,
+      "capture_id": "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966",
+      "result": "clean"
+     },
+     {
+      "action_id": "inspect_headers -> https://beta.lab.example:443/",
+      "attempt": 1,
+      "capture_id": "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e",
+      "result": "clean"
+     },
+     {
+      "action_id": "inspect_headers -> https://lab.example:443/",
+      "attempt": 1,
+      "capture_id": "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1",
+      "result": "clean"
+     },
+     {
+      "action_id": "inspect_headers -> https://lab.example:443/login",
+      "attempt": 1,
+      "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+      "result": "clean"
+     },
+     {
+      "action_id": "inspect_headers -> https://lab.example:443/health",
+      "attempt": 1,
+      "capture_id": "74233004ec172430552352e412187e19eb96677a2341edca2f100725ea752014",
+      "result": "clean"
+     }
+    ],
+    "coverage": {
+     "planned": 5,
+     "terminal": 5,
+     "unresolved": []
+    },
+    "evidence_count": 5,
+    "omitted": [],
+    "outcomes_by_status": {
+     "clean": 5
+    },
+    "resource_use": {
+     "exhausted": [],
+     "limits": {
+      "actions": 12,
+      "cost": 60,
+      "model_calls": 6,
+      "wall_seconds": 300
+     },
+     "used": {
+      "actions": 5.0,
+      "cost": 6.0,
+      "model_calls": 6.0,
+      "wall_seconds": 0.0
+     }
+    },
+    "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+    "run_report": {
+     "captures": {
+      "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966": {
+       "action_id": "form_probe -> https://lab.example:443/login",
+       "body": "<html><form action=/login>user</form></html>",
+       "status": 200
+      },
+      "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1": {
+       "action_id": "inspect_headers -> https://lab.example:443/",
+       "body": "<html>lab landing\nServer: lab\nLAB_SHARED_BANNER</html>",
+       "status": 200
+      },
+      "74233004ec172430552352e412187e19eb96677a2341edca2f100725ea752014": {
+       "action_id": "inspect_headers -> https://lab.example:443/health",
+       "body": "healthy\n",
+       "status": 200
+      },
+      "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504": {
+       "action_id": "inspect_headers -> https://lab.example:443/login",
+       "body": "<html><form action=/login>user</form></html>",
+       "status": 200
+      },
+      "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e": {
+       "action_id": "inspect_headers -> https://beta.lab.example:443/",
+       "body": "<html>beta landing\nServer: lab\nLAB_SHARED_BANNER</html>",
+       "status": 200
+      }
+     },
+     "closed": "finished",
+     "counts": {
+      "events": 37,
+      "refusals": 1
+     },
+     "events": [
+      {
+       "event": "stage",
+       "stage": "discovery"
+      },
+      {
+       "event": "observation",
+       "field": "landing_status",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": 200
+      },
+      {
+       "event": "observation",
+       "field": "landing_has_form",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": false
+      },
+      {
+       "event": "observation",
+       "field": "landing_has_script",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": false
+      },
+      {
+       "event": "observation",
+       "field": "login_status",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": 200
+      },
+      {
+       "event": "observation",
+       "field": "login_has_form",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": true
+      },
+      {
+       "event": "observation",
+       "field": "login_has_script",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": false
+      },
+      {
+       "event": "observation",
+       "field": "beta_status",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": 200
+      },
+      {
+       "event": "observation",
+       "field": "beta_has_form",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": false
+      },
+      {
+       "event": "observation",
+       "field": "beta_has_script",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": false
+      },
+      {
+       "event": "stage",
+       "stage": "detection"
+      },
+      {
+       "event": "stage",
+       "stage": "crawling"
+      },
+      {
+       "event": "gate",
+       "inputs": {
+        "errors": 0,
+        "responses": 3
+       },
+       "mode": "full",
+       "status": "proceed"
+      },
+      {
+       "event": "stage",
+       "stage": "mining"
+      },
+      {
+       "event": "refused",
+       "kind": "proposal",
+       "payload_keys": [],
+       "reason": "proposal not admitted: refused_by_policy (destination https://outside.example:443 is outside the explicit authorized origins)"
+      },
+      {
+       "event": "stage",
+       "stage": "scanning"
+      },
+      {
+       "event": "stage",
+       "stage": "active_testing"
+      },
+      {
+       "action_id": "form_probe -> https://lab.example:443/login",
+       "destination": "https://lab.example:443/login",
+       "event": "action_authorized",
+       "tool": "form_probe"
+      },
+      {
+       "action_id": "form_probe -> https://lab.example:443/login",
+       "capture_id": "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966",
+       "event": "capture",
+       "status": 200
+      },
+      {
+       "action_id": "form_probe -> https://lab.example:443/login",
+       "detail": "attempt 1 of at most 2",
+       "event": "outcome",
+       "status": "clean"
+      },
+      {
+       "action_id": "inspect_headers -> https://beta.lab.example:443/",
+       "destination": "https://beta.lab.example:443/",
+       "event": "action_authorized",
+       "tool": "inspect_headers"
+      },
+      {
+       "action_id": "inspect_headers -> https://beta.lab.example:443/",
+       "capture_id": "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e",
+       "event": "capture",
+       "status": 200
+      },
+      {
+       "action_id": "inspect_headers -> https://beta.lab.example:443/",
+       "detail": "attempt 1 of at most 2",
+       "event": "outcome",
+       "status": "clean"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/",
+       "destination": "https://lab.example:443/",
+       "event": "action_authorized",
+       "tool": "inspect_headers"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/",
+       "capture_id": "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1",
+       "event": "capture",
+       "status": 200
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/",
+       "detail": "attempt 1 of at most 2",
+       "event": "outcome",
+       "status": "clean"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/login",
+       "destination": "https://lab.example:443/login",
+       "event": "action_authorized",
+       "tool": "inspect_headers"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/login",
+       "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+       "event": "capture",
+       "status": 200
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/login",
+       "detail": "attempt 1 of at most 2",
+       "event": "outcome",
+       "status": "clean"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/health",
+       "destination": "https://lab.example:443/health",
+       "event": "action_authorized",
+       "requested_destination": "https://lab.example/health",
+       "tool": "inspect_headers"
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/health",
+       "capture_id": "74233004ec172430552352e412187e19eb96677a2341edca2f100725ea752014",
+       "event": "capture",
+       "status": 200
+      },
+      {
+       "action_id": "inspect_headers -> https://lab.example:443/health",
+       "detail": "attempt 1 of at most 2",
+       "event": "outcome",
+       "status": "clean"
+      },
+      {
+       "event": "stage",
+       "stage": "reporting"
+      },
+      {
+       "capture_id": "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966",
+       "event": "finding",
+       "finding_id": "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f",
+       "kind": "form-exposure",
+       "severity": "low"
+      },
+      {
+       "capture_id": "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1",
+       "event": "finding",
+       "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+       "kind": "shared-banner",
+       "severity": "medium"
+      },
+      {
+       "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+       "event": "finding",
+       "finding_id": "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4",
+       "kind": "form-exposure",
+       "severity": "low"
+      },
+      {
+       "capture_id": "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e",
+       "event": "finding",
+       "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+       "kind": "shared-banner",
+       "severity": "medium"
+      }
+     ],
+     "findings": [
+      {
+       "capture_id": "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1",
+       "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+       "kind": "shared-banner",
+       "quote": "LAB_SHARED_BANNER",
+       "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+       "severity": "medium",
+       "title": "Shared lab banner disclosed"
+      },
+      {
+       "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+       "finding_id": "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4",
+       "kind": "form-exposure",
+       "quote": "<form",
+       "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+       "severity": "low",
+       "title": "Login form reachable"
+      },
+      {
+       "capture_id": "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966",
+       "finding_id": "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f",
+       "kind": "form-exposure",
+       "quote": "<form",
+       "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+       "severity": "low",
+       "title": "Login form reachable"
+      },
+      {
+       "capture_id": "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e",
+       "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+       "kind": "shared-banner",
+       "quote": "LAB_SHARED_BANNER",
+       "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+       "severity": "medium",
+       "title": "Shared lab banner disclosed"
+      }
+     ],
+     "gate": {
+      "inputs": {
+       "errors": 0,
+       "responses": 3
+      },
+      "mode": "full",
+      "status": "proceed"
+     },
+     "observations": {
+      "beta_has_form": {
+       "field": "beta_has_form",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": false
+      },
+      "beta_has_script": {
+       "field": "beta_has_script",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": false
+      },
+      "beta_status": {
+       "field": "beta_status",
+       "source": "fixture:beta",
+       "state": "measured",
+       "value": 200
+      },
+      "landing_has_form": {
+       "field": "landing_has_form",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": false
+      },
+      "landing_has_script": {
+       "field": "landing_has_script",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": false
+      },
+      "landing_status": {
+       "field": "landing_status",
+       "source": "fixture:landing",
+       "state": "measured",
+       "value": 200
+      },
+      "login_has_form": {
+       "field": "login_has_form",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": true
+      },
+      "login_has_script": {
+       "field": "login_has_script",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": false
+      },
+      "login_status": {
+       "field": "login_status",
+       "source": "fixture:login",
+       "state": "measured",
+       "value": 200
+      }
+     },
+     "outcomes": {
+      "form_probe -> https://lab.example:443/login": {
+       "action_id": "form_probe -> https://lab.example:443/login",
+       "detail": "attempt 1 of at most 2",
+       "status": "clean"
+      },
+      "inspect_headers -> https://beta.lab.example:443/": {
+       "action_id": "inspect_headers -> https://beta.lab.example:443/",
+       "detail": "attempt 1 of at most 2",
+       "status": "clean"
+      },
+      "inspect_headers -> https://lab.example:443/": {
+       "action_id": "inspect_headers -> https://lab.example:443/",
+       "detail": "attempt 1 of at most 2",
+       "status": "clean"
+      },
+      "inspect_headers -> https://lab.example:443/health": {
+       "action_id": "inspect_headers -> https://lab.example:443/health",
+       "detail": "attempt 1 of at most 2",
+       "status": "clean"
+      },
+      "inspect_headers -> https://lab.example:443/login": {
+       "action_id": "inspect_headers -> https://lab.example:443/login",
+       "detail": "attempt 1 of at most 2",
+       "status": "clean"
+      }
+     },
+     "policy_digest": "5fa80647402ff112940e0e16f5b07292b0d4cb16433d5d47192a9b00b3e34254",
+     "reviews": [],
+     "run_id": "42e38aedc3248d1384293ef053d7b11211d3ace2f3dd36c35d926aba4d109ecc",
+     "schema": "course-run-report/v1",
+     "stage": "reporting"
+    },
+    "schema": "course-terminal-report/v1",
+    "stop_reason": null
+   }
+  },
+  "followup_plan": [
+   {
+    "arguments": {},
+    "destination": "https://lab.example/health",
+    "tool": "inspect_headers"
+   }
+  ],
+  "halted": null,
+  "memory_written": [],
+  "plan": [
+   "inspect_headers -> https://beta.lab.example:443/",
+   "inspect_headers -> https://lab.example:443/",
+   "inspect_headers -> https://lab.example:443/login",
+   "form_probe -> https://lab.example:443/login"
+  ],
+  "proposals": [
+   {
+    "admitted": false,
+    "attempts": [
+     {
+      "attempt": 1,
+      "reason": "destination https://outside.example:443 is outside the explicit authorized origins",
+      "status": "refused_by_policy"
+     }
+    ],
+    "phase": "observation",
+    "proposal": {
+     "action": {
+      "arguments": {},
+      "destination": "https://outside.example/",
+      "tool": "inspect_headers"
+     },
+     "evidence": [
+      "landing_status"
+     ],
+     "kind": "exfil-hypothesis",
+     "surface": "landing_status"
+    },
+    "reason": "destination https://outside.example:443 is outside the explicit authorized origins",
+    "status": "refused_by_policy",
+    "usage": {
+     "calls": 1,
+     "reply_bytes": 188,
+     "request_bytes": 1157
+    }
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/health",
+    "admitted": true,
+    "attempts": [
+     {
+      "attempt": 1,
+      "status": "admitted"
+     }
+    ],
+    "context_evidence": [
+     {
+      "action_id": "form_probe -> https://lab.example:443/login",
+      "excerpt": "<html><form action=/login>user</form></html>",
+      "status": 200
+     },
+     {
+      "action_id": "inspect_headers -> https://lab.example:443/",
+      "excerpt": "<html>lab landing\nServer: lab\nLAB_SHARED_BANNER</html>",
+      "status": 200
+     },
+     {
+      "action_id": "inspect_headers -> https://lab.example:443/login",
+      "excerpt": "<html><form action=/login>user</form></html>",
+      "status": 200
+     },
+     {
+      "action_id": "inspect_headers -> https://beta.lab.example:443/",
+      "excerpt": "<html>beta landing\nServer: lab\nLAB_SHARED_BANNER</html>",
+      "status": 200
+     }
+    ],
+    "phase": "evidence",
+    "proposal": {
+     "action": {
+      "arguments": {},
+      "destination": "https://lab.example/health",
+      "tool": "inspect_headers"
+     },
+     "evidence": [
+      "landing_status",
+      "landing_has_form"
+     ],
+     "kind": "health-endpoint-disclosure",
+     "surface": "landing_status"
+    },
+    "usage": {
+     "calls": 1,
+     "reply_bytes": 220,
+     "request_bytes": 1824
+    }
+   }
+  ],
+  "retrieval": null,
+  "schema": "course-app-report/v1",
+  "verification": {
+   "governed": {
+    "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c": {
+     "capture_id": "5049914f20a90bd1fc4c5186494fad804145b55500756c19b238b74ef14aebe1",
+     "ceiling_enforced": false,
+     "consolidated_into": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+     "evidence_grade": "moderate",
+     "false_positive": false,
+     "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+     "kind": "shared-banner",
+     "original_severity": "medium",
+     "quote": "LAB_SHARED_BANNER",
+     "severity": "medium",
+     "status": "absorbed",
+     "title": "Shared lab banner disclosed",
+     "verdicts": [
+      {
+       "after": "medium",
+       "applied": true,
+       "before": "medium",
+       "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+       "reason": "banner marker verified in the capture",
+       "verdict": "accept"
+      }
+     ]
+    },
+    "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4": {
+     "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+     "ceiling_enforced": false,
+     "evidence_grade": "moderate",
+     "false_positive": true,
+     "finding_id": "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4",
+     "kind": "form-exposure",
+     "original_severity": "low",
+     "quote": "<form",
+     "severity": "low",
+     "status": "rejected",
+     "title": "Login form reachable",
+     "verdicts": [
+      {
+       "after": "low",
+       "applied": true,
+       "before": "low",
+       "finding_id": "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4",
+       "reason": "verifier judged the form a template artifact; a human should check this",
+       "verdict": "reject"
+      }
+     ]
+    },
+    "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f": {
+     "capture_id": "3167330cb726f9383d59ecffbfbba9761f8e117478c5ed551fd6c76ad202c966",
+     "ceiling_enforced": false,
+     "evidence_grade": "moderate",
+     "false_positive": true,
+     "finding_id": "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f",
+     "kind": "form-exposure",
+     "original_severity": "low",
+     "quote": "<form",
+     "severity": "low",
+     "status": "rejected",
+     "title": "Login form reachable",
+     "verdicts": [
+      {
+       "after": "low",
+       "applied": true,
+       "before": "low",
+       "finding_id": "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f",
+       "reason": "verifier judged the form a template artifact; a human should check this",
+       "verdict": "reject"
+      }
+     ]
+    },
+    "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac": {
+     "affected_hosts": [
+      "beta.lab.example",
+      "lab.example"
+     ],
+     "capture_id": "f3eb3f45d1737bf4c450cbcd25b38e01f4dae25343f4d0bf8632109d79833d0e",
+     "ceiling_enforced": false,
+     "evidence_grade": "moderate",
+     "false_positive": false,
+     "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+     "kind": "shared-banner",
+     "original_severity": "medium",
+     "quote": "LAB_SHARED_BANNER",
+     "severity": "medium",
+     "status": "governed",
+     "title": "Shared lab banner disclosed",
+     "verdicts": [
+      {
+       "after": "medium",
+       "applied": true,
+       "before": "medium",
+       "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+       "reason": "banner marker verified in the capture",
+       "verdict": "accept"
+      }
+     ]
+    }
+   },
+   "verdict_ledger": [
+    {
+     "after": "medium",
+     "applied": true,
+     "before": "medium",
+     "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+     "reason": "banner marker verified in the capture",
+     "verdict": "accept"
+    },
+    {
+     "after": "low",
+     "applied": true,
+     "before": "low",
+     "finding_id": "5b411f0c612a0098c19ec7800d74cb3a01a0525e2bdffaa3e61a02e1cc1478f4",
+     "reason": "verifier judged the form a template artifact; a human should check this",
+     "verdict": "reject"
+    },
+    {
+     "after": "low",
+     "applied": true,
+     "before": "low",
+     "finding_id": "b02a95ece091e3d291cf1859d645199d8244f4f6080b008461dba0ba95d0f33f",
+     "reason": "verifier judged the form a template artifact; a human should check this",
+     "verdict": "reject"
+    },
+    {
+     "after": "medium",
+     "applied": true,
+     "before": "medium",
+     "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+     "reason": "banner marker verified in the capture",
+     "verdict": "accept"
+    }
+   ]
+  },
+  "world": "assembly-lesson-fixtures"
+ },
+ "controller_swap": {
+  "legacy": {
+   "eligible": [
+    "inspect_headers -> https://lab.example:443/",
+    "form_probe -> https://lab.example:443/login",
+    "inspect_headers -> https://lab.example:443/login",
+    "inspect_headers -> https://beta.lab.example:443/"
+   ],
+   "execution_order": [
+    "inspect_headers -> https://beta.lab.example:443/",
+    "inspect_headers -> https://lab.example:443/",
+    "inspect_headers -> https://lab.example:443/login",
+    "form_probe -> https://lab.example:443/login"
+   ],
+   "feedback_weights": [
+    "feedback-v1"
+   ]
+  },
+  "priority": {
+   "eligible": [
+    "inspect_headers -> https://lab.example:443/",
+    "form_probe -> https://lab.example:443/login",
+    "inspect_headers -> https://lab.example:443/login",
+    "inspect_headers -> https://beta.lab.example:443/"
+   ],
+   "execution_order": [
+    "form_probe -> https://lab.example:443/login",
+    "inspect_headers -> https://beta.lab.example:443/",
+    "inspect_headers -> https://lab.example:443/",
+    "inspect_headers -> https://lab.example:443/login"
+   ],
+   "feedback_weights": [
+    "feedback-v1"
+   ]
+  }
+ },
+ "interrupted_and_resumed": {
+  "coverage": {
+   "planned": 3,
+   "terminal": 2,
+   "unresolved": [
+    "form_probe -> https://lab.example:443/login"
+   ]
+  },
+  "executed_before_interrupt": "clean",
+  "finish": true,
+  "interrupted_action_ids": [
+   "inspect_headers -> https://lab.example:443/login",
+   "form_probe -> https://lab.example:443/login"
+  ],
+  "reconciliation": [
+   {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "settled": "unresolved"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "capture_id": "9f89d2749b1ed6eeb787bdbb781974b4f744399eed39880f1ef87f5638e46504",
+    "settled": "clean"
+   }
+  ]
+ },
+ "memory_across_runs": {
+  "after_refutation_included": [],
+  "after_refutation_write_back": [
+   {
+    "declined": "tactic is refuted; a new success does not silently rehabilitate it -- record a fresh tactic or lift the refutation explicitly",
+    "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+    "record_id": null
+   },
+   {
+    "declined": "tactic is refuted; a new success does not silently rehabilitate it -- record a fresh tactic or lift the refutation explicitly",
+    "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+    "record_id": null
+   }
+  ],
+  "first_run_wrote": [
+   {
+    "finding_id": "0c1334d3538fee2d92f800290c2396301edea1b14ef65688e4c0e392e65e755c",
+    "grade": "proven",
+    "record_id": "tactic-384e024a80e7"
+   },
+   {
+    "finding_id": "d6c7bd5a0d4a5839c27834c614e2f8f81ebf6c4366f8059e62c0a192260b1dac",
+    "grade": "proven",
+    "record_id": "tactic-b28f252cbf32"
+   }
+  ],
+  "second_run_context_included": [
+   "tactic-384e024a80e7",
+   "tactic-b28f252cbf32"
+  ]
+ },
+ "schema": "app-lesson-demo/v1"
+}

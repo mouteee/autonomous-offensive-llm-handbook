@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" aria-labelledby="t d">
+<title id="t">One proposal round, from context to admission</title><desc id="d">The host builds the proposal context and hands it to the provider callable -- the one place a model client plugs in. The reply passes strict parsing and the hypothesis schema; a malformed reply earns one bounded repair attempt carrying the validation error back, while a well-formed proposal goes to the policy, whose refusal is terminal. Every call is admitted against the host's stops and charged to the shared model-call budget.</desc>
+<rect x="0" y="0" width="720" height="470" rx="10" fill="#1a1a19"/>
+<text x="40" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="19" fill="#ffffff" text-anchor="start" font-weight="650">One proposal round</text>
+<text x="40" y="58" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">your model client is the provider callable; everything around it is the host's</text>
+<rect x="40" y="84" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="190" y="107" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">proposal context</text>
+<text x="190" y="126" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">instruction, observations, evidence</text>
+<rect x="380" y="84" width="300" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="530" y="107" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">provider(context)</text>
+<text x="530" y="126" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">your client plugs in here</text>
+<line x1="340" y1="113" x2="376" y2="113" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 370 109 L 376 113 L 370 117" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="358" y="76" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">admitted + charged</text>
+<rect x="380" y="186" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="530" y="209" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">strict parse</text>
+<text x="530" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">one JSON object, byte cap, no extras</text>
+<line x1="530" y1="142" x2="530" y2="182" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 526 176 L 530 182 L 534 176" fill="none" stroke="#898781" stroke-width="1.5"/>
+<rect x="40" y="186" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="190" y="209" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">hypothesis schema</text>
+<text x="190" y="228" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">kind, surface, evidence, action</text>
+<line x1="380" y1="215" x2="348" y2="215" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 350 211 L 344 215 L 350 219" fill="none" stroke="#898781" stroke-width="1.5"/>
+<rect x="40" y="288" width="300" height="58" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="190" y="311" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">policy</text>
+<text x="190" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">terminal either way</text>
+<line x1="190" y1="244" x2="190" y2="284" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 186 278 L 190 284 L 194 278" fill="none" stroke="#898781" stroke-width="1.5"/>
+<rect x="380" y="288" width="300" height="58" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="530" y="311" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="650">admitted plan row</text>
+<text x="530" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#c3c2b7" text-anchor="middle" font-weight="normal">same door as everything else</text>
+<line x1="340" y1="317" x2="376" y2="317" stroke="#898781" stroke-width="1.5" stroke-linecap="butt"/>
+<path d="M 370 313 L 376 317 L 370 321" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="358" y="311" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="middle" font-weight="normal">allowed</text>
+<line x1="620" y1="244" x2="620" y2="264" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line x1="620" y1="264" x2="700" y2="264" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line x1="700" y1="264" x2="700" y2="113" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line x1="700" y1="113" x2="684" y2="113" stroke="#898781" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<text x="696" y="258" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="end" font-weight="normal">repair:</text>
+<text x="696" y="274" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="end" font-weight="normal">malformed only,</text>
+<text x="696" y="290" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="end" font-weight="normal">bounded,</text>
+<text x="696" y="306" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="end" font-weight="normal">re-admitted</text>
+<text x="40" y="384" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">repair stops at the attempt bound, the model-call budget, cancellation,</text>
+<text x="40" y="404" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">closure or the wall deadline -- whichever comes first; a policy refusal is terminal</text>
+<text x="40" y="424" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">because rephrasing a forbidden action does not permit it</text>
+<text x="40" y="454" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">a call already running may finish late; no further call starts after the run's stops</text>
+</svg>

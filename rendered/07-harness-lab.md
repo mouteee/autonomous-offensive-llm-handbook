@@ -111,7 +111,7 @@ Every finding is marked as requiring human review. The tutorial does not impleme
 
 The manifest is a reviewable declaration, not a universal implementation. A cloud, infrastructure or other target port also needs appropriate adapters, evidence semantics and evaluation ground truth. Changing a catalogue alone does not demonstrate an end-to-end port.
 
-## What this does not establish
+## Limits of the fixture lab
 
 - It does not make model text or live findings repeatable.
 - It does not establish savings in tokens, elapsed time, money or analyst effort.
@@ -129,4 +129,4 @@ Then integrate a model only as a proposal producer. Keep the trusted adapter reg
 
 ## What it costs to build this
 
-Every new adapter needs transport-boundary tests; every rule needs positive and negative fixtures; every target port needs reviewable authorization and evidence semantics. Those costs do not disappear when the model becomes more capable. The sample proof predicate is not a production verifier, the library is not a sandbox, and the controlled study remains unrun. These are remaining implementation and measurement obligations, not claims that the tutorial has paid them.
+Every new adapter needs transport-boundary tests; every rule needs positive and negative fixtures; every target port needs reviewable authorization and evidence semantics. Those costs do not disappear when the model becomes more capable. The sample proof predicate is not a production verifier, the library is not a sandbox, and the controlled study remains unrun as of the register date in [the evidence register](appendix-f-evidence-register.md). These are remaining implementation and measurement obligations, not claims that the tutorial has paid them.

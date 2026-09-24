@@ -1,0 +1,374 @@
+{
+ "body_digest": "ce00354f0f75b4dc",
+ "condition": {
+  "learn": false,
+  "name": "legacy",
+  "seed": 7,
+  "world": "decoy-delay"
+ },
+ "manifest_digest": "3cc0636b65ea2e25",
+ "schema": "controller-research-raw/v1",
+ "total_reward": -12.340526,
+ "trace": [
+  {
+   "cum": -0.235233,
+   "family": "fam-decoy",
+   "reward": -0.235233,
+   "step": 0
+  },
+  {
+   "cum": -0.520746,
+   "family": "fam-decoy",
+   "reward": -0.285513,
+   "step": 1
+  },
+  {
+   "cum": -0.809146,
+   "family": "fam-decoy",
+   "reward": -0.2884,
+   "step": 2
+  },
+  {
+   "cum": -1.022417,
+   "family": "fam-decoy",
+   "reward": -0.213271,
+   "step": 3
+  },
+  {
+   "cum": -1.237513,
+   "family": "fam-decoy",
+   "reward": -0.215096,
+   "step": 4
+  },
+  {
+   "cum": -1.492865,
+   "family": "fam-decoy",
+   "reward": -0.255352,
+   "step": 5
+  },
+  {
+   "cum": -1.677444,
+   "family": "fam-decoy",
+   "reward": -0.184579,
+   "step": 6
+  },
+  {
+   "cum": -1.968127,
+   "family": "fam-decoy",
+   "reward": -0.290683,
+   "step": 7
+  },
+  {
+   "cum": -2.239276,
+   "family": "fam-decoy",
+   "reward": -0.271149,
+   "step": 8
+  },
+  {
+   "cum": -2.376051,
+   "family": "fam-decoy",
+   "reward": -0.136775,
+   "step": 9
+  },
+  {
+   "cum": -2.548268,
+   "family": "fam-decoy",
+   "reward": -0.172217,
+   "step": 10
+  },
+  {
+   "cum": -2.83571,
+   "family": "fam-decoy",
+   "reward": -0.287442,
+   "step": 11
+  },
+  {
+   "cum": -2.99963,
+   "family": "fam-decoy",
+   "reward": -0.16392,
+   "step": 12
+  },
+  {
+   "cum": -3.182518,
+   "family": "fam-decoy",
+   "reward": -0.182888,
+   "step": 13
+  },
+  {
+   "cum": -3.323642,
+   "family": "fam-decoy",
+   "reward": -0.141124,
+   "step": 14
+  },
+  {
+   "cum": -3.508757,
+   "family": "fam-decoy",
+   "reward": -0.185115,
+   "step": 15
+  },
+  {
+   "cum": -3.662868,
+   "family": "fam-decoy",
+   "reward": -0.154111,
+   "step": 16
+  },
+  {
+   "cum": -3.939255,
+   "family": "fam-decoy",
+   "reward": -0.276387,
+   "step": 17
+  },
+  {
+   "cum": -4.208858,
+   "family": "fam-decoy",
+   "reward": -0.269603,
+   "step": 18
+  },
+  {
+   "cum": -4.375215,
+   "family": "fam-decoy",
+   "reward": -0.166357,
+   "step": 19
+  },
+  {
+   "cum": -4.500119,
+   "family": "fam-decoy",
+   "reward": -0.124904,
+   "step": 20
+  },
+  {
+   "cum": -4.681245,
+   "family": "fam-decoy",
+   "reward": -0.181126,
+   "step": 21
+  },
+  {
+   "cum": -4.813251,
+   "family": "fam-decoy",
+   "reward": -0.132006,
+   "step": 22
+  },
+  {
+   "cum": -4.980421,
+   "family": "fam-decoy",
+   "reward": -0.16717,
+   "step": 23
+  },
+  {
+   "cum": -5.150995,
+   "family": "fam-decoy",
+   "reward": -0.170574,
+   "step": 24
+  },
+  {
+   "cum": -5.394076,
+   "family": "fam-decoy",
+   "reward": -0.243081,
+   "step": 25
+  },
+  {
+   "cum": -5.689563,
+   "family": "fam-decoy",
+   "reward": -0.295487,
+   "step": 26
+  },
+  {
+   "cum": -5.966144,
+   "family": "fam-decoy",
+   "reward": -0.276581,
+   "step": 27
+  },
+  {
+   "cum": -6.240276,
+   "family": "fam-decoy",
+   "reward": -0.274132,
+   "step": 28
+  },
+  {
+   "cum": -6.365992,
+   "family": "fam-decoy",
+   "reward": -0.125716,
+   "step": 29
+  },
+  {
+   "cum": -6.556104,
+   "family": "fam-decoy",
+   "reward": -0.190112,
+   "step": 30
+  },
+  {
+   "cum": -6.683307,
+   "family": "fam-decoy",
+   "reward": -0.127203,
+   "step": 31
+  },
+  {
+   "cum": -6.911553,
+   "family": "fam-decoy",
+   "reward": -0.228246,
+   "step": 32
+  },
+  {
+   "cum": -7.181369,
+   "family": "fam-decoy",
+   "reward": -0.269816,
+   "step": 33
+  },
+  {
+   "cum": -7.434702,
+   "family": "fam-decoy",
+   "reward": -0.253333,
+   "step": 34
+  },
+  {
+   "cum": -7.682153,
+   "family": "fam-decoy",
+   "reward": -0.247451,
+   "step": 35
+  },
+  {
+   "cum": -7.908302,
+   "family": "fam-decoy",
+   "reward": -0.226149,
+   "step": 36
+  },
+  {
+   "cum": -8.070203,
+   "family": "fam-decoy",
+   "reward": -0.161901,
+   "step": 37
+  },
+  {
+   "cum": -8.234963,
+   "family": "fam-decoy",
+   "reward": -0.16476,
+   "step": 38
+  },
+  {
+   "cum": -8.378969,
+   "family": "fam-decoy",
+   "reward": -0.144006,
+   "step": 39
+  },
+  {
+   "cum": -8.600493,
+   "family": "fam-decoy",
+   "reward": -0.221524,
+   "step": 40
+  },
+  {
+   "cum": -8.773635,
+   "family": "fam-decoy",
+   "reward": -0.173142,
+   "step": 41
+  },
+  {
+   "cum": -9.031882,
+   "family": "fam-decoy",
+   "reward": -0.258247,
+   "step": 42
+  },
+  {
+   "cum": -9.321367,
+   "family": "fam-decoy",
+   "reward": -0.289485,
+   "step": 43
+  },
+  {
+   "cum": -9.601074,
+   "family": "fam-decoy",
+   "reward": -0.279707,
+   "step": 44
+  },
+  {
+   "cum": -9.726208,
+   "family": "fam-decoy",
+   "reward": -0.125134,
+   "step": 45
+  },
+  {
+   "cum": -9.975756,
+   "family": "fam-decoy",
+   "reward": -0.249548,
+   "step": 46
+  },
+  {
+   "cum": -10.251188,
+   "family": "fam-decoy",
+   "reward": -0.275432,
+   "step": 47
+  },
+  {
+   "cum": -10.45799,
+   "family": "fam-decoy",
+   "reward": -0.206802,
+   "step": 48
+  },
+  {
+   "cum": -10.737552,
+   "family": "fam-decoy",
+   "reward": -0.279562,
+   "step": 49
+  },
+  {
+   "cum": -10.871781,
+   "family": "fam-decoy",
+   "reward": -0.134229,
+   "step": 50
+  },
+  {
+   "cum": -10.981584,
+   "family": "fam-decoy",
+   "reward": -0.109803,
+   "step": 51
+  },
+  {
+   "cum": -11.17295,
+   "family": "fam-decoy",
+   "reward": -0.191366,
+   "step": 52
+  },
+  {
+   "cum": -11.27725,
+   "family": "fam-decoy",
+   "reward": -0.1043,
+   "step": 53
+  },
+  {
+   "cum": -11.525027,
+   "family": "fam-decoy",
+   "reward": -0.247777,
+   "step": 54
+  },
+  {
+   "cum": -11.670639,
+   "family": "fam-decoy",
+   "reward": -0.145612,
+   "step": 55
+  },
+  {
+   "cum": -11.904706,
+   "family": "fam-decoy",
+   "reward": -0.234067,
+   "step": 56
+  },
+  {
+   "cum": -12.007721,
+   "family": "fam-decoy",
+   "reward": -0.103015,
+   "step": 57
+  },
+  {
+   "cum": -12.144054,
+   "family": "fam-decoy",
+   "reward": -0.136333,
+   "step": 58
+  },
+  {
+   "cum": -12.340526,
+   "family": "fam-decoy",
+   "reward": -0.196472,
+   "step": 59
+  }
+ ]
+}

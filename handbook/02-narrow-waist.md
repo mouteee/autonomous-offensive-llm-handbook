@@ -1,4 +1,4 @@
-# The narrow waist
+# One recording path
 
 A model reports SQL injection on a quote endpoint. There is no request in the record and no response. The finding carries a title, a severity of critical, and a paragraph of impact that reads like every other paragraph of impact you have ever read. It goes in the PDF. Someone forwards the PDF to a development team, and an engineer who actually looks writes back to say the endpoint returns the same page for every input.
 
@@ -8,7 +8,7 @@ The instinct is to write a better instruction. Tell it to report only what it ca
 
 So the control has to sit somewhere the model is not. Chapter 01 put the choosing outside the model. This chapter puts the recording outside it.
 
-## One door
+## Use one recording interface
 
 The rule is one sentence and everything after it in this chapter is a consequence: each kind of side effect has exactly one writer, and none of the writers is the model.
 
@@ -63,7 +63,7 @@ out: ToolCall(name='fetch_url', arguments={'url': 'https://h/', 'timeout': 5})
 
 Coercing is the tolerance half, and it exists because models are sloppy about types in specific, predictable ways. `[[code:llm_control.py:_validate_type]]` turns a quoted integer into an integer, a bare number in a string field into a string, and the strings `true` and `false` into booleans. It refuses to treat a boolean as either an integer or a string, which is the one coercion that would be silently destructive. The tolerance is deliberate and I think it is correct. A run that dies because the model wrote `"30"` where the schema wanted an unquoted integer has spent a repair cycle on nothing.
 
-## Where the validator is quietly wrong
+## Known validation gaps
 
 I went looking for the seam between those two halves, because dropping and coercing are both silent and silence compounds.
 
@@ -115,7 +115,7 @@ I want the containment one, and the reason is the property only it has: there is
 
 Now the part that took me two attempts to get right.
 
-### The split
+### Separate proposal and finding gates
 
 Run that check over everything a model proposes and you will destroy your scan. I know because that is what the first version did.
 
@@ -142,7 +142,7 @@ This is not hypothetical. The first version of this gate applied the quote test 
 
 I made this mistake myself, in the direction that goes blind, and it took a while to notice. What makes it easy to make is that both collapses read as reasonable in a design document: one says trust the model, the other says verify everything, and neither of them stops to ask what the verification is actually able to decide.
 
-### Where the split leaks
+### Remaining bypasses
 
 <!-- num-ok: Three places is a spelled quantity counting a code artifact: the three this section then describes one at a time, and the same sentence splits them two found while writing plus one found by a reviewer -->
 Three places, all real, all in the working system rather than in the argument. I found two of them while writing. A reviewer found the third, and the third is the one that matters.

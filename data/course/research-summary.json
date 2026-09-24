@@ -1,0 +1,222 @@
+{
+ "manifest_digest": "3cc0636b65ea2e25",
+ "rows": [
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "priority--steady-families--seed7",
+   "regret_vs_best_fixed_family": 0.0,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 83.391417
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "priority--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": 12.324464,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 47.391417
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "priority--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 0.0,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 41.178317
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "priority--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 53.518843,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": -12.340526
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "legacy--steady-families--seed7",
+   "regret_vs_best_fixed_family": 59.675536,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": 23.715881
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "legacy--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": 0.0,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": 60,
+   "total_reward": 59.715881
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "legacy--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 29.526161,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": 11.652156
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "legacy--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 53.518843,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": -12.340526
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "linucb--steady-families--seed7",
+   "regret_vs_best_fixed_family": 1.955577,
+   "repeat_ratio": 0.941176,
+   "status": "analyzed",
+   "steps_to_first_payout": 1,
+   "total_reward": 81.43584
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "linucb--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": -23.822717,
+   "repeat_ratio": 0.92437,
+   "status": "analyzed",
+   "steps_to_first_payout": 1,
+   "total_reward": 83.538598
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "linucb--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 3.280736,
+   "repeat_ratio": 0.915254,
+   "status": "analyzed",
+   "steps_to_first_payout": 3,
+   "total_reward": 37.897581
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "linucb--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 4.898468,
+   "repeat_ratio": 0.932203,
+   "status": "analyzed",
+   "steps_to_first_payout": 3,
+   "total_reward": 36.279849
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "linucb-frozen--steady-families--seed7",
+   "regret_vs_best_fixed_family": 35.336347,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": 48.05507
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "linucb-frozen--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": 11.660811,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": 48.05507
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "linucb-frozen--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 17.518843,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": 23.659474
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "linucb-frozen--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 53.518843,
+   "repeat_ratio": 1.0,
+   "status": "analyzed",
+   "steps_to_first_payout": null,
+   "total_reward": -12.340526
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "mb--steady-families--seed7",
+   "regret_vs_best_fixed_family": 29.087853,
+   "repeat_ratio": 0.05042,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 54.303564
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "mb--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": 7.421706,
+   "repeat_ratio": 0.042017,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 52.294175
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "mb--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 14.299703,
+   "repeat_ratio": 0.711864,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 26.878614
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "mb--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 39.629828,
+   "repeat_ratio": 0.728814,
+   "status": "analyzed",
+   "steps_to_first_payout": 8,
+   "total_reward": 1.548489
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "mb-plastic--steady-families--seed7",
+   "regret_vs_best_fixed_family": 25.177713,
+   "repeat_ratio": 0.201681,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 58.213704
+  },
+  {
+   "best_fixed_family": "fam-recon",
+   "condition": "mb-plastic--drifting-signal--seed7",
+   "regret_vs_best_fixed_family": 3.795385,
+   "repeat_ratio": 0.168067,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 55.920496
+  },
+  {
+   "best_fixed_family": "fam-inject",
+   "condition": "mb-plastic--delayed-credit--seed7",
+   "regret_vs_best_fixed_family": 11.315032,
+   "repeat_ratio": 0.745763,
+   "status": "analyzed",
+   "steps_to_first_payout": 0,
+   "total_reward": 29.863285
+  },
+  {
+   "best_fixed_family": "fam-pay",
+   "condition": "mb-plastic--decoy-delay--seed7",
+   "regret_vs_best_fixed_family": 33.818742,
+   "repeat_ratio": 0.728814,
+   "status": "analyzed",
+   "steps_to_first_payout": 8,
+   "total_reward": 7.359575
+  }
+ ],
+ "schema": "controller-research-summary/v1"
+}

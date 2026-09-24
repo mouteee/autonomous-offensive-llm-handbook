@@ -8,3 +8,5 @@ output/
 .pytest_cache/
 .superpowers/
 scripts/.denylist
+.site-src/
+site/

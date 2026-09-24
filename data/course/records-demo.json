@@ -1,0 +1,208 @@
+{
+ "admitted": [
+  {
+   "field": "has_form",
+   "reason": "observation recorded",
+   "recorded": true
+  },
+  {
+   "action_id": "inspect_headers -> https://lab.example:443/login",
+   "reason": "action authorized",
+   "recorded": true
+  },
+  {
+   "capture_id": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+   "reason": "capture recorded",
+   "recorded": true
+  },
+  {
+   "action_id": "inspect_headers -> https://lab.example:443/login",
+   "reason": "outcome recorded",
+   "recorded": true,
+   "status": "clean"
+  },
+  {
+   "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+   "reason": "finding recorded",
+   "recorded": true
+  },
+  {
+   "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+   "reason": "review recorded",
+   "recorded": true
+  }
+ ],
+ "refused": [
+  {
+   "reason": "destination https://other.example:443 is outside the explicit authorized origins",
+   "recorded": false
+  },
+  {
+   "reason": "tool 'shell' is not declared in the catalogue",
+   "recorded": false
+  },
+  {
+   "reason": "payload run_id does not belong to this run",
+   "recorded": false
+  },
+  {
+   "reason": "quote does not occur verbatim in the cited capture",
+   "recorded": false
+  },
+  {
+   "reason": "malformed payload: KeyError('status')",
+   "recorded": false
+  }
+ ],
+ "report": {
+  "captures": {
+   "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817": {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "body": "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\n",
+    "status": 200
+   }
+  },
+  "closed": null,
+  "counts": {
+   "events": 11,
+   "refusals": 5
+  },
+  "events": [
+   {
+    "event": "observation",
+    "field": "has_form",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": true
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "destination": "https://lab.example:443/login",
+    "event": "action_authorized",
+    "requested_destination": "https://lab.example/login",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "capture_id": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "detail": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "capture_id": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+    "event": "finding",
+    "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+    "kind": "header",
+    "severity": "medium"
+   },
+   {
+    "actor": "human_review_required",
+    "decision": "needs_review",
+    "event": "review",
+    "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+    "reason": "awaiting human acceptance"
+   },
+   {
+    "event": "refused",
+    "kind": "action",
+    "payload_keys": [
+     "arguments",
+     "destination",
+     "run_id",
+     "tool"
+    ],
+    "reason": "destination https://other.example:443 is outside the explicit authorized origins"
+   },
+   {
+    "event": "refused",
+    "kind": "action",
+    "payload_keys": [
+     "arguments",
+     "destination",
+     "run_id",
+     "tool"
+    ],
+    "reason": "tool 'shell' is not declared in the catalogue"
+   },
+   {
+    "event": "refused",
+    "kind": "capture",
+    "payload_keys": [
+     "action_id",
+     "body",
+     "run_id",
+     "status"
+    ],
+    "reason": "payload run_id does not belong to this run"
+   },
+   {
+    "event": "refused",
+    "kind": "finding",
+    "payload_keys": [
+     "capture_id",
+     "kind",
+     "quote",
+     "run_id",
+     "severity",
+     "title"
+    ],
+    "reason": "quote does not occur verbatim in the cited capture"
+   },
+   {
+    "event": "refused",
+    "kind": "outcome",
+    "payload_keys": [
+     "action_id",
+     "run_id"
+    ],
+    "reason": "malformed payload: KeyError('status')"
+   }
+  ],
+  "findings": [
+   {
+    "capture_id": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+    "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+    "kind": "header",
+    "quote": "Access-Control-Allow-Origin: *",
+    "run_id": "ab0e0b615f005409efae5a65c209aa94da7794ef72d50fedd7e2b2fb5bd0e08e",
+    "severity": "medium",
+    "title": "Wildcard cross-origin header"
+   }
+  ],
+  "gate": null,
+  "observations": {
+   "has_form": {
+    "field": "has_form",
+    "source": "fixture:login",
+    "state": "measured",
+    "value": true
+   }
+  },
+  "outcomes": {
+   "inspect_headers -> https://lab.example:443/login": {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "detail": "a7246fbfb0a317fed537269e87a0d3a815da9fd6da315402b7c54d0c6e7a7817",
+    "status": "clean"
+   }
+  },
+  "policy_digest": "724330529cbcb21950ee25f141f929c2e8cee34f227812d56029ac4703806a80",
+  "reviews": [
+   {
+    "actor": "human_review_required",
+    "decision": "needs_review",
+    "finding_id": "c0acdb82a831755b2c3a748b727c35877c80313754cac98f8cba27e9b51dc42b",
+    "reason": "awaiting human acceptance"
+   }
+  ],
+  "run_id": "ab0e0b615f005409efae5a65c209aa94da7794ef72d50fedd7e2b2fb5bd0e08e",
+  "schema": "course-run-report/v1",
+  "stage": null
+ },
+ "schema": "records-demo/v1"
+}

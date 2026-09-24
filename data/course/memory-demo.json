@@ -1,0 +1,336 @@
+{
+ "dedup": {
+  "longterm_rows_after": 4,
+  "longterm_rows_before": 4
+ },
+ "deletion": {
+  "applied": true,
+  "tactics_after": [
+   {
+    "bypass_technique": "union_select",
+    "evidence_grade": "proven",
+    "param_name": "id",
+    "ref": "tactic:test_sqli:/api/*/items",
+    "similarity": 1.0,
+    "success_rate": 0.8,
+    "tool": "test_sqli",
+    "total_attempts": 5,
+    "url_pattern": "/api/*/items"
+   },
+   {
+    "bypass_technique": "header_probe",
+    "evidence_grade": "hypothesis",
+    "param_name": null,
+    "ref": "tactic:test_headers:/",
+    "similarity": 0.8,
+    "success_rate": 1.0,
+    "tool": "test_headers",
+    "total_attempts": 1,
+    "url_pattern": "/"
+   }
+  ]
+ },
+ "hybrid": {
+  "results": [
+   {
+    "content": "run-9 observed that the search endpoint reflects the query parameter into the results header",
+    "created_at": 1700000004.0,
+    "expires_at": 0.0,
+    "keyword_score": 0.0,
+    "metadata": {},
+    "record_id": "work-run9-note",
+    "score": 0.7,
+    "tier": "working",
+    "vector_score": 1.0
+   },
+   {
+    "content": "run-7 executed test_idor and read another account's order history from the orders api",
+    "created_at": 1700000003.0,
+    "expires_at": 0.0,
+    "keyword_score": 0.0,
+    "metadata": {},
+    "record_id": "epi-run7-idor",
+    "score": 0.532162,
+    "tier": "episodic",
+    "vector_score": 0.760231
+   },
+   {
+    "content": "union-based sql injection on the items api id parameter, json body bypasses the waf",
+    "created_at": 1700000100.0,
+    "expires_at": 0.0,
+    "keyword_score": 1.0,
+    "metadata": {
+     "bypass_technique": "union_select",
+     "evidence_grade": "proven",
+     "param_name": "id",
+     "proof": "union select returned 3 rows with schema names in the response body",
+     "refuted": false,
+     "signature": "fd464cc0d89d0b4c182c6ed1c1819db3444891579f0fd1f567175b984e64fa57",
+     "success_rate": 0.8,
+     "targets_seen": [
+      "ddef8e9c"
+     ],
+     "total_attempts": 5,
+     "total_successes": 4
+    },
+    "record_id": "tactic-fd464cc0d89d",
+    "score": 0.3,
+    "tier": "longterm",
+    "vector_score": 0.0
+   },
+   {
+    "content": "run-6 executed test_sqli against the login form and captured a sql error page from the items api",
+    "created_at": 1700000002.0,
+    "expires_at": 0.0,
+    "keyword_score": 0.0,
+    "metadata": {},
+    "record_id": "epi-run6-sqli",
+    "score": 0.259167,
+    "tier": "episodic",
+    "vector_score": 0.370238
+   },
+   {
+    "content": "flask debug tracebacks disclose template paths and local variables when debug mode is left on",
+    "created_at": 1700000001.0,
+    "expires_at": 0.0,
+    "keyword_score": 0.0,
+    "metadata": {},
+    "record_id": "know-flask-tracebacks",
+    "score": 0.242883,
+    "tier": "knowledge",
+    "vector_score": 0.346975
+   }
+  ],
+  "trace": {
+   "fallback": false,
+   "fallback_reason": null,
+   "keyword_lane_error": null,
+   "keyword_normalized": {
+    "tactic-fd464cc0d89d": 1.0
+   },
+   "keyword_raw": {
+    "tactic-fd464cc0d89d": 4.399716
+   },
+   "query": "sql injection on the items api",
+   "sanitized": "sql injection on the items api",
+   "vector_normalized": {
+    "epi-run6-sqli": 0.370238,
+    "epi-run7-idor": 0.760231,
+    "know-flask-tracebacks": 0.346975,
+    "know-waf-generic": 0.0,
+    "work-run9-note": 1.0
+   },
+   "weights": {
+    "keyword": 0.3,
+    "vector": 0.7
+   }
+  }
+ },
+ "keyword_only": {
+  "results": [
+   {
+    "content": "union-based sql injection on the items api id parameter, json body bypasses the waf",
+    "created_at": 1700000100.0,
+    "expires_at": 0.0,
+    "keyword_score": 1.0,
+    "metadata": {
+     "bypass_technique": "union_select",
+     "evidence_grade": "proven",
+     "param_name": "id",
+     "proof": "union select returned 3 rows with schema names in the response body",
+     "refuted": false,
+     "signature": "fd464cc0d89d0b4c182c6ed1c1819db3444891579f0fd1f567175b984e64fa57",
+     "success_rate": 0.8,
+     "targets_seen": [
+      "ddef8e9c"
+     ],
+     "total_attempts": 5,
+     "total_successes": 4
+    },
+    "record_id": "tactic-fd464cc0d89d",
+    "score": 1.0,
+    "tier": "longterm",
+    "vector_score": 0.0
+   }
+  ],
+  "trace": {
+   "fallback": true,
+   "fallback_reason": "no embedder configured",
+   "keyword_lane_error": null,
+   "keyword_normalized": {
+    "tactic-fd464cc0d89d": 1.0
+   },
+   "keyword_raw": {
+    "tactic-fd464cc0d89d": 4.399716
+   },
+   "query": "sql injection on the items api",
+   "sanitized": "sql injection on the items api",
+   "vector_normalized": {},
+   "weights": {
+    "keyword": 1.0,
+    "vector": 0.0
+   }
+  }
+ },
+ "lanes": {
+  "host_history": [
+   {
+    "ref": "finding:f-a-sqli",
+    "severity": "high",
+    "times_seen": 2,
+    "title": "SQL injection in items API",
+    "type": "sqli",
+    "url": "https://shop.engagement-a.example/api/7/items"
+   },
+   {
+    "ref": "finding:f-a-idor",
+    "severity": "medium",
+    "times_seen": 1,
+    "title": "IDOR on order history",
+    "type": "idor",
+    "url": "https://shop.engagement-a.example/api/9/orders"
+   }
+  ],
+  "learned_tactics": [
+   {
+    "bypass_technique": "union_select",
+    "evidence_grade": "proven",
+    "param_name": "id",
+    "ref": "tactic:test_sqli:/api/*/items",
+    "similarity": 1.0,
+    "success_rate": 0.8,
+    "tool": "test_sqli",
+    "total_attempts": 5,
+    "url_pattern": "/api/*/items"
+   },
+   {
+    "bypass_technique": null,
+    "evidence_grade": "hypothesis",
+    "param_name": null,
+    "ref": "tactic:fetch_url:/backup.zip",
+    "similarity": 1.0,
+    "success_rate": 1.0,
+    "tool": "fetch_url",
+    "total_attempts": 1,
+    "url_pattern": "/backup.zip"
+   },
+   {
+    "bypass_technique": "header_probe",
+    "evidence_grade": "hypothesis",
+    "param_name": null,
+    "ref": "tactic:test_headers:/",
+    "similarity": 0.8,
+    "success_rate": 1.0,
+    "tool": "test_headers",
+    "total_attempts": 1,
+    "url_pattern": "/"
+   },
+   {
+    "bypass_technique": null,
+    "evidence_grade": "hypothesis",
+    "param_name": "order_id",
+    "ref": "tactic:test_idor:/api/*/orders",
+    "similarity": 1.0,
+    "success_rate": 0.5,
+    "tool": "test_idor",
+    "total_attempts": 2,
+    "url_pattern": "/api/*/orders"
+   }
+  ],
+  "negative_evidence": "Never yielded on this stack -- deprioritize, do not skip:\n- test_headers: 0 hits in 8 tries",
+  "profile_priors": [
+   {
+    "best_similarity": 1.0,
+    "confidence": 0.272354,
+    "dry": false,
+    "hits": 14,
+    "n": 33,
+    "profiles": 2,
+    "tool": "test_sqli",
+    "weighted_hits": 13.6,
+    "weighted_n": 31.0,
+    "yield": 0.43871
+   },
+   {
+    "best_similarity": 1.0,
+    "confidence": 0.206543,
+    "dry": false,
+    "hits": 1,
+    "n": 1,
+    "profiles": 1,
+    "tool": "test_xxe",
+    "weighted_hits": 1.0,
+    "weighted_n": 1.0,
+    "yield": 1.0
+   },
+   {
+    "best_similarity": 0.8,
+    "confidence": 0.187613,
+    "dry": false,
+    "hits": 3,
+    "n": 6,
+    "profiles": 1,
+    "tool": "test_idor",
+    "weighted_hits": 2.4,
+    "weighted_n": 4.8,
+    "yield": 0.5
+   },
+   {
+    "best_similarity": 1.0,
+    "confidence": 0.0,
+    "dry": true,
+    "hits": 0,
+    "n": 8,
+    "profiles": 1,
+    "tool": "test_headers",
+    "weighted_hits": 0.0,
+    "weighted_n": 8.0,
+    "yield": 0.0
+   }
+  ]
+ },
+ "profile": "python:postgresql:waf_present:generic_waf:rest:flask",
+ "refutation": {
+  "applied": true,
+  "tactics_after": [
+   {
+    "bypass_technique": "union_select",
+    "evidence_grade": "proven",
+    "param_name": "id",
+    "ref": "tactic:test_sqli:/api/*/items",
+    "similarity": 1.0,
+    "success_rate": 0.8,
+    "tool": "test_sqli",
+    "total_attempts": 5,
+    "url_pattern": "/api/*/items"
+   },
+   {
+    "bypass_technique": null,
+    "evidence_grade": "hypothesis",
+    "param_name": null,
+    "ref": "tactic:fetch_url:/backup.zip",
+    "similarity": 1.0,
+    "success_rate": 1.0,
+    "tool": "fetch_url",
+    "total_attempts": 1,
+    "url_pattern": "/backup.zip"
+   },
+   {
+    "bypass_technique": "header_probe",
+    "evidence_grade": "hypothesis",
+    "param_name": null,
+    "ref": "tactic:test_headers:/",
+    "similarity": 0.8,
+    "success_rate": 1.0,
+    "tool": "test_headers",
+    "total_attempts": 1,
+    "url_pattern": "/"
+   }
+  ]
+ },
+ "schema": "memory-lesson-demo/v1",
+ "wilson_example": {
+  "one_of_one": 0.206543,
+  "twelve_of_twenty_three": 0.329624
+ }
+}

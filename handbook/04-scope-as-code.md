@@ -34,7 +34,7 @@ That return value is carrying more than it looks like it is. A refusal that is a
 
 Chapters 01, 02 and 03 each made this admission about their own subject; here the guard has since landed. `[[code:scope_guard.py:ScopeGuard]]` ships in `core/`, so what follows is behaviour I ran against fictional hosts out of a scratch copy of it. It is the one part of this chapter that is code you can run: the crawler's separate check below, and the bundle miner two sections on, stay in the working system.
 
-## Where the fact stops being a fact
+## Limits of scope checking
 
 Three ways the answer is wrong, and I found all three by writing the sentence I wanted to publish and then trying to break it.
 
@@ -80,7 +80,7 @@ The value of that is easiest to see from the receiving end. Handed a report with
 
 The limit is the familiar one. On the fan-out path, where one scan spreads across many hosts, the ledger is built by the orchestrating agent following a markdown contract and persisted through the analysis store. That is convention, the same species as chapter 01's stage machine and chapter 02's agent-path waist: an instruction that works in practice, enforced by an agent that has generally done what it was told. The skip the executor performs is code and returns a reason. The ledger of hosts is prose that has been reliable so far. Those are different properties, and a report cannot tell them apart.
 
-## The floor
+## Actions requiring operator approval
 
 Some things need a human regardless of what any scope declaration says.
 

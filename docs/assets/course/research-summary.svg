@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 532" width="990" height="532" role="img" aria-labelledby="t d">
+<title id="t">Total reward per condition, by world</title><desc id="d">Four panels, one per synthetic world, each showing every manifest condition's total reward as a labeled bar from the committed research summary. The exact values are in data/course/research-summary.json.</desc>
+<rect x="0" y="0" width="990" height="532" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">The frozen manifest's summary, drawn</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">one seed and short episodes on purpose: the figure shows the protocol's output shape, not statistical power</text>
+<text x="130" y="102" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="start" font-weight="650">decoy-delay</text>
+<line x1="178.91" y1="110" x2="178.91" y2="222" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="130" y1="224" x2="130" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="130" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">-12.3</text>
+<line x1="178.91" y1="224" x2="178.91" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="178.91" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0</text>
+<line x1="510" y1="224" x2="510" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="510" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">83.5</text>
+<rect x="130" y="110" width="48.91" height="14.67" rx="2" fill="#3987e5"/>
+<text x="122" y="122.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">priority</text>
+<rect x="130" y="127.67" width="48.91" height="14.67" rx="2" fill="#d95926"/>
+<text x="122" y="140.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">legacy</text>
+<rect x="178.91" y="145.33" width="143.79" height="14.67" rx="2" fill="#199e70"/>
+<text x="122" y="158.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb</text>
+<rect x="130" y="163" width="48.91" height="14.67" rx="2" fill="#199e70"/>
+<text x="122" y="175.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb-frozen</text>
+<rect x="178.91" y="180.67" width="6.14" height="14.67" rx="2" fill="#c98500"/>
+<text x="122" y="193.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb</text>
+<rect x="178.91" y="198.33" width="29.17" height="14.67" rx="2" fill="#c98500"/>
+<text x="122" y="211.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb-plastic</text>
+<text x="570" y="102" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="start" font-weight="650">delayed-credit</text>
+<line x1="618.91" y1="110" x2="618.91" y2="222" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="570" y1="224" x2="570" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="570" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">-12.3</text>
+<line x1="618.91" y1="224" x2="618.91" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="618.91" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0</text>
+<line x1="950" y1="224" x2="950" y2="228" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="950" y="242" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">83.5</text>
+<rect x="618.91" y="110" width="163.2" height="14.67" rx="2" fill="#3987e5"/>
+<text x="562" y="122.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">priority</text>
+<rect x="618.91" y="127.67" width="46.18" height="14.67" rx="2" fill="#d95926"/>
+<text x="562" y="140.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">legacy</text>
+<rect x="618.91" y="145.33" width="150.2" height="14.67" rx="2" fill="#199e70"/>
+<text x="562" y="158.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb</text>
+<rect x="618.91" y="163" width="93.77" height="14.67" rx="2" fill="#199e70"/>
+<text x="562" y="175.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb-frozen</text>
+<rect x="618.91" y="180.67" width="106.53" height="14.67" rx="2" fill="#c98500"/>
+<text x="562" y="193.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb</text>
+<rect x="618.91" y="198.33" width="118.36" height="14.67" rx="2" fill="#c98500"/>
+<text x="562" y="211.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb-plastic</text>
+<text x="130" y="278" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="start" font-weight="650">drifting-signal</text>
+<line x1="178.91" y1="286" x2="178.91" y2="398" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="130" y1="400" x2="130" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="130" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">-12.3</text>
+<line x1="178.91" y1="400" x2="178.91" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="178.91" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0</text>
+<line x1="510" y1="400" x2="510" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="510" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">83.5</text>
+<rect x="178.91" y="286" width="187.83" height="14.67" rx="2" fill="#3987e5"/>
+<text x="122" y="298.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">priority</text>
+<rect x="178.91" y="303.67" width="236.67" height="14.67" rx="2" fill="#d95926"/>
+<text x="122" y="316.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">legacy</text>
+<rect x="178.91" y="321.33" width="331.09" height="14.67" rx="2" fill="#199e70"/>
+<text x="122" y="334.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb</text>
+<rect x="178.91" y="339" width="190.46" height="14.67" rx="2" fill="#199e70"/>
+<text x="122" y="351.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb-frozen</text>
+<rect x="178.91" y="356.67" width="207.26" height="14.67" rx="2" fill="#c98500"/>
+<text x="122" y="369.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb</text>
+<rect x="178.91" y="374.33" width="221.63" height="14.67" rx="2" fill="#c98500"/>
+<text x="122" y="387.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb-plastic</text>
+<text x="570" y="278" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="start" font-weight="650">steady-families</text>
+<line x1="618.91" y1="286" x2="618.91" y2="398" stroke="#898781" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="570" y1="400" x2="570" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="570" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">-12.3</text>
+<line x1="618.91" y1="400" x2="618.91" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="618.91" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">0</text>
+<line x1="950" y1="400" x2="950" y2="404" stroke="#898781" stroke-width="1" stroke-linecap="butt"/>
+<text x="950" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="middle" font-weight="normal">83.5</text>
+<rect x="618.91" y="286" width="330.51" height="14.67" rx="2" fill="#3987e5"/>
+<text x="562" y="298.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">priority</text>
+<rect x="618.91" y="303.67" width="93.99" height="14.67" rx="2" fill="#d95926"/>
+<text x="562" y="316.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">legacy</text>
+<rect x="618.91" y="321.33" width="322.76" height="14.67" rx="2" fill="#199e70"/>
+<text x="562" y="334.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb</text>
+<rect x="618.91" y="339" width="190.46" height="14.67" rx="2" fill="#199e70"/>
+<text x="562" y="351.83" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">linucb-frozen</text>
+<rect x="618.91" y="356.67" width="215.22" height="14.67" rx="2" fill="#c98500"/>
+<text x="562" y="369.5" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb</text>
+<rect x="618.91" y="374.33" width="230.72" height="14.67" rx="2" fill="#c98500"/>
+<text x="562" y="387.17" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="end" font-weight="normal">mb-plastic</text>
+<text x="64" y="470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">axis: total synthetic reward under this toy world's scoring rule -- larger is more reward; the marked zero line separates net-positive from net-negative</text>
+<text x="64" y="492" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">bar color follows the base controller (frozen twins share their hue and are named); identity is the row label, never color alone</text>
+<text x="64" y="514" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">read one row before citing one: scope every statement to its measured world and replicate unit</text>
+</svg>

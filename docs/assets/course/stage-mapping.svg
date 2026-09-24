@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" role="img" aria-labelledby="t d">
+<title id="t">Operational stages mapped onto the teaching harness stages</title><desc id="d">Seven operational stages on top -- discovery, detection, crawling, mining, scanning, active testing, reporting -- each connected to the teaching harness stage or stages it corresponds to: observe, plan, execute, review, report.</desc>
+<rect x="0" y="0" width="960" height="330" rx="10" fill="#1a1a19"/>
+<text x="64" y="40" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#ffffff" text-anchor="start" font-weight="650">Two resolutions of the same run</text>
+<text x="64" y="64" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#c3c2b7" text-anchor="start" font-weight="normal">the operational vocabulary above, the teaching harness below; every arrow is a row of the mapping table in core/run/stages.py</text>
+<rect x="37" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="96" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">discovery</text>
+<rect x="165" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="224" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">detection</text>
+<rect x="293" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="352" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">crawling</text>
+<rect x="421" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="480" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">mining</text>
+<rect x="549" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="608" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">scanning</text>
+<rect x="677" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="736" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">active testing</text>
+<rect x="805" y="96" width="118" height="46" rx="8" fill="none" stroke="#52c78d" stroke-width="1.5"/>
+<text x="864" y="124" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="650">reporting</text>
+<rect x="61" y="226" width="150" height="46" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="136" y="254" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">observe</text>
+<rect x="233" y="226" width="150" height="46" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="308" y="254" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">plan</text>
+<rect x="405" y="226" width="150" height="46" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="480" y="254" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">execute</text>
+<rect x="577" y="226" width="150" height="46" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="652" y="254" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">review</text>
+<rect x="749" y="226" width="150" height="46" rx="8" fill="none" stroke="#898781" stroke-width="1.5"/>
+<text x="824" y="254" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="650">report</text>
+<line x1="96" y1="142" x2="136" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="224" y1="142" x2="136" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="352" y1="142" x2="136" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="480" y1="142" x2="308" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="608" y1="142" x2="480" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="736" y1="142" x2="480" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="864" y1="142" x2="652" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<line x1="864" y1="142" x2="824" y2="226" stroke="#383835" stroke-width="1.2" stroke-linecap="butt"/>
+<text x="64" y="306" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#898781" text-anchor="start" font-weight="normal">advancement is positional in both vocabularies; the mapping is data the tests hold, not prose</text>
+</svg>

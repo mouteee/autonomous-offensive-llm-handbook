@@ -81,6 +81,20 @@ rm "$TMP/sanitize/planted.md"
 bash scripts/audit.sh "$TMP/sanitize" >/dev/null || { echo "FAIL: sanitization gate stayed red after the planted identifier was removed"; exit 1; }
 unset DENY_FRAGMENT_A DENY_FRAGMENT_B OUT
 
+# The .venv exclusion, in both directions. A reader following the README
+# creates .venv inside the repository, so the sweep must not read installed
+# dependencies as the tree's prose -- and the same planted identifier outside
+# .venv must still fire, or the exclusion has widened into an amnesty. The
+# planted token is assembled at runtime for the same reason as above.
+VENV_FRAGMENT_A='open'; VENV_FRAGMENT_B='router'
+mkdir -p "$TMP/sanitize/.venv/lib"
+printf 'dependency metadata mentioning %s%s here.\n' "$VENV_FRAGMENT_A" "$VENV_FRAGMENT_B" > "$TMP/sanitize/.venv/lib/record.md"
+bash scripts/audit.sh "$TMP/sanitize" >/dev/null || { echo "FAIL: sanitization gate read a reader's .venv as the tree's prose"; exit 1; }
+printf 'prose mentioning %s%s here.\n' "$VENV_FRAGMENT_A" "$VENV_FRAGMENT_B" > "$TMP/sanitize/outside.md"
+if bash scripts/audit.sh "$TMP/sanitize" >/dev/null 2>&1; then echo "FAIL: the .venv exclusion widened into an identifier amnesty outside .venv"; exit 1; fi
+rm -rf "$TMP/sanitize/.venv" "$TMP/sanitize/outside.md"
+unset VENV_FRAGMENT_A VENV_FRAGMENT_B
+
 # A target this gate cannot read is a HARD FAILURE, not a clean report, and
 # that is the same defect as the neutered denylist above seen from the other
 # side: until this was fixed, a mistyped path printed "sanitization clean" and
@@ -209,6 +223,16 @@ rm "$TMP/numbers/a.md"
 # A bare year and a chapter/section/layer reference are not measurements.
 printf 'Written in 2026, this refers to chapter 03 and Layer 0 only.\n' > "$TMP/numbers/a.md"
 ./scripts/verify_claims.sh "$TMP/numbers" >/dev/null || { echo "FAIL: uncited-number gate flagged a bare year or a chapter/layer reference"; exit 1; }
+rm "$TMP/numbers/a.md"
+
+# A lesson reference is the course pages' own navigation vocabulary, exempt on
+# the same terms as a chapter reference -- and only the reference form: the
+# same digit standing alone on the same line still has to fire, which is the
+# direction that keeps this exemption from widening into a digit amnesty.
+printf 'Continue with lesson 11 after lessons 9 and 10.\n' > "$TMP/numbers/a.md"
+./scripts/verify_claims.sh "$TMP/numbers" >/dev/null || { echo "FAIL: uncited-number gate flagged a lesson reference"; exit 1; }
+printf 'Lesson 11 ran 11 probes.\n' > "$TMP/numbers/a.md"
+if ./scripts/verify_claims.sh "$TMP/numbers" >/dev/null 2>&1; then echo "FAIL: a bare count beside a lesson reference slipped through the lesson exemption"; exit 1; fi
 rm "$TMP/numbers/a.md"
 
 # A leading ordered-list marker ("1.", "2.", ...) is list syntax, not a

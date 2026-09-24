@@ -1,0 +1,382 @@
+{
+ "candidates": {
+  "eligible": [
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/login",
+    "cost": 1.0,
+    "family": "fam-scan",
+    "priority": 2.0
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/login",
+    "cost": 1.0,
+    "family": "fam-recon",
+    "priority": 1.0
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "cost": 2.0,
+    "family": "fam-inject",
+    "priority": 4.0
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "cost": 1.0,
+    "family": "fam-recon",
+    "priority": 3.0
+   },
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/",
+    "cost": 1.0,
+    "family": "fam-scan",
+    "priority": 2.0
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/",
+    "cost": 1.0,
+    "family": "fam-recon",
+    "priority": 1.0
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "cost": 1.0,
+    "family": "fam-recon",
+    "priority": 3.0
+   }
+  ],
+  "excluded": [
+   {
+    "action_id": "ancient_probe -> https://lab.example:443/login",
+    "reasons": [
+     "tool 'ancient_probe' is unavailable on this host"
+    ],
+    "scope": "host"
+   },
+   {
+    "action_id": "ancient_probe -> https://lab.example:443/",
+    "reasons": [
+     "tool 'ancient_probe' is unavailable on this host"
+    ],
+    "scope": "host"
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/",
+    "reasons": [
+     "has_form: observed False, requires True"
+    ],
+    "scope": "destination"
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/",
+    "reasons": [
+     "coverage obligation without an eligible candidate"
+    ],
+    "scope": "coverage"
+   }
+  ]
+ },
+ "controller_cannot_create_permission": {
+  "decision_id": "991d67abd0dc940d",
+  "learning": {
+   "applied": false,
+   "reason": "the action was refused before execution"
+  },
+  "reason": "destination https://elsewhere.example:443 is outside the explicit authorized origins",
+  "status": "refused"
+ },
+ "ledger": [
+  {
+   "action_id": "inspect_headers -> https://lab.example:443/",
+   "capture_id": "a8bef61e8e5be4802ffd75d1c9124036dde5b9b6afd7619edddfb1f43a8207ed",
+   "status": "clean"
+  },
+  {
+   "action_id": "inspect_headers -> https://lab.example:443/login",
+   "capture_id": "8aaf75af46c9a89ff37d11bdbb3f5a7af2a052945fdb582ad03cd0b9e5830760",
+   "status": "clean"
+  },
+  {
+   "action_id": "broken_scanner -> https://lab.example:443/",
+   "error_type": "RuntimeError",
+   "status": "tool_error"
+  },
+  {
+   "action_id": "broken_scanner -> https://lab.example:443/login",
+   "error_type": "RuntimeError",
+   "status": "tool_error"
+  },
+  {
+   "action_id": "form_probe -> https://lab.example:443/login",
+   "capture_id": "cc4b7348e7c0068d9ed334dc436a2dc5520c9b9d00afbf6036eafff838ec0dfe",
+   "status": "clean"
+  },
+  {
+   "action_id": "dns_survey -> https://lab.example:443/",
+   "requeue": true,
+   "status": "tool_unavailable"
+  },
+  {
+   "action_id": "dns_survey -> https://lab.example:443/login",
+   "requeue": false,
+   "status": "tool_unavailable"
+  },
+  {
+   "destination": "https://lab.example/",
+   "reason": "unavailability budget for this tool is spent",
+   "status": "not_requeued",
+   "tool": "dns_survey"
+  },
+  {
+   "destination": "https://lab.example/",
+   "reason": "unavailability budget for this tool is spent",
+   "status": "not_requeued",
+   "tool": "dns_survey"
+  },
+  {
+   "action_id": "inspect_headers -> https://lab.example:443/health",
+   "reason": "deliberately out of time",
+   "status": "skipped"
+  }
+ ],
+ "ranked_plan": [
+  {
+   "destination": "https://lab.example:443/",
+   "tool": "inspect_headers"
+  },
+  {
+   "destination": "https://lab.example:443/login",
+   "tool": "inspect_headers"
+  },
+  {
+   "destination": "https://lab.example:443/",
+   "tool": "broken_scanner"
+  },
+  {
+   "destination": "https://lab.example:443/login",
+   "tool": "broken_scanner"
+  },
+  {
+   "destination": "https://lab.example:443/login",
+   "tool": "form_probe"
+  },
+  {
+   "destination": "https://lab.example:443/",
+   "tool": "dns_survey"
+  },
+  {
+   "destination": "https://lab.example:443/login",
+   "tool": "dns_survey"
+  },
+  {
+   "destination": "https://lab.example/",
+   "tool": "dns_survey"
+  },
+  {
+   "destination": "https://lab.example/",
+   "tool": "dns_survey"
+  }
+ ],
+ "report": {
+  "captures": {
+   "8aaf75af46c9a89ff37d11bdbb3f5a7af2a052945fdb582ad03cd0b9e5830760": {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "body": "headers for https://lab.example:443/login\nServer: lab\n",
+    "status": 200
+   },
+   "a8bef61e8e5be4802ffd75d1c9124036dde5b9b6afd7619edddfb1f43a8207ed": {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "body": "headers for https://lab.example:443/\nServer: lab\n",
+    "status": 200
+   },
+   "cc4b7348e7c0068d9ed334dc436a2dc5520c9b9d00afbf6036eafff838ec0dfe": {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "body": "probe response for https://lab.example:443/login\nLAB_OK\n",
+    "status": 200
+   }
+  },
+  "closed": null,
+  "counts": {
+   "events": 20,
+   "refusals": 1
+  },
+  "events": [
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "destination": "https://lab.example:443/",
+    "event": "action_authorized",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "capture_id": "a8bef61e8e5be4802ffd75d1c9124036dde5b9b6afd7619edddfb1f43a8207ed",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "detail": "a8bef61e8e5be4802ffd75d1c9124036dde5b9b6afd7619edddfb1f43a8207ed",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "destination": "https://lab.example:443/login",
+    "event": "action_authorized",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "capture_id": "8aaf75af46c9a89ff37d11bdbb3f5a7af2a052945fdb582ad03cd0b9e5830760",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "detail": "8aaf75af46c9a89ff37d11bdbb3f5a7af2a052945fdb582ad03cd0b9e5830760",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/",
+    "destination": "https://lab.example:443/",
+    "event": "action_authorized",
+    "tool": "broken_scanner"
+   },
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/",
+    "detail": "RuntimeError",
+    "event": "outcome",
+    "status": "tool_error"
+   },
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/login",
+    "destination": "https://lab.example:443/login",
+    "event": "action_authorized",
+    "tool": "broken_scanner"
+   },
+   {
+    "action_id": "broken_scanner -> https://lab.example:443/login",
+    "detail": "RuntimeError",
+    "event": "outcome",
+    "status": "tool_error"
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "destination": "https://lab.example:443/login",
+    "event": "action_authorized",
+    "tool": "form_probe"
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "capture_id": "cc4b7348e7c0068d9ed334dc436a2dc5520c9b9d00afbf6036eafff838ec0dfe",
+    "event": "capture",
+    "status": 200
+   },
+   {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "detail": "cc4b7348e7c0068d9ed334dc436a2dc5520c9b9d00afbf6036eafff838ec0dfe",
+    "event": "outcome",
+    "status": "clean"
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/",
+    "destination": "https://lab.example:443/",
+    "event": "action_authorized",
+    "tool": "dns_survey"
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/",
+    "detail": "no adapter registered for 'dns_survey'",
+    "event": "outcome",
+    "status": "tool_unavailable"
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/login",
+    "destination": "https://lab.example:443/login",
+    "event": "action_authorized",
+    "tool": "dns_survey"
+   },
+   {
+    "action_id": "dns_survey -> https://lab.example:443/login",
+    "detail": "no adapter registered for 'dns_survey'",
+    "event": "outcome",
+    "status": "tool_unavailable"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/health",
+    "destination": "https://lab.example:443/health",
+    "event": "action_authorized",
+    "requested_destination": "https://lab.example/health",
+    "tool": "inspect_headers"
+   },
+   {
+    "action_id": "inspect_headers -> https://lab.example:443/health",
+    "detail": "deliberately out of time",
+    "event": "outcome",
+    "status": "skipped"
+   },
+   {
+    "event": "refused",
+    "kind": "action",
+    "payload_keys": [
+     "arguments",
+     "destination",
+     "run_id",
+     "tool"
+    ],
+    "reason": "destination https://elsewhere.example:443 is outside the explicit authorized origins"
+   }
+  ],
+  "findings": [],
+  "gate": null,
+  "observations": {},
+  "outcomes": {
+   "broken_scanner -> https://lab.example:443/": {
+    "action_id": "broken_scanner -> https://lab.example:443/",
+    "detail": "RuntimeError",
+    "status": "tool_error"
+   },
+   "broken_scanner -> https://lab.example:443/login": {
+    "action_id": "broken_scanner -> https://lab.example:443/login",
+    "detail": "RuntimeError",
+    "status": "tool_error"
+   },
+   "dns_survey -> https://lab.example:443/": {
+    "action_id": "dns_survey -> https://lab.example:443/",
+    "detail": "no adapter registered for 'dns_survey'",
+    "status": "tool_unavailable"
+   },
+   "dns_survey -> https://lab.example:443/login": {
+    "action_id": "dns_survey -> https://lab.example:443/login",
+    "detail": "no adapter registered for 'dns_survey'",
+    "status": "tool_unavailable"
+   },
+   "form_probe -> https://lab.example:443/login": {
+    "action_id": "form_probe -> https://lab.example:443/login",
+    "detail": "cc4b7348e7c0068d9ed334dc436a2dc5520c9b9d00afbf6036eafff838ec0dfe",
+    "status": "clean"
+   },
+   "inspect_headers -> https://lab.example:443/": {
+    "action_id": "inspect_headers -> https://lab.example:443/",
+    "detail": "a8bef61e8e5be4802ffd75d1c9124036dde5b9b6afd7619edddfb1f43a8207ed",
+    "status": "clean"
+   },
+   "inspect_headers -> https://lab.example:443/health": {
+    "action_id": "inspect_headers -> https://lab.example:443/health",
+    "detail": "deliberately out of time",
+    "status": "skipped"
+   },
+   "inspect_headers -> https://lab.example:443/login": {
+    "action_id": "inspect_headers -> https://lab.example:443/login",
+    "detail": "8aaf75af46c9a89ff37d11bdbb3f5a7af2a052945fdb582ad03cd0b9e5830760",
+    "status": "clean"
+   }
+  },
+  "policy_digest": "87fa1a0b7bc58b03eed95daedf00590cca149c83dc844fed3074d769aa48b233",
+  "reviews": [],
+  "run_id": "bfe90cb039249281165ef3b3ed30b19e50390fe712e75b8c8e3f57a4d6847f6c",
+  "schema": "course-run-report/v1",
+  "stage": null
+ },
+ "schema": "dispatch-demo/v1"
+}

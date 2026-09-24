@@ -1,0 +1,231 @@
+{
+ "final_total_change": 20.0,
+ "ledger": [
+  {
+   "clipped": 0,
+   "decision_family": "fam-a",
+   "learned_w_dot": {
+    "fam-a": 0.05,
+    "fam-b": 0.0
+   },
+   "modulation": 1.0,
+   "note": "immediate credit; fam-a's traced weights climb",
+   "phase": "reward",
+   "total_abs_delta": 0.5,
+   "traces_alive": 10,
+   "updated": 10
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-a",
+   "learned_w_dot": {
+    "fam-a": 0.14,
+    "fam-b": 0.0
+   },
+   "modulation": 1.0,
+   "note": "immediate credit; fam-a's traced weights climb",
+   "phase": "reward",
+   "total_abs_delta": 0.9,
+   "traces_alive": 10,
+   "updated": 10
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-a",
+   "learned_w_dot": {
+    "fam-a": 0.262,
+    "fam-b": 0.0
+   },
+   "modulation": 1.0,
+   "note": "immediate credit; fam-a's traced weights climb",
+   "phase": "reward",
+   "total_abs_delta": 1.22,
+   "traces_alive": 10,
+   "updated": 10
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.38008,
+    "fam-b": 0.05
+   },
+   "modulation": 1.0,
+   "note": "the newer decision's outcome lands first",
+   "phase": "delayed",
+   "total_abs_delta": 1.6808,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-a",
+   "learned_w_dot": {
+    "fam-a": 0.49816,
+    "fam-b": 0.1
+   },
+   "modulation": 1.0,
+   "note": "the older decision's outcome lands second and also brushes fam-b's still-alive traces: credit crosstalk",
+   "phase": "delayed",
+   "total_abs_delta": 1.6808,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.49816,
+    "fam-b": 0.1
+   },
+   "modulation": 0.0,
+   "note": "unrewarded fam-b selects; every select decays all traces",
+   "phase": "stale",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 0
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.49816,
+    "fam-b": 0.1
+   },
+   "modulation": 0.0,
+   "note": "unrewarded fam-b selects; every select decays all traces",
+   "phase": "stale",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 0
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.49816,
+    "fam-b": 0.1
+   },
+   "modulation": 0.0,
+   "note": "unrewarded fam-b selects; every select decays all traces",
+   "phase": "stale",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 0
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.49816,
+    "fam-b": 0.1
+   },
+   "modulation": 0.0,
+   "note": "unrewarded fam-b selects; every select decays all traces",
+   "phase": "stale",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 0
+  },
+  {
+   "clipped": 0,
+   "decision_family": "fam-a",
+   "learned_w_dot": {
+    "fam-a": 0.557332,
+    "fam-b": 0.263984
+   },
+   "modulation": 1.0,
+   "note": "fam-a's decayed traces buy about half the earlier update while fam-b's fresher traces capture most of the credit",
+   "phase": "stale",
+   "total_abs_delta": 2.231564544,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 10,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.794022,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 9.727058176,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 10,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 0.983374,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 1.893518541,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 20,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 1.0,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 0.166258739,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 20,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 1.0,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 20,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 1.0,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 20
+  },
+  {
+   "clipped": 20,
+   "decision_family": "fam-b",
+   "learned_w_dot": {
+    "fam-a": 1.0,
+    "fam-b": 1.0
+   },
+   "modulation": 5.0,
+   "note": "oversized reward; weights clip at the bound",
+   "phase": "saturate",
+   "total_abs_delta": 0.0,
+   "traces_alive": 20,
+   "updated": 20
+  }
+ ],
+ "schema": "plasticity-lesson-trace/v1",
+ "seed": 0
+}

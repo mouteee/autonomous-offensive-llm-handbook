@@ -1,0 +1,734 @@
+{
+ "body_digest": "7652d4c90ccfd81f",
+ "condition": {
+  "learn": false,
+  "name": "mb",
+  "seed": 7,
+  "world": "steady-families"
+ },
+ "manifest_digest": "3cc0636b65ea2e25",
+ "schema": "controller-research-raw/v1",
+ "total_reward": 54.303564,
+ "trace": [
+  {
+   "cum": 0.63017,
+   "family": "fam-inject",
+   "reward": 0.63017,
+   "step": 0
+  },
+  {
+   "cum": 0.803308,
+   "family": "fam-recon",
+   "reward": 0.173138,
+   "step": 1
+  },
+  {
+   "cum": 1.114908,
+   "family": "fam-authz",
+   "reward": 0.3116,
+   "step": 2
+  },
+  {
+   "cum": 1.728879,
+   "family": "fam-inject",
+   "reward": 0.613971,
+   "step": 3
+  },
+  {
+   "cum": 1.853639,
+   "family": "fam-recon",
+   "reward": 0.12476,
+   "step": 4
+  },
+  {
+   "cum": 2.579126,
+   "family": "fam-inject",
+   "reward": 0.725487,
+   "step": 5
+  },
+  {
+   "cum": 2.994547,
+   "family": "fam-authz",
+   "reward": 0.415421,
+   "step": 6
+  },
+  {
+   "cum": 3.152469,
+   "family": "fam-recon",
+   "reward": 0.157922,
+   "step": 7
+  },
+  {
+   "cum": 3.776027,
+   "family": "fam-inject",
+   "reward": 0.623558,
+   "step": 8
+  },
+  {
+   "cum": 3.992347,
+   "family": "fam-recon",
+   "reward": 0.21632,
+   "step": 9
+  },
+  {
+   "cum": 4.42013,
+   "family": "fam-authz",
+   "reward": 0.427783,
+   "step": 10
+  },
+  {
+   "cum": 5.03205,
+   "family": "fam-inject",
+   "reward": 0.61192,
+   "step": 11
+  },
+  {
+   "cum": 5.194879,
+   "family": "fam-recon",
+   "reward": 0.162829,
+   "step": 12
+  },
+  {
+   "cum": 5.885516,
+   "family": "fam-inject",
+   "reward": 0.690637,
+   "step": 13
+  },
+  {
+   "cum": 6.344392,
+   "family": "fam-authz",
+   "reward": 0.458876,
+   "step": 14
+  },
+  {
+   "cum": 7.049431,
+   "family": "fam-inject",
+   "reward": 0.705039,
+   "step": 15
+  },
+  {
+   "cum": 7.345466,
+   "family": "fam-recon",
+   "reward": 0.296035,
+   "step": 16
+  },
+  {
+   "cum": 8.029091,
+   "family": "fam-inject",
+   "reward": 0.683625,
+   "step": 17
+  },
+  {
+   "cum": 8.359488,
+   "family": "fam-authz",
+   "reward": 0.330397,
+   "step": 18
+  },
+  {
+   "cum": 8.574093,
+   "family": "fam-recon",
+   "reward": 0.214605,
+   "step": 19
+  },
+  {
+   "cum": 9.236843,
+   "family": "fam-inject",
+   "reward": 0.66275,
+   "step": 20
+  },
+  {
+   "cum": 9.428084,
+   "family": "fam-recon",
+   "reward": 0.191241,
+   "step": 21
+  },
+  {
+   "cum": 9.896078,
+   "family": "fam-authz",
+   "reward": 0.467994,
+   "step": 22
+  },
+  {
+   "cum": 10.508212,
+   "family": "fam-inject",
+   "reward": 0.612134,
+   "step": 23
+  },
+  {
+   "cum": 10.772597,
+   "family": "fam-recon",
+   "reward": 0.264385,
+   "step": 24
+  },
+  {
+   "cum": 11.449755,
+   "family": "fam-inject",
+   "reward": 0.677158,
+   "step": 25
+  },
+  {
+   "cum": 11.754268,
+   "family": "fam-authz",
+   "reward": 0.304513,
+   "step": 26
+  },
+  {
+   "cum": 12.007915,
+   "family": "fam-recon",
+   "reward": 0.253647,
+   "step": 27
+  },
+  {
+   "cum": 12.657438,
+   "family": "fam-inject",
+   "reward": 0.649523,
+   "step": 28
+  },
+  {
+   "cum": 13.131722,
+   "family": "fam-authz",
+   "reward": 0.474284,
+   "step": 29
+  },
+  {
+   "cum": 13.395578,
+   "family": "fam-recon",
+   "reward": 0.263856,
+   "step": 30
+  },
+  {
+   "cum": 13.578637,
+   "family": "fam-recon",
+   "reward": 0.183059,
+   "step": 31
+  },
+  {
+   "cum": 14.355476,
+   "family": "fam-inject",
+   "reward": 0.776839,
+   "step": 32
+  },
+  {
+   "cum": 14.99072,
+   "family": "fam-inject",
+   "reward": 0.635244,
+   "step": 33
+  },
+  {
+   "cum": 15.337387,
+   "family": "fam-authz",
+   "reward": 0.346667,
+   "step": 34
+  },
+  {
+   "cum": 15.938206,
+   "family": "fam-inject",
+   "reward": 0.600819,
+   "step": 35
+  },
+  {
+   "cum": 16.228826,
+   "family": "fam-recon",
+   "reward": 0.29062,
+   "step": 36
+  },
+  {
+   "cum": 16.931924,
+   "family": "fam-inject",
+   "reward": 0.703098,
+   "step": 37
+  },
+  {
+   "cum": 17.367164,
+   "family": "fam-authz",
+   "reward": 0.43524,
+   "step": 38
+  },
+  {
+   "cum": 17.626739,
+   "family": "fam-recon",
+   "reward": 0.259575,
+   "step": 39
+  },
+  {
+   "cum": 18.005215,
+   "family": "fam-authz",
+   "reward": 0.378476,
+   "step": 40
+  },
+  {
+   "cum": 18.617665,
+   "family": "fam-inject",
+   "reward": 0.61245,
+   "step": 41
+  },
+  {
+   "cum": 18.785676,
+   "family": "fam-recon",
+   "reward": 0.168011,
+   "step": 42
+  },
+  {
+   "cum": 19.385723,
+   "family": "fam-inject",
+   "reward": 0.600047,
+   "step": 43
+  },
+  {
+   "cum": 19.490823,
+   "family": "fam-recon",
+   "reward": 0.1051,
+   "step": 44
+  },
+  {
+   "cum": 20.213637,
+   "family": "fam-inject",
+   "reward": 0.722814,
+   "step": 45
+  },
+  {
+   "cum": 20.564089,
+   "family": "fam-authz",
+   "reward": 0.350452,
+   "step": 46
+  },
+  {
+   "cum": 20.86271,
+   "family": "fam-recon",
+   "reward": 0.298621,
+   "step": 47
+  },
+  {
+   "cum": 21.559477,
+   "family": "fam-inject",
+   "reward": 0.696767,
+   "step": 48
+  },
+  {
+   "cum": 21.712428,
+   "family": "fam-recon",
+   "reward": 0.152951,
+   "step": 49
+  },
+  {
+   "cum": 22.178199,
+   "family": "fam-authz",
+   "reward": 0.465771,
+   "step": 50
+  },
+  {
+   "cum": 22.88385,
+   "family": "fam-inject",
+   "reward": 0.705651,
+   "step": 51
+  },
+  {
+   "cum": 23.489258,
+   "family": "fam-inject",
+   "reward": 0.605408,
+   "step": 52
+  },
+  {
+   "cum": 23.728497,
+   "family": "fam-recon",
+   "reward": 0.239239,
+   "step": 53
+  },
+  {
+   "cum": 24.08072,
+   "family": "fam-authz",
+   "reward": 0.352223,
+   "step": 54
+  },
+  {
+   "cum": 24.787238,
+   "family": "fam-inject",
+   "reward": 0.706518,
+   "step": 55
+  },
+  {
+   "cum": 25.431846,
+   "family": "fam-inject",
+   "reward": 0.644608,
+   "step": 56
+  },
+  {
+   "cum": 25.693062,
+   "family": "fam-recon",
+   "reward": 0.261216,
+   "step": 57
+  },
+  {
+   "cum": 26.156729,
+   "family": "fam-authz",
+   "reward": 0.463667,
+   "step": 58
+  },
+  {
+   "cum": 26.262525,
+   "family": "fam-recon",
+   "reward": 0.105796,
+   "step": 59
+  },
+  {
+   "cum": 26.918409,
+   "family": "fam-inject",
+   "reward": 0.655884,
+   "step": 60
+  },
+  {
+   "cum": 27.356913,
+   "family": "fam-authz",
+   "reward": 0.438504,
+   "step": 61
+  },
+  {
+   "cum": 28.154521,
+   "family": "fam-inject",
+   "reward": 0.797608,
+   "step": 62
+  },
+  {
+   "cum": 28.29989,
+   "family": "fam-recon",
+   "reward": 0.145369,
+   "step": 63
+  },
+  {
+   "cum": 28.940765,
+   "family": "fam-inject",
+   "reward": 0.640875,
+   "step": 64
+  },
+  {
+   "cum": 29.420827,
+   "family": "fam-authz",
+   "reward": 0.480062,
+   "step": 65
+  },
+  {
+   "cum": 29.537783,
+   "family": "fam-recon",
+   "reward": 0.116956,
+   "step": 66
+  },
+  {
+   "cum": 30.319738,
+   "family": "fam-inject",
+   "reward": 0.781955,
+   "step": 67
+  },
+  {
+   "cum": 30.769766,
+   "family": "fam-authz",
+   "reward": 0.450028,
+   "step": 68
+  },
+  {
+   "cum": 31.029931,
+   "family": "fam-recon",
+   "reward": 0.260165,
+   "step": 69
+  },
+  {
+   "cum": 31.709099,
+   "family": "fam-inject",
+   "reward": 0.679168,
+   "step": 70
+  },
+  {
+   "cum": 31.8431,
+   "family": "fam-recon",
+   "reward": 0.134001,
+   "step": 71
+  },
+  {
+   "cum": 32.47333,
+   "family": "fam-inject",
+   "reward": 0.63023,
+   "step": 72
+  },
+  {
+   "cum": 32.93463,
+   "family": "fam-authz",
+   "reward": 0.4613,
+   "step": 73
+  },
+  {
+   "cum": 33.666084,
+   "family": "fam-inject",
+   "reward": 0.731454,
+   "step": 74
+  },
+  {
+   "cum": 33.768933,
+   "family": "fam-recon",
+   "reward": 0.102849,
+   "step": 75
+  },
+  {
+   "cum": 34.263111,
+   "family": "fam-authz",
+   "reward": 0.494178,
+   "step": 76
+  },
+  {
+   "cum": 34.949873,
+   "family": "fam-inject",
+   "reward": 0.686762,
+   "step": 77
+  },
+  {
+   "cum": 35.10024,
+   "family": "fam-recon",
+   "reward": 0.150367,
+   "step": 78
+  },
+  {
+   "cum": 35.748348,
+   "family": "fam-inject",
+   "reward": 0.648108,
+   "step": 79
+  },
+  {
+   "cum": 36.100221,
+   "family": "fam-authz",
+   "reward": 0.351873,
+   "step": 80
+  },
+  {
+   "cum": 36.291853,
+   "family": "fam-recon",
+   "reward": 0.191632,
+   "step": 81
+  },
+  {
+   "cum": 37.072712,
+   "family": "fam-inject",
+   "reward": 0.780859,
+   "step": 82
+  },
+  {
+   "cum": 37.556256,
+   "family": "fam-authz",
+   "reward": 0.483544,
+   "step": 83
+  },
+  {
+   "cum": 37.744281,
+   "family": "fam-recon",
+   "reward": 0.188025,
+   "step": 84
+  },
+  {
+   "cum": 38.345067,
+   "family": "fam-inject",
+   "reward": 0.600786,
+   "step": 85
+  },
+  {
+   "cum": 39.039766,
+   "family": "fam-inject",
+   "reward": 0.694699,
+   "step": 86
+  },
+  {
+   "cum": 39.243436,
+   "family": "fam-recon",
+   "reward": 0.20367,
+   "step": 87
+  },
+  {
+   "cum": 39.654524,
+   "family": "fam-authz",
+   "reward": 0.411088,
+   "step": 88
+  },
+  {
+   "cum": 40.304223,
+   "family": "fam-inject",
+   "reward": 0.649699,
+   "step": 89
+  },
+  {
+   "cum": 40.516569,
+   "family": "fam-recon",
+   "reward": 0.212346,
+   "step": 90
+  },
+  {
+   "cum": 40.968568,
+   "family": "fam-authz",
+   "reward": 0.451999,
+   "step": 91
+  },
+  {
+   "cum": 41.669679,
+   "family": "fam-inject",
+   "reward": 0.701111,
+   "step": 92
+  },
+  {
+   "cum": 41.876336,
+   "family": "fam-recon",
+   "reward": 0.206657,
+   "step": 93
+  },
+  {
+   "cum": 42.664636,
+   "family": "fam-inject",
+   "reward": 0.7883,
+   "step": 94
+  },
+  {
+   "cum": 43.139943,
+   "family": "fam-authz",
+   "reward": 0.475307,
+   "step": 95
+  },
+  {
+   "cum": 43.407943,
+   "family": "fam-recon",
+   "reward": 0.268,
+   "step": 96
+  },
+  {
+   "cum": 44.032267,
+   "family": "fam-inject",
+   "reward": 0.624324,
+   "step": 97
+  },
+  {
+   "cum": 44.346776,
+   "family": "fam-authz",
+   "reward": 0.314509,
+   "step": 98
+  },
+  {
+   "cum": 44.626181,
+   "family": "fam-recon",
+   "reward": 0.279405,
+   "step": 99
+  },
+  {
+   "cum": 45.369405,
+   "family": "fam-inject",
+   "reward": 0.743224,
+   "step": 100
+  },
+  {
+   "cum": 46.145972,
+   "family": "fam-inject",
+   "reward": 0.776567,
+   "step": 101
+  },
+  {
+   "cum": 46.325623,
+   "family": "fam-recon",
+   "reward": 0.179651,
+   "step": 102
+  },
+  {
+   "cum": 46.723075,
+   "family": "fam-authz",
+   "reward": 0.397452,
+   "step": 103
+  },
+  {
+   "cum": 47.409379,
+   "family": "fam-inject",
+   "reward": 0.686304,
+   "step": 104
+  },
+  {
+   "cum": 47.573084,
+   "family": "fam-recon",
+   "reward": 0.163705,
+   "step": 105
+  },
+  {
+   "cum": 48.017514,
+   "family": "fam-authz",
+   "reward": 0.44443,
+   "step": 106
+  },
+  {
+   "cum": 48.62113,
+   "family": "fam-inject",
+   "reward": 0.603616,
+   "step": 107
+  },
+  {
+   "cum": 48.733988,
+   "family": "fam-recon",
+   "reward": 0.112858,
+   "step": 108
+  },
+  {
+   "cum": 49.491661,
+   "family": "fam-inject",
+   "reward": 0.757673,
+   "step": 109
+  },
+  {
+   "cum": 49.812617,
+   "family": "fam-authz",
+   "reward": 0.320956,
+   "step": 110
+  },
+  {
+   "cum": 49.938528,
+   "family": "fam-recon",
+   "reward": 0.125911,
+   "step": 111
+  },
+  {
+   "cum": 50.720811,
+   "family": "fam-inject",
+   "reward": 0.782283,
+   "step": 112
+  },
+  {
+   "cum": 51.072533,
+   "family": "fam-authz",
+   "reward": 0.351722,
+   "step": 113
+  },
+  {
+   "cum": 51.812616,
+   "family": "fam-inject",
+   "reward": 0.740083,
+   "step": 114
+  },
+  {
+   "cum": 51.997679,
+   "family": "fam-recon",
+   "reward": 0.185063,
+   "step": 115
+  },
+  {
+   "cum": 52.785349,
+   "family": "fam-inject",
+   "reward": 0.78767,
+   "step": 116
+  },
+  {
+   "cum": 53.245675,
+   "family": "fam-authz",
+   "reward": 0.460326,
+   "step": 117
+  },
+  {
+   "cum": 54.01823,
+   "family": "fam-inject",
+   "reward": 0.772555,
+   "step": 118
+  },
+  {
+   "cum": 54.303564,
+   "family": "fam-recon",
+   "reward": 0.285334,
+   "step": 119
+  }
+ ]
+}
